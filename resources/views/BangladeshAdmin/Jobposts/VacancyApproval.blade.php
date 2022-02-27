@@ -122,12 +122,12 @@
                             </table>
                             <div class='text-center'>
                                 
-                                <button id="button" type="button" class="btn btn-info">Click Here</button>
+                                <button id="button" type="button" class="btn btn-info">Data Synchronize</button>
 
                                 <div id="overlay">
       <div class="cv-spinner">
         <span class="spinner">
-          <svg id="wrap" width="300" height="300">
+        <svg id="wrap" width="300" height="300">
             <!-- background -->
             <svg>
               <circle
@@ -136,10 +136,10 @@
                 r="130"
                 style="stroke: lightblue; stroke-width: 18; fill: transparent;"
               />
-              <circle cx="150" cy="150" r="115" style="fill: #2c3e50;" />
+              <circle cx="150" cy="150" r="115" style="fill: #77afb5;" />
               <path
                 style="
-                  stroke: #2c3e50;
+                  stroke: #1f244f;
                   stroke-dasharray: 820;
                   stroke-dashoffset: 820;
                   stroke-width: 18;
@@ -161,17 +161,13 @@
               <path
                 id="hourglass"
                 d="M150,150 C60,85 240,85 150,150 C60,215 240,215 150,150 Z"
-                style="stroke: white; stroke-width: 5; fill: white;"
+                style="stroke: red; stroke-width: 5; fill: yellow;"
               />
 
               <path
                 id="frame"
                 d="M100,97 L200, 97 M100,203 L200,203 M110,97 L110,142 M110,158 L110,200 M190,97 L190,142 M190,158 L190,200 M110,150 L110,150 M190,150 L190,150"
-                style="
-                  stroke: lightblue;
-                  stroke-width: 6;
-                  stroke-linecap: round;
-                "
+                style="stroke: green; stroke-width: 6; stroke-linecap: round;"
               />
 
               <animateTransform
