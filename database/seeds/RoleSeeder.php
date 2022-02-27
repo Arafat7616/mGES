@@ -113,7 +113,7 @@ class RoleSeeder extends Seeder
         Role::create([
             'id' => 15,
             'name' => 'Uae Embassy',
-            'slug' => 'uae-embassy',
+            'slug' => 'malaysia-embassy',
             'status' => 'active'
         ]);
 

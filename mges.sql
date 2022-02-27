@@ -1543,7 +1543,7 @@ INSERT INTO `roles` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`)
 (12, 'Bangladeshi admin', 'bangladeshi-admin', 'active', '2022-02-15 09:00:18', '2022-02-15 09:00:18'),
 (13, 'Employer', 'employer', 'active', '2022-02-15 09:00:18', '2022-02-15 09:00:18'),
 (14, 'Uae Admin', 'malaysia-admin', 'active', '2022-02-15 09:00:18', '2022-02-15 09:00:18'),
-(15, 'Uae Embassy', 'uae-embassy', 'active', '2022-02-15 09:00:18', '2022-02-15 09:00:18'),
+(15, 'Uae Embassy', 'malaysia-embassy', 'active', '2022-02-15 09:00:18', '2022-02-15 09:00:18'),
 (16, 'Candidate', 'candidate', 'active', '2022-02-15 09:00:18', '2022-02-15 09:00:18');
 
 -- --------------------------------------------------------
@@ -1689,7 +1689,7 @@ INSERT INTO `users` (`id`, `role_id`, `country_id`, `name`, `email`, `email_veri
 (11, 6, 2, 'Child One Stop Service', 'coss@gmail.com', NULL, '$2y$10$YrXahSUfJL3.ZJH.QWqESu9Ia6eeaA1dzFiMFHEafA9ebL.LfuUd6', 'child-one-stop-service', 'Approved', NULL, NULL, NULL, 'Child One Stop Service', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-15 09:00:19', '2022-02-15 09:00:19'),
 (12, 7, 2, 'Medical Agency', 'ma@gmail.com', NULL, '$2y$10$phAGDamkViZZ3ZgRjFA5reJzKSC14CaD6DuN09cMq02oxaoRR5JKa', 'medical-agency', 'Approved', NULL, NULL, NULL, 'Medical Agency', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11, NULL, NULL, '2022-02-15 09:00:19', '2022-02-15 09:00:19'),
 (13, 8, 2, 'Training Agency', 'ta@gmail.com', NULL, '$2y$10$B3yyC7LYLGy0e4I.Bp4BXecvvpoe7N4DGkzMuHlBYtvIZSPpqAhaC', 'training-agency', 'Approved', NULL, NULL, NULL, 'Training Agency', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11, NULL, NULL, '2022-02-15 09:00:19', '2022-02-15 09:00:19'),
-(14, 15, 2, 'Uae Embassy', 'ue@gmail.com', NULL, '$2y$10$SvdlffdBUkthXxlLXWajbuMVhJfffdecJpxgeWCcJnbVirPx0Ndsa', 'uae-embassy', 'Approved', NULL, NULL, NULL, 'Uae Embassy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-15 09:00:19', '2022-02-15 09:00:19'),
+(14, 15, 2, 'Uae Embassy', 'ue@gmail.com', NULL, '$2y$10$SvdlffdBUkthXxlLXWajbuMVhJfffdecJpxgeWCcJnbVirPx0Ndsa', 'malaysia-embassy', 'Approved', NULL, NULL, NULL, 'Uae Embassy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-15 09:00:19', '2022-02-15 09:00:19'),
 (15, 16, 2, 'Candidate', 'candidate@gmail.com', NULL, '$2y$10$L8OZE4t17g9CZoyFnKMF6eNMsYgWroEB7kLHV1nBfG5FxGYYXw35u', 'candidate', 'Approved', NULL, NULL, NULL, 'Candidate', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-15 09:00:19', '2022-02-15 09:00:19');
 
 --

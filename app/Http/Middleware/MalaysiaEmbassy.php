@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class UaeEmbassy
+class MalaysiaEmbassy
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class UaeEmbassy
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && (Auth::user()->user_type == 'uae-embassy')) {
+        if (Auth::check() && (Auth::user()->user_type == 'malaysia-embassy')) {
             return $next($request);
         }
         else{

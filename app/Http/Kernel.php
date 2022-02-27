@@ -10,7 +10,7 @@ use App\Http\Middleware\OneStopService_Child;
 use App\Http\Middleware\TravelAgency;
 use App\Http\Middleware\BiometricAgencies;
 use App\Http\Middleware\Candidate;
-use App\Http\Middleware\UaeEmbassy;
+use App\Http\Middleware\MalaysiaEmbassy;
 use App\Http\Middleware\TrainingAgency;
 use App\Http\Middleware\MedicalAgency;
 use App\Http\Middleware\RecruitingAgency;
@@ -80,7 +80,7 @@ class Kernel extends HttpKernel
         'travel-agency'=>TravelAgency::class,
         'biometric-agency'=>BiometricAgencies::class,
         'candidate'=>Candidate::class,
-        'uae-embassy'=>UaeEmbassy::class,
+        'malaysia-embassy'=>MalaysiaEmbassy::class,
         'training-agency'=>TrainingAgency::class,
         'medical-agency'=>MedicalAgency::class,
         'employer-company'=>EmployerCompany::class,

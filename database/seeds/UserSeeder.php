@@ -160,7 +160,7 @@ class UserSeeder extends Seeder
             'company_name' => 'Uae Embassy',
             'email' => 'ue@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'uae-embassy',
+            'user_type' => 'malaysia-embassy',
             'active_status' => 'Approved',
         ]);
         User::create([

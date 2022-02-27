@@ -27,7 +27,7 @@ Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'UAEAdmin', 'as' => 
     });
 
     // UAE Embassy
-    Route::group(['prefix' => 'uae-embassy/', 'as' => 'UAEEmbassy.'], function () {
+    Route::group(['prefix' => 'malaysia-embassy/', 'as' => 'UAEEmbassy.'], function () {
         Route::get('new-request', 'UAEEmbassyController@new')->name('new');
         Route::get('approved-request', 'UAEEmbassyController@approved')->name('approved');
         Route::get('rejected-request', 'UAEEmbassyController@rejected')->name('rejected');
