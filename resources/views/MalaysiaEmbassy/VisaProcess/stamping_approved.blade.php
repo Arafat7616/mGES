@@ -1,6 +1,6 @@
-@extends("UaeEmbassy.master")
+@extends("MalaysiaEmbassy.master")
 
-@section('title', 'Visa requested candidates')
+@section('title', 'Visa Approved candidates')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -20,11 +20,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Visa requested candidates</h4>
+                        <h4 class="pull-left page-title">Visa Approved candidates</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">Excelanto</a></li>
                             <li><a href="#">Candidates</a></li>
-                            <li class="active">Visa requested candidates</li>
+                            <li class="active">Visa Approved candidates</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Visa requested candidates</h3>
+                            <h3 class="panel-title">Visa Approved candidates</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -58,8 +58,8 @@
                                             <td>{{ $offeredCandidate->candidate_email }}</td>
                                             <td>{{ $offeredCandidate->phone_number }}</td>
                                             <td>
-                                                @if ($offeredCandidate->result_status == 'Visa-Stamping-Request')
-                                                    <span class="badge badge-primary">Visa-Stamping-Request</span>
+                                                @if ($offeredCandidate->result_status == 'Visa-Stamping-Approved')
+                                                    <span class="badge badge-warning">Visa-Stamping-Approved</span>
                                                 @elseif ($offeredCandidate->result_status == 'Selected')
                                                     <span class="badge badge-success">Selected</span>
                                                 @elseif ($offeredCandidate->result_status == 'Interview')
@@ -81,7 +81,7 @@
                                                         -({{ $offeredCandidate->result_status }})</span>
                                                 @endif
                                             </td>
-                                            <td><a class="btn btn-info btn-sm" href="{{ route('UaeEmbassy.visaProcess.requestedCandidateProfile', $offeredCandidate->id) }}">
+                                            <td><a class="btn btn-info btn-sm" href="{{ route('MalaysiaEmbassy.visaProcess.approvedCandidateProfile', $offeredCandidate->id) }}">
                                                     <i class="fa fa-eye"></i> View
                                                 </a></td>
                                         </tr>

@@ -113,8 +113,8 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 14,
             'country_id' => 2,
-            'name' => 'Uae Admin',
-            'company_name' => 'Uae Admin',
+            'name' => 'Malaysia Admin',
+            'company_name' => 'Malaysia Admin',
             'email' => 'uaeadmin@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'malaysia-admin',
@@ -156,8 +156,8 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 15,
             'country_id' => 2,
-            'name' => 'Uae Embassy',
-            'company_name' => 'Uae Embassy',
+            'name' => 'Malaysia Embassy',
+            'company_name' => 'Malaysia Embassy',
             'email' => 'ue@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'malaysia-embassy',

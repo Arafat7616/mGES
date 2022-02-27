@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    @include('UaeEmbassy.include._header')
+    @include('MalaysiaEmbassy.include._header')
 </head>
 
 
@@ -17,13 +17,13 @@
 <div id="wrapper">
 
     <!-- Top Bar Start -->
-    @include("UaeEmbassy.include._topbar")
+    @include("MalaysiaEmbassy.include._topbar")
     <!-- Top Bar End -->
 
 
     <!-- ========== Left Sidebar Start ========== -->
 
-    {{-- @include("UaeEmbassy.include._side-menu") --}}
+    @include("MalaysiaEmbassy.include._side-menu")
     <!-- Left Sidebar End -->
 
     <!-- Start right Content here -->
@@ -31,14 +31,14 @@
 
     <div class="content-page">
         @yield('main-content')
-        @include('UaeEmbassy.include._footer')
+        @include('MalaysiaEmbassy.include._footer')
     </div>
 
 </div>
 
 
 <!-- jQuery  -->
-@include("UaeEmbassy.include._scripts")
+@include("MalaysiaEmbassy.include._scripts")
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-@extends("UaeEmbassy.master")
+@extends("MalaysiaEmbassy.master")
 
 @section('title', 'Candidate Profile')
 @section('DataTableCss')

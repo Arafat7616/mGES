@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UaeEmbassy;
+namespace App\Http\Controllers\MalaysiaEmbassy;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,26 +11,26 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Session;
 
-class UaeEmbassyDashboardController extends Controller
+class MalaysiaEmbassyDashboardController extends Controller
 {
     public function dashboard(){
         $user = User::find(Auth::user()->id);
         if ($user->active_status == "New" || $user->active_status == 'Pending' || $user->active_status == 'Rejected') {
-            return view('UaeEmbassy.pending-profile', compact('user'));
+            return view('MalaysiaEmbassy.pending-profile', compact('user'));
         }
-        return view('UaeEmbassy.welcome');
+        return view('MalaysiaEmbassy.welcome');
     }
 
     public function companyPrfileView(){
 
         $user = User::find(Auth::user()->id);
-        return view('UaeEmbassy.profile', compact('user'));
+        return view('MalaysiaEmbassy.profile', compact('user'));
     }
 
     public function editProfile()
     {
         $user = Auth::user();
-        return view('UaeEmbassy.profile-edit', compact('user'));
+        return view('MalaysiaEmbassy.profile-edit', compact('user'));
     }
 
     public function updateProfile(Request $request)

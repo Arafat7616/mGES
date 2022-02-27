@@ -15,12 +15,12 @@
 * __Welfare sevice centre:__ ```wsc@gmail.com```
 * __Master One stop service:__ ```moss@gmail.com```
 * __Bangladesh Embassy:__ ```be@gmail.com```
-* __Uae Admin:__ ```uaeadmin@gmail.com```
+* __Malaysia Admin:__ ```uaeadmin@gmail.com```
 * __Child One Stop Service:__ ```coss@gmail.com```
 * __Medical Agency:__ ```ma@gmail.com```
 * __Training Agency:__ ```ta@gmail.com```
 * __Travel Agency:__ ```travel@gmail.com```
 * __Biometric Agency:__ ```bio@gmail.com```
-* __Uae Embassy:__ ```ue@gmail.com```
+* __Malaysia Embassy:__ ```ue@gmail.com```
 * __Employer Company:__ ```ec@gmail.com```
 * __Candidate:__ ```candidate@gmail.com```

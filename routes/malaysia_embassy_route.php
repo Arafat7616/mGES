@@ -2,15 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-  // UaeEmbassy
-Route::group(['prefix' => 'malaysia-embassy/', 'namespace' => 'UaeEmbassy', 'as' => 'UaeEmbassy.', 'middleware' => ['auth', 'malaysia-embassy']], function () {
-    Route::get('/dashboard', 'UaeEmbassyDashboardController@dashboard')->name('dashboard');
-    Route::get('/company-profile-view', 'UaeEmbassyDashboardController@companyPrfileView')->name('companyPrfileView');
+// Malaysia Embassy route
+Route::group(['prefix' => 'malaysia-embassy/', 'namespace' => 'MalaysiaEmbassy', 'as' => 'MalaysiaEmbassy.', 'middleware' => ['auth', 'malaysia-embassy']], function () {
+    Route::get('/dashboard', 'MalaysiaEmbassyDashboardController@dashboard')->name('dashboard');
+    Route::get('/company-profile-view', 'MalaysiaEmbassyDashboardController@companyPrfileView')->name('companyPrfileView');
 
-    Route::get('/edit-profile', 'UaeEmbassyDashboardController@editProfile')->name('editProfile');
-    Route::post('/update-profile', 'UaeEmbassyDashboardController@updateProfile')->name('updateProfile');
+    Route::get('/edit-profile', 'MalaysiaEmbassyDashboardController@editProfile')->name('editProfile');
+    Route::post('/update-profile', 'MalaysiaEmbassyDashboardController@updateProfile')->name('updateProfile');
 
-    Route::post('/company-profile-submit', 'UaeEmbassyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
+    Route::post('/company-profile-submit', 'MalaysiaEmbassyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
 
     //visa Process
     Route::get('/stamping-requested', 'VisaProcessController@stampingRequested')->name('stampingRequested');

@@ -55,7 +55,7 @@ class RedirectIfAuthenticated
         }
         elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-embassy')
         {
-            return redirect()->route('UaeEmbassy.dashboard');
+            return redirect()->route('MalaysiaEmbassy.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'medical-agency')
         {
             return redirect()->route('MedicalAgency.dashboard');

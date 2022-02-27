@@ -2,8 +2,8 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="{{ route('UaeEmbassy.dashboard') }}" class="logo"><img src="{{ asset('assets/images/mges.png') }}" height="28"></a>
-            <a href="{{ route('UaeEmbassy.dashboard') }}" class="logo-sm"><img src="{{asset('assets/images/logo_sm.png')}}" height="36"></a>
+            <a href="{{ route('MalaysiaEmbassy.dashboard') }}" class="logo"><img src="{{ asset('assets/images/mges.png') }}" height="28"></a>
+            <a href="{{ route('MalaysiaEmbassy.dashboard') }}" class="logo-sm"><img src="{{asset('assets/images/logo_sm.png')}}" height="36"></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
@@ -91,7 +91,7 @@
                           <!-- Menu Footer-->
                           <li class="user-footer">
                             <div class="left">
-                                <a href="{{ route('UaeEmbassy.companyPrfileView') }}">
+                                <a href="{{ route('MalaysiaEmbassy.companyPrfileView') }}">
                                     <img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-user-management-kiranshastry-lineal-color-kiranshastry-10.png"/>
                                 </a>
                             </div>
@@ -118,7 +118,7 @@
 
                             <li class="divider"></li>
                             @if (Auth::user()->active_status == 'Approved')
-                            <li><a href="{{ route('UaeEmbassy.companyPrfileView') }}"> Profile</a>
+                            <li><a href="{{ route('MalaysiaEmbassy.companyPrfileView') }}"> Profile</a>
                             </li>
                             @endif
 
