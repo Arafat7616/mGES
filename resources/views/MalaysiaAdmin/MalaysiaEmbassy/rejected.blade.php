@@ -1,6 +1,6 @@
 @extends("MalaysiaAdmin.master")
 
-@section('title', 'Approved Embassy Requests')
+@section('title', 'Rejected Embassy Requests')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -20,11 +20,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Approved Requests</h4>
+                        <h4 class="pull-left page-title">Rejected Requests</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">Excelanto</a></li>
-                            <li><a href="#">UAE Embassy</a></li>
-                            <li class="active">Approved Requests</li>
+                            <li><a href="#">Malaysia Embassy</a></li>
+                            <li class="active">Rejected Requests</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Approved Embassy Requests</h3>
+                            <h3 class="panel-title">Rejected Embassy Requests</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -58,7 +58,7 @@
                                             <td>{{ $user->domain }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>
-                                                <span class="badge badge-success">{{ $user->active_status }}</span>
+                                                <span class="badge badge-danger">{{ $user->active_status }}</span>
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"

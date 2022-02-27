@@ -64,7 +64,7 @@
                                                 @elseif ($offeredCandidate->travel_status == 'Ticket-Issued')
                                                     <span class="badge badge-success">Ticket-Issued</span>
                                                 @elseif ($offeredCandidate->travel_status == 'Forwarded')
-                                                    <span class="badge badge-primary">Sent To UAE</span>
+                                                    <span class="badge badge-primary">Sent To Malaysia</span>
                                                 @elseif ($offeredCandidate->travel_status == 'Activated')
                                                     <span class="badge badge-warning">Appointed</span>
                                                 @else

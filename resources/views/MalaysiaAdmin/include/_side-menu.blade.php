@@ -17,11 +17,11 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i> <span> UAE Embassy</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i> <span> Malaysia Embassy</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('MalaysiaAdmin.UAEEmbassy.new') }}"><i class="fa fa-arrow-circle-right"></i> New Requests</a></li>
-                        <li><a href="{{ route('MalaysiaAdmin.UAEEmbassy.approved') }}"><i class="fa fa-arrow-circle-right"></i> Approved Requests</a></li>
-                        <li><a href="{{ route('MalaysiaAdmin.UAEEmbassy.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
+                        <li><a href="{{ route('MalaysiaAdmin.MalaysiaEmbassy.new') }}"><i class="fa fa-arrow-circle-right"></i> New Requests</a></li>
+                        <li><a href="{{ route('MalaysiaAdmin.MalaysiaEmbassy.approved') }}"><i class="fa fa-arrow-circle-right"></i> Approved Requests</a></li>
+                        <li><a href="{{ route('MalaysiaAdmin.MalaysiaEmbassy.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
                     </ul>
                 </li>
                 <li class="has_sub">

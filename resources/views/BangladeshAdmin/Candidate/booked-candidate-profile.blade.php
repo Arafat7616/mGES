@@ -61,19 +61,17 @@
                                         <b>Status</b> <a class="float-right"> <button type="button"
                                                 class="btn btn-success btn-xs update">Ticket-Issued</button>
                                     </li>
-                                    <button class="btn btn-primary btn-block" onclick="forwardToUae(this)"
-                                    value="{{ route('BangladeshAdmin.candidate.forwardToUae', $offeredCandidate->id) }}">
-                                    <i class="fa fa-share"></i> Forward to
-                                    UAE</button>
+                                    <button class="btn btn-primary btn-block" onclick="forwardToMalaysia(this)"
+                                    value="{{ route('BangladeshAdmin.candidate.forwardToMalaysia', $offeredCandidate->id) }}">
+                                    <i class="fa fa-share"></i> Forward to Malaysia</button>
                                 @elseif ($offeredCandidate->travel_status == 'Forwarded')
                                     <li class="list-group-item">
                                         <b>Status</b> <a class="float-right"> <button type="button"
                                                 class="btn btn-success btn-xs update">Forwarded</button>
                                     </li>
-                                    <button class="btn btn-primary btn-block" disabled onclick="forwardToUae(this)"
-                                    value="{{ route('BangladeshAdmin.candidate.forwardToUae', $offeredCandidate->id) }}">
-                                    <i class="fa fa-share"></i> Forward to
-                                    UAE</button>
+                                    <button class="btn btn-primary btn-block" disabled onclick="forwardToMalaysia(this)"
+                                    value="{{ route('BangladeshAdmin.candidate.forwardToMalaysia', $offeredCandidate->id) }}">
+                                    <i class="fa fa-share"></i> Forward to Malaysia</button>
                                 @endif
                             </ul>
                         </div>
@@ -340,7 +338,7 @@
     </div>
     <!--End content -->
     <script>
-        function forwardToUae(objButton) {
+        function forwardToMalaysia(objButton) {
             var url = objButton.value;
             // alert(objButton.value)
             Swal.fire({

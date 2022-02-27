@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// UAE Admin route
+// Malaysia Admin route
 Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as' => 'MalaysiaAdmin.', 'middleware' => ['auth', 'malaysia-admin']], function () {
     Route::get('/dashboard', 'MalaysiaAdminDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'MalaysiaAdminDashboardController@companyPrfileView')->name('companyPrfileView');
@@ -26,11 +26,11 @@ Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as
         Route::get('rejected', 'EmployerRequestController@rejected')->name('rejected');
     });
 
-    // UAE Embassy
-    Route::group(['prefix' => 'malaysia-embassy/', 'as' => 'UAEEmbassy.'], function () {
-        Route::get('new-request', 'UAEEmbassyController@new')->name('new');
-        Route::get('approved-request', 'UAEEmbassyController@approved')->name('approved');
-        Route::get('rejected-request', 'UAEEmbassyController@rejected')->name('rejected');
+    // Malaysia Embassy
+    Route::group(['prefix' => 'malaysia-embassy/', 'as' => 'MalaysiaEmbassy.'], function () {
+        Route::get('new-request', 'MalaysiaEmbassyController@new')->name('new');
+        Route::get('approved-request', 'MalaysiaEmbassyController@approved')->name('approved');
+        Route::get('rejected-request', 'MalaysiaEmbassyController@rejected')->name('rejected');
     });
 
     // job category route

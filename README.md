@@ -15,7 +15,7 @@
 * __Welfare sevice centre:__ ```wsc@gmail.com```
 * __Master One stop service:__ ```moss@gmail.com```
 * __Bangladesh Embassy:__ ```be@gmail.com```
-* __Malaysia Admin:__ ```uaeadmin@gmail.com```
+* __Malaysia Admin:__ ```malaysiaadmin@gmail.com```
 * __Child One Stop Service:__ ```coss@gmail.com```
 * __Medical Agency:__ ```ma@gmail.com```
 * __Training Agency:__ ```ta@gmail.com```

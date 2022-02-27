@@ -115,7 +115,7 @@ class UserSeeder extends Seeder
             'country_id' => 2,
             'name' => 'Malaysia Admin',
             'company_name' => 'Malaysia Admin',
-            'email' => 'uaeadmin@gmail.com',
+            'email' => 'malaysiaadmin@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'malaysia-admin',
             'active_status' => 'Approved',
