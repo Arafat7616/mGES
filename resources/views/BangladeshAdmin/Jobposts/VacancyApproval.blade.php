@@ -386,7 +386,7 @@
           }).done(function () {
             setTimeout(function () {
               $("#overlay").fadeOut(300);
-            }, 1200);
+            }, 7000);
           });
         });
       });
