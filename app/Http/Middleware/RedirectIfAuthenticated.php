@@ -32,7 +32,7 @@ class RedirectIfAuthenticated
             //return redirect()->route('OneStopService.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-admin')
         {
-            return redirect()->route('UAEAdmin.dashboard');
+            return redirect()->route('MalaysiaAdmin.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'master-one-stop-service')
         {
             return redirect()->route('OneStopService.dashboard');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UAEAdmin;
+namespace App\Http\Controllers\MalaysiaAdmin;
 
 use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
@@ -11,12 +11,12 @@ class CandidateController extends Controller
     public function travelReceived()
     {
         $offeredCandidates = OfferedCandidate::whereIn('travel_status', ['Activated', 'Forwarded'])->orderBy('id', 'DESC')->get();
-        return view('UAEAdmin.candidate.travel-received', compact('offeredCandidates'));
+        return view('MalaysiaAdmin.candidate.travel-received', compact('offeredCandidates'));
     }
 
     public function travelCandidateProfile($offered_candidate_id)
     {
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
-        return view('UAEAdmin.candidate.show-travel-candidate', compact('offeredCandidate'));
+        return view('MalaysiaAdmin.candidate.show-travel-candidate', compact('offeredCandidate'));
     }
 }

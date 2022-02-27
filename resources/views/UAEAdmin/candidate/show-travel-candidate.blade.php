@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Candidate Profile')
 @section('DataTableCss')

@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 @section('main-content')
     <div class="content">
         <div class="container">

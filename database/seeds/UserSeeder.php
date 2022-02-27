@@ -158,7 +158,7 @@ class UserSeeder extends Seeder
             'country_id' => 2,
             'name' => 'Malaysia Embassy',
             'company_name' => 'Malaysia Embassy',
-            'email' => 'ue@gmail.com',
+            'email' => 'me@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'malaysia-embassy',
             'active_status' => 'Approved',

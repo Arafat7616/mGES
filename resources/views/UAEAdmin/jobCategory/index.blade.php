@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'View Job Category')
 @section('DataTableCss')
@@ -60,7 +60,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('UAEAdmin.jobCategory.edit', $jobCategory->id) }}">
+                                                    href="{{ route('MalaysiaAdmin.jobCategory.edit', $jobCategory->id) }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                             </td>

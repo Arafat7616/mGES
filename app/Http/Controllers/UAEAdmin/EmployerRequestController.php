@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UAEAdmin;
+namespace App\Http\Controllers\MalaysiaAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,22 +11,22 @@ class EmployerRequestController extends Controller
 {
     public function new(){
         $users = User::where('user_type','employer-company')->where('active_status', 'Pending')->orderBy('id','DESC')->get();
-        return view('UAEAdmin.employerRequest.new', compact('users'));
+        return view('MalaysiaAdmin.employerRequest.new', compact('users'));
     }
 
     public function approved(){
         $users = User::where('user_type','employer-company')->where('active_status', 'Approved')->orderBy('id','DESC')->get();
-        return view('UAEAdmin.employerRequest.approved', compact('users'));
+        return view('MalaysiaAdmin.employerRequest.approved', compact('users'));
     }
 
     public function rejected(){
         $users = User::where('user_type','employer-company')->where('active_status', 'Rejected')->orderBy('id','DESC')->get();
-        return view('UAEAdmin.employerRequest.rejected', compact('users'));
+        return view('MalaysiaAdmin.employerRequest.rejected', compact('users'));
     }
 
     public function edit($id){
         $user = User::findOrFail($id);
-        return view('UAEAdmin.employerRequest.edit', compact('user'));
+        return view('MalaysiaAdmin.employerRequest.edit', compact('user'));
     }
 
     public function update(Request $request , $id){

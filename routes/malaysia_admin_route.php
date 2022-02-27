@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 // UAE Admin route
-Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'UAEAdmin', 'as' => 'UAEAdmin.', 'middleware' => ['auth', 'malaysia-admin']], function () {
-    Route::get('/dashboard', 'UAEAdminDashboardController@dashboard')->name('dashboard');
-    Route::get('/company-profile-view', 'UAEAdminDashboardController@companyPrfileView')->name('companyPrfileView');
+Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as' => 'MalaysiaAdmin.', 'middleware' => ['auth', 'malaysia-admin']], function () {
+    Route::get('/dashboard', 'MalaysiaAdminDashboardController@dashboard')->name('dashboard');
+    Route::get('/company-profile-view', 'MalaysiaAdminDashboardController@companyPrfileView')->name('companyPrfileView');
 
-    Route::get('/edit-profile', 'UAEAdminDashboardController@editProfile')->name('editProfile');
-    Route::post('/update-profile', 'UAEAdminDashboardController@updateProfile')->name('updateProfile');
+    Route::get('/edit-profile', 'MalaysiaAdminDashboardController@editProfile')->name('editProfile');
+    Route::post('/update-profile', 'MalaysiaAdminDashboardController@updateProfile')->name('updateProfile');
 
     // company
     Route::group(['prefix' => 'company/', 'as' => 'company.'], function () {

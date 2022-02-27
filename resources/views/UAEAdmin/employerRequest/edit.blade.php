@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 @section('main-content')
     <div class="content">
         <div class="container">
@@ -25,7 +25,7 @@
                         </div>
                         <div class="panel-body">
                             <form role="form" method="POST" enctype="multipart/form-data"
-                                action="{{ route('UAEAdmin.employerRequest.update', $user->id) }}">
+                                action="{{ route('MalaysiaAdmin.employerRequest.update', $user->id) }}">
                                 @csrf
                                 {{-- <input type="text"> --}}
                                 <div class="row">

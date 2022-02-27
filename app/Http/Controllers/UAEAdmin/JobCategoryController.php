@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UAEAdmin;
+namespace App\Http\Controllers\MalaysiaAdmin;
 
 use App\Http\Controllers\Controller;
 use App\JobCategory;
@@ -16,7 +16,7 @@ class JobCategoryController extends Controller
     public function index()
     {
         $jobCategories = JobCategory::orderBy('id','DESC')->get();
-        return view('UAEAdmin.jobCategory.index', compact('jobCategories'));
+        return view('MalaysiaAdmin.jobCategory.index', compact('jobCategories'));
     }
 
     /**
@@ -26,7 +26,7 @@ class JobCategoryController extends Controller
      */
     public function create()
     {
-        return view('UAEAdmin.jobCategory.create');
+        return view('MalaysiaAdmin.jobCategory.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class JobCategoryController extends Controller
     public function edit($id)
     {
         $jobCategory = JobCategory::findOrFail($id);
-        return view('UAEAdmin.jobCategory.edit', compact('jobCategory'));
+        return view('MalaysiaAdmin.jobCategory.edit', compact('jobCategory'));
     }
 
     /**

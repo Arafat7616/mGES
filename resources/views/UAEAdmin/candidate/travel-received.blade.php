@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Travel Received Candidates List')
 @section('DataTableCss')
@@ -73,7 +73,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-xs"
-                                                    href="{{ route('UAEAdmin.candidate.travelCandidateProfile', $offeredCandidate->id) }}"><i
+                                                    href="{{ route('MalaysiaAdmin.candidate.travelCandidateProfile', $offeredCandidate->id) }}"><i
                                                         class="fa fa-eye"></i></a>
                                             </td>
                                         </tr>

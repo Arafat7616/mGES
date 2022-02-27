@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UAEAdmin;
+namespace App\Http\Controllers\MalaysiaAdmin;
 
 use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
@@ -15,37 +15,37 @@ class VisaRequestController extends Controller
 {
     public function requested(){
         $offeredCandidates = OfferedCandidate::where('result_status','Visa-Applied')->orderBy('id','DESC')->get();
-        return view('UAEAdmin.visa.requested', compact('offeredCandidates'));
+        return view('MalaysiaAdmin.visa.requested', compact('offeredCandidates'));
     }
 
     public function approved(){
         $offeredCandidates = OfferedCandidate::where('result_status','Visa-Approved')->orderBy('id','DESC')->get();
-        return view('UAEAdmin.visa.approved', compact('offeredCandidates'));
+        return view('MalaysiaAdmin.visa.approved', compact('offeredCandidates'));
     }
 
     public function rejected(){
         $offeredCandidates = OfferedCandidate::where('result_status','Visa-Rejected')->orderBy('id','DESC')->get();
-        return view('UAEAdmin.visa.rejected', compact('offeredCandidates'));
+        return view('MalaysiaAdmin.visa.rejected', compact('offeredCandidates'));
     }
 
     public function showVisaApprovedCandidate($offered_candidate_id){
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
-        return view('UAEAdmin.visa.show-visa-approved-candidate', compact('offeredCandidate'));
+        return view('MalaysiaAdmin.visa.show-visa-approved-candidate', compact('offeredCandidate'));
     }
 
     public function showVisaAppliedCandidate($offered_candidate_id){
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
-        return view('UAEAdmin.visa.show-visa-applied-candidate', compact('offeredCandidate'));
+        return view('MalaysiaAdmin.visa.show-visa-applied-candidate', compact('offeredCandidate'));
     }
 
     public function showVisaRejectedCandidate($offered_candidate_id){
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
-        return view('UAEAdmin.visa.show-visa-rejected-candidate', compact('offeredCandidate'));
+        return view('MalaysiaAdmin.visa.show-visa-rejected-candidate', compact('offeredCandidate'));
     }
 
     public function visaStatusOfferedCandidate($offered_candidate_id){
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
-        return view('UAEAdmin.visa.visa-status-result', compact('offeredCandidate'));
+        return view('MalaysiaAdmin.visa.visa-status-result', compact('offeredCandidate'));
     }
 
     public function visaStatusOfferedCandidateUpdate(Request $request, $offered_candidate_id){

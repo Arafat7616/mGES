@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 @section('main-content')
 <div class="content">
     <div class="container">
@@ -18,7 +18,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('UAEAdmin.updateProfile') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('MalaysiaAdmin.updateProfile') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @include('Others.message')
                     <div class="panel panel-primary">

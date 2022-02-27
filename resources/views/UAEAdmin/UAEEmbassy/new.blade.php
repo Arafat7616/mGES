@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'New Embassy Requests')
 @section('DataTableCss')
@@ -64,19 +64,19 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('UAEAdmin.company.showCompanyProfile', $user->id) }}">
+                                                    href="{{ route('MalaysiaAdmin.company.showCompanyProfile', $user->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
                                             <td>
                                                 <button class="btn btn-success" onclick="approve(this)"
-                                                    value="{{ route('UAEAdmin.company.approveNow', $user->id) }}">
+                                                    value="{{ route('MalaysiaAdmin.company.approveNow', $user->id) }}">
                                                     <i class="mdi mdi-check"></i> </button>
 
                                             </td>
                                             <td>
                                                 <button class="btn btn-danger" onclick="reject(this)"
-                                                    value="{{ route('UAEAdmin.company.rejectNow', $user->id) }}">
+                                                    value="{{ route('MalaysiaAdmin.company.rejectNow', $user->id) }}">
                                                     <i class="mdi mdi-close"></i> </button>
                                             </td>
                                         </tr>

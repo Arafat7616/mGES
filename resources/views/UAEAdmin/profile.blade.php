@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 @section('main-content')
     <div class="content">
         <div class="container">
@@ -144,7 +144,7 @@
                                 <div class="text-center">
                                     <img height="200px;" width="200px;" class="card-img profile-card-image"
                                         src="{{ asset($user->logo ?? get_static_option('no_image')) }}" alt="Card image cap">
-                                    <h1 class="profile-name">{{ $user->name }} <a class="btn btn-success" href="{{ route('UAEAdmin.editProfile') }}"><i class="fa fa-edit"></i> Edit Profile </a></h1>
+                                    <h1 class="profile-name">{{ $user->name }} <a class="btn btn-success" href="{{ route('MalaysiaAdmin.editProfile') }}"><i class="fa fa-edit"></i> Edit Profile </a></h1>
                                 </div>
                                 <div class="row">
                                     <ul class="list-group">

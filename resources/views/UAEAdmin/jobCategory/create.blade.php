@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Add Job Category')
 @section('DataTableCss')
@@ -30,7 +30,7 @@
                             <h3 class="panel-title">Add Job Category</h3>
                         </div>
                         <div class="panel-body">
-                            <form action="{{ route('UAEAdmin.jobCategory.store') }}" method="POST" role="form" enctype="multipart/form-data">
+                            <form action="{{ route('MalaysiaAdmin.jobCategory.store') }}" method="POST" role="form" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
                                 <div class="row ">

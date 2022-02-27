@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Visa Requested Candidates')
 @section('DataTableCss')
@@ -84,7 +84,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-xs"
-                                                    href="{{ route('UAEAdmin.visa.showVisaAppliedCandidate', $offeredCandidate->id) }}"><i
+                                                    href="{{ route('MalaysiaAdmin.visa.showVisaAppliedCandidate', $offeredCandidate->id) }}"><i
                                                         class="fa fa-eye"></i></a>
                                             </td>
                                         </tr>

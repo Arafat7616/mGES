@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Approved Employer Requests')
 @section('DataTableCss')
@@ -62,7 +62,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('UAEAdmin.company.showCompanyProfile', $user->id) }}">
+                                                    href="{{ route('MalaysiaAdmin.company.showCompanyProfile', $user->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>

@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Candidate Profile')
 @section('DataTableCss')
@@ -61,7 +61,7 @@
                                         <button type="button" name="Rejected"
                                             class="btn btn-danger btn-xs update">Visa-Requested</button>
                                     </li>
-                                    <a href="{{ route('UAEAdmin.visa.visaStatusOfferedCandidate', $offeredCandidate->id) }}"
+                                    <a href="{{ route('MalaysiaAdmin.visa.visaStatusOfferedCandidate', $offeredCandidate->id) }}"
                                         class="btn btn-primary btn-block"><b><i class="fa fa-edit"></i> Visa status
                                             result</b></a>
                                 @endif

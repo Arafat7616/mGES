@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UAEAdmin;
+namespace App\Http\Controllers\MalaysiaAdmin;
 
 use App\Http\Controllers\Controller;
 use App\User;
@@ -11,21 +11,21 @@ use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Session;
 
-class UAEAdminDashboardController extends Controller
+class MalaysiaAdminDashboardController extends Controller
 {
     public function dashboard(){
-        return view('UAEAdmin.welcome');
+        return view('MalaysiaAdmin.welcome');
     }
 
     public function companyPrfileView(){
         $user = User::find(Auth::user()->id);
-        return view('UAEAdmin.profile', compact('user'));
+        return view('MalaysiaAdmin.profile', compact('user'));
     }
 
     public function editProfile()
     {
         $user = Auth::user();
-        return view('UAEAdmin.profile-edit', compact('user'));
+        return view('MalaysiaAdmin.profile-edit', compact('user'));
     }
 
     public function updateProfile(Request $request)

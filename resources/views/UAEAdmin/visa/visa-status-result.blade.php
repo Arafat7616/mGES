@@ -1,4 +1,4 @@
-@extends("UAEAdmin.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Update result for the visa requested candidate')
 @section('DataTableCss')
@@ -31,7 +31,7 @@
                         </div>
                         <div class="panel-body">
                             <form role="form"
-                                action="{{ route('UAEAdmin.visa.visaStatusOfferedCandidateUpdate', $offeredCandidate->id) }}"
+                                action="{{ route('MalaysiaAdmin.visa.visaStatusOfferedCandidateUpdate', $offeredCandidate->id) }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')

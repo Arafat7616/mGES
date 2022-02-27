@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UAEAdmin;
+namespace App\Http\Controllers\MalaysiaAdmin;
 
 use App\Http\Controllers\Controller;
 use App\User;
@@ -11,7 +11,7 @@ class CompanyController extends Controller
     public function showCompanyProfile($user_id)
     {
         $user = User::findOrFail($user_id);
-        return view('UAEAdmin.company.profile', compact('user'));
+        return view('MalaysiaAdmin.company.profile', compact('user'));
     }
 
     public function approveNow($id){
