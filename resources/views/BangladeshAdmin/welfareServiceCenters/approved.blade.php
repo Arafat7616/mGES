@@ -21,7 +21,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Approved Requests</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">Welfare Service Center</a></li>
                             <li class="active">Approved Requests</li>
                         </ol>

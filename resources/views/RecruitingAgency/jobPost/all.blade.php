@@ -22,7 +22,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">All Job Posts</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">Job Posts
                                 </a></li>
                             <li class="active">All Job Posts</li>

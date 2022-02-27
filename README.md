@@ -1,5 +1,5 @@
 ## Follow belows steps to install this project
-* Download the project or clone it ```git clone git@github.com:MRRaihan/Excelanto```
+* Download the project or clone it ```git clone git@github.com:MRRaihan/mGES```
 * __Run:__ ```cp .env.example .env``` then configure your database
 * __Run:__ ```composer install```
 * __Run:__ ```php artisan key:generate```
