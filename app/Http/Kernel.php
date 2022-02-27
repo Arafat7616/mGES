@@ -15,7 +15,7 @@ use App\Http\Middleware\TrainingAgency;
 use App\Http\Middleware\MedicalAgency;
 use App\Http\Middleware\RecruitingAgency;
 use App\Http\Middleware\SuperAdmin;
-use App\Http\Middleware\UaeAdmin;
+use App\Http\Middleware\MalaysiaAdmin;
 use App\Http\Middleware\WelfareCentre;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -74,7 +74,7 @@ class Kernel extends HttpKernel
         'bangladesh-admin'=>BangladeshAdmin::class,
         'recruiting-agency'=>RecruitingAgency::class,
         'welfare-centre'=>WelfareCentre::class,
-        'uae-admin'=>UaeAdmin::class,
+        'malaysia-admin'=>MalaysiaAdmin::class,
         'one-stop-service'=>OneStopService::class,
         'child-one-stop-service'=>OneStopService_Child::class,
         'travel-agency'=>TravelAgency::class,

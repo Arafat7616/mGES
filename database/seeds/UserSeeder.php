@@ -117,7 +117,7 @@ class UserSeeder extends Seeder
             'company_name' => 'Uae Admin',
             'email' => 'uaeadmin@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'uae-admin',
+            'user_type' => 'malaysia-admin',
             'active_status' => 'Approved',
         ]);
         User::create([

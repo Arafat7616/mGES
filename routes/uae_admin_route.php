@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // UAE Admin route
-Route::group(['prefix' => 'uae-admin/', 'namespace' => 'UAEAdmin', 'as' => 'UAEAdmin.', 'middleware' => ['auth', 'uae-admin']], function () {
+Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'UAEAdmin', 'as' => 'UAEAdmin.', 'middleware' => ['auth', 'malaysia-admin']], function () {
     Route::get('/dashboard', 'UAEAdminDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'UAEAdminDashboardController@companyPrfileView')->name('companyPrfileView');
 

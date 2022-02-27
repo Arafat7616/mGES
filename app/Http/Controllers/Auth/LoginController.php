@@ -45,9 +45,9 @@ class LoginController extends Controller
         {
             return 'bangladesh-embassy/dashboard';
 
-        }elseif(Auth::user()->user_type == 'uae-admin')
+        }elseif(Auth::user()->user_type == 'malaysia-admin')
         {
-            return 'uae-admin/dashboard';
+            return 'malaysia-admin/dashboard';
 
         }elseif(Auth::user()->user_type == 'master-one-stop-service')
         {
