@@ -30,9 +30,9 @@ class RedirectIfAuthenticated
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-embassy')
         {
             //return redirect()->route('OneStopService.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'uae-admin')
+        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-admin')
         {
-            return redirect()->route('UAEAdmin.dashboard');
+            return redirect()->route('MalaysiaAdmin.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'master-one-stop-service')
         {
             return redirect()->route('OneStopService.dashboard');
@@ -53,9 +53,9 @@ class RedirectIfAuthenticated
         {
             return redirect()->route('Candidate.dashboard');
         }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'uae-embassy')
+        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-embassy')
         {
-            return redirect()->route('UaeEmbassy.dashboard');
+            return redirect()->route('MalaysiaEmbassy.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'medical-agency')
         {
             return redirect()->route('MedicalAgency.dashboard');

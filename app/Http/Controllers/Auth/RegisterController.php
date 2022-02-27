@@ -46,8 +46,8 @@ class RegisterController extends Controller
             return 'welfare-centre/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-embassy') {
             return 'bangladesh-embassy/dashboard';
-        } elseif (Auth::user()->user_type == 'uae-admin') {
-            return 'uae-admin/dashboard';
+        } elseif (Auth::user()->user_type == 'malaysia-admin') {
+            return 'malaysia-admin/dashboard';
         } elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'child-one-stop-service') {
@@ -136,7 +136,7 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 13) {
             $userType = "employer";
         } elseif ($data['role'] == 14) {
-            $userType = "uae-admin";
+            $userType = "malaysia-admin";
         } elseif ($data['role'] == 15) {
             $userType = "";
         } else {

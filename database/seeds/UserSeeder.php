@@ -113,11 +113,11 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 14,
             'country_id' => 2,
-            'name' => 'Uae Admin',
-            'company_name' => 'Uae Admin',
-            'email' => 'uaeadmin@gmail.com',
+            'name' => 'Malaysia Admin',
+            'company_name' => 'Malaysia Admin',
+            'email' => 'malaysiaadmin@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'uae-admin',
+            'user_type' => 'malaysia-admin',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -156,11 +156,11 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 15,
             'country_id' => 2,
-            'name' => 'Uae Embassy',
-            'company_name' => 'Uae Embassy',
-            'email' => 'ue@gmail.com',
+            'name' => 'Malaysia Embassy',
+            'company_name' => 'Malaysia Embassy',
+            'email' => 'me@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'uae-embassy',
+            'user_type' => 'malaysia-embassy',
             'active_status' => 'Approved',
         ]);
         User::create([

@@ -67,7 +67,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('show-final-profile/{offered_candidate_id}', 'CandidateController@showFinalCandidate')->name('showFinalCandidate');
         Route::get('show-booked-profile/{offered_candidate_id}', 'CandidateController@showBookedCandidate')->name('showBookedCandidate');
         Route::post('forward/{id}', 'CandidateController@forwardNow')->name('forwardNow');
-        Route::post('forward-to-uae/{offered_candidate_id}', 'CandidateController@forwardToUae')->name('forwardToUae');
+        Route::post('forward-to-malaysia/{offered_candidate_id}', 'CandidateController@forwardToMalaysia')->name('forwardToMalaysia');
         Route::get('forwarded', 'CandidateController@forwarded')->name('forwarded');
         Route::get('reviewed', 'CandidateController@reviewed')->name('reviewed');
         Route::get('finalized', 'CandidateController@finalized')->name('finalized');

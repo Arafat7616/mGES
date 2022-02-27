@@ -61,7 +61,7 @@
                                             <td>{{ $candidate->candidate_email }}</td>
                                             <td>
                                                 @if ($candidate->travel_status == 'Forwarded')
-                                                    <span class="badge badge-info">Sent To UAE</span>
+                                                    <span class="badge badge-info">Sent To Malaysia</span>
                                                 @elseif ($candidate->travel_status == 'Activated')
                                                     <span class="badge badge-success">Appointed</span>
                                                 @else

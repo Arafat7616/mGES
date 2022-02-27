@@ -117,7 +117,7 @@ class CandidateController extends Controller
         }
     }
 
-    public function forwardToUae($offered_candidate_id){
+    public function forwardToMalaysia($offered_candidate_id){
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
         $offeredCandidate->travel_status = "Forwarded";
         $offeredCandidate->active_status = "Forwarded";

@@ -18,7 +18,7 @@ class TravelEnquirySeeder extends Seeder
             DB::table('travel_enquiries')->insert([
                 'oss_id' => 11,
                 'start_point' => 'Dhaka Bangladesh',
-                'end_point' => 'Dubai UAE',
+                'end_point' => 'Kuala Lumpur, Malaysia',
                 'tickets_required' => 2,
                 'date_of_journey'  => Carbon::now()->addDays(2),
                 'end_date'  => Carbon::now()->addDays(7),

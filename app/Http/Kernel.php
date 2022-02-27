@@ -10,12 +10,12 @@ use App\Http\Middleware\OneStopService_Child;
 use App\Http\Middleware\TravelAgency;
 use App\Http\Middleware\BiometricAgencies;
 use App\Http\Middleware\Candidate;
-use App\Http\Middleware\UaeEmbassy;
+use App\Http\Middleware\MalaysiaEmbassy;
 use App\Http\Middleware\TrainingAgency;
 use App\Http\Middleware\MedicalAgency;
 use App\Http\Middleware\RecruitingAgency;
 use App\Http\Middleware\SuperAdmin;
-use App\Http\Middleware\UaeAdmin;
+use App\Http\Middleware\MalaysiaAdmin;
 use App\Http\Middleware\WelfareCentre;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -74,13 +74,13 @@ class Kernel extends HttpKernel
         'bangladesh-admin'=>BangladeshAdmin::class,
         'recruiting-agency'=>RecruitingAgency::class,
         'welfare-centre'=>WelfareCentre::class,
-        'uae-admin'=>UaeAdmin::class,
+        'malaysia-admin'=>MalaysiaAdmin::class,
         'one-stop-service'=>OneStopService::class,
         'child-one-stop-service'=>OneStopService_Child::class,
         'travel-agency'=>TravelAgency::class,
         'biometric-agency'=>BiometricAgencies::class,
         'candidate'=>Candidate::class,
-        'uae-embassy'=>UaeEmbassy::class,
+        'malaysia-embassy'=>MalaysiaEmbassy::class,
         'training-agency'=>TrainingAgency::class,
         'medical-agency'=>MedicalAgency::class,
         'employer-company'=>EmployerCompany::class,
