@@ -13,9 +13,10 @@
 -   **Super admin:** `sa@gmail.com`
 -   **Bangladesh admin:** `ba@gmail.com`
 -   **Bangladesh Recruiting agency:** `bra@gmail.com`
+-   **Malaysia Recruiting agency:** `mra@gmail.com`
 -   **Welfare sevice centre:** `wsc@gmail.com`
 -   **Master One stop service:** `moss@gmail.com`
-    * __Bangladesh High Commission :__ ```bhc@gmail.com```
+-   **Bangladesh High Commission:** `bhc@gmail.com`
 -   **Malaysia Embassy:** `me@gmail.com`
 -   **Malaysia Admin:** `malaysiaadmin@gmail.com`
 -   **Child One Stop Service:** `coss@gmail.com`
