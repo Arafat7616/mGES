@@ -41,20 +41,26 @@ class LoginController extends Controller
         }elseif(Auth::user()->user_type == 'bangladesh-high-commission')
         {
             return 'bangladesh-high-commission/dashboard';
-        }elseif(Auth::user()->user_type == 'malaysia-admin')
+        }
+        elseif(Auth::user()->user_type == 'malaysia-admin')
         {
             return 'malaysia-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'master-one-stop-service') {
+        }
+        elseif(Auth::user()->user_type == 'malaysia-embassy')
+        {
+            return 'malaysia-embassy/dashboard';
+        }
+        elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'child-one-stop-service') {
             return 'child-one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'medical-company') {
             return 'medical-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'training-company') {
+        } elseif (Auth::user()->user_type == 'training-agency') {
             return 'training-agency/dashboard';
         } elseif (Auth::user()->user_type == 'travel-company') {
             return '/dashboard';
-        } elseif (Auth::user()->user_type == 'biometric-company') {
+        } elseif (Auth::user()->user_type == 'biometric-agency') {
             return '/dashboard';
         }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
         {

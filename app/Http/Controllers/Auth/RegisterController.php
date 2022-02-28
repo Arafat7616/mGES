@@ -46,15 +46,22 @@ class RegisterController extends Controller
             return 'welfare-centre/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-high-commission') {
             return 'bangladesh-high-commission/dashboard';
-        } elseif (Auth::user()->user_type == 'malaysia-admin') {
+        }
+        elseif(Auth::user()->user_type == 'malaysia-admin')
+        {
             return 'malaysia-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'master-one-stop-service') {
+        }
+        elseif(Auth::user()->user_type == 'malaysia-embassy')
+        {
+            return 'malaysia-admin/dashboard';
+        }
+        elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'child-one-stop-service') {
             return 'child-one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'medical-company') {
             return 'medical-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'training-company') {
+        } elseif (Auth::user()->user_type == 'training-agency') {
             return 'training-agency/dashboard';
         } elseif (Auth::user()->user_type == 'travel-company') {
             return '/dashboard';
@@ -127,11 +134,11 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 7) {
             $userType = "medical-company";
         } elseif ($data['role'] == 8) {
-            $userType = "training-company";
+            $userType = "training-agency";
         } elseif ($data['role'] == 9) {
             $userType = "travel-company";
         } elseif ($data['role'] == 10) {
-            $userType = "biometric-company";
+            $userType = "biometric-agency";
         } elseif ($data['role'] == 11) {
             $userType = "bangladesh-recruiting-agency";
         } elseif ($data['role'] == 12) {
@@ -141,7 +148,7 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 14) {
             $userType = "malaysia-admin";
         } elseif ($data['role'] == 15) {
-            $userType = "";
+            $userType = "malaysia-embassy";
         } else {
             echo "some this wrong";
         }
