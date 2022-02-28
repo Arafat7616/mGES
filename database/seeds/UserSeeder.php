@@ -173,5 +173,15 @@ class UserSeeder extends Seeder
             'user_type' => 'candidate',
             'active_status' => 'Approved',
         ]);
+        User::create([
+            'role_id' => 17,
+            'country_id' => 2,
+            'name' => 'Malaysia Recruiting Agency',
+            'company_name' => 'Malaysia Recruiting Agency',
+            'email' => 'mra@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysia-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
     }
 }

@@ -64,6 +64,9 @@ class RegisterController extends Controller
             return 'recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
+        }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
+        {
+            return 'malaysia-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'employer') {
         } else {
             return route('register');
