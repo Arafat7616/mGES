@@ -40,8 +40,8 @@ class RegisterController extends Controller
         if (Auth::user()->user_type == 'super-admin') {
 
             return 'super-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'employer-company') {
-            return 'employer-company/dashboard';
+        } elseif (Auth::user()->user_type == 'malaysian-employer') {
+            return 'malaysian-employer/dashboard';
         } elseif (Auth::user()->user_type == 'welfare-service-center-company') {
             return 'welfare-centre/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-high-commission') {
@@ -67,7 +67,6 @@ class RegisterController extends Controller
         }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
         {
             return 'malaysia-recruiting-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'employer') {
         } else {
             return route('register');
         }
@@ -114,7 +113,7 @@ class RegisterController extends Controller
         if ($data['role'] == 1) {
             $userType = "super-admin";
         } elseif ($data['role'] == 2) {
-            $userType = "employer-company";
+            $userType = "malaysian-employer";
         } elseif ($data['role'] == 3) {
 
             $userType = "welfare-service-center-company";

@@ -24,5 +24,5 @@
 -   **Training Agency:** `ta@gmail.com`
 -   **Travel Agency:** `travel@gmail.com`
 -   **Biometric Agency:** `bio@gmail.com`
--   **Employer Company:** `ec@gmail.com`
+-   **Malaysian Employer:** `malaysianemployer@gmail.com`
 -   **Candidate:** `candidate@gmail.com`

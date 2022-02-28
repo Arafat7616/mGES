@@ -21,8 +21,8 @@ class RedirectIfAuthenticated
 
         if (Auth::guard($guard)->check() && Auth::user()->user_type == 'super-admin') {
             return redirect()->route('SuperAdmin.dashboard');
-        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'employer-company') {
-            return redirect()->route('EmployerCompany.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysian-employer') {
+            return redirect()->route('MalaysianEmployer.dashboard');
         } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'welfare-service-center-company') {
             return redirect()->route('WelfareCentre.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladesh-high-commission')
@@ -50,8 +50,6 @@ class RedirectIfAuthenticated
             return redirect()->route('BangladeshRecruitingAgency.dashboard');
         } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-admin') {
             //return redirect()->route('BangladeshAdmin.dashboard');
-        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'employer') {
-            //return redirect()->route('.dashboard');
         } else {
             return $next($request);
         }

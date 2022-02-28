@@ -1,11 +1,12 @@
-@extends("BangladeshAdmin.master")
+@extends("MalaysianEmployer.master")
 
-@section('title', 'Reviewed Candidates')
+@section('title', 'Candidates List')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -19,11 +20,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Reviewed Candidates</h4>
+                        <h4 class="pull-left page-title">Candidates List</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">Candidates</a></li>
-                            <li class="active"> Reviewed Candidates</li>
+                            <li class="active">Requested Candidates List</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -33,7 +34,8 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Malaysian Employer Reviewed Candidated List</h3>
+                            <h3 class="panel-title">
+                                Requested Candidates List</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -42,42 +44,42 @@
                                         <th>SL No</th>
                                         <th>Candidate Name</th>
                                         <th>Job Category</th>
+                                        <th>Phone No</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
+                                        <th>Photo</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($offeredCandidates as $offeredCandidate)
+                                    @foreach ($candidates as $candidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $offeredCandidate->candidate_name }}</td>
-                                            <td>{{ $offeredCandidate->job_category->category_name }}</td>
-                                            <td>{{ $offeredCandidate->candidate_email }}</td>
-                                            <td>{{ $offeredCandidate->phone_number }}</td>
+                                            <td>{{ $candidate->candidate_name }}</td>
+                                            <td>{{ $candidate->job_category->category_name }}</td>
+                                            <td>{{ $candidate->phone_number }}</td>
+                                            <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                @if ($offeredCandidate->result_status == 'Selected')
-                                                    <span class="btn btn-success btn-sm">Selected</span>
-                                                @elseif ($offeredCandidate->result_status == "Interview")
-                                                    <span class="btn btn-primary btn-sm">Interview</span>
-                                                @elseif ($offeredCandidate->result_status == "Rejected")
-                                                    <span class="btn btn-danger btn-sm">Rejected</span>
-                                                @elseif ($offeredCandidate->result_status == "Under-Interview-Process")
-                                                    <span class="btn btn-danger btn-sm">Under-Interview-Process</span>
-                                                @elseif ($offeredCandidate->result_status == "Updated")
-                                                    <span class="btn btn-info btn-sm">Updated</span>
-                                                @elseif ($offeredCandidate->result_status == "Finalized")
-                                                    <span class="btn btn-warning btn-sm">Finalized</span>
-                                                @elseif ($offeredCandidate->result_status == "Assigned")
-                                                    <span class="btn btn-warning btn-sm">Post-Selection</span>
+                                                @if ($candidate->candidate_picture)
+                                                    <a href="{{ asset($candidate->candidate_picture) }}" target="_blank">
+                                                        <img height="70px;" src="{{ asset($candidate->candidate_picture) }}" width="70px;" class="rounded-circle" />
+                                                    </a>
                                                 @else
-                                                    <span class="btn btn-warning btn-sm">Under-Process</span>
+                                                    <abbr title="Sorry There in no picture">
+                                                        <img class="rounded-circle" height="70px;" src="{{asset('assets/images/users/avatar-1.jpg')}}" width="70px;" />
+                                                    </abbr>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($candidate->result_status == "New")
+                                                    <span class="badge badge-success">New</span>
+                                                @else
+                                                    <span class="badge badge-info">{{ $candidate->result_status }}</span>
                                                 @endif
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('BangladeshAdmin.candidate.show', $offeredCandidate->candidate->id) }}">
+                                                    href="{{ route('MalaysianEmployer.candidates.show', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
@@ -89,8 +91,9 @@
                                         <th>SL No</th>
                                         <th>Candidate Name</th>
                                         <th>Job Category</th>
+                                        <th>Phone No</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
+                                        <th>Photo</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -106,7 +109,7 @@
 @endsection
 
 @section('DataTableJs')
-     <!-- Datatables-->
+    <!-- Datatables-->
     <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/dataTables.buttons.min.js') }}"></script>
