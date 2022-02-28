@@ -6,6 +6,7 @@ use App\AppliedJob;
 use App\JobPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Notification;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -71,6 +72,32 @@ class JobPostController extends Controller
         $appliedJob->status = "Rejected";
         try {
             $appliedJob->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Successfully Rejected'
+            ]);
+        }catch (\Exception $exception){
+            return response()->json([
+                'type' => 'error',
+                'message' => $exception->getMessage()
+            ]);
+        }
+    }
+
+    public function notificationStore($job_post_id){
+        $jobPost = JobPost::find($job_post_id);
+
+        $notification = new Notification();
+        $notification->title = 'New Job Post';
+        $notification->text = 'Need '.$jobPost->job_vacancy.' employe for '.$jobPost->company->company_name;
+        $notification->notification_for = 'bangladesh-recruiting-agency';
+        $notification->notification_from =$jobPost->user_id;
+        $notification->created_by =  Auth::user()->id;
+        $notification->jobpost_id = $job_post_id;
+        $notification->save();
+
+        try {
+            $notification->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Rejected'

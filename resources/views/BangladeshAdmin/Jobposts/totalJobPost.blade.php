@@ -60,7 +60,7 @@
                                                 <a class="btn btn-info" href="{{ route('BangladeshAdmin.JobPostShow', $jobPost->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
-                                                <button class="btn btn-info button" value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
+                                                <button class="btn btn-info button" job="{{ $jobPost->id }}" value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
                                                     <i class="fa fa-edit"></i> Data Synchronize
                                                 </button>
                                             </td>
@@ -209,12 +209,12 @@
 
 <script>
     jQuery(function($) {
-        $(document).ajaxSend(function() {
-            $("#overlay").fadeIn(300);
-        });
+        $(document).ajaxSend(function() {id
 
         $(".button").click(function() {
             var max_vacancy = $(this).attr('value');
+            var id = $(this).attr('job');
+            console.log(id);
             var minimum_vacancy = parseInt(max_vacancy/2)
             var random_vacancy =  Math.floor(Math.random() * (max_vacancy - minimum_vacancy + 1) + minimum_vacancy)
 
@@ -231,6 +231,32 @@
                         random_vacancy+' Candidates matched .',
                         'success'
                     )
+                    var url = '/bangladesh-admin/job-notification-store/'+id;
+                    $.ajax({
+                    method: 'GET'
+                    , url: url
+                    , headers: {
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    , }
+                    , success: function(data) {
+                        if (data.type == 'success') {
+                            // Swal.fire(
+                            //     'Rejected !'
+                            //     , 'This company has been Rejected. ' + data.message
+                            //     , 'success'
+                            // )
+                            // setTimeout(function() {
+                            //     location.reload();
+                            // }, 800); //
+                        } else {
+                            // Swal.fire(
+                            //     'Wrong !'
+                            //     , 'Something going wrong. ' + data.message
+                            //     , 'warning'
+                            // )
+                        }
+                    }
+                , })
                 }, 7000);
             });
         });
