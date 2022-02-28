@@ -10,17 +10,17 @@ use Whoops\Run;
 class EmployerRequestController extends Controller
 {
     public function new(){
-        $users = User::where('user_type','employer-company')->where('active_status', 'Pending')->orderBy('id','DESC')->get();
+        $users = User::where('user_type','malaysian-employer')->where('active_status', 'Pending')->orderBy('id','DESC')->get();
         return view('MalaysiaAdmin.employerRequest.new', compact('users'));
     }
 
     public function approved(){
-        $users = User::where('user_type','employer-company')->where('active_status', 'Approved')->orderBy('id','DESC')->get();
+        $users = User::where('user_type','malaysian-employer')->where('active_status', 'Approved')->orderBy('id','DESC')->get();
         return view('MalaysiaAdmin.employerRequest.approved', compact('users'));
     }
 
     public function rejected(){
-        $users = User::where('user_type','employer-company')->where('active_status', 'Rejected')->orderBy('id','DESC')->get();
+        $users = User::where('user_type','malaysian-employer')->where('active_status', 'Rejected')->orderBy('id','DESC')->get();
         return view('MalaysiaAdmin.employerRequest.rejected', compact('users'));
     }
 

@@ -34,8 +34,8 @@ class LoginController extends Controller
         if (Auth::user()->user_type == 'super-admin') {
 
             return 'super-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'employer-company') {
-            return 'employer-company/dashboard';
+        } elseif (Auth::user()->user_type == 'malaysian-employer') {
+            return 'malaysian-employer/dashboard';
         } elseif (Auth::user()->user_type == 'welfare-service-center-company') {
             return 'welfare-centre/dashboard';
         }elseif(Auth::user()->user_type == 'bangladesh-high-commission')
@@ -63,7 +63,6 @@ class LoginController extends Controller
             return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'employer') {
         } else {
             return route('login');
         }

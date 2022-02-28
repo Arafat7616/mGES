@@ -4,7 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\BangladeshAdmin;
 use App\Http\Middleware\BangladeshHighCommission;
-use App\Http\Middleware\EmployerCompany;
+use App\Http\Middleware\MalaysianEmployer;
 use App\Http\Middleware\OneStopService;
 use App\Http\Middleware\OneStopService_Child;
 use App\Http\Middleware\TravelAgency;
@@ -85,7 +85,7 @@ class Kernel extends HttpKernel
         'malaysia-embassy'=>MalaysiaEmbassy::class,
         'training-agency'=>TrainingAgency::class,
         'medical-agency'=>MedicalAgency::class,
-        'employer-company'=>EmployerCompany::class,
+        'malaysian-employer'=>MalaysianEmployer::class,
         'bangladesh-high-commission'=>BangladeshHighCommission::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
