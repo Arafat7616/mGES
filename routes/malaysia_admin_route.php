@@ -17,6 +17,20 @@ Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as
         Route::post('request-reject/{company_id}', 'CompanyController@rejectNow')->name('rejectNow');
     });
 
+
+    /* Code By Monir
+        Malaysia Recruiting Agency Approval 
+    */
+    Route::group(['prefix' => 'mra-request/', 'as' => 'mraRequest.'], function () {
+        Route::get('new', 'MraRequestController@new')->name('new');
+        Route::get('new/edit/{id}', 'MraRequestController@edit')->name('edit');
+        Route::post('new/update/{id}', 'MraRequestController@update')->name('update');
+        Route::get('approved', 'MraRequestController@approved')->name('approved');
+        Route::get('rejected', 'MraRequestController@rejected')->name('rejected');
+    });
+
+
+
     // Employer Requests
     Route::group(['prefix' => 'employer-request/', 'as' => 'employerRequest.'], function () {
         Route::get('new', 'EmployerRequestController@new')->name('new');

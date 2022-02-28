@@ -72,7 +72,7 @@ class MalaysiaRecruitingAgencyDashboardController extends Controller
             'document2' => 'mimes:pdf',
             'logo'      => 'image',
         ]);
-
+        // dd($request->all());
         $user = User::find(Auth::user()->id);
 
         $user->company_name    =   $request->companyName;
