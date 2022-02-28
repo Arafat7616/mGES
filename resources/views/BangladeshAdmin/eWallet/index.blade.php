@@ -1,301 +1,182 @@
 @extends("BangladeshAdmin.master")
-<link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet"
-    media="screen">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
 
 @section('main-content')
 <div class="content">
 
     <div class="container">
-        <div class="row ScrollPay">
-            <div class="col-sm-6 col-lg-6">
-                <div class="panel panel-primary ">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Wallet</h4>
-                    </div>
+        <div class="row-add">
+ 
+            <div class="col-sm-12">
+              <div class="card-add">
 
-                    <div class="panel-body">
-                        <p class="text-muted">Wallet Balance</p>
-                        <h3 class=""><b>$ 10000.90</b></h3>
-                    </div>
 
-                    <div class="row justify-content-between">
-                        <div class="panel-body">
-                            <div class="col-sm-3 col-lg-6">
-                                <p class="text-muted">Total Credit</p>
-                                <h3 class=""><b>$ 250.55</b></h3>
-                            </div>
-                            <div class="col-sm-3 col-lg-6">
-                                <p class="text-muted">Total Debit</p>
-                                <h3 class=""><b>$ 188.00</b></h3>
-                            </div>
-                        </div>
-                    </div>
+    <div >
+        <a href="#demo-modal"> <button class="center-btn" >Add your card <span class="plus-btn">+</span></button></a>
+   
+   </div>
 
-                </div>
+
+              </div>
             </div>
+          </div>
 
-            <div class="col-sm-6 col-lg-6">
-                <div class="panel panel-primary ">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Add Wallet</h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="panel-body">
-                            <div class="tab">
-                                <button class="tablinks TabLs" onclick="openCity(event, 'London')">Pocket Pay</button>
-                                <button class="tablinks TabLs" onclick="openCity(event, 'Paris')">Credit Card</button>
-                                <button class="tablinks TabLs" onclick="openCity(event, 'Tokyo')">Paypal</button>
-                                <button class="tablinks TabLs" onclick="openCity(event, 'Netbank')">Net Bank</button>
-                            </div>
-
-                            <div id="London" class="tabcontent">
-
-                                <p class="Paytext ">
-                                    <p>Phone Number</p>
-                                    <p class="AmonutML">
-                                        <input id="phone" type="tel" class="form-control PhoneCode" placeholder="Receiver account number">
-                                        <span id="valid-msg" class="hide">Valid</span>
-                                        <span id="error-msg" class="hide">Invalid number</span>
-                                        <input type="text" class="form-control AmonutM " placeholder="Amount">
-                                    </p>
-
-                                </p>
-                                <p class="Paytext AmonutML">
-                                    <input type="text" class="form-control  " placeholder="Note...">
-                                </p>
-
-                                <p><button class="btn btn-success">Submit</button></p>
-                            </div>
-
-                            <div id="Paris" class="tabcontent">
-                                <p class="Paytext"><span>Card Owner</span><input type="text" class="form-control"
-                                        placeholder="Card Owner Name"></p>
-                                <p class="Paytext">Card Number<input type="text" class="form-control"
-                                        placeholder="Valid Card Number"></p>
-                                <p class="Paytext PaytextL">Expiration Date
-                                    <p class="Paytext AmonutML">
-                                        <input type="date" class="form-control AmonutM " placeholder="Amount">
-                                        <input type="text" class="form-control AmonutM " placeholder="CVV ?">
-                                    </p>
-                                </p>
-                                <div class="card-footer"><button type="button" class="btn btn-primary "> Confirm Payment
-                                    </button></div>
-                            </div>
-
-                            <div id="Tokyo" class="tabcontent">
-                                <p class="PaytextFast">Select your paypal account type</p>
-                                <div>
-                                    <label> <input type="radio" name="optradio" checked class="Payradio"> Domestic
-                                    </label>
-                                    <label class="LabelRadio"> <input type="radio" name="optradio"
-                                            class="Payradio">International</label>
-                                </div>
-
-                                <button type="button" class="btn btn-primary BtnPay">Log into my Paypal</button>
-                                <p class="PaytextLast "> Note: After clicking on the button, you will be directed to a
-                                    secure gateway for payment.
-                                    After completing the payment process, you will be redirected back to the website to
-                                    view details of your order.
-                                </p>
-
-                            </div>
-                            <div id="Netbank" class="tabcontent">
-                                <p class="PaytextFast">Select your Bank</p>
-                                <div class="form-group ">
-                                    <select class="form-control" id="ccmonth">
-                                        <option value="" selected disabled>--Please select your Bank--</option>
-                                        <option>Bank 1</option>
-                                        <option>Bank 2</option>
-                                        <option>Bank 3</option>
-                                        <option>Bank 4</option>
-                                        <option>Bank 5</option>
-                                        <option>Bank 6</option>
-                                        <option>Bank 7</option>
-                                        <option>Bank 8</option>
-                                        <option>Bank 9</option>
-                                        <option>Bank 10</option>
-                                    </select> </div>
-                                <div class="form-group">
-                                    <p> <button type="button" class="btn btn-primary "><i
-                                                class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> </p>
-                                </div>
-                                <p class="text-muted">Note: After clicking on the button, you will be directed to a
-                                    secure gateway for payment. After completing the payment process, you will be
-                                    redirected back to the website to view details of your order. </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
+          
     </div>
+
+   
+    
+    <div id="demo-modal" class="modal">
+        <div class="modal__content">
+            <center>
+                <h3 class="newCard">Add New Card</h3>
+              
+            </center>
+            <form action="#">
+                <div class="form-group">
+                    <label for="text" class="labelText">Card number:</label>
+                    <input type="text" class="form-control form_custom_style" id="email">
+                  </div>
+
+                 <div style="display: flex; justify-content:space-between">
+                    <div class="form-group">
+                        <label for="text" class="labelText">Expiry Date:</label>
+                        <input type="date" class="form-control form_custom_style" id="date">
+                      </div>
+                      <div class="form-group">
+                        <label for="text" class="labelText">Name</label>
+                        <input type="text" class="form-control form_custom_style" id="email">
+                      </div>
+                 </div>
+
+                 <div class="form-group">
+                    <label for="text" class="labelText">Card number:</label>
+                    <input type="text" class="form-control form_custom_style" id="email">
+                  </div>
+
+                  <div class="form-group">
+                    <label><input type="checkbox"> Save card details</label>
+                  </div>
+
+            </form>
+            <footer class="modal_footer">
+              <a type="button" href="{{ route('BangladeshAdmin.eWallet.wallet_card') }}" class="footer_text_btn">Add Card</a>
+            </footer>
+            <a href="#" class="modal__close">&times;</a>
+        </div>
+       
+    </div>
+
+    
 </div>
-
 <style>
-    /* Style the tab */
-    .tab {
-        overflow: hidden;
+    .form_custom_style{
+        border-radius: 10px;
     }
-
-    /* Style the buttons inside the tab */
-    .tab button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 10px;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-
-    .TabLs {
-        margin-right: 10px;
-        margin-bottom: 10px;
-        background-color: rgba(153, 153, 153, 0.39) !important;
-    }
-
-    /* Change background color of buttons on hover */
-    .tab button:hover {
-        background-color: rgb(173, 244, 253) !important;
-    }
-
-    /* Create an active/current tablink class */
-    .tab button.active {
-        background-color: #03a9f4 !important;
+    .labelText{
         color: white;
     }
-
-    /* Style the tab content */
-    .tabcontent {
-        display: none;
-        padding: 6px 12px;
-        border-top: none;
+    .newCard{
+        color: white;
     }
-
-    .Paytext {
-        color: rgb(87, 86, 86);
-        font-size: 15px !important;
+    .modal_footer{
+        /* background: black; */
+       border-radius: 10px;
+        text-align: center;
     }
-
-    .AmonutML {
-        display: flex;
-        justify-content: space-between !important;
+    .footer_text_btn{
+        background: #FFFFFF;
+    padding: 8px 20px 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 12px;
+    color: black;
+    margin: 10px;
     }
-
-    .AmonutM {
-        width: 46%;
-        display: inline;
-        justify-content: space-between !important;
+    .footer_text_btn:hover{
+        background: #dae0e4;
     }
+    .row-add{ margin: 10px; }
+.card-add {
+    height: 250px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px lightgrey;
+    padding: 10px;
+    box-shadow: 10px 5px 5px #ddd;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-btn{
+    background: #2BAAF5;
+    padding: 15px 30px 15px 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+}
+.plus-btn{
+    background: white;
+    color: #2BAAF5;
+    padding: 0 5px 0 5px;
+    font-weight: bold;
+    border-radius: 50%;
+}
 
-    .PaytextL {
-        display: flex;
-        width: 50%;
-    }
 
-    .CreditD {
-        width: 50%;
-        display: flex;
-    }
 
-    .Payradio {
-        margin-right: 5px !important;
-    }
 
-    .LabelRadio {
-        margin-left: 10px;
-    }
 
-    .PaytextFast {
-        color: rgb(87, 86, 86);
-        font-size: 15px;
-        margin-top: 10px;
-        text-align: justify;
-    }
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(77, 77, 77, .7);
+  transition: all .4s;
+}
 
-    .BtnPay {
-        margin-top: 15px;
-    }
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
 
-    .PaytextLast {
-        color: rgb(87, 86, 86);
-        font-size: 15px !important;
-        margin-top: 15px;
-        text-align: justify;
-    }
+.modal__content {
+  border-radius: 4px;
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  background: #2BAAF5;
+  padding: 1em 2em;
+}
 
-    .PhoneCode {
-        width: 100% !important;
-    }
+.modal__footer {
+  text-align: right;
+  a {
+    color: #585858;
+  }
+  i {
+    color: #d02d2c;
+  }
+}
+.modal__close {
+    font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #585858;
+  text-decoration: none;
+}
 </style>
-<script>
-    function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-    var telInput = $("#phone"),
-        errorMsg = $("#error-msg"),
-        validMsg = $("#valid-msg");
-    // initialise plugin
-    telInput.intlTelInput({
-        allowExtensions: true,
-        formatOnDisplay: true,
-        autoFormat: true,
-        autoHideDialCode: true,
-        autoPlaceholder: true,
-        defaultCountry: "auto",
-        ipinfoToken: "yolo",
-        nationalMode: false,
-        numberType: "MOBILE",
-        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-        preferredCountries: ['sa', 'ae', 'qa', 'om', 'bh', 'kw', 'ma'],
-        preventInvalidNumbers: true,
-        separateDialCode: true,
-        initialCountry: "auto",
-        geoIpLookup: function(callback) {
-            $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-                var countryCode = (resp && resp.country) ? resp.country : "";
-                callback(countryCode);
-            });
-        },
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"
-    });
-    var reset = function() {
-        telInput.removeClass("error");
-        errorMsg.addClass("hide");
-        validMsg.addClass("hide");
-    };
-    // on blur: validate
-    telInput.blur(function() {
-        reset();
-        if ($.trim(telInput.val())) {
-            if (telInput.intlTelInput("isValidNumber")) {
-                validMsg.removeClass("hide");
-            } else {
-                telInput.addClass("error");
-                errorMsg.removeClass("hide");
-            }
-        }
-    });
-    // on keyup / change flag: reset
-    telInput.on("keyup change", reset);
-</script>
+
 @endsection
