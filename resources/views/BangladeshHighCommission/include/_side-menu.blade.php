@@ -16,6 +16,7 @@
                         <li><a href="{{ route('BangladeshHighCommission.employerDemand.rejected') }}"><i class="fa fa-arrow-circle-right"></i>Rejected Demand</a></li>
                     </ul>
                 </li>
+                
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i></i> <span>New Passport</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">

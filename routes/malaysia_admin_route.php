@@ -29,7 +29,21 @@ Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as
         Route::get('rejected', 'MraRequestController@rejected')->name('rejected');
     });
 
+     /* Code By Monir
+        Employer Job Post Demand
+    */
+     Route::group(['prefix' => 'employer-job-post-demand/', 'as' => 'employerDemand.'], function () {
+        Route::get('new', 'EmployerDemandController@new')->name('new');
+        Route::get('received', 'EmployerDemandController@received')->name('received');
+        Route::get('edit/{id}', 'EmployerDemandController@edit')->name('edit');
+        Route::post('update/{id}', 'EmployerDemandController@update')->name('update');
+        Route::get('approved', 'EmployerDemandController@approved')->name('approved');
+        Route::get('rejected', 'EmployerDemandController@rejected')->name('rejected');
+        Route::get('show/{id}', 'EmployerDemandController@show')->name('show');
+    });
 
+
+    /* Code By Monir End*/
 
     // Employer Requests
     Route::group(['prefix' => 'employer-request/', 'as' => 'employerRequest.'], function () {

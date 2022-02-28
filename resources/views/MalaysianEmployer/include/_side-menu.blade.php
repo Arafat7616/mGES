@@ -16,8 +16,16 @@
                                     class="fa fa-arrow-circle-right"></i>Post New Job</a></li>
                         <li><a href="{{ route('MalaysianEmployer.postJob.index') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Posted Jobs</a></li>
+
+                        <li><a href="{{ route('MalaysianEmployer.postJob.maApproved') }}"><i
+                                    class="fa fa-arrow-circle-right"></i>Approved Job Posts</a></li>
                     </ul>
                 </li>
+
+
+               
+
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i> <span>
                             Candidates</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>

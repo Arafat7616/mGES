@@ -58,9 +58,9 @@ class PostJobController extends Controller
             'jobVacancy' => 'required|numeric',
             'endDate' => 'required',
             'demandLetter' => 'mimes:pdf',
-            'wsc' => 'required',
-            'appointmentDate' => 'required',
-            'appointmentTime' => 'required',
+            // // 'wsc' => 'required',
+            // 'appointmentDate' => 'required',
+            // 'appointmentTime' => 'required',
         ]);
 
         $job_post = new JobPost();
@@ -68,19 +68,19 @@ class PostJobController extends Controller
         $job_post->user_id = Auth::user()->id;
         $job_post->company_id = Auth::user()->id;
         $job_post->employment_type = $request->employmentType;
-        $job_post->recruiting_type = $request->recruiting_type;
+        // $job_post->recruiting_type = $request->recruiting_type;
         $job_post->gender = $request->gender;
         $job_post->age_limit = $request->ageLimit;
         $job_post->salary = $request->salary;
         $job_post->job_location = $request->jobLocation;
         $job_post->job_vacancy = $request->jobVacancy;
         $job_post->end_date = $request->endDate;
-        $job_post->selected_wsc = $request->wsc;
+        // $job_post->selected_wsc = $request->wsc;
         $job_post->appointment_date = $request->appointmentDate;
         $job_post->appointment_time = $request->appointmentTime;
-        if ($request->recruiting_type != 'self') {
-            $job_post->mra_id = $request->agency_id;
-        }
+        // if ($request->recruiting_type != 'self') {
+        //     $job_post->mra_id = $request->agency_id;
+        // }
 
         if ($request->hasFile('demandLetter')) {
             $pdf             = $request->file('demandLetter');
@@ -109,6 +109,42 @@ class PostJobController extends Controller
     {
         $job_post = JobPost::findOrFail($id);
         return view('MalaysianEmployer.PostJob.show', compact('job_post'));
+    }
+
+
+    public function maApproved()
+    {
+        $job_posts = JobPost::where('ma_status',['Approved'])->orderBy('id', 'DESC')->get();
+        return view('MalaysianEmployer.PostJob.ma_approved', compact('job_posts'));
+    }
+
+    public function recruitEmployee($id)
+    {
+        $job_post = JobPost::findOrFail($id);
+        $malaysiaAgenies = User::where('user_type', 'malaysia-recruiting-agency')->orderBy('id', 'DESC')->get();
+        return view('MalaysianEmployer.PostJob.recruit_employee', compact('job_post','malaysiaAgenies'));
+    }
+
+    public function sendJob(Request $request,$id){
+
+        // dd($request->all());
+        $request->validate([
+             'recruiting_type' => 'required',
+        ]);
+
+         $job_post = JobPost::findOrFail($id);
+        $job_post->recruiting_type = $request->recruiting_type;
+        if ($request->recruiting_type != 'self') {
+            $job_post->mra_id = $request->agency_id;
+        }
+
+        try {
+            $job_post->save();
+            return back()->withToastSuccess('Successfully saved.');
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
+
     }
 
     /**

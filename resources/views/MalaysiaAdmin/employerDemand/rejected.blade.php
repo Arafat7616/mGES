@@ -1,4 +1,4 @@
-@extends("MalaysianEmployer.master")
+@extends("MalaysiaAdmin.master")
 
 @section('title', 'Posted Jobs')
 @section('DataTableCss')
@@ -20,10 +20,10 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Job Category</h4>
+                        <h4 class="pull-left page-title">Rejected Jobs</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
-                            <li><a href="#">Job Category</a></li>
+                            <li><a href="#">Rejected Jobs</a></li>
                             <li class="active">Posted Jobs</li>
                         </ol>
                         <div class="clearfix"></div>
@@ -34,7 +34,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Posted Jobs</h3>
+                            <h3 class="panel-title">Rejected Jobs</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -54,7 +54,7 @@
                                     @foreach ($job_posts as $job_post)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $job_post->user->company_name ?? '-' }}</td>
+                                            <td>{{ $job_post->company->company_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             {{-- <td>{{ $job_post->appointment_date ?? '-' }}</td>
@@ -82,7 +82,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('MalaysianEmployer.postJob.show', $job_post->id) }}">
+                                                    href="{{ route('MalaysiaAdmin.employerDemand.show', $job_post->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                             </td>

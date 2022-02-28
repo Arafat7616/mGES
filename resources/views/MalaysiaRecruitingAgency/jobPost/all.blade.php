@@ -55,8 +55,8 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $jobPost->company->company_name }}</td>
                                             <td>{{ $jobPost->job_category->category_name }}</td>
-                                            <td>{{ $jobPost->created_at }}</td>
-                                            <td>{{ $jobPost->end_date }}</td>
+                                            <td>{{ date('Y-m-d',strtotime($jobPost->created_at)) }}</td>
+                                            <td>{{ date('Y-m-d',strtotime($jobPost->end_date)) }}</td>
                                             <td>
                                                 <a class="btn btn-info btn-sm" href="{{ route('MalaysiaRecruitingAgency.jobPost.show', $jobPost->id ) }}">
                                                     <i class="mdi mdi-eye"></i>
