@@ -9,6 +9,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::get('/edit-profile', 'BangladeshAdminDashboardController@editProfile')->name('editProfile');
     Route::post('/update-profile', 'BangladeshAdminDashboardController@updateProfile')->name('updateProfile');
 
+
     // company
     Route::get('show-company-profile/{user_id}', 'CompanyController@showCompanyProfile')->name('company.showCompanyProfile');
     Route::post('company-request-approve/{company_id}', 'CompanyController@approveNow')->name('company.approveNow');
@@ -41,7 +42,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('rejected', 'WelfareServiceCenterController@rejected')->name('rejected');
     });
 
-    // Bangladesh High Commission 
+    // Bangladesh High Commission
     Route::group(['prefix' => 'bangladesh-high-commission/', 'as' => 'bangladeshHighCommission.'], function () {
         Route::post('approve/{company_id}', 'BangladeshHighCommissionController@approveNow')->name('approveNow');
         Route::post('reject/{company_id}', 'BangladeshHighCommissionController@rejectNow')->name('rejectNow');
@@ -83,12 +84,10 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('approved', 'VisaProcessController@approved')->name('approved');
         Route::get('rejected', 'VisaProcessController@rejected')->name('rejected');
     });
-  
+
     //E-Wallet
     Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
         Route::get('wallet', 'EWalletController@index')->name('index');
         Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
     });
-
-
 });

@@ -41,6 +41,28 @@
     <!-- jQuery  -->
     @include("BangladeshRecruitingAgency.include._scripts")
 
+    <script>
+        $(document).ready(function() {
+            getnotification()
+            setInterval(() => {
+
+                getnotification()
+            }, 300000);
+
+        })
+
+        function getnotification() {
+            $.ajax({
+                type: 'GET',
+                url: '/bangladesh-recruiting-agency/get-all-notification',
+                success: function(data) {
+                    $('#notification_body').html(data)
+                    // console.log(data);
+                }
+            });
+        }
+    </script>
+
 </body>
 
 </html>

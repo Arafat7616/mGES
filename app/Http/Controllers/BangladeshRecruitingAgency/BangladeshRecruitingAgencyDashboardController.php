@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BangladeshRecruitingAgency;
 
 use App\Http\Controllers\Controller;
+use App\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -118,5 +119,14 @@ class BangladeshRecruitingAgencyDashboardController extends Controller
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
+    }
+
+    public function notification()
+    {
+        $notifications = Notification::where('notification_for', 'bangladesh-recruiting-agency')->get();
+
+        // return "hello";
+
+        return view('BangladeshRecruitingAgency.include.notificationBody', compact('notifications'));
     }
 }
