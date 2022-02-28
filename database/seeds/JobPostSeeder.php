@@ -127,5 +127,28 @@ class JobPostSeeder extends Seeder
                 'approved_remarks'  => Str::random(10),
             ]);
         }
+
+        DB::table('job_posts')->insert([
+            'job_category_id' => 11,
+            'user_id' => 8,
+            'company_id' => 8,
+            'employment_type' => 'Full Time',
+            'gender'  => 'Male only',
+            'recruiting_type'  => 'self',
+            'age_limit'  => rand(20, 50),
+            'salary'  => rand(5000, 50000),
+            'job_location'  => 'Kuala lampur , Malaysia',
+            'job_vacancy'  => rand(50, 99),
+            'end_date'  => now(),
+            'demand_letter'  => null,
+            'selected_wsc'  => null,
+            'appointment_date'  => now(),
+            'appointment_time'  => now(),
+            // 'rejection_reason'  => Str::random(10),
+            'status'  => 'Approved',
+            'bd_embasy_status' => 'Approved',
+            'ma_status' => 'Approved',
+            'created_at' => Carbon::now()
+        ]);
     }
 }
