@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 
-class RecruitingAgencieController extends Controller
+class BangladeshRecruitingAgencieController extends Controller
 {
     public function request()
     {

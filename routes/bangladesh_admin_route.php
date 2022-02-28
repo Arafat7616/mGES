@@ -15,12 +15,12 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::post('company-request-reject/{company_id}', 'CompanyController@rejectNow')->name('company.rejectNow');
 
     // Recruiting agency
-    Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'as' => 'recruitingAgency.'], function () {
-        Route::post('approve/{company_id}', 'RecruitingAgencieController@approveNow')->name('approveNow');
-        Route::post('reject/{company_id}', 'RecruitingAgencieController@rejectNow')->name('rejectNow');
-        Route::get('request', 'RecruitingAgencieController@request')->name('request');
-        Route::get('approved', 'RecruitingAgencieController@approved')->name('approved');
-        Route::get('rejected', 'RecruitingAgencieController@rejected')->name('rejected');
+    Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'as' => 'bangladeshRecruitingAgency.'], function () {
+        Route::post('approve/{company_id}', 'BangladeshRecruitingAgencieController@approveNow')->name('approveNow');
+        Route::post('reject/{company_id}', 'BangladeshRecruitingAgencieController@rejectNow')->name('rejectNow');
+        Route::get('request', 'BangladeshRecruitingAgencieController@request')->name('request');
+        Route::get('approved', 'BangladeshRecruitingAgencieController@approved')->name('approved');
+        Route::get('rejected', 'BangladeshRecruitingAgencieController@rejected')->name('rejected');
     });
 
     // One stop services
