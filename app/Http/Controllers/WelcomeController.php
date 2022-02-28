@@ -32,13 +32,13 @@ class WelcomeController extends Controller
                 return redirect()->to('one-stop-service/dashboard');
             } elseif (Auth::user()->user_type == 'child-one-stop-service') {
                 return redirect()->to('child-one-stop-service/dashboard');
-            } elseif (Auth::user()->user_type == 'medical-company') {
+            } elseif (Auth::user()->user_type == 'medical-agency') {
                 return redirect()->to('medical-agency/dashboard');
             } elseif (Auth::user()->user_type == 'training-agency') {
                 return redirect()->to('training-agency/dashboard');
-            } elseif (Auth::user()->user_type == 'travel-company') {
+            } elseif (Auth::user()->user_type == 'travel-agency') {
                 return redirect()->to('/dashboard');
-            } elseif (Auth::user()->user_type == 'biometric-company') {
+            } elseif (Auth::user()->user_type == 'biometric-agency') {
                 return redirect()->to('biometric-agency/dashboard');
             }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
             {
