@@ -30,6 +30,9 @@ class JobPost extends Model
     public function company(){
         return $this->belongsTo(Company::class);
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
     public function job_category(){
         return $this->belongsTo(JobCategory::class);
     }
