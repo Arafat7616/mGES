@@ -44,21 +44,20 @@
                                         <div class="panel-body">
                                             <div class="form-group">
                                                 <label for="User Name">User Name</label>
-                                                <input type="text" class="form-control" id="UserName" value="{{ Auth::user()->name }}"
-                                                    readonly="">
+                                                <input type="text" class="form-control" id="UserName"
+                                                    value="{{ Auth::user()->name }}" readonly="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="Company Name">Company Name</label>
                                                 <input type="text" class="form-control" id="CompanyName"
-                                                    value="{{ Auth::user()->company_name }}" readonly="">
+                                                    value="{{ Auth::user()->company->company_name }}" readonly="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobCategory">Job Category</label>
                                                 <select class="form-control" name="jobCategory" required="">
                                                     <option value="">Select job category</option>
                                                     @foreach ($job_categories as $cat)
-                                                        <option
-                                                            {{ old('jobCategory') == $cat->id ? 'selected' : '' }}
+                                                        <option {{ old('jobCategory') == $cat->id ? 'selected' : '' }}
                                                             value="{{ $cat->id }}">{{ $cat->category_name }}
                                                         </option>
                                                     @endforeach
@@ -76,6 +75,35 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
+                                                <label for="employmentType">Recruiting Type</label><br>
+                                                <div class="radio radio-info radio-inline">
+                                                    <input class="recriting_input" type="radio" id="inlineRadio1"
+                                                        value="self" name="recruiting_type" checked="checked">
+                                                    <label for="inlineRadio1"> Self Recruiting </label>
+                                                </div>
+                                                <div class="radio radio-inline">
+                                                    <input class="recriting_input" type="radio" id="inlineRadio2"
+                                                        value='agency' name="recruiting_type">
+                                                    <label for="inlineRadio2"> Agency Recruiting </label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group Agencies-section" id="Agencies-section">
+                                                <label for="agency_id">Agencies</label>
+                                                <select class="form-control" name="agency_id" required="">
+                                                    <option selected="" disabled="" value="null">Select Agency
+                                                    </option>
+                                                    @foreach ($malaysiaAgenies as $agency)
+                                                        <option value={{ $agency->id }}>{{ $agency->company_name }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+
+                                            <div class="form-group">
                                                 <label for="gender">Gender</label>
                                                 <select class="form-control" name="gender" required="">
                                                     <option selected="" disabled="" value="">Select gender</option>
@@ -87,6 +115,12 @@
                                                         value="Male and Female">Male and Female</option>
                                                 </select>
                                             </div>
+
+                                        </div><!-- panel-body -->
+                                    </div> <!-- col-->
+                                    <!-- Horizontal form -->
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                        <div class="panel-body">
                                             <div class="form-group">
                                                 <label for="ageLimit">Age Limit</label>
                                                 <select class="form-control" name="ageLimit" required="">
@@ -101,11 +135,6 @@
                                                         value="30 - 80">30 - 80</option>
                                                 </select>
                                             </div>
-                                        </div><!-- panel-body -->
-                                    </div> <!-- col-->
-                                    <!-- Horizontal form -->
-                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                        <div class="panel-body">
                                             <div class="form-group">
                                                 <label for="salary">Salary</label>
                                                 <input type="text" class="form-control" id="salary" name="salary"
@@ -113,8 +142,9 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobLocation">Job Location</label>
-                                                <input type="text" class="form-control" id="jobLocation" name="jobLocation"
-                                                    placeholder="Enter Job Location" value="{{ old('jobLocation') }}">
+                                                <input type="text" class="form-control" id="jobLocation"
+                                                    name="jobLocation" placeholder="Enter Job Location"
+                                                    value="{{ old('jobLocation') }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobVacancy">Job Vacancy</label>
@@ -131,7 +161,8 @@
                                                 <label for="demandLetter">Demand Letter</label>
                                                 <div class="input-group">
                                                     <div class="col-sm-4" style="padding-top:6px;">
-                                                        <input type="file" accept="application/pdf" id="demandLetter" name="demandLetter">
+                                                        <input type="file" accept="application/pdf" id="demandLetter"
+                                                            name="demandLetter">
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,7 +187,9 @@
                                                     <select class="form-control" name="wsc" required="" id="wsc">
                                                         <option value="">Select Centre</option>
                                                         @foreach ($welfares as $welfare)
-                                                            <option @if(old('wsc') === $welfare->id) selected @endif value="{{ $welfare->id }}">{{ $welfare->name }}</option>
+                                                            <option @if (old('wsc') === $welfare->id) selected @endif
+                                                                value="{{ $welfare->id }}">{{ $welfare->name }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -177,7 +210,8 @@
                                                     <div class="form-group">
                                                         <label for="appointmentTime">Appointment Time</label>
                                                         <input type="time" value="{{ old('appointmentTime') }}"
-                                                            class="form-control" id="appointmentTime" name="appointmentTime">
+                                                            class="form-control" id="appointmentTime"
+                                                            name="appointmentTime">
                                                     </div>
                                                 </div>
                                             </div> <!-- panel-body -->
@@ -197,8 +231,24 @@
             </div> <!-- End Row -->
         </div>
     </div>
-    <!--End content -->
 @endsection
+
+@section('js')
+    <script>
+        $('.recriting_input').click(function() {
+            let value = $('input[name="recruiting_type"]:checked').val();
+
+            if (value == "agency") {
+                $('#Agencies-section').css('display', 'block')
+            } else {
+                $('#Agencies-section').css('display', 'none')
+            }
+
+
+        })
+    </script>
+@endsection
+
 
 @section('DataTableJs')
 
