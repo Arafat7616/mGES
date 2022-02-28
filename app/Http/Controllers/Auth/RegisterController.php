@@ -67,7 +67,11 @@ class RegisterController extends Controller
         }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
         {
             return 'malaysia-recruiting-agency/dashboard';
-        } else {
+        } elseif(Auth::user()->user_type == 'malaysia-embassy')
+        {
+            return 'malaysia-embassy/dashboard';
+        } 
+        else {
             return route('register');
         }
     }
@@ -140,7 +144,7 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 14) {
             $userType = "malaysia-admin";
         } elseif ($data['role'] == 15) {
-            $userType = "";
+            $userType = "malaysia-embassy";
         } else {
             echo "some this wrong";
         }
