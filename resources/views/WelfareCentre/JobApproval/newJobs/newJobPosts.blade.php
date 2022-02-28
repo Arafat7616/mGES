@@ -56,7 +56,7 @@
                                         @foreach ($new_jobs as $key => $new_job)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                <td>{{ $new_job->company->company_name }}</td>
+                                                <td>{{ $new_job->user->company_name }}</td>
                                                 <td>{{ $new_job->job_category->category_name }}</td>
                                                 <td>{{ $new_job->job_location }}</td>
                                                 <td>{{ $new_job->appointment_date }}</td>

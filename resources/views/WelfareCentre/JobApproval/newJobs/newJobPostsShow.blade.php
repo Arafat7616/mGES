@@ -24,7 +24,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Job Posts</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">View Job Post</a></li>
                             <li class="active">View Job Post</li>
                         </ol>
@@ -44,7 +44,7 @@
 
                             <h3 style="font-weight:bolder;text-align:center;color:blue;">Company Details</h3>
 
-                            <h4 style="font-weight:bolder;text-align:center;">{{ $new_job->company->company_name}}</h4>
+                            <h4 style="font-weight:bolder;text-align:center;">{{ $new_job->user->company_name}}</h4>
 
                             <h6 style="text-align:center;">recruiter@gmail.com</h6>
 

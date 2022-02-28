@@ -31,60 +31,40 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        if (Auth::user()->user_type == 'super-admin'){
+        if (Auth::user()->user_type == 'super-admin') {
 
             return 'super-admin/dashboard';
-        }elseif(Auth::user()->user_type == 'employer-company')
-        {
+        } elseif (Auth::user()->user_type == 'employer-company') {
             return 'employer-company/dashboard';
-        }elseif(Auth::user()->user_type == 'welfare-service-center-company')
-        {
+        } elseif (Auth::user()->user_type == 'welfare-service-center-company') {
             return 'welfare-centre/dashboard';
-
-        }elseif(Auth::user()->user_type == 'bangladeshi-embassy')
+        }elseif(Auth::user()->user_type == 'bangladesh-high-commission')
         {
-            return 'bangladesh-embassy/dashboard';
-
+            return 'bangladesh-high-commission/dashboard';
         }elseif(Auth::user()->user_type == 'malaysia-admin')
         {
             return 'malaysia-admin/dashboard';
-
-        }elseif(Auth::user()->user_type == 'master-one-stop-service')
-        {
+        } elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
-
-        }elseif(Auth::user()->user_type == 'child-one-stop-service')
-        {
+        } elseif (Auth::user()->user_type == 'child-one-stop-service') {
             return 'child-one-stop-service/dashboard';
-
-        }elseif(Auth::user()->user_type == 'medical-company')
-        {
+        } elseif (Auth::user()->user_type == 'medical-company') {
             return 'medical-agency/dashboard';
-
-        }elseif(Auth::user()->user_type == 'training-company')
-        {
+        } elseif (Auth::user()->user_type == 'training-company') {
             return 'training-agency/dashboard';
-
-        }elseif(Auth::user()->user_type == 'travel-company')
-        {
+        } elseif (Auth::user()->user_type == 'travel-company') {
             return '/dashboard';
-
-        }elseif(Auth::user()->user_type == 'biometric-company')
-        {
+        } elseif (Auth::user()->user_type == 'biometric-company') {
             return '/dashboard';
-
-        }elseif(Auth::user()->user_type == 'recruiting-agency')
+        }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
         {
-            return 'recruiting-agency/dashboard';
-
-        }elseif(Auth::user()->user_type == 'bangladeshi-admin')
-        {
+            return 'malaysia-recruiting-agency/dashboard';
+        } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
+            return 'bangladesh-recruiting-agency/dashboard';
+        } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
-
-        }elseif(Auth::user()->user_type == 'employer')
-        {
-        }else
-        {
+        } elseif (Auth::user()->user_type == 'employer') {
+        } else {
             return route('login');
         }
     }
@@ -98,6 +78,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-
 }

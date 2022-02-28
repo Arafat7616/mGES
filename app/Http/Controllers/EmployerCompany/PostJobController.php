@@ -22,7 +22,7 @@ class PostJobController extends Controller
      */
     public function index()
     {
-        $job_posts = JobPost::where('company_id',Auth::user()->id)->orderBy('id','DESC')->get();
+        $job_posts = JobPost::with('user')->where('company_id',Auth::user()->id)->orderBy('id','DESC')->get();
         return view('EmployerCompany.PostJob.index', compact('job_posts'));
     }
 

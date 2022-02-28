@@ -22,7 +22,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Job Category</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">Job Category</a></li>
                             <li class="active">Posted Jobs</li>
                         </ol>
@@ -54,7 +54,7 @@
                                     @foreach ($job_posts as $job_post)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $job_post->company->company_name ?? '-' }}</td>
+                                            <td>{{ $job_post->user->company_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_date ?? '-' }}</td>

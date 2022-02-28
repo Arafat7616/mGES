@@ -15,7 +15,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Job Category</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">Job Category</a></li>
                             <li class="active">Add Job Category</li>
                         </ol>
@@ -50,7 +50,7 @@
                                             <div class="form-group">
                                                 <label for="Company Name">Company Name</label>
                                                 <input type="text" class="form-control" id="CompanyName"
-                                                    value="{{ Auth::user()->company->company_name }}" readonly="">
+                                                    value="{{ Auth::user()->company_name }}" readonly="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobCategory">Job Category</label>

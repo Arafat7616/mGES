@@ -12,7 +12,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Role</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="{{route('SuperAdmin.dashboard')}}">Super Admin</a></li>
                             <li><a href="{{route('SuperAdmin.role.index')}}">Role</a></li>
                             <li class="active">Update role</li>

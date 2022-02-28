@@ -21,7 +21,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">All Training Agency</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">Training Agency</a></li>
                             <li class="active">All Training Agency</li>
                         </ol>

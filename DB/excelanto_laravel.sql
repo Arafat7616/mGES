@@ -361,14 +361,14 @@ INSERT INTO `roles` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`)
 (1, 'Super admin', 'super-admin', 'active', '2021-07-11 09:01:35', '2021-07-11 09:01:35'),
 (2, 'Employer company', 'employer-company', 'active', '2021-07-11 09:02:08', '2021-07-12 02:20:10'),
 (3, 'Welfare service center company', 'welfare-service-center-company', 'active', '2021-07-11 09:02:29', '2021-07-11 09:02:29'),
-(4, 'Bangladeshi embassy', 'bangladeshi-embassy', 'active', '2021-07-11 09:03:00', '2021-07-11 09:03:00'),
+(4, 'Bangladeshi High Commission', 'bangladesh-high-commission', 'active', '2021-07-11 09:03:00', '2021-07-11 09:03:00'),
 (5, 'Master One stop service', 'master-one-stop-service', 'active', '2021-07-11 09:03:26', '2021-07-11 09:03:26'),
 (6, 'One stop service agency', 'child-one-stop-service', 'active', '2021-07-11 09:04:08', '2021-07-11 09:04:08'),
 (7, 'Medical company', 'medical-company', 'active', '2021-07-11 09:04:24', '2021-07-11 09:04:24'),
 (8, 'Training company', 'training-company', 'active', '2021-07-11 09:04:35', '2021-07-11 09:04:35'),
 (9, 'Travel company', 'travel-company', 'active', '2021-07-11 09:04:46', '2021-07-11 09:04:46'),
 (10, 'Biometric company', 'biometric-company', 'active', '2021-07-11 09:04:58', '2021-07-11 09:04:58'),
-(11, 'Recruiting Agency', 'recruiting-agency', 'active', '2021-07-11 09:05:23', '2021-07-11 09:05:23'),
+(11, 'Bangladesh Recruiting Agency', 'bangladesh-recruiting-agency', 'active', '2021-07-11 09:05:23', '2021-07-11 09:05:23'),
 (12, 'Bangladeshi admin', 'bangladeshi-admin', 'active', '2021-07-11 09:06:02', '2021-07-11 09:06:02'),
 (13, 'Employer', 'employer', 'active', '2021-07-11 09:06:28', '2021-07-11 09:06:28');
 
@@ -416,7 +416,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `role_id`, `country_id`, `name`, `email`, `email_verified_at`, `password`, `user_type`, `active_status`, `quata`, `company_regno`, `domain`, `company_name`, `abbr`, `mobile`, `city`, `state`, `address1`, `address2`, `logo`, `document1`, `document2`, `status`, `childosc_id`, `cosc_assigned_status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 1, 2, 'Super admin', 'sa@gmail.com', NULL, '$2y$10$TvYcKljGTDtXyD2m2.FR9.oM18zadv2AqTymusqr3aCh/VAKE0zhm', 'super-admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:41:48', '2021-07-12 02:41:48'),
 (3, 12, 2, 'Bangladesh admin', 'ba@gmail.com', NULL, '$2y$10$roQwj7Ncvp1p2TWjw/bvIOYlpoDNR8QovM7FArzBlNfknUV4i0dQC', 'bangladeshi-admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:42:38', '2021-07-12 02:42:38'),
-(4, 11, 2, 'Recruiting agency', 'rea@gmail.com', NULL, '$2y$10$HCO1voMsfykna7I9n1iJQuoI8Edcv2E03.2UzCrA2U1qtvCzi2/.O', 'recruiting-agency', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:43:41', '2021-07-12 02:43:41'),
+(4, 11, 2, 'Bangladesh Recruiting Agency', 'rea@gmail.com', NULL, '$2y$10$HCO1voMsfykna7I9n1iJQuoI8Edcv2E03.2UzCrA2U1qtvCzi2/.O', 'bangladesh-recruiting-agency', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:43:41', '2021-07-12 02:43:41'),
 (5, 3, 2, 'Welfare sevice centre', 'wsc@gmail.com', NULL, '$2y$10$K8FpdUM6OtdOknErZ4vSAO4yGIhG4vR57J0tmFvoMsvcJsEpFeMRi', 'welfare-service-center-company', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:44:18', '2021-07-12 02:44:18'),
 (6, 5, 2, 'Master One stop service', 'moss@gmail.com', NULL, '$2y$10$OLTKs0Ib3AubTrEh..74KOmQb9H9EJiyN458Jpds89Btg.w.6EYz2', 'master-one-stop-service', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:45:26', '2021-07-12 02:45:26'),
 (7, 2, 2, 'Employer company', 'ec@gmail.com', NULL, '$2y$10$GTq4SaBJ7ANDPqO6bGT6FOCsVUI2Q0FtfBv3G4OfGju7t37QTkeuO', 'employer-company', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-12 02:46:10', '2021-07-12 02:46:10');
