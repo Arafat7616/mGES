@@ -44,7 +44,7 @@
 
                             <h3 style="font-weight:bolder;text-align:center;color:blue;">Company Details</h3>
 
-                            <h4 style="font-weight:bolder;text-align:center;">{{ $new_job->company->company_name}}</h4>
+                            <h4 style="font-weight:bolder;text-align:center;">{{ $new_job->user->company_name}}</h4>
 
                             <h6 style="text-align:center;">recruiter@gmail.com</h6>
 
