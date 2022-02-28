@@ -83,4 +83,11 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('approved', 'VisaProcessController@approved')->name('approved');
         Route::get('rejected', 'VisaProcessController@rejected')->name('rejected');
     });
+  
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+    });
+
+
 });

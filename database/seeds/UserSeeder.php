@@ -91,11 +91,11 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 2,
             'country_id' => 2,
-            'name' => 'Employer company',
-            'company_name' => 'Employer company',
-            'email' => 'ec@gmail.com',
+            'name' => 'Malaysian Employer',
+            'company_name' => 'Malaysian Employer',
+            'email' => 'malaysianemployer@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'employer-company',
+            'user_type' => 'malaysian-employer',
             'active_status' => 'Approved',
         ]);
 

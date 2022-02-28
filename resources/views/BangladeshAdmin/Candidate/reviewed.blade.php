@@ -33,7 +33,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Employer Company Reviewed Candidated List</h3>
+                            <h3 class="panel-title">Malaysian Employer Reviewed Candidated List</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
