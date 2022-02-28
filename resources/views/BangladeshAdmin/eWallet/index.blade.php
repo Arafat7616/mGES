@@ -54,12 +54,14 @@
 
                             <div id="London" class="tabcontent">
 
-                                <p class="Paytext AmonutML">
+                                <p class="Paytext ">
                                     <p>Phone Number</p>
-                                    <input id="phone" type="tel" class="form-control PhoneCode">
-                                    <span id="valid-msg" class="hide">Valid</span>
-                                    <span id="error-msg" class="hide">Invalid number</span>
-                                    <input type="text" class="form-control AmonutM " placeholder="Amount">
+                                    <p class="AmonutML">
+                                        <input id="phone" type="tel" class="form-control PhoneCode" placeholder="Receiver account number">
+                                        <span id="valid-msg" class="hide">Valid</span>
+                                        <span id="error-msg" class="hide">Invalid number</span>
+                                        <input type="text" class="form-control AmonutM " placeholder="Amount">
+                                    </p>
 
                                 </p>
                                 <p class="Paytext AmonutML">
@@ -234,7 +236,6 @@
     .PhoneCode {
         width: 100% !important;
     }
-
 </style>
 <script>
     function openCity(evt, cityName) {
