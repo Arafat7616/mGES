@@ -15,7 +15,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::post('company-request-reject/{company_id}', 'CompanyController@rejectNow')->name('company.rejectNow');
 
     // Recruiting agency
-    Route::group(['prefix' => 'recruiting-agency/', 'as' => 'recruitingAgency.'], function () {
+    Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'as' => 'recruitingAgency.'], function () {
         Route::post('approve/{company_id}', 'RecruitingAgencieController@approveNow')->name('approveNow');
         Route::post('reject/{company_id}', 'RecruitingAgencieController@rejectNow')->name('rejectNow');
         Route::get('request', 'RecruitingAgencieController@request')->name('request');
@@ -83,5 +83,4 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('approved', 'VisaProcessController@approved')->name('approved');
         Route::get('rejected', 'VisaProcessController@rejected')->name('rejected');
     });
-
 });

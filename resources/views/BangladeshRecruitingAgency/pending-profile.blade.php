@@ -1,4 +1,4 @@
-@extends("RecruitingAgency/pending-profile-master")
+@extends("BangladeshRecruitingAgency/pending-profile-master")
 @section('main-content')
     <div class="content">
         <div class="container">
@@ -25,7 +25,7 @@
                             </div>
                             <div class="panel-body">
                                 <form role="form" method="POST" enctype="multipart/form-data"
-                                    action="{{ route('RecruitingAgency.companyPrfileSubmit') }}">
+                                    action="{{ route('BangladeshRecruitingAgency.companyPrfileSubmit') }}">
                                     @csrf
                                     <div class="row">
                                         <!-- Basic example -->
@@ -77,26 +77,29 @@
                                                     <textarea class="form-control" name="address1" id="address1" cols="30"
                                                         rows="3">
 
-                                                                        </textarea>
+                                                                                </textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="address2">Address 2</label>
                                                     <textarea class="form-control" name="address2" id="address2" cols="30"
                                                         rows="3">
 
-                                                                        </textarea>
+                                                                                </textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="logo">Logo</label>
-                                                    <input name="logo" type="file" accept="image/*" class="form-control" id="logo">
+                                                    <input name="logo" type="file" accept="image/*" class="form-control"
+                                                        id="logo">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="document1">Document 1(Only PDF)</label>
-                                                     <input name="document1"  type="file"  accept="application/pdf" class="form-control" id="document1">
+                                                    <input name="document1" type="file" accept="application/pdf"
+                                                        class="form-control" id="document1">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="document2">Document 2(Only PDF)</label>
-                                                    <input name="document2"  type="file"  accept="application/pdf" class="form-control" id="document2">
+                                                    <input name="document2" type="file" accept="application/pdf"
+                                                        class="form-control" id="document2">
                                                 </div>
                                             </div> <!-- panel-body -->
                                         </div> <!-- col -->
@@ -110,7 +113,7 @@
                         </div>
                     </div>
                 </div> <!-- End Row -->
-            @elseif ($user->active_status == "Pending")
+            @elseif ($user->active_status == 'Pending')
                 <section>
                     <div class="row">
                         <div class="col-md-4 text-right">
@@ -123,7 +126,7 @@
                         </div>
                     </div>
                 </section>
-            @elseif ($user->active_status == "Rejected")
+            @elseif ($user->active_status == 'Rejected')
                 <section>
                     <div class="row">
                         <div class="col-md-4 text-right">
@@ -137,7 +140,6 @@
                         </div>
                     </div>
                 </section>
-
             @endif
 
         </div>

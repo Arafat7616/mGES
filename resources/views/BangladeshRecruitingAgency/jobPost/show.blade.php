@@ -1,4 +1,4 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
 @section('title', 'View Job Post')
 @section('DataTableCss')
@@ -16,7 +16,7 @@
                         <h4 class="pull-left page-title">View Job Post</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">Job Posts</a></li>
-                            <li><a href="#">Recruiting Agency</a></li>
+                            <li><a href="#">Bangladesh Recruiting Agency</a></li>
                             <li><a href="#"> View Job Post </a></li>
                         </ol>
                         <div class="clearfix"></div>

@@ -1,4 +1,4 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
 @section('title', 'All Job Posts')
 @section('DataTableCss')
@@ -58,10 +58,12 @@
                                             <td>{{ $jobPost->created_at }}</td>
                                             <td>{{ $jobPost->end_date }}</td>
                                             <td>
-                                                <a class="btn btn-info btn-sm" href="{{ route('RecruitingAgency.jobPost.show', $jobPost->id ) }}">
+                                                <a class="btn btn-info btn-sm"
+                                                    href="{{ route('BangladeshRecruitingAgency.jobPost.show', $jobPost->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
-                                                <a class="btn btn-success btn-sm" href="{{ route('RecruitingAgency.jobPost.edit', $jobPost->id ) }}">
+                                                <a class="btn btn-success btn-sm"
+                                                    href="{{ route('BangladeshRecruitingAgency.jobPost.edit', $jobPost->id) }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                             </td>

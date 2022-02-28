@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\RecruitingAgency;
+namespace App\Http\Controllers\BangladeshRecruitingAgency;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,26 +12,27 @@ use Illuminate\Support\Facades\Session;
 
 use App\User;
 
-class RecruitingAgencyDashboardController extends Controller
+class BangladeshRecruitingAgencyDashboardController extends Controller
 {
     public function dashboard()
     {
         $user = User::find(Auth::user()->id);
         if ($user->active_status == "New" || $user->active_status == 'Pending' || $user->active_status == 'Rejected') {
-            return view('RecruitingAgency.pending-profile', compact('user'));
+            return view('BangladeshRecruitingAgency.pending-profile', compact('user'));
         }
-        return view('RecruitingAgency.welcome');
+        return view('BangladeshRecruitingAgency.welcome');
     }
 
-    public function companyPrfileView(){
+    public function companyPrfileView()
+    {
         $user = User::find(Auth::user()->id);
-        return view('RecruitingAgency.profile', compact('user'));
+        return view('BangladeshRecruitingAgency.profile', compact('user'));
     }
 
     public function editProfile()
     {
         $user = Auth::user();
-        return view('RecruitingAgency.profile-edit', compact('user'));
+        return view('BangladeshRecruitingAgency.profile-edit', compact('user'));
     }
 
     public function updateProfile(Request $request)
@@ -76,7 +77,7 @@ class RecruitingAgencyDashboardController extends Controller
         $user = User::find(Auth::user()->id);
 
         $user->company_name    =   $request->companyName;
-        $user->active_status    ="Pending";
+        $user->active_status    = "Pending";
         $user->abbr            =   $request->abbreviation;
         $user->company_register_number    =   $request->companyRegisterNumber;
         $user->domain       =   $request->domain;

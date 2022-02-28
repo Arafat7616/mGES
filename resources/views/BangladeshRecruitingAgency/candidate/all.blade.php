@@ -1,6 +1,6 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
-@section('title', 'Selected Candidates')
+@section('title', 'All Candidates')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -20,12 +20,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Selected Candidates</h4>
+                        <h4 class="pull-left page-title">All Candidates</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">Candidates
                                 </a></li>
-                            <li class="active">Selected Candidates</li>
+                            <li class="active">All Candidates</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -35,38 +35,67 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Selected candidates for the approved vacancies</h3>
+                            <h3 class="panel-title">Candidates List</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th>SL No</th>
-                                        <th>Recruiter Name</th>
-                                        <th>Company Name</th>
+                                        <th>Candidate Name</th>
                                         <th>Job Category</th>
-                                        <th>Approved Vacancies</th>
-                                        <th>Candidates</th>
+                                        <th>Phone No</th>
+                                        <th>Email</th>
+                                        <th>Photo</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($selectedCandidates as $selectedCandidate)
+                                    @foreach ($candidates as $candidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->company->user_name }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->company->company_name }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->job_category->category_name }}</td>
-                                            <td>{{ $selectedCandidate->approved_vacancy }}</td>
+                                            <td>{{ $candidate->candidate_name }}</td>
+                                            <td>{{ $candidate->job_category->category_name }}</td>
+                                            <td>{{ $candidate->phone_number }}</td>
+                                            <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                @if ($selectedCandidate->status == 'Applied')
-
-                                                    <a class="btn btn-info btn-sm" href="{{ route('RecruitingAgency.appliedJob.show', $selectedCandidate->id) }}">
-                                                        <i class="fa fa-eye"></i></a>
-                                                @elseif ($selectedCandidate->status == "Approved")
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('RecruitingAgency.candidate.viewSelected', $selectedCandidate->job_post_id) }}"><i
-                                                            class="fa fa-users"></i></a>
+                                                @if ($candidate->candidate_picture)
+                                                    <a href="{{ asset($candidate->candidate_picture) }}" target="_blank">
+                                                        <img height="70px;"
+                                                            src="{{ asset($candidate->candidate_picture) }}"
+                                                            width="70px;" class="rounded-circle" />
+                                                    </a>
+                                                @else
+                                                    <abbr title="Sorry There in no picture">
+                                                        <img class="rounded-circle" height="70px;"
+                                                            src="{{ asset('assets/images/users/avatar-1.jpg') }}"
+                                                            width="70px;" />
+                                                    </abbr>
                                                 @endif
+                                            </td>
+                                            <td>
+                                                @if ($candidate->status == 'Active')
+                                                    <span class=" badge badge-info">Active</span>
+                                                @elseif ($candidate->status == 'Reviewed')
+                                                    <span class="badge badge-warning">Reviewed</span>
+                                                @elseif ($candidate->status == 'Forwarded')
+                                                    <span class="badge badge-warning">Forwarded</span>
+                                                @elseif ($candidate->status == 'Interview')
+                                                    <span class="badge badge-warning">Interview</span>
+                                                @elseif ($candidate->status == 'Inactive')
+                                                    <span class="badge badge-danger">Inactive</span>
+                                                @elseif ($candidate->status == 'Selected')
+                                                    <span class="badge badge-success">Selected</span>
+                                                @else
+                                                    <span class="badge badge-info">{{ $candidate->status }}</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-info btn-sm"
+                                                    href="{{ route('BangladeshRecruitingAgency.candidate.show', $candidate->id) }}">
+                                                    <i class="mdi mdi-eye"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -74,11 +103,13 @@
                                 <tfoot>
                                     <tr>
                                         <th>SL No</th>
-                                        <th>Recruiter Name</th>
-                                        <th>Company Name</th>
+                                        <th>Candidate Name</th>
                                         <th>Job Category</th>
-                                        <th>Approved Vacancies</th>
-                                        <th>Candidates</th>
+                                        <th>Phone No</th>
+                                        <th>Email</th>
+                                        <th>Photo</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>

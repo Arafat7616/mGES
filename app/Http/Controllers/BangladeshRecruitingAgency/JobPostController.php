@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\RecruitingAgency;
+namespace App\Http\Controllers\BangladeshRecruitingAgency;
 
 use App\AppliedJob;
 use App\Candidate;
@@ -12,24 +12,26 @@ use Illuminate\Support\Facades\Auth;
 
 class JobPostController extends Controller
 {
-    public function all(){
-        $jobPosts = JobPost::where('status','Approved')->orderBy('id','DESC')->get();
-        return view('RecruitingAgency.jobPost.all', compact('jobPosts'));
+    public function all()
+    {
+        $jobPosts = JobPost::where('status', 'Approved')->orderBy('id', 'DESC')->get();
+        return view('BangladeshRecruitingAgency.jobPost.all', compact('jobPosts'));
     }
 
     public function edit($id)
     {
         $jobPost = JobPost::findOrFail($id);
-        return view('RecruitingAgency.jobPost.edit', compact('jobPost'));
+        return view('BangladeshRecruitingAgency.jobPost.edit', compact('jobPost'));
     }
 
     public function show($id)
     {
         $jobPost = JobPost::findOrFail($id);
-        return view('RecruitingAgency.jobPost.show', compact('jobPost'));
+        return view('BangladeshRecruitingAgency.jobPost.show', compact('jobPost'));
     }
 
-    public function update(Request $request , $id){
+    public function update(Request $request, $id)
+    {
         $job_post = JobPost::findOrFail($id);
         // $job_post->applied_vacancy    =  $request->appliedVacancy;
         // $job_post->remarks    =  $request->remarks;
@@ -60,9 +62,8 @@ class JobPostController extends Controller
     public function selectCandidates($applied_job_id)
     {
         $appliedJob = AppliedJob::findOrFail($applied_job_id);
-        $candidates = Candidate::where('job_category_id',$appliedJob->jobPost->job_category->id)
-                               ->where('created_id',Auth::user()->id)->orderBy('id','DESC')->get();
-        return view('RecruitingAgency.jobPost.select-candidates', compact('candidates', 'appliedJob'));
+        $candidates = Candidate::where('job_category_id', $appliedJob->jobPost->job_category->id)
+            ->where('created_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        return view('BangladeshRecruitingAgency.jobPost.select-candidates', compact('candidates', 'appliedJob'));
     }
-
 }

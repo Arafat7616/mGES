@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\RecruitingAgency;
+namespace App\Http\Controllers\BangladeshRecruitingAgency;
 
 use App\AppliedJob;
 use App\Candidate;
@@ -15,38 +15,44 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class CandidateController extends Controller
 {
-    public function new(){
-        $jobCategories = JobCategory::where('status','active')->orderBy('id','DESC')->get();
-        return view('RecruitingAgency.candidate.new', compact('jobCategories'));
+    public function new()
+    {
+        $jobCategories = JobCategory::where('status', 'active')->orderBy('id', 'DESC')->get();
+        return view('BangladeshRecruitingAgency.candidate.new', compact('jobCategories'));
     }
 
-    public function all(){
-        $candidates = Candidate::where('created_id', Auth::user()->id)->orderBy('id','DESC')->get();
-        return view('RecruitingAgency.candidate.all', compact('candidates'));
+    public function all()
+    {
+        $candidates = Candidate::where('created_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        return view('BangladeshRecruitingAgency.candidate.all', compact('candidates'));
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $candidate = Candidate::findOrFail($id);
-        return view('RecruitingAgency.candidate.show', compact('candidate'));
+        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate'));
     }
 
-    public function selected(){
-        $selectedCandidates = AppliedJob::where('applier_id', Auth::user()->id)->orderBy('id','DESC')->get();
-        return view('RecruitingAgency.candidate.selected', compact('selectedCandidates'));
+    public function selected()
+    {
+        $selectedCandidates = AppliedJob::where('applier_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        return view('BangladeshRecruitingAgency.candidate.selected', compact('selectedCandidates'));
     }
 
-    public function viewSelected($id){
-        $CandidatesList = Candidate::where('job_id', $id)->orderBy('id','DESC')->get();
-        return view('RecruitingAgency.candidate.viewSelected', compact('CandidatesList'));
+    public function viewSelected($id)
+    {
+        $CandidatesList = Candidate::where('job_id', $id)->orderBy('id', 'DESC')->get();
+        return view('BangladeshRecruitingAgency.candidate.viewSelected', compact('CandidatesList'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'candidateName' => ['required', 'string', 'max:255'],
             'jobCategory'   =>  'required',
             'dateOfBirth'   =>  'required',
             'gender'    => 'required',
-            'passportNo'=> 'required',
+            'passportNo' => 'required',
             'passport'  => 'mimes:pdf',
             'phoneNo'   => 'required',
             'email'     =>  'email',
@@ -127,7 +133,8 @@ class CandidateController extends Controller
         }
     }
 
-    public function approveNow($candidate_id, $applied_job_id){
+    public function approveNow($candidate_id, $applied_job_id)
+    {
         $appliedJob = AppliedJob::findOrFail($applied_job_id);
         $candidate = Candidate::findOrFail($candidate_id);
         $candidate->status = "Selected";
@@ -139,7 +146,7 @@ class CandidateController extends Controller
                 'type' => 'success',
                 'message' => 'Successfully Stored'
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
                 'message' => $exception->getMessage()
@@ -147,7 +154,8 @@ class CandidateController extends Controller
         }
     }
 
-    public function rejectNow($id){
+    public function rejectNow($id)
+    {
         $candidate = Candidate::findOrFail($id);
         $candidate->status = "Active";
         $candidate->job_id = null;
@@ -158,7 +166,7 @@ class CandidateController extends Controller
                 'type' => 'success',
                 'message' => 'Successfully Stored'
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
                 'message' => $exception->getMessage()

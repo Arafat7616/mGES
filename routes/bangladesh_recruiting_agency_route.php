@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-// recruiting agency route
-Route::group(['prefix' => 'recruiting-agency/', 'namespace' => 'RecruitingAgency', 'as' => 'RecruitingAgency.', 'middleware' => ['auth', 'recruiting-agency']], function () {
-    Route::get('/dashboard', 'RecruitingAgencyDashboardController@dashboard')->name('dashboard');
-    Route::post('/company-prfile-submit', 'RecruitingAgencyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
-    Route::get('/company-profile-view', 'RecruitingAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
+// bangladesh-recruiting-agency route
+Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'BangladeshRecruitingAgency', 'as' => 'BangladeshRecruitingAgency.', 'middleware' => ['auth', 'bangladesh-recruiting-agency']], function () {
+    Route::get('/dashboard', 'BangladeshRecruitingAgencyDashboardController@dashboard')->name('dashboard');
+    Route::post('/company-prfile-submit', 'BangladeshRecruitingAgencyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
+    Route::get('/company-profile-view', 'BangladeshRecruitingAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
 
-    Route::get('/edit-profile', 'RecruitingAgencyDashboardController@editProfile')->name('editProfile');
-    Route::post('/update-profile', 'RecruitingAgencyDashboardController@updateProfile')->name('updateProfile');
+    Route::get('/edit-profile', 'BangladeshRecruitingAgencyDashboardController@editProfile')->name('editProfile');
+    Route::post('/update-profile', 'BangladeshRecruitingAgencyDashboardController@updateProfile')->name('updateProfile');
 
 
     // Job Posts
