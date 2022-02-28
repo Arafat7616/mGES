@@ -76,7 +76,7 @@ class MedicalAgencyDashboardController extends Controller
         $user->company_name    =   $request->companyName;
         $user->active_status    ="Pending";
         $user->abbr            =   $request->abbreviation;
-        $user->company_regno    =   $request->companyRegisterNumber;
+        $user->company_register_number   =   $request->companyRegisterNumber;
         $user->domain       =   $request->domain;
         $user->phone        =   $request->phoneNumber;
         $user->city    =   $request->city;
