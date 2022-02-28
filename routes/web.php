@@ -31,8 +31,8 @@ include('travel_agency_route.php');
 include('biometric_agencies_route.php');
 include('bangladesh_embassy_route.php');
 include('employer_company_route.php');
-include('recruiting_agency_route.php');
 include('malaysia_recruiting_agency_route.php');
+include('bangladesh_recruiting_agency_route.php');
 include('bangladesh_admin_route.php');
 include('super_admin_route.php');
 

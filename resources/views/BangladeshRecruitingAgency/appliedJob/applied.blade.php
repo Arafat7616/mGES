@@ -1,4 +1,4 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
 @section('title', 'Applied Job Posts')
 @section('DataTableCss')
@@ -59,8 +59,8 @@
                                     @foreach ($appliedJobs as $appliedJob)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $appliedJob->company->user_name ?? ''  }}</td>
-                                            <td>{{ $appliedJob->company->company_name ?? ''  }}</td>
+                                            <td>{{ $appliedJob->company->user_name ?? '' }}</td>
+                                            <td>{{ $appliedJob->company->company_name ?? '' }}</td>
                                             <td>{{ $appliedJob->jobPost->job_category->category_name ?? '' }}</td>
                                             <td>{{ $appliedJob->job_vacancy }}</td>
                                             <td>{{ $appliedJob->applied_vacancy ?? '' }}</td>
@@ -70,19 +70,19 @@
                                                 @if ($appliedJob->status == 'New')
                                                     <button type="button" name="New"
                                                         class="btn btn-primary btn-xs update">New</button>
-                                                @elseif ($appliedJob->status == "Rejected")
+                                                @elseif ($appliedJob->status == 'Rejected')
                                                     <button type="button" name="Rejected"
                                                         class="btn btn-warning btn-xs update">Rejected</button>
-                                                @elseif ($appliedJob->status == "Pending")
+                                                @elseif ($appliedJob->status == 'Pending')
                                                     <button type="button" name="Pending"
                                                         class="btn btn-warning btn-xs update">Pending</button>
-                                                @elseif ($appliedJob->status == "Approved")
+                                                @elseif ($appliedJob->status == 'Approved')
                                                     <button type="button" name="Approved"
                                                         class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($appliedJob->status == "Verified")
+                                                @elseif ($appliedJob->status == 'Verified')
                                                     <button type="button" name="Verified"
                                                         class="btn btn-info btn-xs update">Verified</button>
-                                                @elseif ($appliedJob->status == "Applied")
+                                                @elseif ($appliedJob->status == 'Applied')
                                                     <button type="button" name="Applied"
                                                         class="btn btn-info btn-xs update">Applied</button>
                                                 @endif
@@ -90,19 +90,18 @@
                                             <td>
 
                                                 @if ($appliedJob->status == 'Rejected')
-
-                                                @elseif ($appliedJob->status == "Approved")
+                                                @elseif ($appliedJob->status == 'Approved')
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('RecruitingAgency.appliedJob.show', $appliedJob->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $appliedJob->id) }}">
                                                         <i class="mdi mdi-eye"></i>
                                                     </a>
                                                     <a class="btn btn-success btn-sm"
-                                                        href="{{ route('RecruitingAgency.jobPost.selectCandidates', $appliedJob->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.jobPost.selectCandidates', $appliedJob->id) }}">
                                                         <i class="fa fa-user-plus"></i>
                                                     </a>
                                                 @else
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('RecruitingAgency.appliedJob.show', $appliedJob->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $appliedJob->id) }}">
                                                         <i class="mdi mdi-eye"></i>
                                                     </a>
                                                 @endif

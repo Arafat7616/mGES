@@ -1,6 +1,6 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
-@section('title', 'All Candidates')
+@section('title', 'Select Candidates')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -20,12 +20,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">All Candidates</h4>
+                        <h4 class="pull-left page-title">Select Candidates</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">Candidates
                                 </a></li>
-                            <li class="active">All Candidates</li>
+                            <li class="active">Select Candidates</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -35,7 +35,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Candidates List</h3>
+                            <h3 class="panel-title">Select candidates for the job</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -52,48 +52,60 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($candidates as $candidate)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $candidate->candidate_name }}</td>
-                                            <td>{{ $candidate->job_category->category_name }}</td>
-                                            <td>{{ $candidate->phone_number }}</td>
-                                            <td>{{ $candidate->candidate_email }}</td>
-                                            <td>
-                                                @if ($candidate->candidate_picture)
-                                                    <a href="{{ asset($candidate->candidate_picture) }}" target="_blank">
-                                                        <img height="70px;" src="{{ asset($candidate->candidate_picture) }}" width="70px;" class="rounded-circle" />
+                                    @if (count($CandidatesList) != 0)
+                                        @foreach ($CandidatesList as $candidate)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $candidate->candidate_name }}</td>
+                                                <td>{{ $candidate->job_category->category_name }}</td>
+                                                <td>{{ $candidate->phone_number }}</td>
+                                                <td>{{ $candidate->candidate_email }}</td>
+                                                <td>
+                                                    @if ($candidate->candidate_picture)
+                                                        <a href="{{ asset($candidate->candidate_picture) }}"
+                                                            target="_blank">
+                                                            <img height="70px;"
+                                                                src="{{ asset($candidate->candidate_picture) }}"
+                                                                width="70px;" class="rounded-circle" />
+                                                        </a>
+                                                    @else
+                                                        <abbr title="Sorry There in no picture">
+                                                            <img class="rounded-circle" height="70px;"
+                                                                src="{{ asset('assets/images/users/avatar-1.jpg') }}"
+                                                                width="70px;" />
+                                                        </abbr>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if ($candidate->status == 'Active')
+                                                        <span class=" badge badge-info">Active</span>
+                                                    @elseif ($candidate->status == 'Reviewed')
+                                                        <span class="badge badge-warning">Reviewed</span>
+                                                    @elseif ($candidate->status == 'Forwarded')
+                                                        <span class="badge badge-warning">Forwarded</span>
+                                                    @elseif ($candidate->status == 'Interview')
+                                                        <span class="badge badge-warning">Interview</span>
+                                                    @elseif ($candidate->status == 'Inactive')
+                                                        <span class="badge badge-danger">Inactive</span>
+                                                    @elseif ($candidate->status == 'Selected')
+                                                        <span class="badge badge-success">Selected</span>
+                                                    @else
+                                                        <span class="badge badge-info">{{ $candidate->status }}</span>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="{{ route('BangladeshRecruitingAgency.candidate.show', $candidate->id) }}">
+                                                        <i class="mdi mdi-eye"></i>
                                                     </a>
-                                                @else
-                                                    <abbr title="Sorry There in no picture">
-                                                        <img class="rounded-circle" height="70px;" src="{{asset('assets/images/users/avatar-1.jpg')}}" width="70px;" />
-                                                    </abbr>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                @if ($candidate->status == 'Active')
-                                                    <span class=" badge badge-info">Active</span>
-                                                @elseif ($candidate->status == "Reviewed")
-                                                    <span class="badge badge-warning">Reviewed</span>
-                                                @elseif ($candidate->status == "Forwarded")
-                                                    <span class="badge badge-warning">Forwarded</span>
-                                                @elseif ($candidate->status == "Interview")
-                                                    <span class="badge badge-warning">Interview</span>
-                                                @elseif ($candidate->status == "Inactive")
-                                                    <span class="badge badge-danger">Inactive</span>
-                                                @elseif ($candidate->status == "Selected")
-                                                    <span class="badge badge-success">Selected</span>
-                                                @else
-                                                <span class="badge badge-info">{{ $candidate->status }}</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <a class="btn btn-info btn-sm" href="{{ route('RecruitingAgency.candidate.show',$candidate->id ) }}">
-                                                    <i class="mdi mdi-eye"></i>
-                                                </a>
-                                            </td>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @else
+                                        <tr>
+                                            <td colspan="8">No data available </td>
                                         </tr>
-                                    @endforeach
+                                    @endif
                                 </tbody>
                                 <tfoot>
                                     <tr>

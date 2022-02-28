@@ -60,8 +60,8 @@ class RegisterController extends Controller
             return '/dashboard';
         } elseif (Auth::user()->user_type == 'biometric-company') {
             return '/dashboard';
-        } elseif (Auth::user()->user_type == 'recruiting-agency') {
-            return 'recruiting-agency/dashboard';
+        } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
+            return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
         }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
@@ -133,7 +133,7 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 10) {
             $userType = "biometric-company";
         } elseif ($data['role'] == 11) {
-            $userType = "recruiting-agency";
+            $userType = "bangladesh-recruiting-agency";
         } elseif ($data['role'] == 12) {
             $userType = "bangladeshi-admin";
         } elseif ($data['role'] == 13) {

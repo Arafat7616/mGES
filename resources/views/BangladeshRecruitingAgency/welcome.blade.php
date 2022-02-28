@@ -1,4 +1,4 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 @section('main-content')
     <div class="content">
         <div class="container">
@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Recruiting Agency</h4>
+                        <h4 class="pull-left page-title">Bangladesh Recruiting Agency</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
-                            <li class="active">Recruiting Agency</li>
+                            <li class="active">Bangladesh Recruiting Agency</li>
                             <li><a href="#">Dashboard</a></li>
                         </ol>
                         <div class="clearfix"></div>
@@ -68,4 +68,3 @@
         </div>
     </div>
 @endsection
-

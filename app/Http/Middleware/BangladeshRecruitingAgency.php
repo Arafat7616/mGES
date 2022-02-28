@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class RecruitingAgency
+class BangladeshRecruitingAgency
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,9 @@ class RecruitingAgency
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && (Auth::user()->user_type == 'recruiting-agency')) {
+        if (Auth::check() && (Auth::user()->user_type == 'bangladesh-recruiting-agency')) {
             return $next($request);
-        }
-        else{
+        } else {
             return redirect()->route('login');
         }
     }

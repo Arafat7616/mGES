@@ -1,26 +1,28 @@
 ## Follow belows steps to install this project
-* Download the project or clone it ```git clone git@github.com:MRRaihan/mGES```
-* __Run:__ ```cp .env.example .env``` then configure your database
-* __Run:__ ```composer install```
-* __Run:__ ```php artisan key:generate```
-* __Run:__ ```php artisan migrate:fresh --seed```
 
-## Now you are ready to go  :).
+-   Download the project or clone it `git clone git@github.com:MRRaihan/mGES`
+-   **Run:** `cp .env.example .env` then configure your database
+-   **Run:** `composer install`
+-   **Run:** `php artisan key:generate`
+-   **Run:** `php artisan migrate:fresh --seed`
+
+## Now you are ready to go :).
 
 ## Credintials to login
-* __Password:__ Password is ```12345``` for all portal
-* __Super admin:__ ```sa@gmail.com```
-* __Bangladesh admin:__ ```ba@gmail.com```
-* __Recruiting agency:__ ```rea@gmail.com```
-* __Welfare sevice centre:__ ```wsc@gmail.com```
-* __Master One stop service:__ ```moss@gmail.com```
-* __Bangladesh Embassy:__ ```be@gmail.com```
-* __Malaysia Embassy:__ ```me@gmail.com```
-* __Malaysia Admin:__ ```malaysiaadmin@gmail.com```
-* __Child One Stop Service:__ ```coss@gmail.com```
-* __Medical Agency:__ ```ma@gmail.com```
-* __Training Agency:__ ```ta@gmail.com```
-* __Travel Agency:__ ```travel@gmail.com```
-* __Biometric Agency:__ ```bio@gmail.com```
-* __Employer Company:__ ```ec@gmail.com```
-* __Candidate:__ ```candidate@gmail.com```
+
+-   **Password:** Password is `12345` for all portal
+-   **Super admin:** `sa@gmail.com`
+-   **Bangladesh admin:** `ba@gmail.com`
+-   **Bangladesh Recruiting agency:** `bra@gmail.com`
+-   **Welfare sevice centre:** `wsc@gmail.com`
+-   **Master One stop service:** `moss@gmail.com`
+-   **Bangladesh Embassy:** `be@gmail.com`
+-   **Malaysia Embassy:** `me@gmail.com`
+-   **Malaysia Admin:** `malaysiaadmin@gmail.com`
+-   **Child One Stop Service:** `coss@gmail.com`
+-   **Medical Agency:** `ma@gmail.com`
+-   **Training Agency:** `ta@gmail.com`
+-   **Travel Agency:** `travel@gmail.com`
+-   **Biometric Agency:** `bio@gmail.com`
+-   **Employer Company:** `ec@gmail.com`
+-   **Candidate:** `candidate@gmail.com`

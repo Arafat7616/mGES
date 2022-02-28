@@ -1,4 +1,4 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
 @section('title', 'Select Candidates')
 @section('DataTableCss')
@@ -62,27 +62,31 @@
                                             <td>
                                                 @if ($candidate->candidate_picture)
                                                     <a href="{{ asset($candidate->candidate_picture) }}" target="_blank">
-                                                        <img height="70px;" src="{{ asset($candidate->candidate_picture) }}" width="70px;" class="rounded-circle" />
+                                                        <img height="70px;"
+                                                            src="{{ asset($candidate->candidate_picture) }}"
+                                                            width="70px;" class="rounded-circle" />
                                                     </a>
                                                 @else
                                                     <abbr title="Sorry There in no picture">
-                                                        <img class="rounded-circle" height="70px;" src="{{asset('assets/images/users/avatar-1.jpg')}}" width="70px;" />
+                                                        <img class="rounded-circle" height="70px;"
+                                                            src="{{ asset('assets/images/users/avatar-1.jpg') }}"
+                                                            width="70px;" />
                                                     </abbr>
                                                 @endif
                                             </td>
                                             <td>
                                                 @if ($candidate->status == 'Active')
                                                     <button type="button" class="btn btn-info btn-xs ">Waiting</button>
-                                                @elseif ($candidate->status == "Inactive")
+                                                @elseif ($candidate->status == 'Inactive')
                                                     <button type="button" class="btn btn-danger btn-xs ">Not
                                                         Selected</button>
-                                                @elseif ($candidate->status == "Selected")
+                                                @elseif ($candidate->status == 'Selected')
                                                     <button type="button" class="btn btn-success btn-xs ">Selected</button>
-                                                @elseif ($candidate->status == "Forwarded")
+                                                @elseif ($candidate->status == 'Forwarded')
                                                     <button type="button" class="btn btn-success btn-xs ">Forwarded</button>
-                                                @elseif ($candidate->status == "Reviewed")
+                                                @elseif ($candidate->status == 'Reviewed')
                                                     <button type="button" class="btn btn-success btn-xs ">Reviewed</button>
-                                                @elseif ($candidate->status == "Interview")
+                                                @elseif ($candidate->status == 'Interview')
                                                     <button type="button" class="btn btn-success btn-xs ">Interview</button>
                                                 @else
                                                     <span class="badge badge-info">{{ $candidate->status }}</span>
@@ -90,29 +94,27 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-xs"
-                                                    href="{{ route('RecruitingAgency.candidate.show', $candidate->id) }}"><i
+                                                    href="{{ route('BangladeshRecruitingAgency.candidate.show', $candidate->id) }}"><i
                                                         class="fa fa-eye"></i></a>
                                                 @if ($candidate->status == 'Active')
                                                     <button class="btn btn-success btn-xs" onclick="approve(this)"
-                                                        value="{{ route('RecruitingAgency.candidate.approveNow', [$candidate->id, $appliedJob->id]) }}">
+                                                        value="{{ route('BangladeshRecruitingAgency.candidate.approveNow', [$candidate->id, $appliedJob->id]) }}">
                                                         <i class="mdi mdi-check"></i> </button>
-                                                @elseif ($candidate->status == "Inactive")
-
+                                                @elseif ($candidate->status == 'Inactive')
                                                     <button class="btn btn-success btn-xs" onclick="approve(this)" disabled
-                                                        value="{{ route('RecruitingAgency.candidate.approveNow', [$candidate->id, $appliedJob->id]) }}">
+                                                        value="{{ route('BangladeshRecruitingAgency.candidate.approveNow', [$candidate->id, $appliedJob->id]) }}">
                                                         <i class="mdi mdi-check"></i> </button>
-                                                @elseif ($candidate->status == "Selected")
+                                                @elseif ($candidate->status == 'Selected')
                                                     <button class="btn btn-danger btn-xs" onclick="reject(this)"
-                                                        value="{{ route('RecruitingAgency.candidate.rejectNow', $candidate->id) }}">
+                                                        value="{{ route('BangladeshRecruitingAgency.candidate.rejectNow', $candidate->id) }}">
                                                         <i class="fa fa-times" aria-hidden="true"></i> </button>
-
-                                                @elseif ($candidate->status == "Forwarded")
+                                                @elseif ($candidate->status == 'Forwarded')
                                                     <button class="btn btn-danger btn-xs" onclick="reject(this)"
-                                                        value="{{ route('RecruitingAgency.candidate.rejectNow', $candidate->id) }}">
+                                                        value="{{ route('BangladeshRecruitingAgency.candidate.rejectNow', $candidate->id) }}">
                                                         <i class="fa fa-times" aria-hidden="true"></i> </button>
-                                                @elseif ($candidate->status == "Reviewed")
+                                                @elseif ($candidate->status == 'Reviewed')
                                                     <button class="btn btn-danger btn-xs" onclick="reject(this)"
-                                                        value="{{ route('RecruitingAgency.candidate.rejectNow', $candidate->id ) }}">
+                                                        value="{{ route('BangladeshRecruitingAgency.candidate.rejectNow', $candidate->id) }}">
                                                         <i class="fa fa-times" aria-hidden="true"></i> </button>
                                                 @endif
                                             </td>
