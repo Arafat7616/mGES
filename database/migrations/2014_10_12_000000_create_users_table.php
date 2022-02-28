@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('user_type')->nullable();
             $table->enum('active_status', ['New','Pending', 'Approved', 'Rejected'])->default('New');
             $table->integer('quata')->nullable();
-            $table->string('company_regno')->nullable();
             $table->string('domain')->nullable();
             $table->string('company_name')->nullable();
             $table->string('company_register_number')->nullable();
@@ -57,7 +56,6 @@ class CreateUsersTable extends Migration
             // $table->string('user_type')->nullable();
             // $table->enum('active_status', ['New','Pending', 'Approved', 'Rejected'])->default('New');
             // $table->integer('quata')->nullable();
-            // $table->string('company_regno')->nullable();
             // $table->string('domain')->nullable();
             // $table->string('company_name')->nullable();
             // $table->string('abbr')->nullable();

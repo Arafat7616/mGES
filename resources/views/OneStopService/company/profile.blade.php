@@ -83,7 +83,7 @@
                                     <hr>
 
                                     <strong><i class="fa fa-pencil mr-1"></i> Register Number</strong>
-                                    <p class="text-muted">{{ $user->company_regno }}</p>
+                                    <p class="text-muted">{{ $user->company_register_number }}</p>
 
                                     <hr>
 
