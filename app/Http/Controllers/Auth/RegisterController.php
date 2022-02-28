@@ -65,7 +65,7 @@ class RegisterController extends Controller
             return 'training-agency/dashboard';
         } elseif (Auth::user()->user_type == 'travel-agency') {
             return 'travel-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'biometric-company') {
+        } elseif (Auth::user()->user_type == 'biometric-agency') {
             return 'biometric-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
             return 'bangladesh-recruiting-agency/dashboard';
@@ -148,7 +148,7 @@ class RegisterController extends Controller
             $userType = "malaysia-admin";
         } elseif ($data['role'] == 15) {
             $userType = "malaysia-embassy";
-        } 
+        }
         elseif ($data['role'] == 17) {
             $userType = "malaysia-recruiting-agency";
         } else {
