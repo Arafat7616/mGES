@@ -123,5 +123,12 @@ class RoleSeeder extends Seeder
             'slug' => 'candidate',
             'status' => 'active'
         ]);
+
+        Role::create([
+            'id' => 17,
+            'name' => 'Malaysia Recruiting Agency',
+            'slug' => 'malaysia-recruiting-agency',
+            'status' => 'active'
+        ]);
     }
 }

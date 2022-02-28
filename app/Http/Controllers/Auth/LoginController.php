@@ -54,6 +54,9 @@ class LoginController extends Controller
             return '/dashboard';
         } elseif (Auth::user()->user_type == 'biometric-company') {
             return '/dashboard';
+        }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
+        {
+            return 'malaysia-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
             return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
