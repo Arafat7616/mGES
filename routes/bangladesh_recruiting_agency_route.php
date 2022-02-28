@@ -7,6 +7,7 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
     Route::get('/dashboard', 'BangladeshRecruitingAgencyDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'BangladeshRecruitingAgencyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'BangladeshRecruitingAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
+    Route::get('/get-all-notification', 'BangladeshRecruitingAgencyDashboardController@notification')->name('get_all_nofication');
 
     Route::get('/edit-profile', 'BangladeshRecruitingAgencyDashboardController@editProfile')->name('editProfile');
     Route::post('/update-profile', 'BangladeshRecruitingAgencyDashboardController@updateProfile')->name('updateProfile');

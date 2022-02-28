@@ -9,10 +9,11 @@
 ## Now you are ready to go :).
 
 ## Credintials to login
+
 -   **Password:** Password is `12345` for all portal
 -   **Super admin:** `sa@gmail.com`
 -   **Bangladesh admin:** `ba@gmail.com`
--   **Bangladesh Recruiting agency:** `bra@gmail.com`
+-   **Bangladesh Recruiting agency:** `brea@gmail.com`
 -   **Malaysia Recruiting agency:** `mra@gmail.com`
 -   **Welfare sevice centre:** `wsc@gmail.com`
 -   **Master One stop service:** `moss@gmail.com`
