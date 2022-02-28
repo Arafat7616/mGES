@@ -102,11 +102,11 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 4,
             'country_id' => 2,
-            'name' => 'Bangladesh Embassy',
-            'company_name' => 'Bangladesh Embassy',
-            'email' => 'be@gmail.com',
+            'name' => 'Bangladesh High Commission ',
+            'company_name' => 'Bangladesh High Commission ',
+            'email' => 'bhc@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'bangladeshi-embassy',
+            'user_type' => 'bangladesh-high-commission',
             'active_status' => 'Approved',
         ]);
 
@@ -171,6 +171,16 @@ class UserSeeder extends Seeder
             'email' => 'candidate@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'candidate',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 17,
+            'country_id' => 2,
+            'name' => 'Malaysia Recruiting Agency',
+            'company_name' => 'Malaysia Recruiting Agency',
+            'email' => 'mra@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysia-recruiting-agency',
             'active_status' => 'Approved',
         ]);
     }

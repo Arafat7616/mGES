@@ -47,16 +47,12 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span>
-                            Bangladesh Embassy </span> <span class="pull-right"><i
-                                class="mdi mdi-plus"></i></span></a>
+
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Bangladesh High Commission  </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('BangladeshAdmin.bangladeshEmbassy.request') }}"><i
-                                    class="fa fa-arrow-circle-right"></i> New Requests</a></li>
-                        <li><a href="{{ route('BangladeshAdmin.bangladeshEmbassy.approved') }}"><i
-                                    class="fa fa-arrow-circle-right"></i> Approved Requests</a></li>
-                        <li><a href="{{ route('BangladeshAdmin.bangladeshEmbassy.rejected') }}"><i
-                                    class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
+                        <li><a href="{{ route('BangladeshAdmin.bangladeshHighCommission.request') }}"><i class="fa fa-arrow-circle-right"></i> New Requests</a></li>
+                        <li><a href="{{ route('BangladeshAdmin.bangladeshHighCommission.approved') }}"><i class="fa fa-arrow-circle-right"></i> Approved Requests</a></li>
+                        <li><a href="{{ route('BangladeshAdmin.bangladeshHighCommission.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
                     </ul>
                 </li>
 

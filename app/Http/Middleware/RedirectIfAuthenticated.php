@@ -25,8 +25,9 @@ class RedirectIfAuthenticated
             return redirect()->route('EmployerCompany.dashboard');
         } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'welfare-service-center-company') {
             return redirect()->route('WelfareCentre.dashboard');
-        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-embassy') {
-            //return redirect()->route('OneStopService.dashboard');
+        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladesh-high-commission')
+        {
+            return redirect()->route('BangladeshHighCommission.dashboard');
         } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-admin') {
             return redirect()->route('MalaysiaAdmin.dashboard');
         } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'master-one-stop-service') {

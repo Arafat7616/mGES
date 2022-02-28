@@ -3,7 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\BangladeshAdmin;
-use App\Http\Middleware\BangladeshEmbassy;
+use App\Http\Middleware\BangladeshHighCommission;
 use App\Http\Middleware\EmployerCompany;
 use App\Http\Middleware\OneStopService;
 use App\Http\Middleware\OneStopService_Child;
@@ -13,6 +13,7 @@ use App\Http\Middleware\Candidate;
 use App\Http\Middleware\MalaysiaEmbassy;
 use App\Http\Middleware\TrainingAgency;
 use App\Http\Middleware\MedicalAgency;
+use App\Http\Middleware\MalaysiaRecruitingAgency;
 use App\Http\Middleware\BangladeshRecruitingAgency;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\MalaysiaAdmin;
@@ -70,21 +71,22 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'super-admin' => SuperAdmin::class,
-        'bangladesh-admin' => BangladeshAdmin::class,
+        'super-admin'=>SuperAdmin::class,
+        'bangladesh-admin'=>BangladeshAdmin::class,
         'bangladesh-recruiting-agency' => BangladeshRecruitingAgency::class,
-        'welfare-centre' => WelfareCentre::class,
-        'malaysia-admin' => MalaysiaAdmin::class,
-        'one-stop-service' => OneStopService::class,
-        'child-one-stop-service' => OneStopService_Child::class,
-        'travel-agency' => TravelAgency::class,
-        'biometric-agency' => BiometricAgencies::class,
-        'candidate' => Candidate::class,
-        'malaysia-embassy' => MalaysiaEmbassy::class,
-        'training-agency' => TrainingAgency::class,
-        'medical-agency' => MedicalAgency::class,
-        'employer-company' => EmployerCompany::class,
-        'bangladesh-embassy' => BangladeshEmbassy::class,
+        'malaysia-recruiting-agency'=>MalaysiaRecruitingAgency::class,
+        'welfare-centre'=>WelfareCentre::class,
+        'malaysia-admin'=>MalaysiaAdmin::class,
+        'one-stop-service'=>OneStopService::class,
+        'child-one-stop-service'=>OneStopService_Child::class,
+        'travel-agency'=>TravelAgency::class,
+        'biometric-agency'=>BiometricAgencies::class,
+        'candidate'=>Candidate::class,
+        'malaysia-embassy'=>MalaysiaEmbassy::class,
+        'training-agency'=>TrainingAgency::class,
+        'medical-agency'=>MedicalAgency::class,
+        'employer-company'=>EmployerCompany::class,
+        'bangladesh-high-commission'=>BangladeshHighCommission::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
