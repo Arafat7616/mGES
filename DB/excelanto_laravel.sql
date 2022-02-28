@@ -364,7 +364,7 @@ INSERT INTO `roles` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`)
 (4, 'Bangladeshi High Commission', 'bangladesh-high-commission', 'active', '2021-07-11 09:03:00', '2021-07-11 09:03:00'),
 (5, 'Master One stop service', 'master-one-stop-service', 'active', '2021-07-11 09:03:26', '2021-07-11 09:03:26'),
 (6, 'One stop service agency', 'child-one-stop-service', 'active', '2021-07-11 09:04:08', '2021-07-11 09:04:08'),
-(7, 'Medical company', 'medical-company', 'active', '2021-07-11 09:04:24', '2021-07-11 09:04:24'),
+(7, 'Medical company', 'medical-agency', 'active', '2021-07-11 09:04:24', '2021-07-11 09:04:24'),
 (8, 'Training company', 'training-company', 'active', '2021-07-11 09:04:35', '2021-07-11 09:04:35'),
 (9, 'Travel company', 'travel-company', 'active', '2021-07-11 09:04:46', '2021-07-11 09:04:46'),
 (10, 'Biometric company', 'biometric-company', 'active', '2021-07-11 09:04:58', '2021-07-11 09:04:58'),
