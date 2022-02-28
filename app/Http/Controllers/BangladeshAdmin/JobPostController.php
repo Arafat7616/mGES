@@ -18,8 +18,8 @@ class JobPostController extends Controller
      */
     public function index()
     {
-        $job_posts = JobPost::where('status', 'Approved')->orderBy('id', 'DESC')->get();
-        return view('BangladeshAdmin.Jobposts.totalJobPost', compact('job_posts'));
+        $jobPosts = JobPost::where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
+        return view('BangladeshAdmin.Jobposts.totalJobPost', compact('jobPosts'));
 
     }
     public function JobPostShow($id)
@@ -82,8 +82,6 @@ class JobPostController extends Controller
             ]);
         }
     }
-
-
 
     public function vacancy_approval()
     {

@@ -11,7 +11,6 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
     Route::get('/edit-profile', 'BangladeshRecruitingAgencyDashboardController@editProfile')->name('editProfile');
     Route::post('/update-profile', 'BangladeshRecruitingAgencyDashboardController@updateProfile')->name('updateProfile');
 
-
     // Job Posts
     Route::group(['prefix' => 'job-post/', 'as' => 'jobPost.'], function () {
         Route::get('all', 'JobPostController@all')->name('all');
