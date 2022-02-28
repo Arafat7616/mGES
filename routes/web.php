@@ -29,7 +29,7 @@ include('malaysia_admin_route.php');
 include('candidate_route.php');
 include('travel_agency_route.php');
 include('biometric_agencies_route.php');
-include('bangladesh_embassy_route.php');
+include('bangladesh_high_commission_route.php');
 include('employer_company_route.php');
 include('recruiting_agency_route.php');
 include('bangladesh_admin_route.php');

@@ -14,7 +14,7 @@
 * __Recruiting agency:__ ```rea@gmail.com```
 * __Welfare sevice centre:__ ```wsc@gmail.com```
 * __Master One stop service:__ ```moss@gmail.com```
-* __Bangladesh Embassy:__ ```be@gmail.com```
+* __Bangladesh High Commission :__ ```bhc@gmail.com```
 * __Malaysia Embassy:__ ```me@gmail.com```
 * __Malaysia Admin:__ ```malaysiaadmin@gmail.com```
 * __Child One Stop Service:__ ```coss@gmail.com```

@@ -41,13 +41,13 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('rejected', 'WelfareServiceCenterController@rejected')->name('rejected');
     });
 
-    // Bangladesh Embassy
-    Route::group(['prefix' => 'bangladesh-embassy/', 'as' => 'bangladeshEmbassy.'], function () {
-        Route::post('approve/{company_id}', 'BangladeshEmbassyController@approveNow')->name('approveNow');
-        Route::post('reject/{company_id}', 'BangladeshEmbassyController@rejectNow')->name('rejectNow');
-        Route::get('request', 'BangladeshEmbassyController@request')->name('request');
-        Route::get('approved', 'BangladeshEmbassyController@approved')->name('approved');
-        Route::get('rejected', 'BangladeshEmbassyController@rejected')->name('rejected');
+    // Bangladesh High Commission 
+    Route::group(['prefix' => 'bangladesh-high-commission/', 'as' => 'bangladeshHighCommission.'], function () {
+        Route::post('approve/{company_id}', 'BangladeshHighCommissionController@approveNow')->name('approveNow');
+        Route::post('reject/{company_id}', 'BangladeshHighCommissionController@rejectNow')->name('rejectNow');
+        Route::get('request', 'BangladeshHighCommissionController@request')->name('request');
+        Route::get('approved', 'BangladeshHighCommissionController@approved')->name('approved');
+        Route::get('rejected', 'BangladeshHighCommissionController@rejected')->name('rejected');
     });
 
     //job posts

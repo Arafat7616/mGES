@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'welfare-service-center-company')
         {
             return redirect()->route('WelfareCentre.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-embassy')
+        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladesh-high-commission')
         {
             //return redirect()->route('OneStopService.dashboard');
         }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-admin')
