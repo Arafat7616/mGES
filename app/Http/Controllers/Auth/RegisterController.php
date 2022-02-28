@@ -140,7 +140,11 @@ class RegisterController extends Controller
             $userType = "employer";
         } elseif ($data['role'] == 14) {
             $userType = "malaysia-admin";
-        } elseif ($data['role'] == 15) {
+        } 
+        elseif ($data['role'] == 17) {
+            $userType = "malaysia-recruiting-agency";
+        }
+        elseif ($data['role'] == 15) {
             $userType = "";
         } else {
             echo "some this wrong";

@@ -17,6 +17,15 @@
                 </li>
 
                 <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i> <span>Malaysia Recruiting Agency</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('MalaysiaAdmin.mraRequest.new') }}"><i class="fa fa-arrow-circle-right"></i> New Requests</a></li>
+                        <li><a href="{{ route('MalaysiaAdmin.mraRequest.approved') }}"><i class="fa fa-arrow-circle-right"></i> Approved Requests</a></li>
+                        <li><a href="{{ route('MalaysiaAdmin.mraRequest.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i> <span> Malaysia Embassy</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('MalaysiaAdmin.MalaysiaEmbassy.new') }}"><i class="fa fa-arrow-circle-right"></i> New Requests</a></li>
@@ -24,6 +33,7 @@
                         <li><a href="{{ route('MalaysiaAdmin.MalaysiaEmbassy.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
                     </ul>
                 </li>
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-adjust"></i> <span> Job Category</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
@@ -31,6 +41,7 @@
                         <li><a href="{{ route('MalaysiaAdmin.jobCategory.index') }}"><i class="fa fa-arrow-circle-right"></i> View Job Categories</a></li>
                     </ul>
                 </li>
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tachometer"></i> <span> Visa Process</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
