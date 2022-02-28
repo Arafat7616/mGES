@@ -1,4 +1,4 @@
-@extends("RecruitingAgency.master")
+@extends("BangladeshRecruitingAgency.master")
 
 @section('title', 'Candidate Profile')
 @section('DataTableCss')
@@ -68,11 +68,14 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">About</a>
+                                <li class="nav-item"><a class="nav-link active" href="#activity"
+                                        data-toggle="tab">About</a>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Documents</a>
+                                <li class="nav-item"><a class="nav-link" href="#timeline"
+                                        data-toggle="tab">Documents</a>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#results" data-toggle="tab">Results</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#results"
+                                        data-toggle="tab">Results</a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="panel-body">
@@ -90,66 +93,79 @@
                                     <strong><i class="fa fa-map-marker mr-1"></i> Permanent Address</strong>
                                     <p class="text-muted">{{ $candidate->permanent_address }}</p>
                                 </div> <!-- /.tab-pane -->
-                                <div class="tab-pane" id="timeline"> @if($candidate->candidate_resume)
+                                <div class="tab-pane" id="timeline">
+                                    @if ($candidate->candidate_resume)
                                         <a href="{{ asset($candidate->candidate_resume) }}" target="_blank">
                                             <strong><i class="fa fa-file mr-1"></i> Bio-data</strong>
                                         </a>
                                         <div class="mailbox-attachment-info">
-                                            <a href="{{ asset($candidate->candidate_resume) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="{{ asset($candidate->candidate_resume) }}" download
+                                                class="btn btn-default btn-xs float-right"><i
+                                                    class="fa fa-cloud-download"></i></a>
                                         </div>
                                     @else
                                         <a title="Sorry there is no document">
                                             <strong><i class="fa fa-file mr-1"></i> Bio-data</strong>
                                             <div class="mailbox-attachment-info">
-                                                <a href="#" class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                                <a href="#" class="btn btn-default btn-xs float-right"><i
+                                                        class="fa fa-cloud-download"></i></a>
                                             </div>
                                         </a>
                                     @endif
                                     <hr>
-                                    @if($candidate->candidate_passport)
+                                    @if ($candidate->candidate_passport)
                                         <a href="{{ asset($candidate->candidate_passport) }}" target="_blank">
                                             <strong><i class="fa fa-file mr-1"></i> Passport</strong>
                                         </a>
                                         <div class="mailbox-attachment-info">
-                                            <a href="{{ asset($candidate->candidate_passport) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="{{ asset($candidate->candidate_passport) }}" download
+                                                class="btn btn-default btn-xs float-right"><i
+                                                    class="fa fa-cloud-download"></i></a>
                                         </div>
                                     @else
                                         <a title="Sorry there is no document">
                                             <strong><i class="fa fa-file mr-1"></i> Passport</strong>
                                             <div class="mailbox-attachment-info">
-                                                <a href="#" class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                                <a href="#" class="btn btn-default btn-xs float-right"><i
+                                                        class="fa fa-cloud-download"></i></a>
                                             </div>
                                         </a>
                                     @endif
                                     <hr>
-                                    @if($candidate->pre_medical_certificate)
+                                    @if ($candidate->pre_medical_certificate)
                                         <a href="{{ asset($candidate->pre_medical_certificate) }}" target="_blank">
                                             <strong><i class="fa fa-file mr-1"></i> Pre-Medical Certificate</strong>
                                         </a>
                                         <div class="mailbox-attachment-info">
-                                            <a href="{{ asset($candidate->pre_medical_certificate) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="{{ asset($candidate->pre_medical_certificate) }}" download
+                                                class="btn btn-default btn-xs float-right"><i
+                                                    class="fa fa-cloud-download"></i></a>
                                         </div>
                                     @else
                                         <a title="Sorry there is no document">
                                             <strong><i class="fa fa-file mr-1"></i> Pre-Medical Certificate</strong>
                                             <div class="mailbox-attachment-info">
-                                                <a href="#" class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                                <a href="#" class="btn btn-default btn-xs float-right"><i
+                                                        class="fa fa-cloud-download"></i></a>
                                             </div>
                                         </a>
                                     @endif
                                     <hr>
-                                    @if($candidate->pre_training_certificate)
+                                    @if ($candidate->pre_training_certificate)
                                         <a href="{{ asset($candidate->pre_training_certificate) }}" target="_blank">
                                             <strong><i class="fa fa-file mr-1"></i> Pre-Training Certificate</strong>
                                         </a>
                                         <div class="mailbox-attachment-info">
-                                            <a href="{{ asset($candidate->pre_training_certificate) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="{{ asset($candidate->pre_training_certificate) }}" download
+                                                class="btn btn-default btn-xs float-right"><i
+                                                    class="fa fa-cloud-download"></i></a>
                                         </div>
                                     @else
                                         <a title="Sorry there is no document">
                                             <strong><i class="fa fa-file mr-1"></i> Pre-Training Certificate</strong>
                                             <div class="mailbox-attachment-info">
-                                                <a href="#" class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                                <a href="#" class="btn btn-default btn-xs float-right"><i
+                                                        class="fa fa-cloud-download"></i></a>
                                             </div>
                                         </a>
                                     @endif
@@ -162,18 +178,21 @@
                                     <strong><i class="fa fa-pencil mr-1"></i> Employer Comments</strong>
                                     <p class="text-muted">{{ $candidate->employer_comments }}</p>
                                     <hr>
-                                    @if($candidate->offer_letter)
+                                    @if ($candidate->offer_letter)
                                         <a href="{{ asset($candidate->offer_letter) }}" target="_blank">
                                             <strong><i class="fa fa-file mr-1"></i> Candidate-OfferLetter</strong>
                                         </a>
                                         <div class="mailbox-attachment-info">
-                                            <a href="{{ asset($candidate->offer_letter) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="{{ asset($candidate->offer_letter) }}" download
+                                                class="btn btn-default btn-xs float-right"><i
+                                                    class="fa fa-cloud-download"></i></a>
                                         </div>
                                     @else
                                         <a title="Sorry there is no document">
                                             <strong><i class="fa fa-file mr-1"></i> Candidate-OfferLetter</strong>
                                             <div class="mailbox-attachment-info">
-                                                <a href="#" class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                                <a href="#" class="btn btn-default btn-xs float-right"><i
+                                                        class="fa fa-cloud-download"></i></a>
                                             </div>
                                         </a>
                                     @endif

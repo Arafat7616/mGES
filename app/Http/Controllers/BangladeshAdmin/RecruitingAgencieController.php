@@ -8,22 +8,26 @@ use App\User;
 
 class RecruitingAgencieController extends Controller
 {
-    public function request(){
-        $users = User::where('user_type','recruiting-agency')->where('active_status', 'Pending')->orderBy('id','DESC')->get();
+    public function request()
+    {
+        $users = User::where('user_type', 'bangladesh-recruiting-agency')->where('active_status', 'Pending')->orderBy('id', 'DESC')->get();
         return view('BangladeshAdmin.recruitingAgency.request', compact('users'));
     }
 
-    public function approved(){
-        $users = User::where('user_type','recruiting-agency')->where('active_status', 'Approved')->orderBy('id','DESC')->get();
+    public function approved()
+    {
+        $users = User::where('user_type', 'bangladesh-recruiting-agency')->where('active_status', 'Approved')->orderBy('id', 'DESC')->get();
         return view('BangladeshAdmin.recruitingAgency.approved', compact('users'));
     }
 
-    public function rejected(){
-        $users = User::where('user_type','recruiting-agency')->where('active_status', 'Rejected')->orderBy('id','DESC')->get();
+    public function rejected()
+    {
+        $users = User::where('user_type', 'bangladesh-recruiting-agency')->where('active_status', 'Rejected')->orderBy('id', 'DESC')->get();
         return view('BangladeshAdmin.recruitingAgency.rejected', compact('users'));
     }
 
-    public function approveNow($id){
+    public function approveNow($id)
+    {
         $user = User::findOrFail($id);
         $user->active_status = "Approved";
         try {
@@ -32,14 +36,15 @@ class RecruitingAgencieController extends Controller
                 'type' => 'success',
                 'message' => 'Successfully Stored'
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
                 'message' => $exception->getMessage()
             ]);
         }
     }
-    public function rejectNow($id){
+    public function rejectNow($id)
+    {
         $user = User::findOrFail($id);
         $user->active_status = "Rejected";
         try {
@@ -48,7 +53,7 @@ class RecruitingAgencieController extends Controller
                 'type' => 'success',
                 'message' => 'Successfully Updated'
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
                 'message' => $exception->getMessage()
