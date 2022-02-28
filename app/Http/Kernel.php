@@ -13,7 +13,8 @@ use App\Http\Middleware\Candidate;
 use App\Http\Middleware\MalaysiaEmbassy;
 use App\Http\Middleware\TrainingAgency;
 use App\Http\Middleware\MedicalAgency;
-use App\Http\Middleware\RecruitingAgency;
+use App\Http\Middleware\MalaysiaRecruitingAgency;
+use App\Http\Middleware\BangladeshRecruitingAgency;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\MalaysiaAdmin;
 use App\Http\Middleware\WelfareCentre;
@@ -72,7 +73,8 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'super-admin'=>SuperAdmin::class,
         'bangladesh-admin'=>BangladeshAdmin::class,
-        'recruiting-agency'=>RecruitingAgency::class,
+        'bangladesh-recruiting-agency' => BangladeshRecruitingAgency::class,
+        'malaysia-recruiting-agency'=>MalaysiaRecruitingAgency::class,
         'welfare-centre'=>WelfareCentre::class,
         'malaysia-admin'=>MalaysiaAdmin::class,
         'one-stop-service'=>OneStopService::class,

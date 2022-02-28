@@ -58,11 +58,11 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 11,
             'country_id' => 2,
-            'name' => 'Recruiting agency',
-            'company_name' => 'Recruiting agency',
-            'email' => 'rea@gmail.com',
+            'name' => 'Bangladesh Recruiting agency',
+            'company_name' => 'Bangladesh Recruiting agency',
+            'email' => 'brea@gmail.com',
             'password' => Hash::make('12345'),
-            'user_type' => 'recruiting-agency',
+            'user_type' => 'bangladesh-recruiting-agency',
             'active_status' => 'Approved',
         ]);
 
@@ -133,7 +133,7 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 7,
             'country_id' => 2,
-            'childosc_id'=>11,
+            'childosc_id' => 11,
             'name' => 'Medical Agency',
             'company_name' => 'Medical Agency',
             'email' => 'ma@gmail.com',
@@ -145,7 +145,7 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 8,
             'country_id' => 2,
-            'childosc_id'=>11,
+            'childosc_id' => 11,
             'name' => 'Training Agency',
             'company_name' => 'Training Agency',
             'email' => 'ta@gmail.com',
@@ -171,6 +171,16 @@ class UserSeeder extends Seeder
             'email' => 'candidate@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'candidate',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 17,
+            'country_id' => 2,
+            'name' => 'Malaysia Recruiting Agency',
+            'company_name' => 'Malaysia Recruiting Agency',
+            'email' => 'mra@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysia-recruiting-agency',
             'active_status' => 'Approved',
         ]);
     }
