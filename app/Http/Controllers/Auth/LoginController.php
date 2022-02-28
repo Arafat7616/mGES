@@ -38,9 +38,11 @@ class LoginController extends Controller
             return 'employer-company/dashboard';
         } elseif (Auth::user()->user_type == 'welfare-service-center-company') {
             return 'welfare-centre/dashboard';
-        } elseif (Auth::user()->user_type == 'bangladeshi-embassy') {
-            return 'bangladesh-embassy/dashboard';
-        } elseif (Auth::user()->user_type == 'malaysia-admin') {
+        }elseif(Auth::user()->user_type == 'bangladesh-high-commission')
+        {
+            return 'bangladesh-high-commission/dashboard';
+        }elseif(Auth::user()->user_type == 'malaysia-admin')
+        {
             return 'malaysia-admin/dashboard';
         } elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
