@@ -49,7 +49,7 @@ class LoginController extends Controller
             return 'one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'child-one-stop-service') {
             return 'child-one-stop-service/dashboard';
-        } elseif (Auth::user()->user_type == 'medical-company') {
+        } elseif (Auth::user()->user_type == 'medical-agency') {
             return 'medical-agency/dashboard';
         } elseif (Auth::user()->user_type == 'training-company') {
             return 'training-agency/dashboard';
