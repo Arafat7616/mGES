@@ -39,7 +39,7 @@ class WelcomeController extends Controller
             } elseif (Auth::user()->user_type == 'travel-company') {
                 return redirect()->to('/dashboard');
             } elseif (Auth::user()->user_type == 'biometric-company') {
-                return redirect()->to('/dashboard');
+                return redirect()->to('biometric-agency/dashboard');
             }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
             {
                 return redirect()->to('malaysia-recruiting-agency/dashboard');

@@ -66,7 +66,7 @@ class RegisterController extends Controller
         } elseif (Auth::user()->user_type == 'travel-company') {
             return '/dashboard';
         } elseif (Auth::user()->user_type == 'biometric-company') {
-            return '/dashboard';
+            return 'biometric-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
             return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
