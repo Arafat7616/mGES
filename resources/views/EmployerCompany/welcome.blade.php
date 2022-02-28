@@ -8,7 +8,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Employer Company</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li class="active">Employer Company</li>
                             <li><a href="#">Dashboard</a></li>
                         </ol>

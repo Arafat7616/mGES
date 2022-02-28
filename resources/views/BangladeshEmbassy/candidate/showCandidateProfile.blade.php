@@ -16,7 +16,7 @@
                 <div class="page-header-title">
                     <h4 class="pull-left page-title">Profile</h4>
                     <ol class="breadcrumb pull-right">
-                        <li><a href="#">Excelanto</a></li>
+                        <li><a href="#">mGES</a></li>
                         <li><a href="#">Meet And Greet Request</a></li>
                         <li class="active">Profile</li>
                     </ol>

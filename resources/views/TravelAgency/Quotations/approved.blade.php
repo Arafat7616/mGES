@@ -22,7 +22,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Approved Quotations</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Excelanto</a></li>
+                            <li><a href="#">mGES</a></li>
                             <li><a href="#">Candidates</a></li>
                             <li class="active">Approved Quotations</li>
                         </ol>

@@ -36,7 +36,6 @@ Route::group(['prefix' => 'recruiting-agency/', 'namespace' => 'RecruitingAgency
         Route::get('all', 'CandidateController@all')->name('all');
         Route::get('show/{id}', 'CandidateController@show')->name('show');
         Route::get('selected', 'CandidateController@selected')->name('selected');
-        Route::get('view-selected', 'CandidateController@viewSelected')->name('viewSelected');
         Route::get('view-selected/{id}', 'CandidateController@viewSelected')->name('viewSelected');
     });
 });
