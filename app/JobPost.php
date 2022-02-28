@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+
 use App\Company;
 
 use Illuminate\Database\Eloquent\Model;
@@ -24,20 +25,25 @@ class JobPost extends Model
         'appointment_date',
         'appointment_time',
         'rejection_reason',
+        'mra_id',
+        'recruiting_type',
         'status',
     ];
 
-    public function company(){
+    public function company()
+    {
         return $this->belongsTo(Company::class);
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function job_category(){
+    public function job_category()
+    {
         return $this->belongsTo(JobCategory::class);
     }
-    public function offeredCandidate(){
+    public function offeredCandidate()
+    {
         return $this->hasMany(OfferedCandidate::class, 'job_post_id');
     }
-
 }

@@ -46,20 +46,27 @@ class RegisterController extends Controller
             return 'welfare-centre/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-high-commission') {
             return 'bangladesh-high-commission/dashboard';
-        } elseif (Auth::user()->user_type == 'malaysia-admin') {
+        }
+        elseif(Auth::user()->user_type == 'malaysia-admin')
+        {
             return 'malaysia-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'master-one-stop-service') {
+        }
+        elseif(Auth::user()->user_type == 'malaysia-embassy')
+        {
+            return 'malaysia-admin/dashboard';
+        }
+        elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'child-one-stop-service') {
             return 'child-one-stop-service/dashboard';
-        } elseif (Auth::user()->user_type == 'medical-company') {
+        } elseif (Auth::user()->user_type == 'medical-agency') {
             return 'medical-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'training-company') {
+        } elseif (Auth::user()->user_type == 'training-agency') {
             return 'training-agency/dashboard';
         } elseif (Auth::user()->user_type == 'travel-agency') {
             return 'travel-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'biometric-company') {
-            return '/dashboard';
+        } elseif (Auth::user()->user_type == 'biometric-agency') {
+            return 'biometric-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
             return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
@@ -128,13 +135,13 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 6) {
             $userType = "child-one-stop-service";
         } elseif ($data['role'] == 7) {
-            $userType = "medical-company";
+            $userType = "medical-agency";
         } elseif ($data['role'] == 8) {
-            $userType = "training-company";
+            $userType = "training-agency";
         } elseif ($data['role'] == 9) {
             $userType = "travel-agency";
         } elseif ($data['role'] == 10) {
-            $userType = "biometric-company";
+            $userType = "biometric-agency";
         } elseif ($data['role'] == 11) {
             $userType = "bangladesh-recruiting-agency";
         } elseif ($data['role'] == 12) {
@@ -145,6 +152,9 @@ class RegisterController extends Controller
             $userType = "malaysia-admin";
         } elseif ($data['role'] == 15) {
             $userType = "malaysia-embassy";
+        }
+        elseif ($data['role'] == 17) {
+            $userType = "malaysia-recruiting-agency";
         } else {
             echo "some this wrong";
         }
