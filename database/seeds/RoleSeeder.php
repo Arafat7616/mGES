@@ -21,8 +21,8 @@ class RoleSeeder extends Seeder
 
         Role::create([
             'id' => 2,
-            'name' => 'Employer company',
-            'slug' => 'employer-company',
+            'name' => 'Malaysian Employer',
+            'slug' => 'malaysian-employer',
             'status' => 'active'
         ]);
 
@@ -35,8 +35,8 @@ class RoleSeeder extends Seeder
 
         Role::create([
             'id' => 4,
-            'name' => 'Bangladeshi embassy',
-            'slug' => 'bangladeshi-embassy',
+            'name' => 'Bangladeshi High Commission',
+            'slug' => 'bangladesh-high-commission',
             'status' => 'active'
         ]);
 
@@ -84,8 +84,8 @@ class RoleSeeder extends Seeder
 
         Role::create([
             'id' => 11,
-            'name' => 'Recruiting Agency',
-            'slug' => 'recruiting-agency',
+            'name' => 'Bangladesh Recruiting Agency',
+            'slug' => 'bangladesh-recruiting-agency',
             'status' => 'active'
         ]);
 
@@ -121,6 +121,13 @@ class RoleSeeder extends Seeder
             'id' => 16,
             'name' => 'Candidate',
             'slug' => 'candidate',
+            'status' => 'active'
+        ]);
+
+        Role::create([
+            'id' => 17,
+            'name' => 'Malaysia Recruiting Agency',
+            'slug' => 'malaysia-recruiting-agency',
             'status' => 'active'
         ]);
     }

@@ -19,62 +19,38 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
 
-        if (Auth::guard($guard)->check() && Auth::user()->user_type == 'super-admin'){
+        if (Auth::guard($guard)->check() && Auth::user()->user_type == 'super-admin') {
             return redirect()->route('SuperAdmin.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'employer-company')
-        {
-            return redirect()->route('EmployerCompany.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'welfare-service-center-company')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysian-employer') {
+            return redirect()->route('MalaysianEmployer.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'welfare-service-center-company') {
             return redirect()->route('WelfareCentre.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-embassy')
+        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladesh-high-commission')
         {
-            //return redirect()->route('OneStopService.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-admin')
-        {
+            return redirect()->route('BangladeshHighCommission.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-admin') {
             return redirect()->route('MalaysiaAdmin.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'master-one-stop-service')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'master-one-stop-service') {
             return redirect()->route('OneStopService.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'child-one-stop-service')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'child-one-stop-service') {
             return redirect()->route('OneStopService_Child.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'travel-agency')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'travel-agency') {
             return redirect()->route('TravelAgency.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'biometric-agency')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'biometric-agency') {
             return redirect()->route('BiometricAgencies.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'candidate')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'candidate') {
             return redirect()->route('Candidate.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-embassy')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'malaysia-embassy') {
             return redirect()->route('MalaysiaEmbassy.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'medical-agency')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'medical-agency') {
             return redirect()->route('MedicalAgency.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'training-agency')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'training-agency') {
             return redirect()->route('TrainingAgency.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'recruiting-agency')
-        {
-            return redirect()->route('RecruitingAgency.dashboard');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-admin')
-        {
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladesh-recruiting-agency') {
+            return redirect()->route('BangladeshRecruitingAgency.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->user_type == 'bangladeshi-admin') {
             //return redirect()->route('BangladeshAdmin.dashboard');
-        }elseif(Auth::guard($guard)->check() && Auth::user()->user_type == 'employer')
-        {
-            //return redirect()->route('.dashboard');
-        }else
-        {
+        } else {
             return $next($request);
         }
     }

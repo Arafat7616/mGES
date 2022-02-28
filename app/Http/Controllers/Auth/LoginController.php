@@ -34,13 +34,16 @@ class LoginController extends Controller
         if (Auth::user()->user_type == 'super-admin') {
 
             return 'super-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'employer-company') {
-            return 'employer-company/dashboard';
+
+        } elseif (Auth::user()->user_type == 'malaysian-employer') {
+            return 'malaysian-employer/dashboard';
         } elseif (Auth::user()->user_type == 'welfare-service-center-company') {
             return 'welfare-centre/dashboard';
-        } elseif (Auth::user()->user_type == 'bangladeshi-embassy') {
-            return 'bangladesh-embassy/dashboard';
-        } elseif (Auth::user()->user_type == 'malaysia-admin') {
+        }elseif(Auth::user()->user_type == 'bangladesh-high-commission')
+        {
+            return 'bangladesh-high-commission/dashboard';
+        }elseif(Auth::user()->user_type == 'malaysia-admin')
+        {
             return 'malaysia-admin/dashboard';
         } elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
@@ -54,8 +57,11 @@ class LoginController extends Controller
             return 'travel-agency/dashboard';
         } elseif (Auth::user()->user_type == 'biometric-company') {
             return '/dashboard';
-        } elseif (Auth::user()->user_type == 'recruiting-agency') {
-            return 'recruiting-agency/dashboard';
+        }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
+        {
+            return 'malaysia-recruiting-agency/dashboard';
+        } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
+            return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
         } elseif (Auth::user()->user_type == 'employer') {

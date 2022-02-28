@@ -40,12 +40,12 @@ class RegisterController extends Controller
         if (Auth::user()->user_type == 'super-admin') {
 
             return 'super-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'employer-company') {
-            return 'employer-company/dashboard';
+        } elseif (Auth::user()->user_type == 'malaysian-employer') {
+            return 'malaysian-employer/dashboard';
         } elseif (Auth::user()->user_type == 'welfare-service-center-company') {
             return 'welfare-centre/dashboard';
-        } elseif (Auth::user()->user_type == 'bangladeshi-embassy') {
-            return 'bangladesh-embassy/dashboard';
+        } elseif (Auth::user()->user_type == 'bangladesh-high-commission') {
+            return 'bangladesh-high-commission/dashboard';
         } elseif (Auth::user()->user_type == 'malaysia-admin') {
             return 'malaysia-admin/dashboard';
         } elseif (Auth::user()->user_type == 'master-one-stop-service') {
@@ -60,11 +60,13 @@ class RegisterController extends Controller
             return 'travel-agency/dashboard';
         } elseif (Auth::user()->user_type == 'biometric-company') {
             return '/dashboard';
-        } elseif (Auth::user()->user_type == 'recruiting-agency') {
-            return 'recruiting-agency/dashboard';
+        } elseif (Auth::user()->user_type == 'bangladesh-recruiting-agency') {
+            return 'bangladesh-recruiting-agency/dashboard';
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'employer') {
+        }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
+        {
+            return 'malaysia-recruiting-agency/dashboard';
         } else {
             return route('register');
         }
@@ -111,12 +113,12 @@ class RegisterController extends Controller
         if ($data['role'] == 1) {
             $userType = "super-admin";
         } elseif ($data['role'] == 2) {
-            $userType = "employer-company";
+            $userType = "malaysian-employer";
         } elseif ($data['role'] == 3) {
 
             $userType = "welfare-service-center-company";
         } elseif ($data['role'] == 4) {
-            $userType = "bangladeshi-embassy";
+            $userType = "bangladesh-high-commission";
         } elseif ($data['role'] == 5) {
             $userType = "master-one-stop-service";
         } elseif ($data['role'] == 6) {
@@ -130,7 +132,7 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 10) {
             $userType = "biometric-company";
         } elseif ($data['role'] == 11) {
-            $userType = "recruiting-agency";
+            $userType = "bangladesh-recruiting-agency";
         } elseif ($data['role'] == 12) {
             $userType = "bangladeshi-admin";
         } elseif ($data['role'] == 13) {

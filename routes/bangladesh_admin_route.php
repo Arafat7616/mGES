@@ -15,12 +15,12 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::post('company-request-reject/{company_id}', 'CompanyController@rejectNow')->name('company.rejectNow');
 
     // Recruiting agency
-    Route::group(['prefix' => 'recruiting-agency/', 'as' => 'recruitingAgency.'], function () {
-        Route::post('approve/{company_id}', 'RecruitingAgencieController@approveNow')->name('approveNow');
-        Route::post('reject/{company_id}', 'RecruitingAgencieController@rejectNow')->name('rejectNow');
-        Route::get('request', 'RecruitingAgencieController@request')->name('request');
-        Route::get('approved', 'RecruitingAgencieController@approved')->name('approved');
-        Route::get('rejected', 'RecruitingAgencieController@rejected')->name('rejected');
+    Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'as' => 'bangladeshRecruitingAgency.'], function () {
+        Route::post('approve/{company_id}', 'BangladeshRecruitingAgencieController@approveNow')->name('approveNow');
+        Route::post('reject/{company_id}', 'BangladeshRecruitingAgencieController@rejectNow')->name('rejectNow');
+        Route::get('request', 'BangladeshRecruitingAgencieController@request')->name('request');
+        Route::get('approved', 'BangladeshRecruitingAgencieController@approved')->name('approved');
+        Route::get('rejected', 'BangladeshRecruitingAgencieController@rejected')->name('rejected');
     });
 
     // One stop services
@@ -41,13 +41,13 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('rejected', 'WelfareServiceCenterController@rejected')->name('rejected');
     });
 
-    // Bangladesh Embassy
-    Route::group(['prefix' => 'bangladesh-embassy/', 'as' => 'bangladeshEmbassy.'], function () {
-        Route::post('approve/{company_id}', 'BangladeshEmbassyController@approveNow')->name('approveNow');
-        Route::post('reject/{company_id}', 'BangladeshEmbassyController@rejectNow')->name('rejectNow');
-        Route::get('request', 'BangladeshEmbassyController@request')->name('request');
-        Route::get('approved', 'BangladeshEmbassyController@approved')->name('approved');
-        Route::get('rejected', 'BangladeshEmbassyController@rejected')->name('rejected');
+    // Bangladesh High Commission 
+    Route::group(['prefix' => 'bangladesh-high-commission/', 'as' => 'bangladeshHighCommission.'], function () {
+        Route::post('approve/{company_id}', 'BangladeshHighCommissionController@approveNow')->name('approveNow');
+        Route::post('reject/{company_id}', 'BangladeshHighCommissionController@rejectNow')->name('rejectNow');
+        Route::get('request', 'BangladeshHighCommissionController@request')->name('request');
+        Route::get('approved', 'BangladeshHighCommissionController@approved')->name('approved');
+        Route::get('rejected', 'BangladeshHighCommissionController@rejected')->name('rejected');
     });
 
     //job posts
@@ -83,5 +83,11 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('approved', 'VisaProcessController@approved')->name('approved');
         Route::get('rejected', 'VisaProcessController@rejected')->name('rejected');
     });
+  
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+    });
+
 
 });
