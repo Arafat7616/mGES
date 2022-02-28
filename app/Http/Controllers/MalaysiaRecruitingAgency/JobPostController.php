@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Auth;
 
 class JobPostController extends Controller
 {
-    public function all(){
-        $jobPosts = JobPost::where('status','Approved')->orderBy('id','DESC')->get();
+    public function all()
+    {
+        $jobPosts = JobPost::where('status', 'Approved')->orderBy('id', 'DESC')->get();
         return view('MalaysiaRecruitingAgency.jobPost.all', compact('jobPosts'));
     }
 
@@ -29,7 +30,8 @@ class JobPostController extends Controller
         return view('MalaysiaRecruitingAgency.jobPost.show', compact('jobPost'));
     }
 
-    public function update(Request $request , $id){
+    public function update(Request $request, $id)
+    {
         $job_post = JobPost::findOrFail($id);
         // $job_post->applied_vacancy    =  $request->appliedVacancy;
         // $job_post->remarks    =  $request->remarks;
@@ -60,9 +62,8 @@ class JobPostController extends Controller
     public function selectCandidates($applied_job_id)
     {
         $appliedJob = AppliedJob::findOrFail($applied_job_id);
-        $candidates = Candidate::where('job_category_id',$appliedJob->jobPost->job_category->id)
-                               ->where('created_id',Auth::user()->id)->orderBy('id','DESC')->get();
+        $candidates = Candidate::where('job_category_id', $appliedJob->jobPost->job_category->id)
+            ->where('created_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('MalaysiaRecruitingAgency.jobPost.select-candidates', compact('candidates', 'appliedJob'));
     }
-
 }
