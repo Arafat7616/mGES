@@ -52,7 +52,7 @@
                                     @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $user->company_register_number }}</td>
+                                        <td>{{ $user->company_regno }}</td>
                                         <td>{{ $user->company_name }}</td>
                                         <td>{{ $user->domain }}</td>
                                         <td>{{ $user->email }}</td>
