@@ -18,8 +18,7 @@ class TravelAgency
     {
         if (Auth::check() && (Auth::user()->user_type == 'travel-agency')) {
             return $next($request);
-        }
-        else{
+        } else {
             return redirect()->route('login');
         }
     }

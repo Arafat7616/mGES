@@ -56,8 +56,8 @@ class RegisterController extends Controller
             return 'medical-agency/dashboard';
         } elseif (Auth::user()->user_type == 'training-company') {
             return 'training-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'travel-company') {
-            return '/dashboard';
+        } elseif (Auth::user()->user_type == 'travel-agency') {
+            return 'travel-agency/dashboard';
         } elseif (Auth::user()->user_type == 'biometric-company') {
             return '/dashboard';
         } elseif (Auth::user()->user_type == 'recruiting-agency') {
@@ -126,7 +126,7 @@ class RegisterController extends Controller
         } elseif ($data['role'] == 8) {
             $userType = "training-company";
         } elseif ($data['role'] == 9) {
-            $userType = "travel-company";
+            $userType = "travel-agency";
         } elseif ($data['role'] == 10) {
             $userType = "biometric-company";
         } elseif ($data['role'] == 11) {
