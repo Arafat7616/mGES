@@ -48,7 +48,7 @@
                                                     <input name="companyRegisterNumber"
                                                         placeholder="Enter Company Register Number" type="text"
                                                         class="form-control" id="companyRegisterNumber"
-                                                        value="{{ $user->company_regno }}">
+                                                        value="{{ $user->company_register_number}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="domain">Domain</label>
