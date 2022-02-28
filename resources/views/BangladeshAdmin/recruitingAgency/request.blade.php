@@ -60,24 +60,24 @@
                                             <td>{{ $user->domain }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>
-                                                <span
-                                                    class="badge badge-warning">{{ $user->active_status }}</span>
+                                                <span class="badge badge-warning">{{ $user->active_status }}</span>
                                             </td>
                                             <td>
-                                                <a class="btn btn-info btn-sm" href="{{ route('BangladeshAdmin.company.showCompanyProfile', $user->id) }}">
+                                                <a class="btn btn-info btn-sm"
+                                                    href="{{ route('BangladeshAdmin.company.showCompanyProfile', $user->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
                                             <td>
                                                 <button class="btn btn-success" onclick="approve(this)"
-                                                    value="{{ route('BangladeshAdmin.recruitingAgency.approveNow', $user->id) }}">
+                                                    value="{{ route('BangladeshAdmin.bangladeshRecruitingAgency.approveNow', $user->id) }}">
                                                     <i class="mdi mdi-check"></i> </button>
 
                                             </td>
                                             <td>
                                                 <button class="btn btn-danger" onclick="reject(this)"
-                                                value="{{ route('BangladeshAdmin.recruitingAgency.rejectNow', $user->id) }}">
-                                                <i class="mdi mdi-close"></i> </button>
+                                                    value="{{ route('BangladeshAdmin.bangladeshRecruitingAgency.rejectNow', $user->id) }}">
+                                                    <i class="mdi mdi-close"></i> </button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -122,7 +122,7 @@
                         method: 'POST',
                         url: url,
                         headers: {
-                            'X-CSRF-TOKEN':  "{{ csrf_token() }}",
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
                         },
                         success: function(data) {
                             if (data.type == 'success') {
@@ -146,6 +146,7 @@
                 }
             })
         }
+
         function reject(objButton) {
             var url = objButton.value;
             // alert(objButton.value)
@@ -164,7 +165,7 @@
                         method: 'POST',
                         url: url,
                         headers: {
-                            'X-CSRF-TOKEN':  "{{ csrf_token() }}",
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
                         },
                         success: function(data) {
                             if (data.type == 'success') {
