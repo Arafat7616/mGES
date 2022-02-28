@@ -49,17 +49,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($jobPosts as $key => $jobPost)
+                                    @foreach ($jobPosts as $jobPost)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $jobPost->company->company_name }}</td>
                                             <td>{{ $jobPost->job_category->category_name }}</td>
                                             <td>{{ $jobPost->created_at }}</td>
-                                            <td>{{ $jobPost->end_date }}</td>
+                                            <td>{{ $jobPost->job_vacancy }}</td>
                                             <td>
-                                                <a class="btn btn-info btn-xs" href="{{ route('BangladeshAdmin.JobPostShow', $jobPost->id) }}">
+                                                <a class="btn btn-info" href="{{ route('BangladeshAdmin.JobPostShow', $jobPost->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
+                                                <button class="btn btn-info button" value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
+                                                    <i class="fa fa-edit"></i> Data Synchronize
+                                                </button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -77,7 +80,7 @@
                             </table>
                             <div class='text-center'>
 
-                                <button id="button" type="button" class="btn btn-info">Data Synchronize</button>
+                                {{-- <button id="button" type="button" class="btn btn-info">Data Synchronize</button> --}}
 
                                 <div id="overlay">
                                     <div class="cv-spinner">
@@ -210,15 +213,24 @@
             $("#overlay").fadeIn(300);
         });
 
-        $("#button").click(function() {
+        $(".button").click(function() {
+            var max_vacancy = $(this).attr('value');
+            var minimum_vacancy = parseInt(max_vacancy/2)
+            var random_vacancy =  Math.floor(Math.random() * (max_vacancy - minimum_vacancy + 1) + minimum_vacancy)
+
             $.ajax({
                 type: "GET"
                 , success: function(data) {
-                    console.log(data);
+                    // console.log(data);
                 }
             }).done(function() {
                 setTimeout(function() {
                     $("#overlay").fadeOut(300);
+                    Swal.fire(
+                        'Matched !',
+                        random_vacancy+' Candidates matched .',
+                        'success'
+                    )
                 }, 7000);
             });
         });

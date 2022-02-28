@@ -1,17 +1,17 @@
 @import "nib";
-
 body {
     background: #e5e5e5;
 }
 
 #button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 30px;
+    /* display: block; */
+    /* margin: 20px auto; */
+    /* padding: 10px 30px; */
     background-color: #eee;
     border: solid #ccc 1px;
     cursor: pointer;
 }
+
 #overlay {
     position: absolute;
     top: 0;
@@ -21,12 +21,14 @@ body {
     display: none;
     background: rgba(0, 0, 0, 0.6);
 }
+
 .cv-spinner {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .spinner {
     width: auto;
     height: auto;
@@ -45,6 +47,7 @@ body {
         transform: rotate(0deg);
     }
 }
+
 .is-hide {
     display: none;
 }
