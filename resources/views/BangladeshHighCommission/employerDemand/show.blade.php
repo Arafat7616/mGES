@@ -79,6 +79,7 @@
                             <hr>
                             <strong><i class="fa fa-calendar mr-1"></i> End Date</strong>
                             <p class="text-muted">{{ $job_post->end_date }}</p>
+
                         </div>
                     </div>
                 </div>
@@ -100,6 +101,23 @@
                             <strong><i class="fa fa-money mr-1"></i> Salary</strong>
                             <p class="text-muted">{{ $job_post->salary }}</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4"></div>
+
+                <div class="col-md-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong><i class="fa fa-calendar mr-1"></i> QR Code</strong></h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <br>
+                            <p class="text-center">
+                                {!! QrCode::size(200)->generate(url('/qr_code_result')) !!}
+                            </p>
+                          </div>
                     </div>
                 </div>
             </div>

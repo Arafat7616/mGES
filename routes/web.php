@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\QrCodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,10 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 /*Route::get('/', 'HomeController@index')->name('admin.login');*/
+
+Route::get('/qr_code', [QrCodeController::class, 'index']);
+Route::get('/qr_code_result', [QrCodeController::class, 'result']);
+
 
 include('child_oss_route.php');
 include('one_stop_service_route.php');
