@@ -19,7 +19,7 @@ class NotificationSeeder extends Seeder
             'notification_from' => 8,
             'created_by' => 2,
             'jobpost_id' => 1,
-            'me_id' => 11,
+            // 'me_id' => 11,
             'staus' => 1
         ]);
     }
