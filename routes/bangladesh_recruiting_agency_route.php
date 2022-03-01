@@ -19,6 +19,8 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
         Route::get('select-candidates/{applied_job_id}', 'JobPostController@selectCandidates')->name('selectCandidates');
         Route::get('edit/{id}', 'JobPostController@edit')->name('edit');
         Route::post('update/{id}', 'JobPostController@update')->name('update');
+        Route::get('/job-details/{jobpostid}', 'JobPostController@jobDetails')->name('jobDetails');
+        Route::get('/job-interrested/{jobpostid}', 'JobPostController@JobInterested')->name('jobIntersted');
     });
 
     // Applied job

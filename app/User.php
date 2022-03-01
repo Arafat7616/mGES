@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'role_id','country_id','name','email','password','user_type','active_status','quata','domain','company_name','abbr','mobile','city','state','address1','address2','document1','document2','status','childosc_id','cosc_assigned_status','remember_token'
+        'role_id', 'country_id', 'name', 'email', 'password', 'user_type', 'active_status', 'quata', 'domain', 'company_name', 'abbr', 'mobile', 'city', 'state', 'address1', 'address2', 'document1', 'document2', 'status', 'childosc_id', 'cosc_assigned_status', 'remember_token'
     ];
 
     /**
@@ -37,7 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function company(){
+    public function company()
+    {
         return $this->hasOne(Company::class);
     }
 
@@ -46,7 +47,13 @@ class User extends Authenticatable
         return $this->hasOne(User::class, 'travel_agency_id');
     }
 
-    public function country(){
-        return $this->belongsTo(Country::class ,'country_id');
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
+    }
+
+    public function braInterested()
+    {
+        return $this->hasOne(BRAInterest::class, 'bar_id');
     }
 }
