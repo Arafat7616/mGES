@@ -14,7 +14,8 @@ class JobPostController extends Controller
 {
     public function all()
     {
-        $jobPosts = JobPost::where('status', 'Approved')->orderBy('id', 'DESC')->get();
+        // $jobPosts = JobPost::where('status', 'Approved')->orderBy('id', 'DESC')->get();
+        $jobPosts = JobPost::where('ma_status', 'Approved')->where('recruiting_type','agency')->where('mra_id',Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('MalaysiaRecruitingAgency.jobPost.all', compact('jobPosts'));
     }
 

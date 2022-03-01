@@ -21,6 +21,10 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
         ]
     ]);
 
+    Route::get('approved-job-posts', 'PostJobController@maApproved')->name('postJob.maApproved');
+    Route::get('approved-job-posts/{id}', 'PostJobController@recruitEmployee')->name('postJob.recruit');
+    Route::post('approved-job-posts/send/{id}', 'PostJobController@sendJob')->name('postJob.send');
+
     // candidates
     Route::group(['prefix' => 'candidates/', 'as' => 'candidates.'], function () {
         Route::get('new', 'CandidateController@new_candidates')->name('new');

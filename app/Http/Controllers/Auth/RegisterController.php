@@ -119,7 +119,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+dd($data);
         $userType = "";
         if ($data['role'] == 1) {
             $userType = "super-admin";

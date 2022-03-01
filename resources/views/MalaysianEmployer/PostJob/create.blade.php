@@ -74,7 +74,9 @@
                                                         value="Part Time">Part Time</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group">
+
+
+                                            {{-- <div class="form-group">
                                                 <label for="employmentType">Recruiting Type</label><br>
                                                 <div class="radio radio-info radio-inline">
                                                     <input class="recriting_input" type="radio" id="inlineRadio1"
@@ -100,7 +102,7 @@
                                                     @endforeach
 
                                                 </select>
-                                            </div>
+                                            </div> --}}
 
 
                                             <div class="form-group">
@@ -137,7 +139,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="salary">Salary</label>
-                                                <input type="text" class="form-control" id="salary" name="salary"
+                                                <input type="number" class="form-control" id="salary" name="salary"
                                                     placeholder=" Enter Salary" value="{{ old('salary') }}">
                                             </div>
                                             <div class="form-group">
@@ -148,7 +150,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobVacancy">Job Vacancy</label>
-                                                <input type="text" value="{{ old('jobVacancy') }}" class="form-control"
+                                                <input type="number"  value="{{ old('jobVacancy') }}" class="form-control"
                                                     id="jobVacancy" name="jobVacancy" placeholder="Enter Job Vacancy">
                                             </div>
 
@@ -167,18 +169,18 @@
                                                 </div>
                                             </div>
                                         </div> <!-- panel-body -->
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-dark  ">Submit</button>
+                                            </div>
                                     </div> <!-- col -->
                                 </div> <!-- End row -->
                             </div><!-- panel-body -->
                         </div>
-                        <div class="panel panel-secondary">
+                        {{-- <div class="panel panel-secondary">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Make an appointment to verify new job post</h3>
                             </div>
                             <div class="panel-body">
-                                <form role="form" method="POST" enctype="multipart/form-data"
-                                    action="{{ route('MalaysianEmployer.companyPrfileSubmit') }}">
-                                    @csrf
                                     <div class="row">
                                         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                             <div class="panel-body">
@@ -218,14 +220,14 @@
                                         </div> <!-- col -->
                                     </div> <!-- End row -->
                             </div><!-- panel-body -->
-                        </div>
-                        <div class="panel">
+                        </div> --}}
+                        {{-- <div class="panel">
                             <div class="panel-footer">
                                 <div class=" text-right">
                                     <button type="submit" class="btn btn-dark waves-effect waves-ligh">Submit</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </form>
                 </div>
             </div> <!-- End Row -->
