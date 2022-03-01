@@ -60,9 +60,23 @@
                                                 <a class="btn btn-info" href="{{ route('BangladeshAdmin.JobPostShow', $jobPost->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
-                                                <button class="btn btn-info button" job="{{ $jobPost->id }}" value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
+
+
+
+                                                <button class="btn btn-info button" value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);" >
                                                     <i class="fa fa-edit"></i> Data Synchronize
                                                 </button>
+
+                                                @if ($jobPost->notification)
+                                                    <a class="btn btn-warning" disabled  href="#">
+                                                        <i class="fa fa-bell"></i> Sent Notification
+                                                    </a>
+                                                @else
+                                                    <a class="btn btn-warning"  href="{{ route('BangladeshAdmin.jobPost.notificationStore',$jobPost->id) }}">
+                                                        <i class="fa fa-bell"></i> Sent Notification
+                                                    </a>
+                                                @endif
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -183,6 +197,7 @@
                     , success: function(data) {
                         if (data.type == 'success') {
                             Swal.fire(
+
                                 'Rejected !'
                                 , 'This company has been Rejected. ' + data.message
                                 , 'success'
@@ -205,19 +220,18 @@
 
 </script>
 
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script>
     jQuery(function($) {
-        $(document).ajaxSend(function() {id
-
+        $(document).ajaxSend(function() {
+            $("#overlay").fadeIn(300);
+        });
         $(".button").click(function() {
             var max_vacancy = $(this).attr('value');
-            var id = $(this).attr('job');
-            console.log(id);
             var minimum_vacancy = parseInt(max_vacancy/2)
             var random_vacancy =  Math.floor(Math.random() * (max_vacancy - minimum_vacancy + 1) + minimum_vacancy)
-
             $.ajax({
                 type: "GET"
                 , success: function(data) {
@@ -226,42 +240,19 @@
             }).done(function() {
                 setTimeout(function() {
                     $("#overlay").fadeOut(300);
-                    Swal.fire(
-                        'Matched !',
-                        random_vacancy+' Candidates matched .',
-                        'success'
-                    )
-                    var url = '/bangladesh-admin/job-notification-store/'+id;
-                    $.ajax({
-                    method: 'GET'
-                    , url: url
-                    , headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    , }
-                    , success: function(data) {
-                        if (data.type == 'success') {
-                            // Swal.fire(
-                            //     'Rejected !'
-                            //     , 'This company has been Rejected. ' + data.message
-                            //     , 'success'
-                            // )
-                            // setTimeout(function() {
-                            //     location.reload();
-                            // }, 800); //
-                        } else {
-                            // Swal.fire(
-                            //     'Wrong !'
-                            //     , 'Something going wrong. ' + data.message
-                            //     , 'warning'
-                            // )
-                        }
-                    }
-                , })
+                    Swal.fire({
+                        icon: 'success',
+                        title: random_vacancy +' Candidates matched .',
+                        imageUrl: 'https://c.tenor.com/xyl_b-fpgWkAAAAd/matrix-green.gif',
+                        imageHeight: 300,
+                        imageWidth: 550,
+                        imageAlt: 'Big image',
+                        width: 600
+                    })
                 }, 7000);
             });
         });
     });
-
 </script>
 @endsection
 

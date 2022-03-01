@@ -69,17 +69,18 @@ if (!function_exists('random_code')) {
 
     function send_sms($message, $phone)
     {
+
         // app name given in here
-        $app_name = env('APP_NAME');
+       // $app_name = env('APP_NAME');
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => env('SMS_API_URL'),
+            CURLOPT_URL => 'https://api.sms.net.bd/sendsms',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
-                'api_key' => env('SMS_API_KEY'),
-                'msg' => $message,
+                'api_key' => 'l2Phx0d2M8Pd8OLKuuM1K3XZVY3Ln78jUWzoz7xO',
+                'msg' => nl2br($message),
                 'to' => $phone
             ),
         ));

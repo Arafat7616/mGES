@@ -98,16 +98,12 @@ class JobPostController extends Controller
 
         try {
             $notification->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Successfully Rejected'
-            ]);
-        }catch (\Exception $exception){
-            return response()->json([
-                'type' => 'error',
-                'message' => $exception->getMessage()
-            ]);
+            return back()->withToastSuccess('Successfully sent notification to all recruiter');
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
+
+
     }
 
     public function vacancy_approval()
@@ -182,4 +178,6 @@ class JobPostController extends Controller
     {
         //
     }
+
+
 }
