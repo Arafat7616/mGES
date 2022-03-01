@@ -3,6 +3,7 @@
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controller\DummyAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function () {
 //     return User::all();
 // });
+// Route::post('dummy-mges-app', 'DummyAPIController@index')->name('dummy.index');
+// Route::get('/dummy-mges-app', function () {
+//     return "Hello";
+// });
+
+Route::post('/dummy_mges_app','DummyAPIController@index');

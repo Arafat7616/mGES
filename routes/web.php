@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::post('api/dummy-mges-app', 'DummyAPIController@index')->name('dummy.index');
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
