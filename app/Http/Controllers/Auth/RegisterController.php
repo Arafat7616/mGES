@@ -53,7 +53,7 @@ class RegisterController extends Controller
         }
         elseif(Auth::user()->user_type == 'malaysia-embassy')
         {
-            return 'malaysia-admin/dashboard';
+            return 'malaysia-embassy/dashboard';
         }
         elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
