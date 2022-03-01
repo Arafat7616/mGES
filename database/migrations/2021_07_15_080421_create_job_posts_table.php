@@ -30,7 +30,6 @@ class CreateJobPostsTable extends Migration
             $table->integer('selected_wsc')->nullable();
             $table->integer('mra_id')->nullable();
             $table->string('recruiting_type')->nullable();
-            $table->enum('ma_status', ['New', 'Verified', 'Approved', 'Applied', 'Rejected', 'Pending'])->default('New');
             $table->string('appointment_date', 100)->nullable();
             $table->string('appointment_time', 100)->nullable();
             $table->string('rejection_reason', 500)->nullable();
