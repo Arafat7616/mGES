@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\QrCodeController;
+use App\Http\Controllers\RatingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,13 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('re
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 /*Route::get('/', 'HomeController@index')->name('admin.login');*/
 
+
+//others
 Route::get('/qr_code', [QrCodeController::class, 'index']);
 Route::get('/qr_code_result', [QrCodeController::class, 'result']);
+
+//Rating route
+Route::get('/rating', [RatingController::class, 'index']);
 
 
 include('child_oss_route.php');
