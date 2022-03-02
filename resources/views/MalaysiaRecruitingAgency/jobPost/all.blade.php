@@ -46,6 +46,7 @@
                                         <th>Job Category</th>
                                         <th>Post Date</th>
                                         <th>End Date</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -53,10 +54,16 @@
                                     @foreach ($jobPosts as $jobPost)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $jobPost->company->company_name }}</td>
+                                            <td>{{ $jobPost->user->company_name }}</td>
                                             <td>{{ $jobPost->job_category->category_name }}</td>
                                             <td>{{ date('Y-m-d',strtotime($jobPost->created_at)) }}</td>
                                             <td>{{ date('Y-m-d',strtotime($jobPost->end_date)) }}</td>
+                                            <td>
+                                                @if ($jobPost->forward_status == 'Forwarded')
+                                                    <span class="badge badge-success">Already Forwarded</span>
+                                                @endif
+
+                                            </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm" href="{{ route('MalaysiaRecruitingAgency.jobPost.show', $jobPost->id ) }}">
                                                     <i class="mdi mdi-eye"></i>

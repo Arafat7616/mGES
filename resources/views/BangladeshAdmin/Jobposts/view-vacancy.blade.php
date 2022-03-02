@@ -39,7 +39,7 @@
                         </div>
                         <div class="panel-body">
                             <strong><i class="fa fa-book mr-1"></i> Company Name</strong>
-                            <p class="text-muted">{{  $appliedJob->jobPost->company->company_name}}</p>
+                            <p class="text-muted">{{  $appliedJob->jobPost->user->company_name}}</p>
 
                             <hr>
 

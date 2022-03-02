@@ -50,7 +50,7 @@
                                             <div class="form-group">
                                                 <label for="Company Name">Company Name</label>
                                                 <input type="text" class="form-control" id="CompanyName"
-                                                    value="{{ Auth::user()->company->company_name }}" readonly="">
+                                                    value="{{ Auth::user()->company_name }}" readonly="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobCategory">Job Category</label>
@@ -160,7 +160,7 @@
                                                     id="endDate" name="endDate">
                                             </div>
                                             <div class="form-group">
-                                                <label for="demandLetter">Demand Letter</label>
+                                                <label for="demandLetter">Preliminary Demand Letter</label>
                                                 <div class="input-group">
                                                     <div class="col-sm-4" style="padding-top:6px;">
                                                         <input type="file" accept="application/pdf" id="demandLetter"
@@ -169,13 +169,15 @@
                                                 </div>
                                             </div>
                                         </div> <!-- panel-body -->
-                                            <div class="text-right">
+                                            {{-- <div class="text-right">
                                                 <button type="submit" class="btn btn-dark  ">Submit</button>
-                                            </div>
+                                            </div> --}}
                                     </div> <!-- col -->
                                 </div> <!-- End row -->
                             </div><!-- panel-body -->
                         </div>
+
+
                         {{-- <div class="panel panel-secondary">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Make an appointment to verify new job post</h3>
@@ -221,6 +223,54 @@
                                     </div> <!-- End row -->
                             </div><!-- panel-body -->
                         </div> --}}
+                        {{-- <div class="panel">
+                            <div class="panel-footer">
+                                <div class=" text-right">
+                                    <button type="submit" class="btn btn-dark waves-effect waves-ligh">Submit</button>
+                                </div>
+                            </div>
+                        </div> --}}
+
+
+
+                        
+                        <div class="panel panel-secondary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Please Select a Recruiting Type</h3>
+                            </div>
+                            <div class="panel-body" style="margin-left: 10px;">
+                                    <div class="form-group">
+                                        <label for="employmentType">Recruiting Type</label><br>
+                                        <div class="radio radio-info radio-inline">
+                                            <input class="recriting_input" type="radio" id="inlineRadio1" value="self"
+                                                name="recruiting_type" checked="checked">
+                                            <label for="inlineRadio1"> Self Recruiting </label>
+                                        </div>
+                                        <div class="radio radio-inline">
+                                            <input class="recriting_input" type="radio" id="inlineRadio2" value='agency'
+                                                name="recruiting_type">
+                                            <label for="inlineRadio2"> Agency Recruiting </label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group Agencies-section" id="Agencies-section">
+                                        <label for="agency_id">Agencies</label>
+                                        <select class="form-control" name="agency_id" required="">
+                                            <option selected="" disabled="" value="null">Select Agency
+                                            </option>
+                                            @foreach ($malaysiaAgenies as $agency)
+                                                <option value={{ $agency->id }}>{{ $agency->company_name }}
+                                                </option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                    <div class="text-right">
+                                                <button type="submit" class="btn btn-dark  ">Submit</button>
+                                            </div>
+                            </div><!-- panel-body -->
+                        </div>
                         {{-- <div class="panel">
                             <div class="panel-footer">
                                 <div class=" text-right">
