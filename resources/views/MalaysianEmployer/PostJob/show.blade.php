@@ -59,11 +59,33 @@
                               <li class="list-group-item">
                                 <b>Job Posted by</b> <a class="float-right">Employer</a>
                               </li>
+                              <li class="list-group-item">
+                                <b>Status &nbsp; &nbsp;</b>
+                                @if ($job_post->status == 'New')
+                                                    <button type="button" name="New"
+                                                        class="btn btn-primary btn-xs update">New</button>
+                                                @elseif ($job_post->status == "Rejected")
+                                                    <button type="button" name="Rejected"
+                                                        class="btn btn-warning btn-xs update">Rejected</button>
+                                                @elseif ($job_post->status == "Pending")
+                                                    <button type="button" name="Pending"
+                                                        class="btn btn-warning btn-xs update">Pending</button>
+                                                @elseif ($job_post->status == "Approved")
+                                                    <button type="button" name="Approved"
+                                                        class="btn btn-success btn-xs update">Approved</button>
+                                                @elseif ($job_post->status == "Verified")
+                                                    <button type="button" name="Verified"
+                                                        class="btn btn-info btn-xs update">Verified</button>
+                                                @elseif ($job_post->status == "Applied")
+                                                    <button type="button" name="Applied"
+                                                        class="btn btn-info btn-xs update">Applied</button>
+                                                @endif
+                              </li>
                             </ul>
 
 
                             <a href="../demandletter/172745224_23847221674930487_737226822608284999_n.jpg " download="" class="btn btn-primary btn-block">
-                                <b><i class="fa fa-download"></i> Demand Letter </b>
+                                <b><i class="fa fa-send"></i> Forward To Bangladesh High Comission </b>
                             </a>
                           </div>
                     </div>
@@ -118,6 +140,50 @@
                             <strong><i class="fa fa-money mr-1"></i> Salary</strong>
                             <p class="text-muted">{{ $job_post->salary}}</p>
                           </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Selected Bangladesh Recruiting Agencies</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table id="datatable-buttons" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>SL No</th>
+                                        <th>Agency Name</th>
+                                        <th>Employer Amount</th>
+                                        <th>Demad Letter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>bangladeshi Agency One</td>
+                                        <td>12</td>
+                                        <td>
+                                            <a class="btn btn-info btn-sm"
+                                                href="{{ route('print_pdf') }}">
+                                                <i class="fa fa-download"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>SL No</th>
+                                        <th>Agency Name</th>
+                                        <th>Employer Amount</th>
+                                        <th>Demad Letter</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

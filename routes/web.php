@@ -29,6 +29,9 @@ Route::get('/qr_code_result', [QrCodeController::class, 'result']);
 //Rating route
 Route::get('/rating', [RatingController::class, 'index']);
 
+//PDF Generate Route
+Route::get('/print_pdf', 'PdfController@print')->name('print_pdf');
+
 
 include('child_oss_route.php');
 include('one_stop_service_route.php');
