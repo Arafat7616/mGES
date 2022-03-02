@@ -15,8 +15,8 @@ class CreateBRAInterestsTable extends Migration
     {
         Schema::create('b_r_a_interests', function (Blueprint $table) {
             $table->id();
-            $table->integer('bar_id')->nullable();
-            $table->integer('job_post')->nullable();
+            $table->integer('bra_id')->nullable();
+            $table->integer('job_post_id')->nullable();
             $table->boolean('status')->nullable();
             $table->timestamps();
         });

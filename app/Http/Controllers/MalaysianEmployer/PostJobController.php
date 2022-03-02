@@ -58,6 +58,7 @@ class PostJobController extends Controller
             'jobVacancy' => 'required|numeric',
             'endDate' => 'required',
             'demandLetter' => 'mimes:pdf',
+            'recruiting_type' => 'required',
             // // 'wsc' => 'required',
             // 'appointmentDate' => 'required',
             // 'appointmentTime' => 'required',
@@ -68,7 +69,7 @@ class PostJobController extends Controller
         $job_post->user_id = Auth::user()->id;
         $job_post->company_id = Auth::user()->id;
         $job_post->employment_type = $request->employmentType;
-        // $job_post->recruiting_type = $request->recruiting_type;
+        $job_post->recruiting_type = $request->recruiting_type;
         $job_post->gender = $request->gender;
         $job_post->age_limit = $request->ageLimit;
         $job_post->salary = $request->salary;
@@ -76,11 +77,11 @@ class PostJobController extends Controller
         $job_post->job_vacancy = $request->jobVacancy;
         $job_post->end_date = $request->endDate;
         // $job_post->selected_wsc = $request->wsc;
-        $job_post->appointment_date = $request->appointmentDate;
-        $job_post->appointment_time = $request->appointmentTime;
-        // if ($request->recruiting_type != 'self') {
-        //     $job_post->mra_id = $request->agency_id;
-        // }
+        // $job_post->appointment_date = $request->appointmentDate;
+        // $job_post->appointment_time = $request->appointmentTime;
+        if ($request->recruiting_type != 'self') {
+            $job_post->mra_id = $request->agency_id;
+        }
 
         if ($request->hasFile('demandLetter')) {
             $pdf             = $request->file('demandLetter');
@@ -105,10 +106,25 @@ class PostJobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+   
+
     public function show($id)
     {
         $job_post = JobPost::findOrFail($id);
         return view('MalaysianEmployer.PostJob.show', compact('job_post'));
+    }
+
+
+    public function forward($id){
+        $job_post = JobPost::findorFail($id);
+        $job_post->forward_status = 'Forwarded';
+        try {
+            $job_post->save();
+            return back()->withToastSuccess('Successfully Forwarded.');
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
+
     }
 
 

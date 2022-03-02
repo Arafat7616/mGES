@@ -1,0 +1,75 @@
+.bgAboutImage {
+  background-image: url("../img/MGES-Web-Ui/Header-UI-02/HeaderUiUpdated.PNG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 9em 0;
+}
+
+.bodyHeight {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.coreAreasHeader {
+  background-color: #00add7;
+  padding: 2rem;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.ecoText {
+  font-size: 30px;
+}
+
+.usedForHeader {
+  background-color: #00add7;
+  padding: 2rem;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.usedForBg {
+  background-color: #cdeff7;
+}
+
+.listStyleCountry {
+  list-style: none;
+}
+
+.leftSideAreas {
+  background-image: url("../img/UU2.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 12em 0;
+}
+
+.textGroup {
+  padding: 4em 0;
+}
+
+.workPermit {
+  border-radius: 15px;
+}
+
+.rowStyleUsedFor {
+  padding: 4em 0;
+}
+
+.rightSideUsedBy {
+  padding-bottom: 4em;
+}
+
+.ecoText2 {
+  font-size: 20px;
+}
+
+.centralizedPay {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.remitenceText {
+  font-size: 18px;
+}

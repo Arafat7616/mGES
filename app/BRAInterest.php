@@ -8,8 +8,13 @@ class BRAInterest extends Model
 {
     protected $fillable = [
         'id',
-        'bar_id',
-        'job_post',
+        'bra_id',
+        'job_post_id',
         'status',
     ];
+
+    public function bra()
+    {
+        return $this->belongsTo(User::class, 'bra_id');
+    }
 }

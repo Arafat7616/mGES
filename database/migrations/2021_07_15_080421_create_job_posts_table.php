@@ -36,6 +36,8 @@ class CreateJobPostsTable extends Migration
             $table->integer('wsc_send_status')->default(0);
             $table->enum('ma_status', ['New', 'Verified', 'Approved', 'Applied', 'Rejected', 'Pending'])->default('New');
             $table->enum('status', ['New', 'Verified', 'Verified2', 'Approved', 'Applied', 'Rejected', 'Pending'])->default('New');
+            $table->enum('forward_status', ['Forwarded','Pending'])->nullable();
+            $table->enum('status', ['New', 'Verified', 'Approved', 'Applied', 'Rejected', 'Pending'])->default('New');
             $table->enum('bd_embasy_status', ['Approved', 'Rejected'])->nullable();
             $table->timestamps();
         });

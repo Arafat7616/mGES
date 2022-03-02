@@ -38,6 +38,7 @@ class JobPostController extends Controller
         // $job_post->remarks    =  $request->remarks;
         // $job_post->applied_date    =  Carbon::now();
         $job_post->status    =  "Applied";
+        $job_post->forward_status = "Forwarded";
 
 
         $applied_job = new AppliedJob();
@@ -50,6 +51,7 @@ class JobPostController extends Controller
         $applied_job->applier_agency_name   = Auth::user()->name;
         $applied_job->datetime     = Carbon::now();
         $applied_job->status       = "Applied";
+        
 
         try {
             $job_post->save();

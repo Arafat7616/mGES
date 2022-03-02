@@ -53,7 +53,7 @@
                                     @foreach ($jobPosts as $jobPost)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $jobPost->company->company_name }}</td>
+                                            <td>{{ $jobPost->user->company_name }}</td>
                                             <td>{{ $jobPost->job_category->category_name }}</td>
                                             <td>{{ $jobPost->created_at }}</td>
                                             <td>{{ $jobPost->job_vacancy }}</td>
@@ -233,53 +233,7 @@
         </div>
     </div>
 
-    <script>
-        function reject(objButton) {
-            var url = objButton.value;
-            // alert(objButton.value)
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, Reject !'
-            }).then((result) => {
-                if (result.isConfirmed) {
-
-                    $.ajax({
-                        method: 'POST',
-                        url: url,
-                        headers: {
-                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                        },
-                        success: function(data) {
-                            if (data.type == 'success') {
-                                Swal.fire(
-
-                                    'Rejected !', 'This company has been Rejected. ' + data.message,
-                                    'success'
-                                )
-                                setTimeout(function() {
-                                    location.reload();
-                                }, 800); //
-                            } else {
-                                Swal.fire(
-                                    'Wrong !', 'Something going wrong. ' + data.message, 'warning'
-                                )
-                            }
-                        },
-                    })
-                }
-            })
-        }
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-
-
 
     <script>
         jQuery(function($) {

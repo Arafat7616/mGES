@@ -2,10 +2,10 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="{{ route('MalaysiaAdmin.dashboard') }}" class="logo"><img
-                    src="{{ asset('assets/images/logo_white_2.png') }}" height="28"></a>
-            <a href="{{ route('MalaysiaAdmin.dashboard') }}" class="logo-sm"><img
-                    src="{{ asset('assets/images/logo_sm.png') }}" height="36"></a>
+            <a href="{{ route('BangladeshAdmin.dashboard') }}" class="logo"><img
+                src="{{ asset('assets/images/mges.png') }}" height="28"></a>
+        <a href="{{ route('BangladeshAdmin.dashboard') }}" class="logo-sm"><img
+                src="{{ asset('assets/images/logo_sm.png') }}" height="36"></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->

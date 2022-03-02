@@ -25,6 +25,7 @@ Route::group(['prefix' => 'malaysia-recruiting-agency/', 'namespace' => 'Malaysi
     Route::group(['prefix' => 'applied-job/', 'as' => 'appliedJob.'], function () {
         Route::get('/', 'AppliedJobController@applied')->name('applied');
         Route::get('show/{id}', 'AppliedJobController@show')->name('show');
+        Route::get('forwarded', 'AppliedJobController@forwarded')->name('forwarded');
     });
 
     //Candidates

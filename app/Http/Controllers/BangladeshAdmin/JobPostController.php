@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\BangladeshAdmin;
 
 use App\AppliedJob;
+use App\BRAInterest;
 use App\JobPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\JobDistributeInBRA;
 use App\Notification;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +23,18 @@ class JobPostController extends Controller
     {
         $jobPosts = JobPost::where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
         return view('BangladeshAdmin.Jobposts.totalJobPost', compact('jobPosts'));
+    }
+    public function braInterested()
+    {
+        // take array of all interested jobPost ids
+        $array = [];
+        $jobPostIdArrayFromInterest  = BRAInterest::all();
+        foreach($jobPostIdArrayFromInterest as $d){
+            array_push($array,$d->job_post_id);
+        }
+        // take all interested jobPosts
+        $jobPosts = JobPost::whereIn('id',$array)->where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
+        return view('BangladeshAdmin.Jobposts.braInterested', compact('jobPosts'));
 
     }
     public function JobPostShow($id)
@@ -96,11 +110,13 @@ class JobPostController extends Controller
 
         $notification = new Notification();
         $notification->title = 'New Job Post';
-        $notification->text = 'Need '.$jobPost->job_vacancy.' employe for '.$jobPost->company->company_name;
+
+        $notification->text = 'Need '.$jobPost->job_vacancy.' employe for '.$jobPost->user->name;
+
         $notification->notification_for = 'bangladesh-recruiting-agency';
         $notification->notification_from =$jobPost->user_id;
         $notification->created_by =  Auth::user()->id;
-        $notification->jobpost_id = $job_post_id;
+        $notification->job_post_id = $job_post_id;
         $notification->save();
 
         try {
@@ -117,8 +133,8 @@ class JobPostController extends Controller
     {
         $appliedVacancies = AppliedJob::orderby('id', 'DESC')->get();
         return view('BangladeshAdmin.Jobposts.VacancyApproval', compact('appliedVacancies'));
-
     }
+
 
     public function bhc_approval()
     {
@@ -153,44 +169,66 @@ class JobPostController extends Controller
      * @param  \App\JobPost  $jobPost
      * @return \Illuminate\Http\Response
      */
-    public function show(JobPost $jobPost)
+
+    public function distributeCandidates($job_post_id)
     {
-        //
+        $jobPost = JobPost::findOrFail($job_post_id);
+
+        // take array of all BRA interested
+        $BRAInterests  = BRAInterest::where('job_post_id', $job_post_id)->get();
+        $BRAInterestsCountedValue  = BRAInterest::where('job_post_id', $job_post_id)->count();
+
+        $totalAmount = $jobPost->job_vacancy;
+
+        $average = $totalAmount/$BRAInterestsCountedValue;
+        $first_avg =  round($average);
+        $loop_updateable_value = $first_avg;
+
+        $getedValue = [];
+        for ($i=1; $i <=$BRAInterestsCountedValue; $i++) {
+            if($i == 1){
+                array_push($getedValue, $first_avg);
+                $loop_updateable_value = $loop_updateable_value;
+            }elseif ($i == $BRAInterestsCountedValue) {
+                $loop_updateable_value = $loop_updateable_value+$first_avg;
+                if($loop_updateable_value > $totalAmount){
+                    $loop_updateable_value = $loop_updateable_value-1;
+                    array_push($getedValue, $first_avg-1);
+                }else{
+                    array_push($getedValue, $first_avg);
+                }
+            }else{
+                array_push($getedValue, $first_avg);
+                $loop_updateable_value = $loop_updateable_value+$first_avg;
+            }
+        }
+        $messageArray = [];
+
+        foreach ($BRAInterests as $key => $BRAInterest) {
+            $jobDistributeInBRA = new JobDistributeInBRA();
+            $jobDistributeInBRA->job_post_id = $job_post_id;
+            $jobDistributeInBRA->bra_id = $BRAInterest->bra_id;
+            $jobDistributeInBRA->bra_interest_id = $BRAInterest->id;
+            $jobDistributeInBRA->distributed_vacancy = $getedValue[$key];
+            $jobDistributeInBRA->save();
+
+            //array_push($messageArray, $BRAInterest->bra->name, $getedValue[$key]);
+        }
+
+        $jobDistributeInBRAs = JobDistributeInBRA::where('job_post_id',$job_post_id)->get();
+        return view('BangladeshAdmin.Jobposts.DistributeAlertTable',compact('jobDistributeInBRAs'));
+
+        // try {
+        //     return response()->json([
+        //         'type' => 'success',
+        //         'message' => 'Successfully Rejected',
+        //         'messageArray' => $messageArray
+        //     ]);
+        // }catch (\Exception $exception){
+        //     return response()->json([
+        //         'type' => 'error',
+        //         'message' => $exception->getMessage()
+        //     ]);
+        // }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\JobPost  $jobPost
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(JobPost $jobPost)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\JobPost  $jobPost
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, JobPost $jobPost)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\JobPost  $jobPost
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(JobPost $jobPost)
-    {
-        //
-    }
-
-
 }

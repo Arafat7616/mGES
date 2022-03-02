@@ -18,7 +18,7 @@ class NotificationSeeder extends Seeder
             'notification_for' => 'bangladesh-recruiting-agency',
             'notification_from' => 8,
             'created_by' => 2,
-            'jobpost_id' => 1,
+            'job_post_id' => 1,
             // 'me_id' => 11,
             'staus' => 1
         ]);

@@ -20,7 +20,7 @@ class CreateNotificationsTable extends Migration
             $table->string('notification_for')->nullable();
             $table->string('notification_from')->nullable();
             $table->integer('created_by')->nullable();
-            $table->integer('jobpost_id')->nullable();
+            $table->integer('job_post_id')->nullable();
             $table->integer('me_id')->nullable();
             $table->boolean('staus')->nullable();
             $table->timestamps();

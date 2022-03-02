@@ -84,20 +84,23 @@
                 <i> <b></b> Passion <span class="text-primary">to Create Valu through
                         <span class="text-danger">Difference</span></span></i>
             </small>
-            <h1 class="">MITSUMI TECHNOLOGY (M) SDN. BHD. </h1>
+           
+            <h1 class=""> <img src="{{ asset($post->user->logo) }}" alt=""  height="50px" width="50px">{{ $post->user->name }} </h1>
             <span class="col-7 ">
-                [Company No: 157027-H]
+                [Company No: {{ $post->user->id }}]
             </span>
             <span class="col-4 ">
-                GST Reg No: 000782761984
+                GST Reg No: {{ $post->user->company_register_number }}
             </span>
 
-            <span class="">Batu 3 <span>3/4</span>, Parit Bilal, 83050 Batu Pahat, Johor, Malaysia</span>
+            <span class="">Batu 3 <span>3/4</span>,{{$post->user->address}}</span>
 
-            <span class="col-3 ">Tel: 07-4310111</span>
+            <span class="col-3 ">Tel: {{ $post->user->phone }}</span>
 
             <span class="col-3 ">Fax: 07-4315333</span>
-            <div class="DateS  text-end  ">Date: 28 Aug 2017</div>
+            <div class="DateS  text-end  ">Date: {{ date('d M,Y',strtotime($post->created_at)) }}</div>
+            
+            {{-- @if ($post->ma_status == 'Approved')
             <p>To,</p>
             <i> <b class="btext"> NICE OVERSEAS PVT. LTD.</b> </i>
             <i> <b class="btext"> Gaushala,Kathmandu,Nepal</b> </i>
@@ -105,6 +108,7 @@
             <i> <b class="btext"> G.P.O Box 8974, CPS 312, Samakhusi-26,</b> </i>
             <i> <b class="btext"> Town Planning Near Swimming Pool,</b> </i>
             <i> <b class="btext"> Kathmandu, Nepal</b> </i>
+            @endif --}}
 
             <p class="mt-3">Dear Sir/Madam,</p>
             <b>Re: DEMAND LETTER FOR RECRUITMENT OF WORKERS FROM NEPAL</b>
@@ -118,7 +122,7 @@
                             <b>1. Number of workers</b>
                         </td>
                         <td>
-                            : 50 Persons (Female)
+                            : {{ $post->job_vacancy }} Persons ({{ $post->gender }})
                         </td>
                     </tr><br>
                     <tr>
@@ -126,7 +130,7 @@
                             <b>2. Job Category</b>
                         </td>
                         <td>
-                            : Production Operator
+                            : {{ $post->job_category_id ? $post->job_category->category_name : '' }}
                         </td>
                     </tr><br>
                     <tr>
@@ -142,7 +146,7 @@
                             <b>4. Age</b>
                         </td>
                         <td>
-                            : (18-30 yrs.)
+                            : ({{ $post->age_limit }})
                         </td>
                     </tr><br>
                     <tr>
@@ -158,7 +162,7 @@
                             <b>6. Basic Monthly Salary : </b>
                         </td>
                         <td>
-                            RM 1000.00
+                            RM {{ $post->salary }}
                         </td>
                         <div class="text-center">
                             <table class="Tabord">

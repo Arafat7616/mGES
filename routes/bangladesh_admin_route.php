@@ -9,7 +9,6 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::get('/edit-profile', 'BangladeshAdminDashboardController@editProfile')->name('editProfile');
     Route::post('/update-profile', 'BangladeshAdminDashboardController@updateProfile')->name('updateProfile');
 
-
     // company
     Route::get('show-company-profile/{user_id}', 'CompanyController@showCompanyProfile')->name('company.showCompanyProfile');
     Route::post('company-request-approve/{company_id}', 'CompanyController@approveNow')->name('company.approveNow');
@@ -53,6 +52,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
 
     //job posts
     Route::get('total-job-post', 'JobPostController@index')->name('total_job_post.index');
+    Route::get('bra-interested-job-posts/', 'JobPostController@braInterested')->name('jobPost.braInterested');
     Route::get('job-posts-show/{id}', 'JobPostController@JobPostShow')->name('JobPostShow');
     Route::get('vacancy_approval', 'JobPostController@vacancy_approval')->name('vacancy_approval');
     Route::get('bhc_approval', 'JobPostController@bhc_approval')->name('bhc_approval');
@@ -62,6 +62,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::post('approve-vacancy-store/{applied_job_id}', 'JobPostController@approveVacancyStore')->name('jobPost.approveVacancyStore');
     Route::post('reject-vacancy/{applied_job_id}', 'JobPostController@rejectVacancy')->name('jobPost.rejectVacancy');
     Route::get('job-notification-store/{job_post_id}', 'JobPostController@notificationStore')->name('jobPost.notificationStore');
+    Route::get('distribute-candidates/{job_post_id}', 'JobPostController@distributeCandidates')->name('jobPost.distributeCandidates');
 
     //Candidate
     Route::group(['prefix' => 'candidate/', 'as' => 'candidate.'], function () {

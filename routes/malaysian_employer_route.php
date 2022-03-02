@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
+
 // malaysian-employer Route
 Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmployer', 'as' => 'MalaysianEmployer.', 'middleware' => ['auth', 'malaysian-employer']], function () {
     Route::get('/dashboard', 'MalaysianEmployerDashboardController@dashboard')->name('dashboard');
@@ -26,6 +29,8 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
     Route::get('approved-job-posts-by-bhc/{id}', 'PostJobController@bhcApproved_view')->name('postJob.bhcApproved_view');
     Route::get('approved-job-posts/{id}', 'PostJobController@recruitEmployee')->name('postJob.recruit');
     Route::post('approved-job-posts/send/{id}', 'PostJobController@sendJob')->name('postJob.send');
+    Route::get('approved-job-posts/forward/{id}', 'PostJobController@forward')->name('postJob.forward');
+   
 
     // candidates
     Route::group(['prefix' => 'candidates/', 'as' => 'candidates.'], function () {

@@ -60,7 +60,7 @@ class UserSeeder extends Seeder
             'country_id' => 2,
             'name' => 'Bangladesh Recruiting agency',
             'company_name' => 'Bangladesh Recruiting agency',
-            'email' => 'brea@gmail.com',
+            'email' => 'bra@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
             'active_status' => 'Approved',
@@ -182,6 +182,30 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345'),
             'user_type' => 'malaysia-recruiting-agency',
             'active_status' => 'Approved',
+        ]);
+
+
+
+        User::create([
+            'role_id' => 11,
+            'country_id' => 18,
+            'name' => 'Sonet Recruiting Agency BD',
+            'email' => 'srab@gmail.com',
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+            'domain' => 'srab.com',
+            'company_name' => 'Sonet Recruiting Agency BD',
+            'company_register_number' => '1313164',
+            'abbr' => 'Sonet Recruiting Agency BD',
+            'phone' => '01487984654987',
+            'city' => 'Dhaka',
+            'state' => 'Dhaka',
+            'password' => Hash::make('12345'),
+            'address1' => 'Dhaka fokirapul',
+            'address2' => 'Dkaha banglamotor',
+            'logo' => 'uploads/profile/vogkW72ZyKCZX5D50xjm-1646218057.png',
+            'document1' => 'uploads/profile/VRlWh9l1mzJVK2GyvZZ0-1646218058.pdf',
+            'document2' => NULL,
         ]);
     }
 }

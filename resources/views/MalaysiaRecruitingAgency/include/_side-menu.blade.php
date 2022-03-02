@@ -12,6 +12,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('MalaysiaRecruitingAgency.jobPost.all') }}"><i class="fa fa-arrow-circle-right"></i> All Job Posts</a></li>
                         <li><a href="{{ route('MalaysiaRecruitingAgency.appliedJob.applied') }}"><i class="fa fa-arrow-circle-right"></i> Applied Job</a></li>
+                        <li><a href="{{ route('MalaysiaRecruitingAgency.appliedJob.forwarded') }}"><i class="fa fa-arrow-circle-right"></i> Forwarded To BA</a></li>
                     </ul>
                 </li>
 

@@ -78,8 +78,8 @@ class JobPostController extends Controller
     {
 
         $intersted = new BRAInterest();
-        $intersted->bar_id = Auth::user()->id;
-        $intersted->job_post = $id;
+        $intersted->bra_id = Auth::user()->id;
+        $intersted->job_post_id = $id;
         $intersted->save();
 
         try {
