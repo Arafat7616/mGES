@@ -52,28 +52,33 @@
                                     @foreach ($job_posts as $job_post)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $job_post->company->company_name ?? '-' }}</td>
+                                            <td>{{ $job_post->user->company_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             <td>
-                                               @if ($job_post->ma_status == 'New')
+                                                @if ($job_post->ma_status == 'New')
                                                     <button type="button" name="New"
                                                         class="btn btn-primary btn-xs update">New</button>
-                                                @elseif ($job_post->ma_status == "Rejected")
+                                                @elseif ($job_post->ma_status == 'Rejected')
                                                     <button type="button" name="Rejected"
                                                         class="btn btn-warning btn-xs update">Rejected</button>
-                                                @elseif ($job_post->ma_status == "Pending")
+                                                @elseif ($job_post->ma_status == 'Pending')
                                                     <button type="button" name="Pending"
                                                         class="btn btn-warning btn-xs update">Pending</button>
-                                                @elseif ($job_post->ma_status == "Approved")
+                                                @elseif ($job_post->ma_status == 'Approved')
                                                     <button type="button" name="Approved"
                                                         class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($job_post->ma_status == "Verified")
+                                                @elseif ($job_post->ma_status == 'Verified')
                                                     <button type="button" name="Verified"
                                                         class="btn btn-info btn-xs update">Verified</button>
-                                                @elseif ($job_post->ma_status == "Applied")
+                                                @elseif ($job_post->ma_status == 'Applied')
                                                     <button type="button" name="Applied"
                                                         class="btn btn-info btn-xs update">Applied</button>
+                                                @endif
+
+                                                @if ($job_post->forward_status == 'Forwarded')
+                                                <button type="button" name="Forwarded"
+                                                class="btn btn-info btn-xs update">Already Forwarded </button>
                                                 @endif
                                             </td>
                                             <td>
@@ -81,11 +86,21 @@
                                                     href="{{ route('MalaysianEmployer.postJob.show', $job_post->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
+                                                @if ($job_post->recruiting_type == 'agency')
+                                                    <a class="btn btn-warning btn-sm"
+                                                        href="#" disabled="disabled">
+                                                        <i class="fa fa-share"></i>&nbsp;Forward
+                                                    </a>
+                                                @else
+                                                    @if ($job_post->forward_status == null)
+                                                        <a class="btn btn-warning btn-sm"
+                                                        href="{{ route('MalaysianEmployer.postJob.forward', $job_post->id) }}">
+                                                        <i class="fa fa-share"></i>&nbsp;Forward
+                                                        </a>
+                                                    @endif
+                                                   
+                                                @endif
 
-                                                <a class="btn btn-warning btn-sm"
-                                                    href="{{ route('MalaysianEmployer.postJob.recruit', $job_post->id) }}">
-                                                    <i class="fa fa-edit"></i>&nbsp;Recruit Employee
-                                                </a>
 
                                             </td>
                                         </tr>

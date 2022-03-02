@@ -1,6 +1,6 @@
-@extends("MalaysiaAdmin.master")
+@extends("MalaysiaRecruitingAgency.master")
 
-@section('title', 'Posted Jobs')
+@section('title', 'All Job Posts')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -20,11 +20,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Approved Jobs</h4>
+                        <h4 class="pull-left page-title">All Job Posts</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
-                            <li><a href="#">Approved Jobs</a></li>
-                            <li class="active">Posted Jobs</li>
+                            <li><a href="#">Job Posts
+                                </a></li>
+                            <li class="active">All Job Posts</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -34,7 +35,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Approved Jobs</h3>
+                            <h3 class="panel-title">All Job Posts</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -43,43 +44,30 @@
                                         <th>SL No</th>
                                         <th>Company Name</th>
                                         <th>Job Category</th>
-                                        <th>Job Location</th>
+                                        <th>Post Date</th>
+                                        <th>End Date</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($job_posts as $job_post)
+                                    @foreach ($jobPosts as $jobPost)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $job_post->user->company_name ?? '-' }}</td>
-                                            <td>{{ $job_post->job_category->category_name ?? '-' }}</td>
-                                            <td>{{ $job_post->job_location ?? '-' }}</td>
+                                            <td>{{ $jobPost->user->company_name }}</td>
+                                            <td>{{ $jobPost->job_category->category_name }}</td>
+                                            <td>{{ date('Y-m-d',strtotime($jobPost->created_at)) }}</td>
+                                            <td>{{ date('Y-m-d',strtotime($jobPost->end_date)) }}</td>
                                             <td>
-                                               @if ($job_post->ma_status == 'New')
-                                                    <button type="button" name="New"
-                                                        class="btn btn-primary btn-xs update">New</button>
-                                                @elseif ($job_post->ma_status == "Rejected")
-                                                    <button type="button" name="Rejected"
-                                                        class="btn btn-warning btn-xs update">Rejected</button>
-                                                @elseif ($job_post->ma_status == "Pending")
-                                                    <button type="button" name="Pending"
-                                                        class="btn btn-warning btn-xs update">Pending</button>
-                                                @elseif ($job_post->ma_status == "Approved")
-                                                    <button type="button" name="Approved"
-                                                        class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($job_post->ma_status == "Verified")
-                                                    <button type="button" name="Verified"
-                                                        class="btn btn-info btn-xs update">Verified</button>
-                                                @elseif ($job_post->ma_status == "Applied")
-                                                    <button type="button" name="Applied"
-                                                        class="btn btn-info btn-xs update">Applied</button>
+                                                @if ($jobPost->forward_status == 'Forwarded')
+                                                    <span class="badge badge-success">Already Forwarded</span>
                                                 @endif
+
                                             </td>
                                             <td>
-                                                <a class="btn btn-info btn-sm"
-                                                    href="{{ route('MalaysiaAdmin.employerDemand.show', $job_post->id) }}">
-                                                    <i class="fa fa-eye"></i>
+                                                <a class="btn btn-info btn-sm" href="{{ route('MalaysiaRecruitingAgency.jobPost.show', $jobPost->id ) }}">
+                                                    <i class="mdi mdi-eye"></i>
+                                                </a>
                                                 </a>
                                             </td>
                                         </tr>
@@ -90,7 +78,8 @@
                                         <th>SL No</th>
                                         <th>Company Name</th>
                                         <th>Job Category</th>
-                                        <th>Job Location</th>
+                                        <th>Post Date</th>
+                                        <th>End Date</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
