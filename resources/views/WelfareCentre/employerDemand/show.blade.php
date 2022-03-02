@@ -1,4 +1,4 @@
-@extends("BangladeshHighCommission.master")
+@extends("WelfareCentre.master")
 
 @section('title', 'View Job Post')
 @section('DataTableCss')

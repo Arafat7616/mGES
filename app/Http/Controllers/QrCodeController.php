@@ -14,6 +14,6 @@ class QrCodeController extends Controller
 
     public function result()
     {
-      return view('qrcode_result');
+      return view('print_pdf');
     }
 }

@@ -234,4 +234,20 @@ Route::group(['prefix' => 'welfare-centre/', 'namespace' => 'WelfareCentre', 'as
         Route::get('/upcoming-events', 'AwarenessEventController@upcoming_events')->name('upcoming_events');
         Route::get('/total-events', 'AwarenessEventController@total_events')->name('total_events');
     });
+
+
+    // Employer demand
+    Route::group(['prefix' => 'employer-demand/', 'as' => 'employerDemand.'], function () {
+        Route::get('received', 'EmployerDemandController@received')->name('received');
+        Route::get('send', 'EmployerDemandController@send')->name('send');
+        Route::get('edit/{id}', 'EmployerDemandController@edit')->name('edit');
+        Route::post('update/{id}', 'EmployerDemandController@update')->name('update');
+        Route::get('approved', 'EmployerDemandController@approved')->name('approved');
+        Route::get('rejected', 'EmployerDemandController@rejected')->name('rejected');
+        Route::get('show/{id}', 'EmployerDemandController@show')->name('show');
+        Route::get('send_to_me_and_ba/{id}', 'EmployerDemandController@send_to_me_and_ba')->name('send_to_me_and_ba');
+    });
 });
+
+
+

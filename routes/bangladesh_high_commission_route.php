@@ -17,11 +17,13 @@ Route::group(['prefix' => 'bangladesh-high-commission/', 'namespace' => 'Banglad
     // Employer demand
     Route::group(['prefix' => 'employer-demand/', 'as' => 'employerDemand.'], function () {
         Route::get('received', 'EmployerDemandController@received')->name('received');
+        Route::get('send', 'EmployerDemandController@send')->name('send');
         Route::get('edit/{id}', 'EmployerDemandController@edit')->name('edit');
         Route::post('update/{id}', 'EmployerDemandController@update')->name('update');
         Route::get('approved', 'EmployerDemandController@approved')->name('approved');
         Route::get('rejected', 'EmployerDemandController@rejected')->name('rejected');
         Route::get('show/{id}', 'EmployerDemandController@show')->name('show');
+        Route::get('send_to_bhc/{id}', 'EmployerDemandController@send_to_bhc')->name('send_to_bhc');
     });
 
     // New Passport Service

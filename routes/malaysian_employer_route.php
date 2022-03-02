@@ -21,7 +21,9 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
         ]
     ]);
 
-    Route::get('approved-job-posts', 'PostJobController@maApproved')->name('postJob.maApproved');
+    Route::get('approved-job-posts', 'PostJobController@maApproved')->name('postJob.ma_Approved');
+    Route::get('approved-job-posts-by-bhc', 'PostJobController@bhcApproved')->name('postJob.bhcApproved');
+    Route::get('approved-job-posts-by-bhc/{id}', 'PostJobController@bhcApproved_view')->name('postJob.bhcApproved_view');
     Route::get('approved-job-posts/{id}', 'PostJobController@recruitEmployee')->name('postJob.recruit');
     Route::post('approved-job-posts/send/{id}', 'PostJobController@sendJob')->name('postJob.send');
 

@@ -64,6 +64,8 @@
                                     class="fa fa-arrow-circle-right"></i> Total Job Posts</a></li>
                         <li><a href="{{ route('BangladeshAdmin.vacancy_approval') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Vacancy Approval</a></li>
+                        <li><a href="{{ route('BangladeshAdmin.bhc_approval') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> BHC Approval</a></li>
 
                     </ul>
                 </li>

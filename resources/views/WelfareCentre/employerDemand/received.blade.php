@@ -1,4 +1,4 @@
-@extends("BangladeshHighCommission.master")
+@extends("WelfareCentre.master")
 
 @section('title', 'Posted Jobs')
 @section('DataTableCss')
@@ -60,7 +60,7 @@
                                             <td>{{ $job_post->appointment_date ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_time ?? '-' }}</td>
                                             <td>
-                                               @if ($job_post->status == 'New')
+                                               @if ($job_post->status == 'Verified')
                                                     <button type="button" name="New"
                                                         class="btn btn-primary btn-xs update">New</button>
                                                 @elseif ($job_post->status == "Rejected")
@@ -72,9 +72,6 @@
                                                 @elseif ($job_post->status == "Approved")
                                                     <button type="button" name="Approved"
                                                         class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($job_post->status == "Verified")
-                                                    <button type="button" name="Verified"
-                                                        class="btn btn-info btn-xs update">Verified</button>
                                                 @elseif ($job_post->status == "Applied")
                                                     <button type="button" name="Applied"
                                                         class="btn btn-info btn-xs update">Applied</button>
@@ -82,17 +79,17 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('BangladeshHighCommission.employerDemand.show', $job_post->id) }}">
+                                                    href="{{ route('WelfareCentre.employerDemand.show', $job_post->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                                 <a class="btn btn-success btn-sm"
-                                                    href="{{ route('BangladeshHighCommission.employerDemand.edit', $job_post->id) }}">
+                                                    href="{{ route('WelfareCentre.employerDemand.edit', $job_post->id) }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
 
                                                 @if($job_post->status == 'New')
                                                 <a class="btn btn-primary btn-sm"
-                                                    href="{{ route('BangladeshHighCommission.employerDemand.send_to_bhc', $job_post->id) }}">
+                                                    href="{{ route('WelfareCentre.employerDemand.send_to_bhc', $job_post->id) }}">
                                                     <i class="fa fa-send"></i>
                                                 </a>
                                                 @endif
