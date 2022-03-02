@@ -1,0 +1,151 @@
+
+.banner-container {
+   
+    background-image: url("../img/Header-UI-02.png");
+  
+      /* height: 50%; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 13.875rem 10.375rem;
+  }
+  .banner-into{
+      font-size: 57px;
+  }
+  .main-title{
+  
+      font-size: 40px;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      margin-left: 50%;
+      transform: translateX(-200%);
+      opacity: 0;
+      animation: slide-in-anim 4.5s ease-out forwards;
+  }
+  
+  @keyframes slide-in-anim {
+      20% {
+          opacity: 0;
+      }
+      60% {
+          transform: translateX(-45%);
+      }
+      75% {
+          transform: translateX(-52%);
+      }
+      100% {
+          opacity: 1;
+          transform: translateX(-50%);
+      }
+  }
+  
+  
+  .main-subtitle{
+      font-size: 30px;
+  }
+  .banner-icons{
+      background: #9FB8C6;
+      padding: 5px;
+      border-radius: 15px;
+      color: white;
+      cursor: pointer;
+  }
+  .banner-icons:hover{
+      background-color: #89cbf1;
+  }
+  
+  .banner-btn{
+    background: linear-gradient(90deg, #15b6e2, #10a3d3, #1190c2, #167db1, #1a6ba0, #1d5a8e, #1f487b, #1e3868) !important;
+      color: white;
+      border: none;
+      padding: 10px 30px 10px 30px;
+      border-radius: 10px;
+      font-size: 17px;
+  
+    /* border: 2px solid white; */
+  }
+  .banner-btn:hover{
+    background-color: #546f88 !important;
+  
+  
+  }
+  .banner-btn2{
+     
+    transition: all .5s ease;
+    color: #fff;
+    border: 2px solid white;
+    
+    text-align: center;
+    line-height: 1;
+   
+    background-color : transparent;
+    padding: 10px 30px 10px 30px;
+    outline: none;
+    border-radius: 4px;
+    
+  }
+  .banner-btn2:hover{
+    color: #001F3F;
+    background-color: #fff;
+  }
+  
+  
+  
+  
+  .active{
+    border: 2px solid #0e8caf ;
+   
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  /* animation end */
+  .typeing{
+  
+    text-align: center;
+    color:#fff;
+   
+  }
+  
+  .typeing h1 a{ color:white; text-decoration: none;
+  font-size: 57px;
+  }
+  
+  
+  .wrapper {
+    padding-top: 4.25rem;
+    padding-bottom: 4.25rem;
+  }
+  
+  .topHeading {
+    background: linear-gradient(90deg, #15b8e3, #10a4d3, #1291c3, #167eb2, #1b6ca0, #1e5a8d, #1f497a, #1e3867);
+  }
+  
+  /* animation end */
+  
+  .table-card{
+      border: none !important;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                 -20px -20px 60px #ffffff;
+      
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #130101 !important;
+    text-align: left;
+    padding: 8px;
+  }
+.arrowBtn{
+    cursor: pointer;
+}
+.arrowBtn:hover{
+    color: #0e8caf;
+}
