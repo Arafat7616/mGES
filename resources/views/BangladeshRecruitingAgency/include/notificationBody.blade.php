@@ -8,7 +8,7 @@
     <li class="list-group">
         <!-- list item-->
         @forelse ($notifications as $notification)
-            <a href="{{ route('BangladeshRecruitingAgency.jobPost.jobDetails', $notification->jobpost_id) }}"
+            <a href="{{ route('BangladeshRecruitingAgency.jobPost.jobDetails', $notification->job_post_id) }}"
                 class="list-group-item">
                 <div class="media">
                     <div class="media-heading">{{ $notification->title }}</div>

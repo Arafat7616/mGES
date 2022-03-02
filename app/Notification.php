@@ -12,14 +12,14 @@ class Notification extends Model
         'notification_for',
         'notification_from',
         'created_by',
-        'jobpost_id',
+        'job_post_id',
         'me_id',
         'staus'
     ];
 
     public function jobPost()
     {
-        return $this->belongsTo(JobPost::class, 'jobpost_id');
+        return $this->belongsTo(JobPost::class, 'job_post_id');
     }
 
     public function notificationFrom()

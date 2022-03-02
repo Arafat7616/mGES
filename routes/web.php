@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\RatingController;
+
+use App\Http\Controllers\FrontedController;
+
 use App\Http\Controllers\DemandLetterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +21,9 @@ use App\Http\Controllers\DemandLetterController;
 |
 */
 
+Route::get('/','FrontedController@index')->name('homePage');
+// Route::get('/', 'WelcomeController@index')->name('welcome');
 
-Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 /*Route::get('/', 'HomeController@index')->name('admin.login');*/
@@ -60,3 +65,5 @@ Auth::routes([
 ]);
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/
+
+

@@ -1,0 +1,73 @@
+.rightSideContainer {
+  background-image: url(../img/credintialImg/AllOutput/Login-BG-Shape.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.leftSideContainer {
+  min-height: 100vh;
+}
+
+.inputBorder {
+  border-radius: 20px !important;
+  border: 2px solid #358999 !important;
+}
+
+.signInButton {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 36, 27, 0.6082808123249299) 0%,
+    rgba(9, 121, 118, 0.9808298319327731) 48%,
+    rgba(0, 212, 255, 1) 100%
+  ) !important;
+  color: white;
+}
+
+.bgShadow {
+  width: 23rem !important;
+  box-shadow: 2px 2px 40px -2px rgba(0, 0, 0, 0.74);
+  -webkit-box-shadow: 2px 2px 40px -2px rgba(0, 0, 0, 0.74);
+  -moz-box-shadow: 2px 2px 40px -2px rgba(0, 0, 0, 0.74);
+  border-radius: 25px !important;
+}
+
+.borderRadiusAirplane {
+  border-radius: 50%;
+  height: 400px;
+}
+
+/* .borderRadiusAirplane {
+  border-radius: 20px !important;
+} */
+
+.bodyHeight {
+  overflow-x: hidden;
+}
+
+.airFlying {
+  background-image: url(../img/credintialImg/Login-Elements/Login-Elements.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 480px) {
+  .rightSideContainer {
+    display: none !important;
+  }
+}
+
+.inputField {
+  width: 250px;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+}
+.inputField::placeholder {
+  color: #BBB;
+}
+
+/* .mGesWhite{
+  background-position: right !important;
+} */
