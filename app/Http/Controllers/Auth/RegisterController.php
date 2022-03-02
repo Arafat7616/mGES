@@ -38,7 +38,6 @@ class RegisterController extends Controller
     public function redirectTo()
     {
         if (Auth::user()->user_type == 'super-admin') {
-
             return 'super-admin/dashboard';
         } elseif (Auth::user()->user_type == 'malaysian-employer') {
             return 'malaysian-employer/dashboard';
@@ -48,9 +47,12 @@ class RegisterController extends Controller
             return 'bangladesh-high-commission/dashboard';
         } elseif (Auth::user()->user_type == 'malaysia-admin') {
             return 'malaysia-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'malaysia-embassy') {
-            return 'malaysia-admin/dashboard';
-        } elseif (Auth::user()->user_type == 'master-one-stop-service') {
+        }
+        elseif(Auth::user()->user_type == 'malaysia-embassy')
+        {
+            return 'malaysia-embassy/dashboard';
+        }
+        elseif (Auth::user()->user_type == 'master-one-stop-service') {
             return 'one-stop-service/dashboard';
         } elseif (Auth::user()->user_type == 'child-one-stop-service') {
             return 'child-one-stop-service/dashboard';
@@ -68,8 +70,6 @@ class RegisterController extends Controller
             return 'bangladesh-admin/dashboard';
         } elseif (Auth::user()->user_type == 'malaysia-recruiting-agency') {
             return 'malaysia-recruiting-agency/dashboard';
-        } elseif (Auth::user()->user_type == 'malaysia-embassy') {
-            return 'malaysia-embassy/dashboard';
         } else {
             return route('register');
         }
@@ -162,7 +162,7 @@ class RegisterController extends Controller
     }
     public function showRegistrationForm()
     {
-        $countries = Country::where('status', 'active')->orderBy('id', 'DESC')->get();
+        $countries = Country::where('status', 'active')->orderBy('country_name', 'ASC')->get();
         $roles = Role::where('status', 'active')->orderBy('id', 'DESC')->get();
         return view('auth.register', compact('countries', 'roles'));
     }
