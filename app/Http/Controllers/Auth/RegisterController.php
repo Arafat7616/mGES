@@ -74,7 +74,6 @@ class RegisterController extends Controller
         }elseif(Auth::user()->user_type == 'malaysia-recruiting-agency')
         {
             return 'malaysia-recruiting-agency/dashboard';
-        } 
         else {
             return route('register');
         }
@@ -168,7 +167,7 @@ dd($data);
     }
     public function showRegistrationForm()
     {
-        $countries = Country::where('status', 'active')->orderBy('id', 'DESC')->get();
+        $countries = Country::where('status', 'active')->orderBy('country_name', 'ASC')->get();
         $roles = Role::where('status', 'active')->orderBy('id', 'DESC')->get();
         return view('auth.register', compact('countries', 'roles'));
     }
