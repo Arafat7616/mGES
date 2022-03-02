@@ -103,7 +103,9 @@ class JobPostController extends Controller
 
         $notification = new Notification();
         $notification->title = 'New Job Post';
+
         $notification->text = 'Need '.$jobPost->job_vacancy.' employe for '.$jobPost->user->name;
+
         $notification->notification_for = 'bangladesh-recruiting-agency';
         $notification->notification_from =$jobPost->user_id;
         $notification->created_by =  Auth::user()->id;

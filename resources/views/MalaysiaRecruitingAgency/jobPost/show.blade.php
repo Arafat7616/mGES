@@ -30,9 +30,9 @@
 
                             <h3 style="font-weight:bolder;text-align:center;color:blue;">Company Details</h3>
 
-                            <h4 style="font-weight:bolder;text-align:center;">{{ $jobPost->company->company_name }}</h4>
+                            <h4 style="font-weight:bolder;text-align:center;">{{ $jobPost->user->company_name }}</h4>
 
-                            <h6 style="text-align:center;">{{ $jobPost->company->email }}</h6>
+                            <h6 style="text-align:center;">{{ $jobPost->user->email }}</h6>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
@@ -49,8 +49,8 @@
                                 </li>
                             </ul>
 
-                            <a href="#" download="" class="btn btn-primary btn-block">
-                                <b><i class="fa fa-download"></i> Demand Letter </b>
+                            <a href="{{ route('postJob.viewDemandLetter',$jobPost->id) }}" target="_blank" class="btn btn-primary btn-block">
+                                <b><i class="fa fa-download"></i>&nbsp;Preliminary Demand Letter </b>
                             </a>
                         </div>
                     </div>

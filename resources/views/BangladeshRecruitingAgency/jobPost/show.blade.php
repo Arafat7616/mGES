@@ -30,9 +30,9 @@
 
                             <h3 style="font-weight:bolder;text-align:center;color:blue;">Company Details</h3>
 
-                            <h4 style="font-weight:bolder;text-align:center;">{{ $jobPost->company->company_name }}</h4>
+                            <h4 style="font-weight:bolder;text-align:center;">{{ $jobPost->user->company_name }}</h4>
 
-                            <h6 style="text-align:center;">{{ $jobPost->company->email }}</h6>
+                            <h6 style="text-align:center;">{{ $jobPost->user->email }}</h6>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">

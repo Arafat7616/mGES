@@ -56,14 +56,14 @@
                                                         value="Rejected">Rejected</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group" id="demandLetter" style="display: none;">
+                                            {{-- <div class="form-group" id="demandLetter" style="display: none;">
                                                 <label for="demandLetter">Demand Letter</label>
                                                 <div class="input-group">
                                                     <div class="col-sm-4" style="padding-top:6px;">
                                                         <input type="file" accept="application/pdf" name="demandLetter">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="form-group" id="reasonToReject" style="display: none;">
                                                 <label for="reasonToReject">Reason to reject</label>
                                                 <textarea class="form-control" rows="3" placeholder="Write reason.."
