@@ -43,33 +43,33 @@
                             </div>
                             <div class="panel-body">
                                 <div class="row">
-                                   <div class="form-group">
-                                                <label for="employmentType">Recruiting Type</label><br>
-                                                <div class="radio radio-info radio-inline">
-                                                    <input class="recriting_input" type="radio" id="inlineRadio1"
-                                                        value="self" name="recruiting_type" checked="checked">
-                                                    <label for="inlineRadio1"> Self Recruiting </label>
-                                                </div>
-                                                <div class="radio radio-inline">
-                                                    <input class="recriting_input" type="radio" id="inlineRadio2"
-                                                        value='agency' name="recruiting_type">
-                                                    <label for="inlineRadio2"> Agency Recruiting </label>
-                                                </div>
+                                    <div class="form-group">
+                                        <label for="employmentType">Recruiting Type</label><br>
+                                        <div class="radio radio-info radio-inline">
+                                            <input class="recriting_input" type="radio" id="inlineRadio1" value="self"
+                                                name="recruiting_type" checked="checked">
+                                            <label for="inlineRadio1"> Self Recruiting </label>
+                                        </div>
+                                        <div class="radio radio-inline">
+                                            <input class="recriting_input" type="radio" id="inlineRadio2" value='agency'
+                                                name="recruiting_type">
+                                            <label for="inlineRadio2"> Agency Recruiting </label>
+                                        </div>
 
-                                            </div>
+                                    </div>
 
-                                            <div class="form-group Agencies-section" id="Agencies-section">
-                                                <label for="agency_id">Agencies</label>
-                                                <select class="form-control" name="agency_id" required="">
-                                                    <option selected="" disabled="" value="null">Select Agency
-                                                    </option>
-                                                    @foreach ($malaysiaAgenies as $agency)
-                                                        <option value={{ $agency->id }}>{{ $agency->company_name }}
-                                                        </option>
-                                                    @endforeach
+                                    <div class="form-group Agencies-section" id="Agencies-section">
+                                        <label for="agency_id">Agencies</label>
+                                        <select class="form-control" name="agency_id" required="">
+                                            <option selected="" disabled="" value="null">Select Agency
+                                            </option>
+                                            @foreach ($malaysiaAgenies as $agency)
+                                                <option value={{ $agency->id }}>{{ $agency->company_name }}
+                                                </option>
+                                            @endforeach
 
-                                                </select>
-                                            </div>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel-footer text-right">
@@ -84,19 +84,19 @@
     <!--End content -->
 @endsection
 @section('js')
-<script>
-    $('.recriting_input').click(function() {
-        let value = $('input[name="recruiting_type"]:checked').val();
+    <script>
+        $('.recriting_input').click(function() {
+            let value = $('input[name="recruiting_type"]:checked').val();
 
-        if (value == "agency") {
-            $('#Agencies-section').css('display', 'block')
-        } else {
-            $('#Agencies-section').css('display', 'none')
-        }
+            if (value == "agency") {
+                $('#Agencies-section').css('display', 'block')
+            } else {
+                $('#Agencies-section').css('display', 'none')
+            }
 
 
-    })
-</script>
+        })
+    </script>
 @endsection
 
 @section('DataTableJs')

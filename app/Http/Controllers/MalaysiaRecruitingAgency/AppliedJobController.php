@@ -4,6 +4,7 @@ namespace App\Http\Controllers\MalaysiaRecruitingAgency;
 
 use App\AppliedJob;
 use App\Http\Controllers\Controller;
+use App\JobPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,5 +19,11 @@ class AppliedJobController extends Controller
     {
         $appliedJob = AppliedJob::findOrFail($id);
         return view('MalaysiaRecruitingAgency.appliedJob.show', compact('appliedJob'));
+    }
+
+    public function forwarded()
+    {
+        $jobPosts = JobPost::where('recruiting_type','agency')->where('forward_status','Forwarded')->get();
+        return view('MalaysiaRecruitingAgency.jobPost.forwarded', compact('jobPosts'));
     }
 }

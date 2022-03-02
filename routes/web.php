@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\DemandLetterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use App\Http\Controllers\RatingController;
 |
 */
 
+
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
@@ -25,6 +27,8 @@ Route::post('change-password', 'HomeController@changePassword')->name('changePas
 //others
 Route::get('/qr_code', [QrCodeController::class, 'index']);
 Route::get('/qr_code_result', [QrCodeController::class, 'result']);
+
+Route::get('job-post/demand-latter/{id}', [DemandLetterController::class,'demandLetter'])->name('postJob.viewDemandLetter');
 
 //Rating route
 Route::get('/rating', [RatingController::class, 'index']);

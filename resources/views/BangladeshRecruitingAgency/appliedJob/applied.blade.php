@@ -60,7 +60,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $appliedJob->company->user_name ?? '' }}</td>
-                                            <td>{{ $appliedJob->company->company_name ?? '' }}</td>
+                                            <td>{{ $appliedJob->user->company_name ?? '' }}</td>
                                             <td>{{ $appliedJob->jobPost->job_category->category_name ?? '' }}</td>
                                             <td>{{ $appliedJob->job_vacancy }}</td>
                                             <td>{{ $appliedJob->applied_vacancy ?? '' }}</td>

@@ -40,11 +40,11 @@
 
                                             <div class="form-group">
                                                 <label for="username">User Name</label>
-                                                <input type="text" class="form-control" id="username" readonly name="username" value="{{ $jobPost->company->user_name }}">
+                                                <input type="text" class="form-control" id="username" readonly name="username" value="{{ $jobPost->user->company_name }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="companyName">Company Name</label>
-                                                <input type="text" class="form-control" id="companyName" readonly name="companyName" value="{{ $jobPost->company->company_name }}">
+                                                <input type="text" class="form-control" id="companyName" readonly name="companyName" value="{{ $jobPost->user->company_name }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="jobCategory">Job Category</label>
