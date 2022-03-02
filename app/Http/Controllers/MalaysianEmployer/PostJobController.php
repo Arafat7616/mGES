@@ -134,6 +134,18 @@ class PostJobController extends Controller
         return view('MalaysianEmployer.PostJob.ma_approved', compact('job_posts'));
     }
 
+    public function bhcApproved()
+    {
+        $job_posts = JobPost::where('status','Approved')->orderBy('id', 'DESC')->get();
+        return view('MalaysianEmployer.PostJob.bhcApproved', compact('job_posts'));
+    }
+
+    public function bhcApproved_view($id)
+    {
+        $job_post = JobPost::find($id);
+        return view('MalaysianEmployer.PostJob.bhcApproved_view', compact('job_post'));
+    }
+
     public function recruitEmployee($id)
     {
         $job_post = JobPost::findOrFail($id);

@@ -17,13 +17,16 @@
                         <li><a href="{{ route('MalaysianEmployer.postJob.index') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Posted Jobs</a></li>
 
-                        <li><a href="{{ route('MalaysianEmployer.postJob.maApproved') }}"><i
+                        <li><a href="{{ route('MalaysianEmployer.postJob.ma_Approved') }}"><i
                                     class="fa fa-arrow-circle-right"></i>Approved Job Posts</a></li>
+
+                        <li><a href="{{ route('MalaysianEmployer.postJob.bhcApproved') }}"><i
+                                class="fa fa-arrow-circle-right"></i>BHC Approval</a></li>
                     </ul>
                 </li>
 
 
-               
+
 
 
                 <li class="has_sub">

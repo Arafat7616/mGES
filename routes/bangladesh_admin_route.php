@@ -55,7 +55,9 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::get('bra-interested-job-posts/', 'JobPostController@braInterested')->name('jobPost.braInterested');
     Route::get('job-posts-show/{id}', 'JobPostController@JobPostShow')->name('JobPostShow');
     Route::get('vacancy_approval', 'JobPostController@vacancy_approval')->name('vacancy_approval');
+    Route::get('bhc_approval', 'JobPostController@bhc_approval')->name('bhc_approval');
     Route::get('view-vacancy/{applied_job_id}', 'JobPostController@viewVacancy')->name('jobPost.viewVacancy');
+    Route::get('bhc_approval/{applied_job_id}', 'JobPostController@bhc_approval_list')->name('jobPost.bhc_approval');
     Route::get('approve-vacancy/{applied_job_id}', 'JobPostController@approveVacancy')->name('jobPost.approveVacancy');
     Route::post('approve-vacancy-store/{applied_job_id}', 'JobPostController@approveVacancyStore')->name('jobPost.approveVacancyStore');
     Route::post('reject-vacancy/{applied_job_id}', 'JobPostController@rejectVacancy')->name('jobPost.rejectVacancy');

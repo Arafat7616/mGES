@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BangladeshHighCommission;
+namespace App\Http\Controllers\WelfareCentre;
 
 use App\Http\Controllers\Controller;
 use App\JobPost;
@@ -11,36 +11,37 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class EmployerDemandController extends Controller
 {
+    //
     public function received(){
-        $job_posts = JobPost::where('status', 'New')->orderBy('id','DESC')->get();
-        return view('BangladeshHighCommission.employerDemand.received',compact('job_posts'));
+        $job_posts = JobPost::where('status', 'Verified')->orderBy('id','DESC')->get();
+        return view('WelfareCentre.employerDemand.received',compact('job_posts'));
     }
 
     public function send(){
         $job_posts = JobPost::where('status', 'Verified')->orderBy('id','DESC')->get();
-        return view('BangladeshHighCommission.employerDemand.received',compact('job_posts'));
+        return view('WelfareCentre.employerDemand.received',compact('job_posts'));
     }
 
     public function approved(){
-        $job_posts = JobPost::where('status','Approved')->orderBy('id','DESC')->get();
-        return view('BangladeshHighCommission.employerDemand.approved',compact('job_posts'));
+        $job_posts = JobPost::where('status','Approved')->where('wsc_send_status',0)->orderBy('id','DESC')->get();
+        return view('WelfareCentre.employerDemand.approved',compact('job_posts'));
     }
 
     public function rejected(){
         $job_posts = JobPost::where('status','Rejected')->orderBy('id','DESC')->get();
-        return view('BangladeshHighCommission.employerDemand.rejected',compact('job_posts'));
+        return view('WelfareCentre.employerDemand.rejected',compact('job_posts'));
     }
 
     public function show($id){
 
         $job_post = JobPost::findOrFail($id);
-        return view('BangladeshHighCommission.employerDemand.show',compact('job_post'));
+        return view('WelfareCentre.employerDemand.show',compact('job_post'));
     }
 
     public function edit($id){
 
         $job_post = JobPost::findOrFail($id);
-        return view('BangladeshHighCommission.employerDemand.edit',compact('job_post'));
+        return view('WelfareCentre.employerDemand.edit',compact('job_post'));
     }
 
     public function update(Request $request , $id){
@@ -70,11 +71,11 @@ class EmployerDemandController extends Controller
         }
     }
 
-    public function send_to_bhc($id){
+    public function send_to_me_and_ba($id){
         $job_post = JobPost::findOrFail($id);
-        $job_post->status = 'Verified';
+        $job_post->wsc_send_status = 1;
         $job_post->update();
 
-        return back()->withToastSuccess('Successfully Forwarded to Bangladesh High Comission.');
+        return back()->withToastSuccess('Successfully Forwarded');
     }
 }

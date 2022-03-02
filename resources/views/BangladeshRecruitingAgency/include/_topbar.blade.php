@@ -50,6 +50,7 @@
                                     {{ Auth::user()->name }}
                                 </p>
                                 <center><small>{{ Auth::user()->email }}</small></center>
+                                @if(Auth::user()->user_type == 'bangladesh-recruiting-agency')
                                 <center><small>Review</small></center>
                                 <center>
                                     <small>
@@ -60,10 +61,12 @@
                                         <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
                                     </small>
                                 </center>
+                                @endif
 
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
+
                                 <div class="left">
                                     <a href="{{ route('BangladeshRecruitingAgency.companyPrfileView') }}">
                                         <img alt="user-img" src="{{ asset('assets/images/icon/Icon-profile.png') }}" /> Profile

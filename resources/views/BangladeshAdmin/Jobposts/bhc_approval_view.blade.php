@@ -1,4 +1,4 @@
-@extends("BangladeshHighCommission.master")
+@extends("BangladeshAdmin.master")
 
 @section('title', 'View Job Post')
 @section('DataTableCss')
@@ -37,9 +37,9 @@
 
                             <h3 style="font-weight:bolder;text-align:center;color:blue;">Company Details</h3>
 
-                            <h4 style="font-weight:bolder;text-align:center;">{{ $job_post->user->company_name }}</h4>
+                            <h4 style="font-weight:bolder;text-align:center;">{{ $job_post->company->company_name }}</h4>
 
-                            <h6 style="text-align:center;">{{ $job_post->user->email }}</h6>
+                            <h6 style="text-align:center;">{{ $job_post->company->email }}</h6>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">

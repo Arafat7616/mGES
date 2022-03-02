@@ -51,6 +51,13 @@ class JobPostController extends Controller
 
     }
 
+    public function bhc_approval_list($applied_job_id)
+    {
+        $job_post = JobPost::FindOrFail($applied_job_id);
+        return view('BangladeshAdmin.Jobposts.bhc_approval_view', compact('job_post'));
+
+    }
+
     public function approveVacancy($applied_job_id)
     {
         $appliedJob = AppliedJob::FindOrFail($applied_job_id);
@@ -127,6 +134,41 @@ class JobPostController extends Controller
         $appliedVacancies = AppliedJob::orderby('id', 'DESC')->get();
         return view('BangladeshAdmin.Jobposts.VacancyApproval', compact('appliedVacancies'));
     }
+
+
+    public function bhc_approval()
+    {
+        $job_posts = JobPost::where('status','Approved')->orderby('id', 'DESC')->get();
+        return view('BangladeshAdmin.Jobposts.bhcApproval', compact('job_posts'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\JobPost  $jobPost
+     * @return \Illuminate\Http\Response
+     */
 
     public function distributeCandidates($job_post_id)
     {

@@ -32,7 +32,7 @@ class JobPostSeeder extends Seeder
                 'appointment_date'  => now(),
                 'appointment_time'  => now(),
                 // 'rejection_reason'  => Str::random(10),
-                'status'  => 'Approved',
+                'status'  => 'New',
                 'bd_embasy_status' => 'Approved',
                 'created_at' => Carbon::now()
             ]);
@@ -55,7 +55,7 @@ class JobPostSeeder extends Seeder
                 'appointment_date'  => now(),
                 'appointment_time'  => now(),
                 // 'rejection_reason'  => Str::random(10),
-                'status'  => 'Applied',
+                'status'  => 'Verified',
                 'bd_embasy_status' => 'Approved',
                 'created_at' => Carbon::now()
             ]);

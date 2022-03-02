@@ -56,10 +56,9 @@
 }
 
 .user-footer {
-    margin-top: 30px;
-    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
+    margin: 10px 16px;
 }
 
 .user-footer .log {

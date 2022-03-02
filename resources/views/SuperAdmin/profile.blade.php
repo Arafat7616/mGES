@@ -163,6 +163,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <form action="{{ route('changePassword') }}" method="POST" enctype="multipart/form-data">
                             @csrf

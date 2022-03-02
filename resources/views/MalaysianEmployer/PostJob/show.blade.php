@@ -51,6 +51,9 @@
                                 <center><b><i class="fa fa-book mr-1"></i>Schedule Detials </b> </center>
                               </li>
                               <li class="list-group-item">
+                                <b>Post Id: &nbsp; &nbsp;</b> <a class="float-right">{{ $job_post->id}}</a>
+                              </li>
+                              <li class="list-group-item">
                                 <b>Appointment Date</b> <a class="float-right">{{ $job_post->appointment_date}}</a>
                               </li>
                               <li class="list-group-item">
@@ -84,9 +87,7 @@
                             </ul>
 
 
-                            <a href="../demandletter/172745224_23847221674930487_737226822608284999_n.jpg " download="" class="btn btn-primary btn-block">
-                                <b><i class="fa fa-send"></i> Forward To Bangladesh High Comission </b>
-                            </a>
+
                           </div>
                     </div>
                 </div>
@@ -155,34 +156,63 @@
                             <table id="datatable-buttons" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
+                                        <th>Select</th>
                                         <th>SL No</th>
-                                        <th>Agency Name</th>
+                                        <th>Bangladesh Recruiting Agency Name</th>
                                         <th>Employer Amount</th>
                                         <th>Demad Letter</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
+
+                                        <td><input type="checkbox" checked/></td>
+                                        <td>SL No</td>
                                         <td>bangladeshi Agency One</td>
                                         <td>12</td>
                                         <td>
                                             <a class="btn btn-info btn-sm"
                                                 href="{{ route('print_pdf') }}">
-                                                <i class="fa fa-download"></i>
+                                                <i class="fa fa-file"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+
+                                        <td><input type="checkbox" checked/></td>
+                                        <td>SL No</td>
+                                        <td>bangladeshi Agency One</td>
+                                        <td>12</td>
+                                        <td>
+                                            <a class="btn btn-info btn-sm"
+                                                href="{{ route('print_pdf') }}">
+                                                <i class="fa fa-file"></i>
                                             </a>
                                         </td>
                                     </tr>
                                 </tbody>
-                                <tfoot>
+                                {{-- <tfoot>
                                     <tr>
-                                        <th>SL No</th>
-                                        <th>Agency Name</th>
-                                        <th>Employer Amount</th>
-                                        <th>Demad Letter</th>
+                                        <th>Select<th>
+                                            <th>SL No</th>
+                                            <th>Agency Name</th>
+                                            <th>Employer Amount</th>
+                                            <th>Demad Letter</th>
                                     </tr>
-                                </tfoot>
+                                </tfoot> --}}
                             </table>
+
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <a href="../demandletter/172745224_23847221674930487_737226822608284999_n.jpg " download="" class="btn btn-primary btn-block text-center mx-auto">
+                                        <b><i class="fa fa-send"></i> Forward To Bangladesh High Comission </b>
+                                    </a>
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
