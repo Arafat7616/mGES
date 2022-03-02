@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BangladeshRecruitingAgency;
 
 use App\AppliedJob;
+use App\BRAInterest;
 use App\Candidate;
 use App\Http\Controllers\Controller;
 use App\JobPost;
@@ -65,5 +66,27 @@ class JobPostController extends Controller
         $candidates = Candidate::where('job_category_id', $appliedJob->jobPost->job_category->id)
             ->where('created_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('BangladeshRecruitingAgency.jobPost.select-candidates', compact('candidates', 'appliedJob'));
+    }
+
+    public function jobDetails($id)
+    {
+        $job_post = JobPost::find($id);
+        return view('BangladeshRecruitingAgency.jobPost.jobDetails', compact('job_post'));
+    }
+
+    public function JobInterested($id)
+    {
+
+        $intersted = new BRAInterest();
+        $intersted->bar_id = Auth::user()->id;
+        $intersted->job_post = $id;
+        $intersted->save();
+
+        try {
+            $intersted->save();
+            return back()->withToastSuccess('Your Action is Recorded');
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
     }
 }

@@ -7,8 +7,9 @@
             class="badge badge-xs badge-success">{{ count($notifications) }}</span></li>
     <li class="list-group">
         <!-- list item-->
-        @foreach ($notifications as $notification)
-            <a href="javascript:void(0);" class="list-group-item">
+        @forelse ($notifications as $notification)
+            <a href="{{ route('BangladeshRecruitingAgency.jobPost.jobDetails', $notification->jobpost_id) }}"
+                class="list-group-item">
                 <div class="media">
                     <div class="media-heading">{{ $notification->title }}</div>
                     <p class="m-0">
@@ -16,7 +17,17 @@
                     </p>
                 </div>
             </a>
-        @endforeach
+        @empty
+            <a href="javascript:void(0);" class="list-group-item">
+                <div class="media">
+                    <div class="media-heading">you have no notification yet !</div>
+                    <p class="m-0">
+                        <small> </small>
+                    </p>
+                </div>
+            </a>
+        @endforelse
+
     </li>
 
 

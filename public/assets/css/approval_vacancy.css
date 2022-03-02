@@ -20,6 +20,7 @@ body {
     height: 100%;
     display: none;
     background: rgba(0, 0, 0, 0.6);
+    /* background-image: url("https://c.tenor.com/xyl_b-fpgWkAAAAd/matrix-green.gif"); */
 }
 
 .cv-spinner {
