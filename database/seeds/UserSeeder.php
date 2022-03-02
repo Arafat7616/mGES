@@ -60,7 +60,7 @@ class UserSeeder extends Seeder
             'country_id' => 2,
             'name' => 'Bangladesh Recruiting agency',
             'company_name' => 'Bangladesh Recruiting agency',
-            'email' => 'brea@gmail.com',
+            'email' => 'bra@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
             'active_status' => 'Approved',

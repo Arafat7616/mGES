@@ -54,6 +54,6 @@ class User extends Authenticatable
 
     public function braInterested()
     {
-        return $this->hasOne(BRAInterest::class, 'bar_id');
+        return $this->hasOne(BRAInterest::class, 'bra_id');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BangladeshAdmin;
 
 use App\AppliedJob;
+use App\BRAInterest;
 use App\JobPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,6 +22,19 @@ class JobPostController extends Controller
     {
         $jobPosts = JobPost::where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
         return view('BangladeshAdmin.Jobposts.totalJobPost', compact('jobPosts'));
+
+    }
+    public function braInterested()
+    {
+        // take array of all interested jobPost ids
+        $array = [];
+        $jobPostIdArrayFromInterest  = BRAInterest::all();
+        foreach($jobPostIdArrayFromInterest as $d){
+            array_push($array,$d->job_post_id);
+        }
+        // take all interested jobPosts
+        $jobPosts = JobPost::whereIn('id',$array)->where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
+        return view('BangladeshAdmin.Jobposts.braInterested', compact('jobPosts'));
 
     }
     public function JobPostShow($id)
@@ -93,7 +107,7 @@ class JobPostController extends Controller
         $notification->notification_for = 'bangladesh-recruiting-agency';
         $notification->notification_from =$jobPost->user_id;
         $notification->created_by =  Auth::user()->id;
-        $notification->jobpost_id = $job_post_id;
+        $notification->job_post_id = $job_post_id;
         $notification->save();
 
         try {

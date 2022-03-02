@@ -13,17 +13,17 @@
 -   **Password:** Password is `12345` for all portal
 -   **Super admin:** `sa@gmail.com`
 -   **Bangladesh admin:** `ba@gmail.com`
--   **Bangladesh Recruiting agency:** `brea@gmail.com`
--   **Malaysia Recruiting agency:** `mra@gmail.com`
+-   **Bangladesh Recruiting agency:** `bra@gmail.com`
 -   **Welfare sevice centre:** `wsc@gmail.com`
 -   **Master One stop service:** `moss@gmail.com`
 -   **Bangladesh High Commission:** `bhc@gmail.com`
+-   **Malaysia Recruiting agency:** `mra@gmail.com`
 -   **Malaysia Embassy:** `me@gmail.com`
 -   **Malaysia Admin:** `malaysiaadmin@gmail.com`
+-   **Malaysian Employer:** `malaysianemployer@gmail.com`
 -   **Child One Stop Service:** `coss@gmail.com`
 -   **Medical Agency:** `ma@gmail.com`
 -   **Training Agency:** `ta@gmail.com`
 -   **Travel Agency:** `travel@gmail.com`
 -   **Biometric Agency:** `bio@gmail.com`
--   **Malaysian Employer:** `malaysianemployer@gmail.com`
 -   **Candidate:** `candidate@gmail.com`

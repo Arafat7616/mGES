@@ -46,8 +46,13 @@ class JobPost extends Model
     {
         return $this->hasMany(OfferedCandidate::class, 'job_post_id');
     }
+    public function notification()
+    {
+        return $this->hasOne(Notification::class, 'job_post_id');
+    }
+    public function braInterests()
+    {
+        return $this->hasMany(BRAInterest::class, 'job_post_id');
 
-    public function notification(){
-        return $this->hasOne(Notification::class, 'jobpost_id');
     }
 }
