@@ -9,7 +9,6 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::get('/edit-profile', 'BangladeshAdminDashboardController@editProfile')->name('editProfile');
     Route::post('/update-profile', 'BangladeshAdminDashboardController@updateProfile')->name('updateProfile');
 
-
     // company
     Route::get('show-company-profile/{user_id}', 'CompanyController@showCompanyProfile')->name('company.showCompanyProfile');
     Route::post('company-request-approve/{company_id}', 'CompanyController@approveNow')->name('company.approveNow');
@@ -61,6 +60,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::post('approve-vacancy-store/{applied_job_id}', 'JobPostController@approveVacancyStore')->name('jobPost.approveVacancyStore');
     Route::post('reject-vacancy/{applied_job_id}', 'JobPostController@rejectVacancy')->name('jobPost.rejectVacancy');
     Route::get('job-notification-store/{job_post_id}', 'JobPostController@notificationStore')->name('jobPost.notificationStore');
+    Route::get('distribute-candidates/{job_post_id}', 'JobPostController@distributeCandidates')->name('jobPost.distributeCandidates');
 
     //Candidate
     Route::group(['prefix' => 'candidate/', 'as' => 'candidate.'], function () {

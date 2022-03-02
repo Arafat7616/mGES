@@ -53,6 +53,9 @@ class JobPost extends Model
     public function braInterests()
     {
         return $this->hasMany(BRAInterest::class, 'job_post_id');
-
+    }
+    public function jobDistributedBras()
+    {
+        return $this->hasMany(JobDistributeInBRA::class, 'job_post_id');
     }
 }
