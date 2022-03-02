@@ -43,29 +43,37 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <!-- User image -->
-                            <li class="user-header ">
-                                <img src="{{ asset(Auth::user()->logo ?? 'assets/images/users/avatar-1.jpg') }}"
+                            <li class="user-header text-center ">
+                                <img class="text-center" src="{{ asset(Auth::user()->logo ?? 'assets/images/users/avatar-1.jpg') }}"
                                     class="img-circle " alt="User Image">
                                 <p>
                                     {{ Auth::user()->name }}
                                 </p>
                                 <center><small>{{ Auth::user()->email }}</small></center>
+                                <center><small>Review</small></center>
+                                <center>
+                                    <small>
+                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
+                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
+                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
+                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
+                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
+                                    </small>
+                                </center>
+
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="left">
                                     <a href="{{ route('BangladeshRecruitingAgency.companyPrfileView') }}">
-                                        <img
-                                            src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-user-management-kiranshastry-lineal-color-kiranshastry-10.png" />
+                                        <img alt="user-img" src="{{ asset('assets/images/icon/Icon-profile.png') }}" /> Profile
                                     </a>
                                 </div>
+
                                 <div class="right">
-                                    <div class="log">
-                                        <a class="dropdown-item logout-btn" href="javascript:void(0);">
-                                            <img src="https://img.icons8.com/fluency/48/000000/sign-in-form-password.png"
-                                                alt="user-img" class="img-circle img-fluid text-center" />
-                                        </a>
-                                    </div>
+                                    <a class="logout-btn" href="javascript:void(0);">
+                                        <img alt="logout-img" src="{{ asset('assets/images/icon/Icon-logout.png') }}" /> Logout
+                                    </a>
                                 </div>
                             </li>
                         </ul>

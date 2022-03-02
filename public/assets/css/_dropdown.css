@@ -1,72 +1,101 @@
-.dropdown-menu{
+.dropdown-menu {
     margin-top: 10px;
-    width: 350px;
-}
-.nav-link img{
- width: 60px;
- height: 60px;
- vertical-align: middle;
- border-style: none;
- padding: 10px;
-}
-.user-header{
-    height: 160PX;
-    width: 350px;
+    width: 450px;
 }
 
-.user-header img{
+.nav-link img {
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    border-style: none;
+    padding: 10px;
+}
+
+.user-header {
+    padding: 20px;
+    height: 270PX;
+    width: 450px;
+    background-color: #CCEFF7;
+    border-radius: 10%;
+}
+
+.user-header img {
     height: 90px;
     width: 90px;
     border: 4px solid;
+    border-radius: 50%;
     border-color: rgb(7, 247, 255);
+    margin: 0px auto;
     margin-top: 20px;
-    text-align: center;
-    margin-left: 129px;
-
 }
 
-.user-header p{
+.user-header .star-image {
+    height: 25px;
+    width: 25px;
+    margin-top: 0;
+    margin-left: 0;
+    border: 0;
+    display: inline;
+    /* text-align: center; */
+    /* margin-left: 129px; */
+    /* background-color: white; */
+}
+
+.user-header p {
     font-size: 25px;
     text-shadow: 2px 2px 3px #333333;
     margin-top: 10px;
     color: rgb(0, 25, 78);
     text-align: center;
-
-
 }
-.user-header small{
-    font-size: 12px;
+
+.user-header small {
+    font-size: 19px;
     color: rgb(0, 0, 0);
     margin-top: 20px;
+}
 
-}
 .user-footer {
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
 }
-.user-footer .log{
+
+.user-footer .log {
     margin-left: 50px;
 }
 
-.user-footer .left{
+.user-footer .left {
+    /* justify-content: left; */
     margin-left: 5px;
-    float:left;
+    float: left;
     padding: 10px;
+    width: 40%;
     background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
 }
-.user-footer .left img{
+
+.user-footer .left img {
     width: 37px;
     margin-left: 20px;
 }
-.user-footer .right{
+
+.user-footer .right {
+    /* justify-content: right; */
+    margin-right: 5px;
     float: right;
     padding: 10px;
-    margin-right: 20px;
+    width: 40%;
     background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
 }
-.user-footer .right img{
-    width: 40px;
+
+.user-footer .right img {
+    width: 37px;
     margin-right: 20px;
 }
-@media screen {
 
-}
+@media screen {}
