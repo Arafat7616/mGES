@@ -16,6 +16,8 @@
                                     class="fa fa-arrow-circle-right"></i> All Job Posts</a></li>
                         <li><a href="{{ route('BangladeshRecruitingAgency.interestedJob.index') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Interested Job</a></li>
+                        <li><a href="{{ route('BangladeshRecruitingAgency.getDistributed.index') }}">
+                            <i class="fa fa-arrow-circle-right"></i> Ba Requested Post</a></li>
                     </ul>
                 </li>
 
@@ -29,6 +31,7 @@
                                     class="fa fa-arrow-circle-right"></i> All Candidates</a></li>
                         <li><a href="{{ route('BangladeshRecruitingAgency.candidate.selected') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Selected Candidates</a></li>
+                       
                     </ul>
                 </li>
 
