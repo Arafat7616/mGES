@@ -15,4 +15,9 @@ class InterestedJobController extends Controller
         return view('BangladeshRecruitingAgency.interestedJob.index', compact('braInterests'));
     }
 
+    public function show($id)
+    {
+        $braInterest = BRAInterest::findOrFail($id);
+        return view('BangladeshRecruitingAgency.interestedJob.show', compact('braInterest'));
+    }
 }
