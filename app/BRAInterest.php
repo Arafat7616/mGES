@@ -17,4 +17,11 @@ class BRAInterest extends Model
     {
         return $this->belongsTo(User::class, 'bra_id');
     }
+
+    public function jobPost()
+    {
+        return $this->belongsTo(JobPost::class, 'job_post_id');
+    }
+
+
 }

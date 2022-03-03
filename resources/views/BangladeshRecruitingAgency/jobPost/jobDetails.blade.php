@@ -66,8 +66,9 @@
 
                             <div class="job_approved_button">
 
-                                @if (Auth::user()->braInterested)
-                                    <a href="#" class="btn btn-success waves-effect waves-light" disabled>Interested</a>
+                                {{-- @if (Auth::user()->braInterested) --}}
+                                @if (check_if_this_bra_interested_for_this_job_post($job_post->id))
+                                    <a href="#" class="btn btn-success waves-effect waves-light" disabled >Interested</a>
                                 @else
                                     <a href="{{ route('BangladeshRecruitingAgency.jobPost.jobIntersted', $job_post->id) }}"
                                         class="btn btn-success waves-effect waves-light">Interested</a>

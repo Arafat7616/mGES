@@ -14,8 +14,8 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('BangladeshRecruitingAgency.jobPost.all') }}"><i
                                     class="fa fa-arrow-circle-right"></i> All Job Posts</a></li>
-                        <li><a href="{{ route('BangladeshRecruitingAgency.appliedJob.applied') }}"><i
-                                    class="fa fa-arrow-circle-right"></i> Applied Job</a></li>
+                        <li><a href="{{ route('BangladeshRecruitingAgency.interestedJob.index') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> Interested Job</a></li>
                     </ul>
                 </li>
 
