@@ -1,6 +1,6 @@
 @extends("BangladeshRecruitingAgency.master")
 
-@section('title', 'Applied Job Posts')
+@section('title', 'Interested Job Posts')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -10,8 +10,6 @@
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-
-
 @endsection
 
 @section('main-content')
@@ -22,12 +20,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Applied Job Posts</h4>
+                        <h4 class="pull-left page-title">Interested Job Posts</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">Job Posts
                                 </a></li>
-                            <li class="active">Applied Job Posts</li>
+                            <li class="active">Interested Job Posts</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -37,7 +35,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Applied job posts in detail</h3>
+                            <h3 class="panel-title">Interested job posts in detail</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -45,63 +43,36 @@
                                     <tr>
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
-                                        <th>Company Name</th>
                                         <th>Job Category</th>
                                         <th>Job Vacancies</th>
                                         <th>Applied Vacancies</th>
-                                        <th>Approved Vacancies</th>
                                         <th>Applied Date</th>
-                                        <th>Status</th>
                                         <th style="width: 8%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($appliedJobs as $appliedJob)
+                                    @foreach ($braInterests as $braInterest)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $appliedJob->company->user_name ?? '' }}</td>
-                                            <td>{{ $appliedJob->user->company_name ?? '' }}</td>
-                                            <td>{{ $appliedJob->jobPost->job_category->category_name ?? '' }}</td>
-                                            <td>{{ $appliedJob->job_vacancy }}</td>
-                                            <td>{{ $appliedJob->applied_vacancy ?? '' }}</td>
-                                            <td>{{ $appliedJob->approved_vacancy ?? '-' }}</td>
-                                            <td>{{ $appliedJob->datetime }}</td>
+                                            <td>{{ $braInterest->jobPost->user->name ?? '-' }}</td>
+                                            <td>{{ $braInterest->jobPost->job_category->category_name ?? '-' }}</td>
+                                            <td>{{ $braInterest->jobPost->job_vacancy ?? '-' }}</td>
+                                            <td>{{ $braInterest->jobPost->app_vacancy ?? '-' }}</td>
+                                            <td>{{ $braInterest->jobPost->created_at }}</td>
                                             <td>
-                                                @if ($appliedJob->status == 'New')
-                                                    <button type="button" name="New"
-                                                        class="btn btn-primary btn-xs update">New</button>
-                                                @elseif ($appliedJob->status == 'Rejected')
-                                                    <button type="button" name="Rejected"
-                                                        class="btn btn-warning btn-xs update">Rejected</button>
-                                                @elseif ($appliedJob->status == 'Pending')
-                                                    <button type="button" name="Pending"
-                                                        class="btn btn-warning btn-xs update">Pending</button>
-                                                @elseif ($appliedJob->status == 'Approved')
-                                                    <button type="button" name="Approved"
-                                                        class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($appliedJob->status == 'Verified')
-                                                    <button type="button" name="Verified"
-                                                        class="btn btn-info btn-xs update">Verified</button>
-                                                @elseif ($appliedJob->status == 'Applied')
-                                                    <button type="button" name="Applied"
-                                                        class="btn btn-info btn-xs update">Applied</button>
-                                                @endif
-                                            </td>
-                                            <td>
-
-                                                @if ($appliedJob->status == 'Rejected')
-                                                @elseif ($appliedJob->status == 'Approved')
+                                                @if ($braInterest->status == 'Rejected')
+                                                @elseif ($braInterest->status == 'Approved')
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $appliedJob->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $braInterest->id) }}">
                                                         <i class="mdi mdi-eye"></i>
                                                     </a>
                                                     <a class="btn btn-success btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.jobPost.selectCandidates', $appliedJob->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.jobPost.selectCandidates', $braInterest->id) }}">
                                                         <i class="fa fa-user-plus"></i>
                                                     </a>
                                                 @else
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $appliedJob->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $braInterest->id) }}">
                                                         <i class="mdi mdi-eye"></i>
                                                     </a>
                                                 @endif
@@ -113,13 +84,10 @@
                                     <tr>
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
-                                        <th>Company Name</th>
                                         <th>Job Category</th>
                                         <th>Job Vacancies</th>
                                         <th>Applied Vacancies</th>
-                                        <th>Approved Vacancies</th>
                                         <th>Applied Date</th>
-                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

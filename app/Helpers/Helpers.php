@@ -1,6 +1,8 @@
 <?php
 
+use App\BRAInterest;
 use App\StaticOption;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('random_code')) {
 
@@ -102,6 +104,14 @@ if (!function_exists('random_code')) {
 
         whoops();
         return redirect()->back();
+    }
+    function check_if_this_bra_interested_for_this_job_post($job_post_id)
+    {
+        if(BRAInterest::where('bra_id', Auth::user()->id)->where('job_post_id', $job_post_id)->first()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     function success($message = 'Your operation has been done successfully')
