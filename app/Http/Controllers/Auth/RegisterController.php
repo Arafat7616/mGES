@@ -37,7 +37,7 @@ class RegisterController extends Controller
 
     public function redirectTo()
     {
-        
+
         if (Auth::user()->user_type == 'super-admin') {
             return 'super-admin/dashboard';
         } elseif (Auth::user()->user_type == 'malaysian-employer') {
@@ -169,7 +169,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $countries = Country::where('status', 'active')->orderBy('country_name', 'ASC')->get();
-        $roles = Role::where('status', 'active')->orderBy('id', 'DESC')->get();
+        $roles = Role::whereNotIn('id', [1,12,14])->where('status', 'active')->orderBy('id', 'DESC')->get();
         return view('auth.register', compact('countries', 'roles'));
     }
 }
