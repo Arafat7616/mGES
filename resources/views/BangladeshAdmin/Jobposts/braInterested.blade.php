@@ -71,7 +71,7 @@
                                                     href="{{ route('BangladeshAdmin.JobPostShow', $jobPost->id) }}">
                                                     <i class="fa fa-eye"></i> View job post
                                                 </a>
-                                                @if($jobPost->jobDistributedBras)
+                                                @if($jobPost->jobDistributedBras->count() > 0)
                                                     <a class="btn btn-warning" disabled fhgkd="{{ $jobPost->id }}" value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
                                                         <i class="fa fa-sitemap"></i>Distribute candidates
                                                     </a>
