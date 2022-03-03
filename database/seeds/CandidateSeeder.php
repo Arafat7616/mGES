@@ -19,7 +19,7 @@ class CandidateSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('candidates')->insert([
-                'candidate_name' =>   'Demo Name ' . $i,
+                'candidate_name' =>   'Mr. candidate ' . $i,
                 'role_id' => 15,
                 'job_id' => rand(1, 10),
                 'company_id' => rand(1, 10),
@@ -27,9 +27,10 @@ class CandidateSeeder extends Seeder
                 'candidate_dob' => '2021-30-07',
                 'candidate_gender' => 'male',
                 'passport_number' => Str::random(18),
-                'phone_number' => '01856230550',
+                'phone_number' => '0185623055'.$i,
                 'candidate_email' => 'demon' . $i . '@gmail.com',
                 'status' => 'Active',
+                'offered_status' => true,
                 // 'result_status' => 'New',
                 'nationality' => 'bangladesh',
                 'present_address' => 'dhaka bangladesh',
@@ -43,7 +44,7 @@ class CandidateSeeder extends Seeder
             $appliedJob = AppliedJob::findOrFail(11);
 
             $candidate_id =  DB::table('candidates')->insertGetId([
-                'candidate_name' =>   'Demo Name ' . $i,
+                'candidate_name' =>   'Mr. candidate ' . $i,
                 'role_id' => 15,
                 'job_id' => $appliedJob->job_post_id,
                 'company_id' => $appliedJob->company_id,
@@ -51,7 +52,7 @@ class CandidateSeeder extends Seeder
                 'candidate_dob' => '2021-30-07',
                 'candidate_gender' => 'male',
                 'passport_number' => Str::random(18),
-                'phone_number' => '01856230550',
+                'phone_number' => '018500305'.$i,
                 'candidate_email' => 'demon' . $i . '@gmail.com',
                 'status' => 'Selected',
                 'result_status' => 'Selected',

@@ -42,21 +42,21 @@ class CreateCandidatesTable extends Migration
             $table->unsignedBigInteger('updated_id')->nullable();
             $table->unsignedBigInteger('pre_medical_id')->nullable();
             $table->unsignedBigInteger('pre_training_id')->nullable();
-            $table->string('pre_medical_status')->nullable();
-            $table->string('pre_training_status')->nullable();
             $table->string('pre_updated_dt')->nullable();
-            $table->string('approval_status')->nullable();
             $table->string('pre_medical_report')->nullable();
             $table->string('pre_training_report')->nullable();
             $table->string('pre_medical_dt')->nullable();
             $table->string('pre_training_dt')->nullable();
             $table->string('pre_medical_comments')->nullable();
             $table->string('pre_training_comments')->nullable();
+            $table->boolean('offered_status')->default(0);
+            $table->string('pre_medical_status')->nullable();
+            $table->string('pre_training_status')->nullable();
+            $table->string('approval_status')->nullable();
             $table->enum('status', ['Active', 'Inactive', 'Selected', 'Reviewed', 'Forwarded', 'Interview', 'confirmed'])->nullable();
             $table->enum('result_status',['New','Physical Interview','Online Interview','Selected','Rejected'])->nullable();
             $table->string('offer_letter')->nullable();
             $table->string('employer_comments')->nullable();
-            // $table->string('status')->default('Active');
             $table->timestamps();
         });
     }

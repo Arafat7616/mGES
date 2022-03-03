@@ -12,8 +12,8 @@ use Laravel\Ui\Presets\React;
 class CandidateController extends Controller
 {
     public function selected(){
-        $offeredCandidates = OfferedCandidate::whereIn('result_status', ['Selected','Assigned'])->orderBy('id','DESC')->get();
-        return view('OneStopService.candidate.selected', compact('offeredCandidates'));
+        $candidates = Candidate::where('offered_status', true)->orderBy('id','DESC')->get();
+        return view('OneStopService.candidate.selected', compact('candidates'));
     }
 
     public function interview(){
