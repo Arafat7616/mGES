@@ -61,6 +61,7 @@ include('malaysia_recruiting_agency_route.php');
 include('bangladesh_recruiting_agency_route.php');
 include('bangladesh_admin_route.php');
 include('super_admin_route.php');
+include('call_center_route.php');
 
 Auth::routes([
     'reset' => false, // Password Reset Routes...

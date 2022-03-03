@@ -130,5 +130,12 @@ class RoleSeeder extends Seeder
             'slug' => 'malaysia-recruiting-agency',
             'status' => 'active'
         ]);
+
+        Role::create([
+            'id' => 18,
+            'name' => 'Call Center',
+            'slug' => 'call-center',
+            'status' => 'active'
+        ]);
     }
 }
