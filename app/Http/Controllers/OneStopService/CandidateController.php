@@ -12,6 +12,7 @@ use Laravel\Ui\Presets\React;
 class CandidateController extends Controller
 {
     public function selected(){
+        // $candidates = Candidate::where('offered_status', true)->where('result_status','!=','Assigned')->orderBy('id','DESC')->get();
         $candidates = Candidate::where('offered_status', true)->orderBy('id','DESC')->get();
         return view('OneStopService.candidate.selected', compact('candidates'));
     }
@@ -50,25 +51,24 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.show-booked-candidate', compact('offeredCandidate'));
     }
 
-    public function assignSelectedCandidate($offered_candidate_id){
-        $offeredCandidate = OfferedCandidate::findOrfail($offered_candidate_id);
-        $candidate = Candidate::findOrFail($offeredCandidate->candidate_id);
+    public function assignSelectedCandidate($candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
         $wscList = User::where('user_type','child-one-stop-service')->where('active_status','Approved')->orderBy('id','DESC')->get();
-        return view('OneStopService.candidate.assign-selected-candidate', compact('candidate','offeredCandidate','wscList'));
+        return view('OneStopService.candidate.assign-selected-candidate', compact('candidate','wscList'));
     }
 
-    public function assignSelectedCandidateStore(Request $request , $offered_candidate_id){
+    public function assignSelectedCandidateStore(Request $request , $candidate_id){
         $request->validate([
             'fees' =>  'required',
             'wsc' =>  'required',
         ]);
-        $offeredCandidate = OfferedCandidate::findOrfail($offered_candidate_id);
-        $offeredCandidate->result_status = 'Assigned';
-        $offeredCandidate->selected_osc_id = $request->wsc;
-        $offeredCandidate->payment_assigned = $request->fees;
+        $candidate = Candidate::findOrfail($candidate_id);
+        $candidate->result_status = 'Assigned';
+        $candidate->selected_osc_id = $request->wsc;
+        $candidate->payment_assigned = $request->fees;
 
         try {
-            $offeredCandidate->save();
+            $candidate->save();
             return back()->withToastSuccess('Successfully saved.');
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
