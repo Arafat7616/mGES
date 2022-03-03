@@ -50,7 +50,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($offeredCandidates as $candidate)
+                                    @foreach ($candidates as $candidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $candidate->candidate_name }}</td>

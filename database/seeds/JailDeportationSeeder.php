@@ -19,7 +19,7 @@ class JailDeportationSeeder extends Seeder
                 'company_id' => 8,
                 'wsc_id' => 6,
                 'job_category_id' => rand(1,12),
-                'person_name' => 'Demo Name '.$i,
+                'person_name' => 'Mr. Person '.$i,
                 'person_relation' => 'Brother ',
                 'passport_number' =>  rand(1000,2000),
                 'passport_expirydate' => Carbon::now()->addYears(5),

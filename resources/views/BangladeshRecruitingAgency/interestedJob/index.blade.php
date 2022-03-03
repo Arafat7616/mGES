@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -63,16 +62,16 @@
                                                 @if ($braInterest->status == 'Rejected')
                                                 @elseif ($braInterest->status == 'Approved')
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $braInterest->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.jobPost.show', $braInterest->jobPost->id) }}">
                                                         <i class="mdi mdi-eye"></i>
                                                     </a>
-                                                    <a class="btn btn-success btn-sm"
+                                                    {{-- <a class="btn btn-success btn-sm"
                                                         href="{{ route('BangladeshRecruitingAgency.jobPost.selectCandidates', $braInterest->id) }}">
                                                         <i class="fa fa-user-plus"></i>
-                                                    </a>
+                                                    </a> --}}
                                                 @else
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $braInterest->id) }}">
+                                                        href="{{ route('BangladeshRecruitingAgency.jobPost.show', $braInterest->jobPost->id) }}">
                                                         <i class="mdi mdi-eye"></i>
                                                     </a>
                                                 @endif
