@@ -4,7 +4,10 @@
     
     padding: 10% !important;
 }
-
+.wrapper {
+    padding-top: 8.25rem;
+    padding-bottom: 8.25rem;
+  }
 .about-text{
     text-align: justify !important;
 }
