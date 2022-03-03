@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\RatingController;
 
-use App\Http\Controllers\FrontedController;
+use App\Http\Controllers\FrontendController;
 
 use App\Http\Controllers\DemandLetterController;
 
@@ -21,7 +21,10 @@ use App\Http\Controllers\DemandLetterController;
 |
 */
 
-Route::get('/','FrontedController@index')->name('homePage');
+Route::get('/', 'FrontendController@index')->name('homePage');
+Route::get('/about', 'FrontendController@about')->name('aboutPage');
+Route::get('/mges/about', 'FrontendController@mgesAbout')->name('mgesAbout');
+Route::get('/conatact', 'FrontendController@contact')->name('conatactPage');
 // Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
@@ -33,7 +36,7 @@ Route::post('change-password', 'HomeController@changePassword')->name('changePas
 Route::get('/qr_code', [QrCodeController::class, 'index']);
 Route::get('/qr_code_result', [QrCodeController::class, 'result']);
 
-Route::get('job-post/demand-latter/{id}', [DemandLetterController::class,'demandLetter'])->name('postJob.viewDemandLetter');
+Route::get('job-post/demand-latter/{id}', [DemandLetterController::class, 'demandLetter'])->name('postJob.viewDemandLetter');
 
 //Rating route
 Route::get('/rating', [RatingController::class, 'index']);
@@ -65,5 +68,3 @@ Auth::routes([
 ]);
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/
-
-

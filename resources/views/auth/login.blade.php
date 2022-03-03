@@ -1,174 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>mGES || Login</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('assets/authentication/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{ asset('assets/authentication/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('assets/authentication/dist/css/adminlte.min.css') }}">
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/landingPageAsset/css/login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <title>mGES Login</title>
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-    <div class="text-center">
-        <img src="{{ asset('assets/images/mges.png') }}" style="height: 60px; margin-bottom:13px;" alt="logo" >
-    </div>
-    <!-- /.login-logo -->
-    <div class="card shadow">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+<style>
+    a:link {
+        text-decoration: none !important;
+    }
 
-            <form action="{{route('login')}}" method="post">
-                @csrf
-                <h4 style= color:red;></h4>
-                <div class="input-group mb-3">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter your Email" value="{{ old('email') }}"   autocomplete="email" autofocus>
+</style>
 
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </div>
-                    </div>
+<body>
+    <div class="bodyHeight">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center my-2">
+                <div class="p-4 bg-light bgShadow">
 
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="input-group mb-3">
-
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter your Password"  autocomplete="current-password">
-
-                   <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" name="loginBtn" class="btn btn-primary btn-block">Sign In</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-            <p class="mt-3 mb-1">
-                <a href="forgot-password.php">I forgot my password</a>
-            </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
-            </p>
-        </div>
-        <!-- /.login-card-body -->
-    </div>
-</div>
-<!-- /.login-box -->
-
-<!-- jQuery -->
-<script src="{{ asset('assets/authentication/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('assets/authentication/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('assets/authentication/dist/js/adminlte.min.js') }}"></script>
-
-</body>
-</html>
-
-
-
-
-{{--
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form action="{{ route('login') }}" method="post">
                         @csrf
+                        <div class="text-center">
+                            <h5 class="my-4 fw-bolder">Member Login</h5>
+                            <input type="email" name="email" value="{{ old('email') }}"
+                                class="form-control inputBorder" placeholder="&#xf0e0; Mail"
+                                style="font-family: Arial, FontAwesome" id="" />
+                            @error('email')
+                                <p class="text-danger">Credentials do not match our records !</p>
+                            @enderror
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <input type="password" class="form-control inputBorder mt-3" placeholder="&#xf023; Password"
+                                style="font-family: Arial, FontAwesome" name="password" id="" />
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
+                            <button class="form-control signInButton my-4">Sign In</button>
+                            <p><small>Forget Username/Password</small></p>
+                            <p class="mt-5 pt-4">
+                                <a href="{{ route('register') }}"><small>Create your Account</small><i
+                                        class="fa-solid fa-right-long"></i></a>
+                            </p>
                         </div>
                     </form>
                 </div>
             </div>
+            <div class="col-md-6 rightSideContainer d-flex flex-column justify-content-evenly">
+                <div class="d-flex justify-content-around">
+                    <div></div>
+                    <img class="img-fluid mGesWhite"
+                        src="assets/landingPageAsset/img/credintialImg/AllOutput/MGES-Logo-White.png" width="250px"
+                        alt="" />
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-end airFlying p-3">
+                        <img class="p-5 borderRadiusAirplane ms-5"
+                            src="assets/landingPageAsset/img/credintialImg/airplane.gif" width="400px" alt="" />
+                    </div>
+                </div>
+                <div></div>
+            </div>
         </div>
     </div>
-</div>
-@endsection
---}}
+</body>
+
+</html>
