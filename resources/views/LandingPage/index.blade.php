@@ -37,7 +37,7 @@
     <!-- banner end -->
 
     <!-- card content start -->
-    <section class="py-3 pb-5 pt-5">
+    <section class="py-3">
         <div class="card-items container">
             <div class="row">
                 <div class="col-sm-12 col-md- col-lg-3">
@@ -111,17 +111,19 @@
 
                 <div class="col-md-6 col-sm-12 mt-5">
                     <p class="aboutText">
-                        <br> Our company Migration Governance Eco-System is a 100% Bangladeshi-owned company that is
-                        active in the field of information technology with numerous years of experience. Apart from
-                        being a supplier of equipment to the government and the private sector, Migration Governance
-                        Eco-System also has local expertise for the development of computer software with the latest
-                        technology.
+                        <br> Our company Migration Governance Eco-System is a 100% Bangladeshi-owned company that is active
+                        in the
+                        field of information technology with numerous years of experience. Apart from being a supplier of
+                        equipment
+                        to the government and the private sector, Migration Governance Eco-System also has local expertise
+                        for the
+                        development of computer software with the latest technology.
 
                     </p>
                     <p class="about-text">
-                        <br> Our strategic business partner, Versatilo Group based in Bangladesh, is an organization
-                        with many years of experience in the field of recruitment, training, and supply of Bangladeshi
-                        workers to Malaysia.
+                        <br> Our strategic business partner, Versatilo Group based in Bangladesh, is an organization with
+                        many years
+                        of experience in the field of recruitment, training, and supply of Bangladeshi workers to Malaysia.
                     </p>
                 </div>
             </div>
@@ -139,562 +141,490 @@
                 <div class="what-left py-2 fw-bold w-50 text-center">
                     <h2>What we do?</h2>
                 </div>
-                <div class="col-md-4 col-sm-12 mt-3">
+
+                <!-- What we do | Left -->
+                <div class="col-md-4 mt-3">
                     <div class="row ">
 
-                        <div class="col-md-9 mb-3 text-end ">
+                        <div class="col-md-9 mb-3 What-mobile text-end ">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
                             <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                            <small>Verification & Attestation for Employer’s Demand of foreign Workers</small>
                         </div>
                         <div class="col-md-1 "><img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}"
-                                alt="" class="Icon-what"></div>
+                                alt="" class="Icon-what MobileNone">
+                        </div>
 
-                        <div class="col-md-8 mb-3 text-end ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                        <div class="col-md-8 mb-3 text-end What-mobile ">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">KDN Approvals</small><br>
+                            <small>Manages KDN Approvals for Employers for hiring Foreign Workers</small>
                         </div>
                         <div class="col-md-3"><img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}"
-                                alt="" class="Icon-what"></div>
+                                alt="" class="Icon-what MobileNone">
+                        </div>
 
-                        <div class="col-md-8 mb-3 text-end ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                        <div class="col-md-8 mb-3 text-end What-mobile ">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">Calling Visa</small><br>
+                            <small>Management of Calling Visas for each worker</small>
                         </div>
                         <div class="col-md-3"><img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}"
-                                alt="" class="Icon-what"></div>
+                                alt="" class="Icon-what MobileNone">
+                        </div>
 
-                        <div class="col-md-9 mb-3 text-end ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                        <div class="col-md-9 mb-3 What-mobile text-end">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">Employer HR Dept</small><br>
+                            <small>Provide necessary tools for HR Department for the Employer in order to effectively manage
+                                workers.</small>
                         </div>
                         <div class="col-md-1 "><img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}"
-                                alt="" class="Icon-what"></div>
+                                alt="" class="Icon-what MobileNone">
+                        </div>
 
                     </div>
-
                 </div>
+                <!-- What we do | Left End-->
 
                 <div class="col-md-4 col-sm-12 What_Circle mt-5  ">
                     <div class="WhatParent text-center ">
-                        <img src="{{ asset('assets/landingPageAsset/img/image 03.png') }} "
+                        <img src="{{ asset('assets/landingPageAsset/img/image 03.png') }}"
                             class="img-fluid what-img btn " alt="">
                     </div>
                 </div>
 
+                <!-- What we do | Right -->
                 <div class="col-md-4 col-sm-12 mt-3">
                     <div class="row ">
 
-                        <div class="col-md-2 ms-3 text-end"><img
+                        <div class="col-md-2 ms-3 text-end"> <img
                                 src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
-                                class="Icon-what"></div>
-                        <div class="col-md-9 mb-3 ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                                class="MobileNone Icon-what">
+                        </div>
+                        <div class="col-md-9 mb-3 What-mobile ">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">Worker Selection</small><br>
+                            <small>Selection of workers for the purpose of documentation for calling visa.</small>
                         </div>
 
-                        <div class="col-md-3 ms-3 text-end "><img
+                        <div class="col-md-3 ms-3 text-end"> <img
                                 src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
-                                class="Icon-what"></div>
-                        <div class="col-md-8 mb-3 ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                                class="MobileNone Icon-what">
+                        </div>
+                        <div class="col-md-8 mb-3 What-mobile">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">Airport Reception</small><br>
+                            <small>Meet the worker at the port of entry and receive workers on behalf of employers</small>
                         </div>
 
-                        <div class="col-md-3 ms-3 text-end "><img
+                        <div class="col-md-3 ms-3 text-end"><img
                                 src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
-                                class="Icon-what"></div>
-                        <div class="col-md-8 mb-3 ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                                class="MobileNone Icon-what">
+                        </div>
+                        <div class="col-md-8 mb-3 What-mobile">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">Legal / Compensation</small><br>
+                            <small>Provide legal assistance and compensation management schemes</small>
                         </div>
 
-                        <div class="col-md-2 ms-3 text-end"><img
+                        <div class="col-md-2 ms-3 text-end"> <img
                                 src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
-                                class="Icon-what"></div>
-                        <div class="col-md-9 mb-3 ">
-                            <small class="what-small2">Employer Demand</small><br>
-                            <small>Verification & Attestation for</small><br>
-                            <small>Employer’s Demand of foreign Workers</small>
+                                class="MobileNone Icon-what">
+                        </div>
+                        <div class="col-md-9 mb-3 What-mobile ">
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-05.png') }}" alt=""
+                                class="Icon-what Mx-v">
+                            <small class="what-small2">Embassy</small><br>
+                            <small>
+                                The module to deal with embassies both in malaysia and also in worker’s home country
+                            </small>
                         </div>
 
                     </div>
-
                 </div>
+                <!-- What we do | Right End-->
+
             </div>
 
         </div>
     </section>
     <!-- What we do? end -->
 
+    <!-- Flip Card Start -->
+    <section class="Modules about-container">
+
+        <div class="about-right py-2 w-50 fw-bold text-center">
+            <h2>mGES | Modules</h2>
+        </div>
+        <div class="container py-5 ">
+            <div class="row mt-5">
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">1</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">Employer</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">Employer</h6>
+                                </div>
+                                <p class="text-center px-1"> Employer can do most of the process except ground handling at
+                                    airport and
+                                    quarantine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">2</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">EMP Agency (MY)</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">EMP Agency (MY)</h6>
+                                </div>
+                                <p class="text-center px-1">Will act on behalf of their clients (employers) on VDR
+                                    application and all
+                                    ground handling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">3</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">KDN SSC</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">KDN SSC</h6>
+                                </div>
+                                <p class="text-center px-1">Employers will only able to access the approval once it is
+                                    shared by OSC.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">4</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">EMP. Agency (BGD)</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">EMP. Agency (BGD)</h6>
+                                </div>
+                                <p class="text-center px-1">Bangladesh’s licensed agencies will participate. Better
+                                    selection and faster
+                                    recruitment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">5</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">Attestation</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">Attestation</h6>
+                                </div>
+                                <p class="text-center px-1">Bangladeshi High Commission in Kuala Lumpur will determine the
+                                    procedure and
+                                    after verification they will generate QR code of the employer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">6</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">Candidates</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">Candidates</h6>
+                                </div>
+                                <p class="text-center px-1">Online interview will assist the employer to select the most
+                                    reliable
+                                    candidates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">7</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">E-Medical</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">E-Medical</h6>
+                                </div>
+                                <p class="text-center px-1">All registered medical center in Bangladesh will upload the
+                                    medical result.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">8</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">Orientation</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">Orientation</h6>
+                                </div>
+                                <p class="text-center px-1">Orientation session and basic knowledge about work & terms for
+                                    employees.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">9</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">Immigration</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">Immigration</h6>
+                                </div>
+                                <p class="text-center px-1"> Integrated module for immigration department for calling visa
+                                    application,
+                                    Sticker, face matching through Artificial Intelligence (AI) and flights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">10</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">VDR Sticker mGES</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">VDR Sticker mGES</h6>
+                                </div>
+                                <p class="text-center px-1">mGES official counter in Dhaka will handle all candidate's
+                                    documents
+                                    securely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">11</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">VDR Sticker High Commission</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">VDR Sticker High Commission</h6>
+                                </div>
+                                <p class="text-center px-1">To ensure safety and data security, only authorized Immigration
+                                    officers
+                                    will be given the access to mGES data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">12</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">BMET</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">BMET</h6>
+                                </div>
+                                <p class="text-center px-1">Bangladesh Bureau of Manpower, Employment, and Training (BMET)
+                                    will
+                                    determine the procedure and the service fees.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-body ">
+                                    <div class="text-center mt-4">
+                                        <h1 class="fw-bold infoText">13</h1>
+                                    </div>
+                                    <p class="text-center mb-3 infoText">Labor Department</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="text-center mt-3">
+                                    <h6 class="fw-bold ">Labor Department</h6>
+                                </div>
+                                <p class="text-center px-1">Malaysian Labor Department will determine the kind of reports
+                                    they require
+                                    from the employers and the agencies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- Flip Card End -->
+
+    <!-- Medical Centers Start -->
     <section>
 
-        <div class="conatiner MEGS-info">
+        <div class="container mt-5 mb-5">
+            <div class="MedicalBG ">
 
-            <div class="card-items container p-5">
-                <div class="row">
+                <div class="row justify-content-center ">
 
+                    <div class="row containerMZ">
 
-                    <!--
-        <div class="col-md-3">
-          <div class="card shadow Modules flip-card mb-2">
-            <div class="card-body flip-card-inner ">
-              <div class="text-center mt-4">
-                <h1 class="fw-bold infoText">11</h1>
-              </div>
-              <p class="text-center mb-3 infoText">VDR Sticker
-                e-MGES</p>
-            </div>
-          </div>
-        </div>
-         -->
-
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">1</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">Employer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">Employer</h6>
-                                                </div>
-                                                <p class="text-center infoText">
-                                                    Employer can do most of the process except ground handling at
-                                                    airport and quarantine</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-12 text-black centeredMG">
+                            <!-- BG Test -->
                         </div>
+
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">2</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">EMP Agency (MY)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">EMP Agency (MY)</h6>
-                                                </div>
-                                                <p class="text-center infoText">Will act on behalf of their clients
-                                                    (employers) on VDR application and all ground handling.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-md-4 MedicalCard mx-4">
+                        <div class="card btn justify-content-center align-items-center">
+                            <p>Endorsed</p>
+                            <h5 class="card-Title">MEDICAL CENTERS</h5>
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
+                                alt="">
                         </div>
+                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">3</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">KDN SSC</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">KDN SSC</h6>
-                                                </div>
-                                                <p class="text-center infoText">Employers will only able to access the
-                                                    approval once it is shared by OSC.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-md-4 MedicalCard mx-4">
+                        <div class="card btn justify-content-center align-items-center">
+                            <p>Endorsed</p>
+                            <h5 class="card-Title">MEDICAL CENTERS</h5>
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
+                                alt="">
                         </div>
+                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">4</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">EMP</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">EMP</h6>
-                                                </div>
-                                                <p class="text-center infoText">Agency (BGD): Bangladesh’s licensed
-                                                    agencies will participate. Better selection and faster recruitment.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                    <div class="col-md-4 MedicalCard mx-4">
+                        <div class="card btn justify-content-center align-items-center">
+                            <p>Endorsed</p>
+                            <h5 class="card-Title">MEDICAL CENTERS</h5>
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
+                                alt="">
                         </div>
+                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
                     </div>
 
-
-                </div>
-            </div>
-            <div class="card-items container ABXS p-5">
-                <div class="row">
-
-
-                    <!--
-        <div class="col-md-3">
-          <div class="card shadow Modules flip-card mb-2">
-            <div class="card-body flip-card-inner ">
-              <div class="text-center mt-4">
-                <h1 class="fw-bold infoText">11</h1>
-              </div>
-              <p class="text-center mb-3 infoText">VDR Sticker
-                e-MGES</p>
-            </div>
-          </div>
-        </div>
-         -->
-
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">5</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">Attestation</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">Attestation</h6>
-                                                </div>
-                                                <p class="text-center infoText">Bangladeshi High Commission in Kuala
-                                                    Lumpur will determine the procedure and after verification they will
-                                                    generate QR code of the employer.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">6</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">Candidates</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">Candidates</h6>
-                                                </div>
-                                                <p class="text-center infoText">Online interview will assist the
-                                                    employer to select the most reliable candidates.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">7</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">E-Medical</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">E-Medical</h6>
-                                                </div>
-                                                <p class="text-center infoText">All registered medical center in
-                                                    Bangladesh will upload the medical result</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">8</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">Orientation</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">Orientation</h6>
-                                                </div>
-                                                <p class="text-center infoText">Orientation session and basic knowledge
-                                                    about work & terms for employees.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="card-items container ABXS p-5">
-                <div class="row">
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">9</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">Immigration</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">Immigration</h6>
-                                                </div>
-                                                <p class="text-center infoText">Integrated module for immigration
-                                                    department for calling visa application, Sticker, face matching
-                                                    through Artificial Intelligence (AI) and flights.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">10</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">VDR Sticker mGES</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">VDR Sticker mGES</h6>
-                                                </div>
-                                                <p class="text-center infoText">mGES official counter in Dhaka will
-                                                    handle all candidate's documents securely.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">11</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">VDR Sticker High Comission</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">VDR Sticker High Comission</h6>
-                                                </div>
-                                                <p class="text-center infoText">To ensure safety and data security,
-                                                    only authorized Immigration officers will be given the access to
-                                                    mGES data.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card shadow Modules ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <div class="card shadow Modules ">
-                                            <div class="card-body ">
-                                                <div class="text-center mt-4">
-                                                    <h1 class="fw-bold infoText">12</h1>
-                                                </div>
-                                                <p class="text-center mb-3 infoText">BMET</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <div class="card shadow  ">
-                                            <div class="card-body ">
-                                                <div class="text-center">
-                                                    <h6 class="fw-bold infoText">BMET</h6>
-                                                </div>
-                                                <p class="text-center infoText">
-                                                    Bangladesh Bureau of Manpower, Employment, and Training (BMET) will
-                                                    determine the procedure and the service fees.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-    <!-- New start -->
-    <section><br><br><br>
-
-        <div class="container view my-5  ">
-            <div class="row mt">
-                <div class="col-md-4 p-5 ParentView">
-                    <div class="card btn justify-content-center align-items-center">
-                        <p>Endorsed</p>
-                        <h5 class="card-Title">MEDICAL CENTERS</h5>
-                        <img src="asset/img/Icon-06.png" class="IconView pye-4" alt="">
-                    </div>
-                    <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
-                </div>
-
-                <div class="col-md-4 p-5 ParentView">
-                    <div class="card btn justify-content-center align-items-center">
-                        <p>Registered</p>
-                        <h5 class="card-Title">Recruitment Agencies</h5>
-                        <img src="asset/img/Icon-07.png" class="IconView pye-4" alt="">
-                    </div>
-                    <a href="./Requirtment-Agency/Requirtment-Agency.html"><button class="w-100  BtnView py-3"> View
-                            All</button></a>
-                </div>
-
-                <div class="col-md-4 p-5 ParentView">
-                    <div class="card btn justify-content-center align-items-center">
-                        <p>Accompanying</p>
-                        <h5 class="card-Title">Insurance providers</h5>
-                        <img src="asset/img/Icon-08.png" class="IconView pye-4" alt="">
-                    </div>
-                    <a href="./Insurance-Provider/Insurance.html"><button class="w-100  BtnView py-3"> View
-                            All</button></a>
                 </div>
 
             </div>
-
         </div>
 
     </section>
-    <!-- New end -->
+    <!-- Medical Centers End -->
 
     <!-- Footer start -->
     <div class="Footer justify-content-center pt-4 pb-4  align-items-center text-light ">
@@ -728,10 +658,10 @@
                 <div class="col-md-2 href">
                     <p class="PHead">Menu</p>
                     <div class="row Menu">
-                        <p class="col-md-6  d-flex"><a href=""> Home </a></p>
-                        <p class="col-md-6  d-flex"><a href=""> MGES </a></p>
-                        <p class="col-md-6  d-flex"><a href=""> About </a></p>
-                        <p class="col-md-6  d-flex"><a href=""> Contact </a></p>
+                        <p class="col-md-6  d-flex"><a href="./index.html"> Home </a></p>
+                        <p class="col-md-6  d-flex"><a href=""> mGES </a></p>
+                        <p class="col-md-6  d-flex"><a href="./about.html"> About </a></p>
+                        <p class="col-md-6  d-flex"><a href="./contact.html"> Contact </a></p>
                     </div>
                 </div>
 
@@ -776,7 +706,6 @@
                     $(this).addClass("active").siblings().removeClass("active");
                 });
             });
-
             var TxtType = function(el, toRotate, period) {
                 this.toRotate = toRotate;
                 this.el = el;
@@ -786,26 +715,20 @@
                 this.tick();
                 this.isDeleting = false;
             };
-
             TxtType.prototype.tick = function() {
                 var i = this.loopNum % this.toRotate.length;
                 var fullTxt = this.toRotate[i];
-
                 if (this.isDeleting) {
                     this.txt = fullTxt.substring(0, this.txt.length - 1);
                 } else {
                     this.txt = fullTxt.substring(0, this.txt.length + 1);
                 }
-
                 this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-
                 var that = this;
                 var delta = 200 - Math.random() * 100;
-
                 if (this.isDeleting) {
                     delta /= 2;
                 }
-
                 if (!this.isDeleting && this.txt === fullTxt) {
                     delta = this.period;
                     this.isDeleting = true;
@@ -814,12 +737,10 @@
                     this.loopNum++;
                     delta = 500;
                 }
-
                 setTimeout(function() {
                     that.tick();
                 }, delta);
             };
-
             window.onload = function() {
                 var elements = document.getElementsByClassName("typewrite");
                 for (var i = 0; i < elements.length; i++) {

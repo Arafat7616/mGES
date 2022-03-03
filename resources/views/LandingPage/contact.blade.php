@@ -12,17 +12,17 @@
                 </h1>
 
                 <!-- <div class="typeing">
-                  <h1>
-                    <a
-                      href=""
-                      class="typewrite"
-                      data-period="2000"
-                      data-type='[ "INTRODUCING !!!" ]'
-                    >
-                      <span class="wrap"></span>
-                    </a>
-                  </h1>
-                </div> -->
+                      <h1>
+                        <a
+                          href=""
+                          class="typewrite"
+                          data-period="2000"
+                          data-type='[ "INTRODUCING !!!" ]'
+                        >
+                          <span class="wrap"></span>
+                        </a>
+                      </h1>
+                    </div> -->
                 <img class="mb-2 img-fluid"
                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/MGES-UI-All-Output/MGES-Logo-Orginal-Color.png') }}"
                     alt="" />
@@ -61,7 +61,8 @@
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
                     <div class="d-flex justify-content-center align-items-center bgLight m-3 p-5">
                         <div class="text-center">
-                            <img width="80px" src="{{ asset('assets/landingPageAsset/img/icons8-location.gif') }}" alt="" />
+                            <img width="80px" src="{{ asset('assets/landingPageAsset/img/icons8-location.gif') }}"
+                                alt="" />
                             <p class="text-muted"><big>Location</big></p>
                             <h4 class="fw-bold">
                                 Al Hashmi Compound, Villa 15, gate 1200, Road 80, Block 426
@@ -127,4 +128,12 @@
         <!-- Footer end -->
 
         <script src="{{ asset('assets/landingPageAsset/js/contact.js') }}"></script>
+        <script src="{{ asset('assets/landingPageAsset/js/main.js') }}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
     @endsection

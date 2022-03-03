@@ -52,21 +52,16 @@
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 480px) {
-  .rightSideContainer {
-    display: none !important;
-  }
+/* @media screen and (max-width: 480px) {
+ 
+} */
+
+.inputField::placeholder {
+  color: #bbb !important;
 }
 
-.inputField {
-  width: 250px;
-  padding: 10px;
-  border-radius: 2px;
-  border: 1px solid #ccc;
-}
-.inputField::placeholder {
-  color: #BBB;
-}
+
+
 
 /* .mGesWhite{
   background-position: right !important;
