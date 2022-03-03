@@ -164,33 +164,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($rec_agency as $key=>$agency)
                                     <tr>
-
                                         <td><input type="checkbox" checked/></td>
-                                        <td>SL No</td>
-                                        <td>bangladeshi Agency One</td>
-                                        <td>12</td>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $agency->bra ? $agency->bra->name : '' }}</td>
+                                        <td>{{ $agency->distributed_vacancy }}</td>
                                         <td>
                                             <a class="btn btn-info btn-sm"
-                                                href="{{ route('print_pdf') }}">
+                                                href="{{ route('postJob.viewDemandLetter',$agency->job_post_id) }}">
                                                 <i class="fa fa-file"></i>
                                             </a>
                                         </td>
                                     </tr>
-
-                                    <tr>
-
-                                        <td><input type="checkbox" checked/></td>
-                                        <td>SL No</td>
-                                        <td>bangladeshi Agency One</td>
-                                        <td>12</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm"
-                                                href="{{ route('print_pdf') }}">
-                                                <i class="fa fa-file"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                                 {{-- <tfoot>
                                     <tr>
@@ -203,15 +190,17 @@
                                 </tfoot> --}}
                             </table>
 
+                            @if($job_post->forward_to_bhc == 0)
                             <div class="row">
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4">
-                                    <a href="../demandletter/172745224_23847221674930487_737226822608284999_n.jpg " download="" class="btn btn-primary btn-block text-center mx-auto">
+                                    <a href="{{ route('MalaysianEmployer.postJob.forward_to_bhc',$job_post->id) }}" class="btn btn-primary btn-block text-center mx-auto">
                                         <b><i class="fa fa-send"></i> Forward To Bangladesh High Comission </b>
                                     </a>
                                 </div>
                                 <div class="col-md-4"></div>
                             </div>
+                            @endif
 
                         </div>
                     </div>

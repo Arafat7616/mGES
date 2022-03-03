@@ -27,6 +27,8 @@ class JobPost extends Model
         'rejection_reason',
         'mra_id',
         'recruiting_type',
+        'forward_to_bhc',
+        'forward_to_wsc',
         'status',
     ];
 

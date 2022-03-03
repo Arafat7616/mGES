@@ -46,7 +46,7 @@
                                         <th>Job Location</th>
                                         {{-- <th>Appointment Date</th>
                                         <th>Appointment Time</th> --}}
-                                        <th>Status</th>
+                                        {{-- <th>Status</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -59,7 +59,7 @@
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             {{-- <td>{{ $job_post->appointment_date ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_time ?? '-' }}</td> --}}
-                                            <td>
+                                            {{-- <td>
                                                @if ($job_post->ma_status == 'New')
                                                     <button type="button" name="New"
                                                         class="btn btn-primary btn-xs update">New</button>
@@ -79,7 +79,7 @@
                                                     <button type="button" name="Applied"
                                                         class="btn btn-info btn-xs update">Applied</button>
                                                 @endif
-                                            </td>
+                                            </td> --}}
                                             <td>
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('MalaysianEmployer.postJob.show', $job_post->id) }}">
@@ -101,7 +101,7 @@
                                         <th>Job Location</th>
                                         {{-- <th>Appointment Date</th>
                                         <th>Appointment Time</th> --}}
-                                        <th>Status</th>
+                                        {{-- <th>Status</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

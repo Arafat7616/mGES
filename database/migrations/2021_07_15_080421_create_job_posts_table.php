@@ -33,7 +33,13 @@ class CreateJobPostsTable extends Migration
             $table->string('appointment_date', 100)->nullable();
             $table->string('appointment_time', 100)->nullable();
             $table->string('rejection_reason', 500)->nullable();
+
+            $table->integer('bhc_approval')->default(0);
+
+            $table->integer('forward_to_bhc')->default(0);
+            $table->integer('forward_to_wsc')->default(0);
             $table->integer('wsc_send_status')->default(0);
+
             $table->enum('ma_status', ['New', 'Verified', 'Approved', 'Applied', 'Rejected', 'Pending'])->default('New');
             $table->enum('forward_status', ['Forwarded','Pending'])->nullable();
             $table->enum('status', ['New', 'Verified', 'Approved', 'Applied', 'Rejected', 'Pending'])->default('New');

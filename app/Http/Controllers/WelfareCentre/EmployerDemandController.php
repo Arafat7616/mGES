@@ -13,7 +13,7 @@ class EmployerDemandController extends Controller
 {
     //
     public function received(){
-        $job_posts = JobPost::where('status', 'Verified')->orderBy('id','DESC')->get();
+        $job_posts = JobPost::where('forward_to_wsc',1)->orderBy('id','DESC')->get();
         return view('WelfareCentre.employerDemand.received',compact('job_posts'));
     }
 
@@ -51,7 +51,7 @@ class EmployerDemandController extends Controller
 
         $job_post = JobPost::findOrFail($id);
 
-        $job_post->status    =   $request->jobPostStatus;
+        $job_post->bhc_approval    =   $request->jobPostStatus;
         $job_post->rejection_reason    =  $request->reasonToReject;
 
         if ($request->hasFile('demandLetter')) {

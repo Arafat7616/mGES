@@ -50,10 +50,10 @@
                                                 <select class="form-control" name="jobPostStatus" id="jobPostStatus"
                                                     required="">
                                                     <option selected="" disabled="" value="">Select status</option>
-                                                    <option {{ $job_post->status == 'Approved' ? 'selected' : '' }}
-                                                        value="Approved">Approved</option>
-                                                    <option {{ $job_post->status == 'Rejected' ? 'selected' : '' }}
-                                                        value="Rejected">Rejected</option>
+                                                    <option {{ $job_post->bhc_approval == 1 ? 'selected' : '' }}
+                                                        value="1">Approved</option>
+                                                    <option {{ $job_post->bhc_approval == 2 ? 'selected' : '' }}
+                                                        value="2">Rejected</option>
                                                 </select>
                                             </div>
                                             <div class="form-group" id="demandLetter" style="display: none;">

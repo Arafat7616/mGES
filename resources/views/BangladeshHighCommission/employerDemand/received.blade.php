@@ -60,24 +60,15 @@
                                             <td>{{ $job_post->appointment_date ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_time ?? '-' }}</td>
                                             <td>
-                                               @if ($job_post->status == 'New')
+                                                @if($job_post->bhc_approval == 1)
                                                     <button type="button" name="New"
-                                                        class="btn btn-primary btn-xs update">New</button>
-                                                @elseif ($job_post->status == "Rejected")
+                                                        class="btn btn-primary btn-xs update">Approved</button>
+                                                @elseif ($job_post->bhc_approval == 2)
                                                     <button type="button" name="Rejected"
                                                         class="btn btn-warning btn-xs update">Rejected</button>
-                                                @elseif ($job_post->status == "Pending")
+                                                @else
                                                     <button type="button" name="Pending"
                                                         class="btn btn-warning btn-xs update">Pending</button>
-                                                @elseif ($job_post->status == "Approved")
-                                                    <button type="button" name="Approved"
-                                                        class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($job_post->status == "Verified")
-                                                    <button type="button" name="Verified"
-                                                        class="btn btn-info btn-xs update">Verified</button>
-                                                @elseif ($job_post->status == "Applied")
-                                                    <button type="button" name="Applied"
-                                                        class="btn btn-info btn-xs update">Applied</button>
                                                 @endif
                                             </td>
                                             <td>
@@ -90,9 +81,9 @@
                                                     <i class="fa fa-edit"></i>
                                                 </a>
 
-                                                @if($job_post->status == 'New')
+                                                @if($job_post->forward_to_wsc == 0)
                                                 <a class="btn btn-primary btn-sm"
-                                                    href="{{ route('BangladeshHighCommission.employerDemand.send_to_bhc', $job_post->id) }}">
+                                                    href="{{ route('BangladeshHighCommission.employerDemand.forward_to_wsc', $job_post->id) }}">
                                                     <i class="fa fa-send"></i>
                                                 </a>
                                                 @endif

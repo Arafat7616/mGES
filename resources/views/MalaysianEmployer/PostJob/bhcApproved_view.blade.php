@@ -105,7 +105,7 @@
                 </div>
 
 
-                @if($job_post->status == 'Approved')
+                @if($job_post->bhc_approval == 1)
                 <div class="col-md-4"></div>
 
                 <div class="col-md-8">
@@ -117,7 +117,7 @@
 
                             <br>
                             <p class="text-center">
-                                {!! QrCode::size(200)->generate(url('/qr_code_result')) !!}
+                                {!! QrCode::size(200)->generate(route('postJob.viewDemandLetter',$job_post->id)) !!}
                             </p>
                           </div>
                     </div>
