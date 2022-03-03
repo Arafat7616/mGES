@@ -37,6 +37,7 @@ class RegisterController extends Controller
 
     public function redirectTo()
     {
+        
         if (Auth::user()->user_type == 'super-admin') {
             return 'super-admin/dashboard';
         } elseif (Auth::user()->user_type == 'malaysian-employer') {
@@ -70,7 +71,9 @@ class RegisterController extends Controller
             return 'bangladesh-admin/dashboard';
         } elseif (Auth::user()->user_type == 'malaysia-recruiting-agency') {
             return 'malaysia-recruiting-agency/dashboard';
-        } else {
+        }elseif (Auth::user()->user_type == 'call-center') {
+            return 'call-center/dashboard';
+        }else {
             return route('register');
         }
     }
@@ -146,7 +149,10 @@ class RegisterController extends Controller
             $userType = "malaysia-embassy";
         } elseif ($data['role'] == 17) {
             $userType = "malaysia-recruiting-agency";
-        } else {
+        } elseif ($data['role'] == 18) {
+            $userType = "call-center";
+        }
+        else {
             echo "some this wrong";
         }
 

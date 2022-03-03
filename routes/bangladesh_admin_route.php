@@ -23,6 +23,15 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('rejected', 'BangladeshRecruitingAgencieController@rejected')->name('rejected');
     });
 
+    // Call Center
+    Route::group(['prefix' => 'call-center/', 'as' => 'callCenter.'], function () {
+        Route::post('approve/{id}', 'CallCenterController@approveNow')->name('approveNow');
+        Route::post('reject/{id}', 'CallCenterController@rejectNow')->name('rejectNow');
+        Route::get('request', 'CallCenterController@request')->name('request');
+        Route::get('approved', 'CallCenterController@approved')->name('approved');
+        Route::get('rejected', 'CallCenterController@rejected')->name('rejected');
+    });
+
     // One stop services
     Route::group(['prefix' => 'one-stop-services/', 'as' => 'oneStopService.'], function () {
         Route::post('approve/{company_id}', 'OneStopServiceController@approveNow')->name('approveNow');

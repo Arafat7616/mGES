@@ -57,6 +57,18 @@
                 </li>
 
                 <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-phone"></i> <span>Call Center</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('BangladeshAdmin.callCenter.request') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> New Requests</a></li>
+                        <li><a href="{{ route('BangladeshAdmin.callCenter.approved') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> Approved Requests</a></li>
+                        <li><a href="{{ route('BangladeshAdmin.callCenter.rejected') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> Rejected Requests</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-agenda"></i> <span> Job Posts
                         </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
