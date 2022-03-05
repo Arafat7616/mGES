@@ -23,7 +23,7 @@ Route::group(['prefix' => 'bangladesh-high-commission/', 'namespace' => 'Banglad
         Route::get('approved', 'EmployerDemandController@approved')->name('approved');
         Route::get('rejected', 'EmployerDemandController@rejected')->name('rejected');
         Route::get('show/{id}', 'EmployerDemandController@show')->name('show');
-        Route::get('send_to_bhc/{id}', 'EmployerDemandController@send_to_bhc')->name('send_to_bhc');
+        Route::get('forward_to_wsc/{id}', 'EmployerDemandController@forward_to_wsc')->name('forward_to_wsc');
     });
 
     // New Passport Service

@@ -47,7 +47,7 @@
                                         <th>Appointment Date</th>
                                         <th>Job Vacancy</th>
                                         <th>QR Code</th>
-                                        <th>Status</th>
+                                        {{-- <th>Status</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -60,8 +60,8 @@
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_date ?? '-' }}</td>
                                             <td>{{ $job_post->job_vacancy }}</td>
-                                            <td>{!! QrCode::size(100)->generate(url('/qr_code_result')) !!}</td>
-                                            <td>
+                                            <td>{!! QrCode::size(100)->generate(route('postJob.viewDemandLetter',$job_post->id)) !!}</td>
+                                            {{-- <td>
                                                @if ($job_post->status == 'New')
                                                     <button type="button" name="New"
                                                         class="btn btn-primary btn-xs update">New</button>
@@ -81,7 +81,7 @@
                                                     <button type="button" name="Applied"
                                                         class="btn btn-info btn-xs update">Applied</button>
                                                 @endif
-                                            </td>
+                                            </td> --}}
                                             <td>
                                                 <a class="btn btn-info btn-xs" href="{{ route('MalaysianEmployer.postJob.bhcApproved_view', $job_post->id) }}">
                                                     <i class="fa fa-eye"></i>

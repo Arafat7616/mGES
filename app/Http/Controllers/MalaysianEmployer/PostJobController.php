@@ -4,6 +4,7 @@ namespace App\Http\Controllers\MalaysianEmployer;
 
 use App\Http\Controllers\Controller;
 use App\JobCategory;
+use App\JobDistributeInBRA;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\JobPost;
@@ -106,12 +107,16 @@ class PostJobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+
 
     public function show($id)
     {
         $job_post = JobPost::findOrFail($id);
-        return view('MalaysianEmployer.PostJob.show', compact('job_post'));
+
+        $rec_agency = JobDistributeInBRA::where('job_post_id',$id)->get();
+
+
+        return view('MalaysianEmployer.PostJob.show', compact('job_post','rec_agency'));
     }
 
 
@@ -124,7 +129,17 @@ class PostJobController extends Controller
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
+    }
 
+    public function forward_to_bhc($id){
+        $job_post = JobPost::findorFail($id);
+        $job_post->forward_to_bhc = 1;
+        try {
+            $job_post->save();
+            return back()->withToastSuccess('Successfully Forwarded to Bangladesh High Comission.');
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
     }
 
 
@@ -136,7 +151,7 @@ class PostJobController extends Controller
 
     public function bhcApproved()
     {
-        $job_posts = JobPost::where('status','Approved')->orderBy('id', 'DESC')->get();
+        $job_posts = JobPost::where('bhc_approval',1)->orderBy('id', 'DESC')->get();
         return view('MalaysianEmployer.PostJob.bhcApproved', compact('job_posts'));
     }
 

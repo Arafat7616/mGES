@@ -30,7 +30,9 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
     Route::get('approved-job-posts/{id}', 'PostJobController@recruitEmployee')->name('postJob.recruit');
     Route::post('approved-job-posts/send/{id}', 'PostJobController@sendJob')->name('postJob.send');
     Route::get('approved-job-posts/forward/{id}', 'PostJobController@forward')->name('postJob.forward');
-   
+
+    Route::get('approved-job-posts/forward_to_bhc/{id}', 'PostJobController@forward_to_bhc')->name('postJob.forward_to_bhc');
+
 
     // candidates
     Route::group(['prefix' => 'candidates/', 'as' => 'candidates.'], function () {

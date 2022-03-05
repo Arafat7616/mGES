@@ -12,12 +12,12 @@ use Intervention\Image\ImageManagerStatic as Image;
 class EmployerDemandController extends Controller
 {
     public function received(){
-        $job_posts = JobPost::where('status', 'New')->orderBy('id','DESC')->get();
+        $job_posts = JobPost::where('forward_to_bhc', 1)->orderBy('id','DESC')->get();
         return view('BangladeshHighCommission.employerDemand.received',compact('job_posts'));
     }
 
     public function send(){
-        $job_posts = JobPost::where('status', 'Verified')->orderBy('id','DESC')->get();
+        $job_posts = JobPost::where('forward_to_wsc', 1)->orderBy('id','DESC')->get();
         return view('BangladeshHighCommission.employerDemand.received',compact('job_posts'));
     }
 
@@ -50,7 +50,7 @@ class EmployerDemandController extends Controller
 
         $job_post = JobPost::findOrFail($id);
 
-        $job_post->status    =   $request->jobPostStatus;
+        $job_post->bhc_approval    =   $request->jobPostStatus;
         $job_post->rejection_reason    =  $request->reasonToReject;
 
         if ($request->hasFile('demandLetter')) {
@@ -70,11 +70,11 @@ class EmployerDemandController extends Controller
         }
     }
 
-    public function send_to_bhc($id){
+    public function forward_to_wsc($id){
         $job_post = JobPost::findOrFail($id);
-        $job_post->status = 'Verified';
+        $job_post->forward_to_wsc = 1;
         $job_post->update();
 
-        return back()->withToastSuccess('Successfully Forwarded to Bangladesh High Comission.');
+        return back()->withToastSuccess('Successfully Forwarded to Welfare Service Center');
     }
 }
