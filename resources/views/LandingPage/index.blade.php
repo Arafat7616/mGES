@@ -37,7 +37,7 @@
     <!-- banner end -->
 
     <!-- card content start -->
-    <section class="py-3">
+    <section class="py-5 my-5">
         <div class="card-items container">
             <div class="row">
                 <div class="col-sm-12 col-md- col-lg-3">
