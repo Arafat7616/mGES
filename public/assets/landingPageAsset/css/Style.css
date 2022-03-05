@@ -146,19 +146,17 @@ body {
 }
 
 .topHeading {
-  background: linear-gradient(
-    90deg,
-    #15b8e3,
-    #10a4d3,
-    #1291c3,
-    #167eb2,
-    #1b6ca0,
-    #1e5a8d,
-    #1f497a,
-    #1e3867
-  );
-}
+  background:#E2E7ED !important;
 
+}
+.topHeaderLink{
+  color: #2A406F !important;
+  font-weight: bold;
+}
+.topHeaderLink:hover{
+  color: #00add7 !important;
+  
+}
 /* animation end */
 
 /* about mges start */

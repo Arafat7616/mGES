@@ -1,7 +1,7 @@
 
-.banner-container {
+.banner-container-medical {
    
-    background-image: url("../img/Header-UI-02.png");
+    background-image: url("../img/Header-UI-02.png") !important;
   
       /* height: 50%; */
     background-repeat: no-repeat;
