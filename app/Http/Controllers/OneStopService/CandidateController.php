@@ -7,14 +7,17 @@ use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
 use App\User;
 use Illuminate\Http\Request;
-use Laravel\Ui\Presets\React;
 
 class CandidateController extends Controller
 {
     public function selected(){
-        // $candidates = Candidate::where('offered_status', true)->where('result_status','!=','Assigned')->orderBy('id','DESC')->get();
-        $candidates = Candidate::where('offered_status', true)->orderBy('id','DESC')->get();
+        $candidates = Candidate::where('result_status','!=','Assigned')->where('offered_status', true)->orderBy('id','DESC')->get();
         return view('OneStopService.candidate.selected', compact('candidates'));
+    }
+
+    public function uploadFaceMatch($candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('OneStopService.candidate.upload-face-match', compact('candidate','wscList'));
     }
 
     public function interview(){
@@ -33,10 +36,9 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.ticketBooked', compact('offeredCandidates'));
     }
 
-    public function showReviewedCandidate($offered_candidate_id){
-        $offeredCandidate = OfferedCandidate::findOrfail($offered_candidate_id);
-        $candidate = Candidate::findOrFail($offeredCandidate->candidate_id);
-        return view('OneStopService.candidate.show-candidate', compact('offeredCandidate','candidate'));
+    public function showReviewedCandidate($candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('OneStopService.candidate.show-candidate', compact('candidate'));
     }
 
     public function showFinalCandidate($offered_candidate_id){
@@ -73,7 +75,6 @@ class CandidateController extends Controller
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
-
     }
 
     public function assignInterviewOsc($offered_candidate_id){

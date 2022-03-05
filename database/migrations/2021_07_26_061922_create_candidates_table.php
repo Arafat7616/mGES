@@ -56,7 +56,9 @@ class CreateCandidatesTable extends Migration
             $table->string('approval_status')->nullable();
             $table->string('payment_assigned')->nullable();
             $table->string('status')->nullable()->comment('Active', 'Inactive', 'Selected', 'Reviewed', 'Forwarded', 'Interview', 'confirmed');
-            $table->string('result_status')->nullable()->comment('New','Physical Interview','Online Interview','Selected','Rejected','Assigned');
+            $table->string('result_status')->default('New')->comment('New','Physical Interview','Online Interview','Selected','Rejected','Assigned');
+            $table->integer('permission_status')->default(0)->comment('1 = single stop center passed, 2 = calling visa approved');
+            $table->string('sending_status')->nullable();
             $table->string('offer_letter')->nullable();
             $table->string('employer_comments')->nullable();
             $table->timestamps();

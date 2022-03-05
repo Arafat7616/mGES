@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Candidate;
 use App\OfferedCandidate;
+use Faker\Generator as Faker;
 
 class CandidateSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class CandidateSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('candidates')->insert([
@@ -84,6 +85,31 @@ class CandidateSeeder extends Seeder
             $offeredCandidate->travel_agency_id = 3;
             $offeredCandidate->post_medical_id = 12;
             $offeredCandidate->save();
+        }
+
+
+        for ($i=0; $i <800 ; $i++) {
+            $candidate = new Candidate();
+            $candidate->candidate_name      =  $faker->name();
+            $candidate->role_id             = 15;
+            $candidate->job_id              = $faker->numberBetween(1, 25);
+            $candidate->company_id          = rand(18, 27);
+            $candidate->job_category_id     = rand(1, 13);
+            $candidate->candidate_dob       = $faker->dateTimeBetween($startDate = '-40 years', $endDate = '-20 years', $timezone = null);
+            $candidate->candidate_gender    = $faker->randomElements(['male', 'female'])[0];
+            $candidate->passport_number     = Str::random(18);
+            $candidate->phone_number        = $faker->phoneNumber();
+            $candidate->candidate_email     = $faker->safeEmail;
+            $candidate->status              = 'Active';
+            $candidate->offered_status      = $faker->randomElements([true, false])[0];
+            $candidate->result_status       = 'New';
+            $candidate->nationality         = 'bangladesh';
+            $candidate->present_address     = 'dhaka bangladesh';
+            $candidate->permanent_address   = 'dhaka bangladesh';
+            $candidate->created_id          = $faker->numberBetween(28,37);
+            $candidate->permission_status   = $faker->numberBetween(1,2);
+            $candidate->created_at          = Carbon::now();
+            $candidate->save();
         }
     }
 }

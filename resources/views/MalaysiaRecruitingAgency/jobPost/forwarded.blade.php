@@ -42,7 +42,7 @@
                                 <thead>
                                     <tr>
                                         <th>SL No</th>
-                                        <th>Company Name</th>
+                                        <th>Name</th>
                                         <th>Job Category</th>
                                         <th>Post Date</th>
                                         <th>End Date</th>
@@ -54,7 +54,7 @@
                                     @foreach ($jobPosts as $jobPost)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $jobPost->user->company_name }}</td>
+                                            <td>{{ $jobPost->candidate_name }}</td>
                                             <td>{{ $jobPost->job_category->category_name }}</td>
                                             <td>{{ date('Y-m-d',strtotime($jobPost->created_at)) }}</td>
                                             <td>{{ date('Y-m-d',strtotime($jobPost->end_date)) }}</td>

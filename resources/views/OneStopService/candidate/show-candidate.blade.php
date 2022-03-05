@@ -56,7 +56,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <b>Status</b> <span
-                                        class="float-right badge badge-info">{{ $offeredCandidate->result_status }}</span>
+                                        class="float-right badge badge-info">{{ $candidate->result_status }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -157,17 +157,17 @@
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="results">
                                     <strong><i class="fa fa-user mr-1"></i> Company Name</strong>
-                                    <p class="text-muted">{{ $offeredCandidate->created_by }}</p>
+                                    <p class="text-muted">{{ $candidate->created_by }}</p>
                                     <hr>
                                     <strong><i class="fa fa-pencil mr-1"></i> Employer Comments</strong>
-                                    <p class="text-muted">{{ $offeredCandidate->employer_comments }}</p>
+                                    <p class="text-muted">{{ $candidate->employer_comments }}</p>
                                     <hr>
-                                    @if($offeredCandidate->offer_letter)
-                                        <a href="{{ asset($offeredCandidate->offer_letter) }}" target="_blank">
+                                    @if($candidate->offer_letter)
+                                        <a href="{{ asset($candidate->offer_letter) }}" target="_blank">
                                             <strong><i class="fa fa-file mr-1"></i> Candidate-OfferLetter</strong>
                                         </a>
                                         <div class="mailbox-attachment-info">
-                                            <a href="{{ asset($offeredCandidate->offer_letter) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="{{ asset($candidate->offer_letter) }}" download class="btn btn-default btn-xs float-right"><i class="fa fa-cloud-download"></i></a>
                                         </div>
                                     @else
                                         <a title="Sorry there is no document">

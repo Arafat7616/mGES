@@ -235,7 +235,7 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container p-2">
                 <p class="centralizedPay">
                     <big>mGES // Centralized Payments</big>
                 </p>
@@ -284,11 +284,11 @@
                         <div>
                             <div class="d-flex my-4">
 
-                                <img width="70px" class="img-fluid mx-2"
+                                <img width="75px" class="img-fluid me-2" 
                                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
                                     alt="" />
 
-                                <div class="ms-4">
+                                <div class="ms-1">
                                     <p><big>Secure Env</big></p>
                                     <p>
                                         <small>Latest cutting-edge technologies are embedded into
@@ -298,11 +298,11 @@
                             </div>
                             <div class="d-flex my-4">
 
-                                <img class="img-fluild mx-2" width="70px"
+                                <img class="img-fluild me-2" width="75px" 
                                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-12.png') }}"
                                     alt="" />
 
-                                <div class="ms-4">
+                                <div class="ms-1">
                                     <p><big>Fast Utility</big></p>
                                     <p>
                                         <small>Use Salary for Savings, Pay Bills, Buy Tickets and
@@ -312,11 +312,11 @@
                             </div>
                             <div class="d-flex my-4">
 
-                                <img class="img-fluid mx-2" width="70px"
+                                <img class="img-fluid me-2" width="75px" 
                                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
                                     alt="" />
 
-                                <div class="ms-4">
+                                <div class="ms-1">
                                     <p><big>Global Remittance</big></p>
                                     <p>
                                         <small>Send money to the relatives back home in an

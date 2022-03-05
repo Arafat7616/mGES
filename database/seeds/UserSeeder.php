@@ -184,8 +184,6 @@ class UserSeeder extends Seeder
             'active_status' => 'Approved',
         ]);
 
-
-
         User::create([
             'role_id' => 11,
             'country_id' => 18,
@@ -208,26 +206,217 @@ class UserSeeder extends Seeder
             'document2' => NULL,
         ]);
 
+
+        // Malaysian Employer company seeder starts
+
         User::create([
-            'role_id' => 18,
-            'country_id' => 18,
-            'name' => 'Call Center',
-            'email' => 'call-center@gmail.com',
-            'user_type' => 'call-center',
-            'active_status' => 'Approved',
-            'domain' => 'call-center.com',
-            'company_name' => 'Call Center',
-            'company_register_number' => '1313164',
-            'abbr' => 'cc',
-            'phone' => '01852525125',
-            'city' => 'Dhaka',
-            'state' => 'Dhaka',
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Versatlilo London',
+            'company_name' => 'Versatlilo London',
+            'email' => 'versatlilolondon@gmail.com',
             'password' => Hash::make('12345'),
-            'address1' => 'Dhaka Banani',
-            'address2' => 'Dkaha Banani',
-            'logo' => 'uploads/profile/vogkW72ZyKCZX5D50xjm-1646218057.png',
-            'document1' => 'uploads/profile/VRlWh9l1mzJVK2GyvZZ0-1646218058.pdf',
-            'document2' => NULL,
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
         ]);
+
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Kamrul Group',
+            'company_name' => 'Kamrul Group',
+            'email' => 'kamrulgroup@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'TFP Solutions (Malaysia)',
+            'company_name' => 'TFP Solutions (Malaysia)',
+            'email' => 'tfp-solutions-malaysia@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Kamrul Agro Industries Ltd.',
+            'company_name' => 'Kamrul Agro Industries Ltd.',
+            'email' => 'kamrul-agro@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Kamrul Food Industries Ltd.',
+            'company_name' => 'Kamrul Food Industries Ltd.',
+            'email' => 'kamrul-food@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Meastro Soft Ltd.',
+            'company_name' => 'Meastro Soft Ltd.',
+            'email' => 'meastro-soft@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Maestro Crown College',
+            'company_name' => 'Maestro Crown College',
+            'email' => 'maestro-crown-college@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Tap and Pay WLL.Bahrain',
+            'company_name' => 'Tap and Pay WLL.Bahrain',
+            'email' => 'tap-and-pay@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'DRB-Hicom Berhad.',
+            'company_name' => 'DRB-Hicom Berhad.',
+            'email' => 'drb-hicom-berhad@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Honda Motor Co.',
+            'company_name' => 'Honda Motor Co.',
+            'email' => 'honda-motor-co.@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'malaysian-employer',
+            'active_status' => 'Approved',
+        ]);
+        // Malaysian Employer company seeder ends
+
+        // Bangladesh Recruiting Agency company seeder starts
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'A-Plus International',
+            'company_name' => 'A-Plus International',
+            'email' => 'a-plus-international@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Eastern Bay Bangladesh',
+            'company_name' => 'Eastern Bay Bangladesh',
+            'email' => 'Eastern-Bay-Bangladesh@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Simplex International',
+            'company_name' => 'Simplex International',
+            'email' => 'simplex-international@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Sarkar Recruiting Agency Ltd.',
+            'company_name' => 'Sarkar Recruiting Agency Ltd.',
+            'email' => 'sarkar-recruiting-ggency-ltd.@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Golden Arrow Ltd.',
+            'company_name' => 'Golden Arrow Ltd.',
+            'email' => 'golden-arrow-ltd@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Nac International',
+            'company_name' => 'Nac International',
+            'email' => 'nac-international@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Tribeni International',
+            'company_name' => 'Tribeni International',
+            'email' => 'tribeni-international@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => '	Binimoy International',
+            'company_name' => '	Binimoy International',
+            'email' => 'Binimoyinternational@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Orchid View Ltd.',
+            'company_name' => 'Orchid View Ltd.',
+            'email' => 'orchid-view-ltd@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        User::create([
+            'role_id' => 2,
+            'country_id' => 2,
+            'name' => 'Kazi International',
+            'company_name' => 'Kazi International',
+            'email' => 'kazi-international@gmail.com',
+            'password' => Hash::make('12345'),
+            'user_type' => 'bangladesh-recruiting-agency',
+            'active_status' => 'Approved',
+        ]);
+        // Bangladesh Recruiting Agency company seeder ends
+
     }
 }
