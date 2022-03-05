@@ -20,4 +20,10 @@ Route::group(['prefix' => 'training-agency/', 'namespace' => 'TrainingAgency', '
         Route::post('add-training-report/{id}', 'CandidateController@add_training_report')->name('add_training_report');
         Route::get('reported', 'CandidateController@reported')->name('reported');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });

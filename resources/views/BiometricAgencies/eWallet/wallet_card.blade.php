@@ -43,7 +43,7 @@
               <p ><span class="bg-danger upcontent">↓ 1230.20$</span></p>
             </div>
             <div class="container moneyContent">
-              <p>XXXX BDT</p>
+              <p>12,000.00 BDT</p>
             </div>
 
             <div class="button_contents" >

@@ -20,4 +20,10 @@ Route::group(['prefix' => 'medical-agency/', 'namespace' => 'MedicalAgency', 'as
         Route::post('add-medical-report/{id}', 'CandidateController@add_medical_report')->name('add_medical_report');
         Route::get('reported', 'CandidateController@reported')->name('reported');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });

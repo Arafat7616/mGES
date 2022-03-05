@@ -1,7 +1,11 @@
 @extends('LandingPage.Layout.app')
 @section('body')
     <section id="banner">
+<<<<<<< Updated upstream
         <div class="container-fluid banner-container-medical">
+=======
+        <div class="container-fluid banner-container-about">
+>>>>>>> Stashed changes
             <div class="text-center">
                 <div class="typeing">
                     <h1>

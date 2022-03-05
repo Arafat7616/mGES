@@ -29,6 +29,12 @@
                         <li><a href="{{ route('TravelAgency.travel.booked') }}"><i class="fa fa-arrow-circle-right"></i> Booked Tickets</a></li>
                     </ul>
                 </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-money"></i> <span> E-Wallet</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('TravelAgency.eWallet.wallet_card') }}"><i class="fa fa-arrow-circle-right"></i> Wallet</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>

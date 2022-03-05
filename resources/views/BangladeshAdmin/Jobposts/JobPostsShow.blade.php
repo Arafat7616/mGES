@@ -124,6 +124,7 @@
                     </div>
                 </div>
 
+                @if($job_post->bhc_approval == 1)
                 <div class="col-md-4"></div>
 
                 <div class="col-md-8">
@@ -140,6 +141,9 @@
                           </div>
                     </div>
                 </div>
+                @endif
+
+
             </div>
         </div> <!-- container -->
     </div>

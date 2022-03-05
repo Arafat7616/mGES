@@ -247,6 +247,12 @@ Route::group(['prefix' => 'welfare-centre/', 'namespace' => 'WelfareCentre', 'as
         Route::get('show/{id}', 'EmployerDemandController@show')->name('show');
         Route::get('send_to_me_and_ba/{id}', 'EmployerDemandController@send_to_me_and_ba')->name('send_to_me_and_ba');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });
 
 
