@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\EWalletController;
 
 use App\Http\Controllers\FrontendController;
 
@@ -30,7 +31,7 @@ Route::get('/mges/medical-center', 'FrontendController@medicalCenter')->name('me
 Route::get('/conatact', 'FrontendController@contact')->name('conatactPage');
 // Route::get('/', 'WelcomeController@index')->name('welcome');
 
-// For system reboot 
+// For system reboot
 Route::get('reboot','FrontendController@reboot');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
@@ -41,7 +42,6 @@ Route::post('change-password', 'HomeController@changePassword')->name('changePas
 //others
 Route::get('/qr_code', [QrCodeController::class, 'index']);
 Route::get('/qr_code_result', [QrCodeController::class, 'result']);
-
 Route::get('job-post/demand-latter/{id}', [DemandLetterController::class, 'demandLetter'])->name('postJob.viewDemandLetter');
 
 //Rating route
@@ -49,6 +49,7 @@ Route::get('/rating', [RatingController::class, 'index']);
 
 //PDF Generate Route
 Route::get('/print_pdf', 'PdfController@print')->name('print_pdf');
+
 
 
 include('child_oss_route.php');

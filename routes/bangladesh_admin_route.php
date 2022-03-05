@@ -72,6 +72,7 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
     Route::post('reject-vacancy/{applied_job_id}', 'JobPostController@rejectVacancy')->name('jobPost.rejectVacancy');
     Route::get('job-notification-store/{job_post_id}', 'JobPostController@notificationStore')->name('jobPost.notificationStore');
     Route::get('distribute-candidates/{job_post_id}', 'JobPostController@distributeCandidates')->name('jobPost.distributeCandidates');
+    Route::get('bhcApproved_view/{id}', 'JobPostController@JobPostShow')->name('jobPost.bhcApproved_view');
 
     //Candidate
     Route::group(['prefix' => 'candidate/', 'as' => 'candidate.'], function () {

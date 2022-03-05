@@ -138,7 +138,7 @@ class JobPostController extends Controller
 
     public function bhc_approval()
     {
-        $job_posts = JobPost::where('status','Approved')->orderby('id', 'DESC')->get();
+        $job_posts = JobPost::where('bhc_approval',1)->latest()->get();
         return view('BangladeshAdmin.Jobposts.bhcApproval', compact('job_posts'));
     }
 

@@ -98,4 +98,10 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('select-candidates', 'TravelQuotationController@selectCandidates')->name('selectCandidates');
         Route::get('show-stamping-approved-candidate/{offered_candidate_id}', 'TravelQuotationController@showStampingApprovedCandidate')->name('showStampingApprovedCandidate');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });

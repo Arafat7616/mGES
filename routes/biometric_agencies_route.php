@@ -19,4 +19,10 @@ Route::group(['prefix' => 'biometric-agency/', 'namespace' => 'BiometricAgencies
         Route::get('upload-biometric/{offered_candidate_id}', 'CandidateController@uploadBiometric')->name('uploadBiometric');
         Route::post('upload-biometric-store/{offered_candidate_id}', 'CandidateController@uploadBiometricStore')->name('uploadBiometricStore');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });

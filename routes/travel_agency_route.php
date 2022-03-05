@@ -47,4 +47,10 @@ Route::group(['prefix' => 'travel-agency/', 'namespace' => 'TravelAgency', 'as' 
         Route::get('/booked', 'TravelTicketsController@booked')->name('booked');
         Route::get('/view-booked-candidate/{offered_candidate_id}', 'TravelTicketsController@viewBookedCandidate')->name('viewBookedCandidate');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });
