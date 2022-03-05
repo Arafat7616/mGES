@@ -54,7 +54,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
     // candidate
     Route::group(['prefix' => 'candidate/', 'as' => 'candidate.'], function () {
         Route::post('request-to-visa/{offered_candidate_id}', 'CandidateController@requestToVisa')->name('requestToVisa');
-        Route::get('show-reviewed/{offered_candidate_id}', 'CandidateController@showReviewedCandidate')->name('showReviewedCandidate');
+        Route::get('show-reviewed/{candidate_id}', 'CandidateController@showReviewedCandidate')->name('showReviewedCandidate');
         Route::get('show-final/{offered_candidate_id}', 'CandidateController@showFinalCandidate')->name('showFinalCandidate');
         Route::get('show-booked/{offered_candidate_id}', 'CandidateController@showBookedCandidate')->name('showBookedCandidate');
         Route::get('assign-selected/{candidate_id}', 'CandidateController@assignSelectedCandidate')->name('assignSelectedCandidate');
@@ -62,6 +62,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::post('assign-interview-osc-store/{offered_candidate_id}', 'CandidateController@assignInterviewOscStore')->name('assignInterviewOscStore');
         Route::post('assign-selected-store/{offered_candidate_id}', 'CandidateController@assignSelectedCandidateStore')->name('assignSelectedCandidateStore');
         Route::get('selected', 'CandidateController@selected')->name('request');
+        Route::get('upload-face-match/{candidate_id}', 'CandidateController@uploadFaceMatch')->name('uploadFaceMatch');
         Route::get('interview', 'CandidateController@interview')->name('approved');
         Route::get('finalized', 'CandidateController@finalized')->name('rejected');
         Route::get('ticket-booked', 'CandidateController@ticketBooked')->name('ticketBooked');

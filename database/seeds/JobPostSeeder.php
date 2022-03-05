@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use Faker\Generator as Faker;
 
 class JobPostSeeder extends Seeder
 {
@@ -13,12 +14,12 @@ class JobPostSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('job_posts')->insert([
                 'job_category_id' => rand(5, 12),
-                'user_id' => 6,
+                'user_id' => $faker->numberBetween(18, 27),
                 'company_id' => 6,
                 'employment_type' => 'Full Time',
                 'gender'  => 'Male only',
