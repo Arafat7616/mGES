@@ -31,7 +31,7 @@
                             <h3 class="panel-title">Assign One Stop Service Centre to the selected candidate</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="{{ route('OneStopService.candidate.assignSelectedCandidateStore', $offeredCandidate->id) }}" method="POST"
+                            <form role="form" action="{{ route('OneStopService.candidate.assignSelectedCandidateStore', $candidate->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')

@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -58,25 +57,21 @@
                                             <td>{{ $candidate->phone_number }}</td>
                                             <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                @if ($candidate->result_status == 'Selected')
+                                                @if($candidate->offered_status == true)
                                                     <span class=" badge badge-success">Selected</span>
-                                                @elseif ($candidate->result_status == "Assigned")
-                                                    <span class="badge badge-info">Assigned</span>
                                                 @else
-                                                    <span class="badge badge-info">{{ $candidate->result_status }}</span>
+                                                    <span class="badge badge-info">Pending</span>
                                                 @endif
                                             </td>
                                             <td>
-                                                @if ($candidate->result_status == 'Selected')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('OneStopService.candidate.assignSelectedCandidate', $candidate->id) }}">
+                                                @if($candidate->offered_status == true)
+                                                    <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.assignSelectedCandidate', $candidate->id) }}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 @else
 
                                                 @endif
-                                                <a class="btn btn-info btn-sm"
-                                                    href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
+                                                <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
@@ -101,7 +96,6 @@
             </div> <!-- End Row -->
         </div> <!-- container -->
     </div>
-    <!--End content -->
 @endsection
 
 @section('DataTableJs')
