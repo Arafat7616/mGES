@@ -73,3 +73,32 @@
 .remitenceText {
   font-size: 18px;
 }
+
+.manualPayment {
+  font-size: 20px;
+}
+
+.anyQuestionImg {
+  padding: 0 2rem !important;
+  margin-bottom: 1rem;
+}
+.secureEnv {
+  width: 70px;
+}
+
+@media screen and (max-width: 480px) {
+  .coreAreaSection {
+    margin: 10px 0 !important;
+  }
+  .textGroup {
+    padding: 0.5em 0 !important;
+  }
+  .ecoText {
+    margin: 10px 1rem !important;
+  }
+  .rightSideUsedBy {
+    padding-bottom: 0;
+    margin: 10px 0;
+  }
+
+}

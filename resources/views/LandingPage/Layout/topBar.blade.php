@@ -37,10 +37,10 @@
                 <li class="nav-item mx-3 {{ Request::routeIs('homePage') ? 'active' : '' }}">
                     <a class="nav-link" aria-current="page" href="{{ route('homePage') }}">Home</a>
                 </li>
-                <li class="nav-item mx-2 {{ Request::routeIs('aboutPage') ? 'active' : '' }}">
+                <li class="nav-item mx-5 {{ Request::routeIs('aboutPage') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('aboutPage') }}">About</a>
                 </li>
-                <li class="nav-item mx-2 dropdown {{ request()->is('mges/*') ? 'active' : '' }}">
+                <li class="nav-item mx-5 dropdown {{ request()->is('mges/*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         mGES
@@ -50,7 +50,7 @@
                             <a class="dropdown-item" href="{{ route('mgesAbout') }}">About mGES</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Medical Center</a>
+                            <a class="dropdown-item" href="{{ route('medicalCenter') }}">Medical Center</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider" />
@@ -64,7 +64,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item mx-2 {{ Request::routeIs('conatactPage') ? 'active' : '' }}">
+                <li class="nav-item mx-5 {{ Request::routeIs('conatactPage') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('conatactPage') }}" tabindex="-1">Contact</a>
                 </li>
             </ul>

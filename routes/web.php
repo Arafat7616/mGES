@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Artisan;
 Route::get('/', 'FrontendController@index')->name('homePage');
 Route::get('/about', 'FrontendController@about')->name('aboutPage');
 Route::get('/mges/about', 'FrontendController@mgesAbout')->name('mgesAbout');
+Route::get('/mges/medical-center', 'FrontendController@medicalCenter')->name('medicalCenter');
 Route::get('/conatact', 'FrontendController@contact')->name('conatactPage');
 // Route::get('/', 'WelcomeController@index')->name('welcome');
 

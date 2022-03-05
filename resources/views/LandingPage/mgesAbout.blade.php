@@ -5,7 +5,7 @@
 @endsection
 @section('body')
     <div id="aboutMGES">
-        <section style='background-image: url({{ asset('assets/landingPageAsset/img/Header-UI-02.png') }})'>
+        <section>
             <div class="bgAboutImage d-flex justify-content-center align-items-center">
                 <div class="text-center textTypeWrite mb-4">
                     <h1 class="text-light textTypeWrite mb-4">
@@ -24,7 +24,7 @@
 
         <!-- //TODO: mGES core areas -->
 
-        <section class="my-5">
+        <section class="my-5 coreAreaSection">
             <!-- <div class=""> -->
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-end leftSideAreas">
@@ -80,7 +80,7 @@
 
                             <div class="row px-3">
                                 <div class="col-md-4">
-                                    <div class="p-3 bg-light workPermit">
+                                    <div class="p-3 my-3 bg-light workPermit">
                                         <p class="text-center fw-bolder">Work Permits</p>
                                         <ul class="listStyleCountry">
                                             <li>
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="p-3 bg-light workPermit">
+                                    <div class="p-3 my-3 bg-light workPermit">
                                         <p class="text-center fw-bolder">Govt. Schemes</p>
                                         <ul class="listStyleCountry">
                                             <li>
@@ -121,7 +121,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="p-3 bg-light workPermit">
+                                    <div class="p-3 my-3 bg-light workPermit">
                                         <p class="text-center fw-bolder">
                                             Professional & Vocational
                                         </p>
@@ -163,7 +163,7 @@
                             </p>
 
                             <div class="row px-3">
-                                <div class="col-md-4">
+                                <div class="col-md-4 my-3">
                                     <div class="p-3 bg-light workPermit">
                                         <p>Work Permits</p>
                                         <ul class="listStyleCountry">
@@ -188,7 +188,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 my-3">
                                     <div class="p-3 bg-light workPermit">
                                         <p>Govt. Schemes</p>
                                         <ul class="listStyleCountry">
@@ -204,7 +204,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 my-3">
                                     <div class="p-3 bg-light workPermit">
                                         <p>Professional & Vocational</p>
                                         <ul class="listStyleCountry">
@@ -239,13 +239,13 @@
                 <p class="centralizedPay">
                     <big>mGES // Centralized Payments</big>
                 </p>
-                <p class="">
+                <p class="manualPayment">
                     <small>No manual payment is collected by agents at any page</small>
                 </p>
                 <div class="row">
                     <!-- <div class="col-md-2">
-                                                                      <h1>This is Joti</h1>
-                                                                    </div> -->
+                          <h1>This is Joti</h1>
+                        </div> -->
                     <div class="col-md-10 mx-auto">
                         <img class="img-fluid"
                             src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
@@ -255,21 +255,21 @@
             </div>
 
             <!-- <div class="row mx-auto d-flex justify-content-center">
-                                                                  <div class="col-md-12">
-                                                                    <img
-                                                                      class="img-fluid"
-                                                                      src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
-                                                                      alt=""
-                                                                    />
-                                                                  </div>
-                                                                </div> -->
+                      <div class="col-md-12">
+                        <img
+                          class="img-fluid"
+                          src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
+                          alt=""
+                        />
+                      </div>
+                    </div> -->
         </section>
 
         <!-- //TODO: Smart Platform -->
         <section class="my-4">
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-end align-items-center">
-                    <div>
+                    <div class="p-3">
                         <div class="">
                             <p class="centralizedPay">
                                 <big>mGES // Centralized Payments</big>
@@ -282,13 +282,13 @@
                         </div>
 
                         <div>
-                            <div class="d-flex my-2">
-                                <div>
-                                    <img width="70px" class="img-fluid mx-2"
-                                        src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
-                                        alt="" />
-                                </div>
-                                <div>
+                            <div class="d-flex my-4">
+
+                                <img width="70px" class="img-fluid mx-2"
+                                    src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
+                                    alt="" />
+
+                                <div class="ms-4">
                                     <p><big>Secure Env</big></p>
                                     <p>
                                         <small>Latest cutting-edge technologies are embedded into
@@ -296,13 +296,13 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="d-flex my-2">
-                                <div>
-                                    <img class="img-fluild mx-2" width="70px"
-                                        src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-12.png') }}"
-                                        alt="" />
-                                </div>
-                                <div>
+                            <div class="d-flex my-4">
+
+                                <img class="img-fluild mx-2" width="70px"
+                                    src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-12.png') }}"
+                                    alt="" />
+
+                                <div class="ms-4">
                                     <p><big>Fast Utility</big></p>
                                     <p>
                                         <small>Use Salary for Savings, Pay Bills, Buy Tickets and
@@ -310,13 +310,13 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="d-flex my-2">
-                                <div>
-                                    <img class="img-fluid mx-2" width="70px"
-                                        src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
-                                        alt="" />
-                                </div>
-                                <div>
+                            <div class="d-flex my-4">
+
+                                <img class="img-fluid mx-2" width="70px"
+                                    src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
+                                    alt="" />
+
+                                <div class="ms-4">
                                     <p><big>Global Remittance</big></p>
                                     <p>
                                         <small>Send money to the relatives back home in an
@@ -329,7 +329,7 @@
                 </div>
                 <div class="col-md-6">
                     <div>
-                        <h2 class="coreAreasHeader text-center text-light">Used By</h2>
+                        <h2 class="coreAreasHeader text-center text-light">Smart Platform</h2>
                         <div class="d-flex justify-content-center">
                             <img src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Smart-platform.png') }}"
                                 alt="" />
@@ -339,43 +339,44 @@
             </div>
         </section>
 
-        <!---unparallel security start---->
-        <section class="unparallel-security about-page-primary-background pb-5">
+        <!--- TODO: Un-parallel Security ---->
+        <section class="about-page-primary-background pb-5">
+
             <div class="row">
                 <div class="col-md-7">
                     <h3 class="about-title-left text-center">Unparallel Security</h3>
+                    <div class="pt-4 text-center">
+                        <h4>Facial Identification</h4>
+                        <p>Use Facial Recognition to identify registered individual</p>
+                    </div>
+
+                    <div class="pt-3 text-center">
+                        <img src="{{ asset('assets/landingPageAsset/img/camera.jpg') }}" class="img-fluid"
+                            alt="" /><br />
+                        <a href="" class="btn image-uploade-btn">Upload Picture</a>
+                    </div>
+
                 </div>
-                <div class="px-5 pt-4 result-tilte-text">
-                    <h4>Facial Identification</h4>
-                    <p>Use Facial Recognition to identify registered individual</p>
-                </div>
-                <div class="col-md-12">
-                    <div class="row pb-4 result-image-contanier">
-                        <div class="col-md-4 text-center pb-5">
-                            <div class="up-image pt-3">
-                                <img src="{{ asset('assets/landingPageAsset/img/camera.jpg') }}" class="up-image-view"
-                                    alt="" /><br />
-                                <a href="" class="btn image-uploade-btn">Upload Picture</a>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="image-result mt-3">
-                                <h4>Identification Results</h4>
-                                <p>sarwar jahan shohan</p>
-                                <br />
-                                <p>XptdvTVW7NiCsmiS58Da</p>
-                                <p>
-                                    Sucess : Person found with 100% confidence. ID :
-                                    bf0e2d06-956c-42b3-9732-bf6ca06b091b
-                                </p>
-                            </div>
-                        </div>
+
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <div class="image-result mt-3">
+                        <h4>Identification Results</h4>
+                        <p>sarwar jahan shohan</p>
+                        <br />
+                        <p>XptdvTVW7NiCsmiS58Da</p>
+                        <p>
+                            Sucess : Person found with 100% confidence. ID :
+                            bf0e2d06-956c-42b3-9732-bf6ca06b091b
+                        </p>
                     </div>
                 </div>
             </div>
+
+
+
         </section>
-        <!---unparallel security end---->
-        <!--multi language start--->
+
+        <!-- @TODO: Multi Lingual --->
         <section class="multi-language">
             <div class="row">
                 <div class="col-md-5"></div>
@@ -385,58 +386,71 @@
                 </div>
             </div>
             <div class="multi-language-image-container text-center">
-                <img class="multi-language-image" src="{{ asset('assets/landingPageAsset/img/Multi-Lang.png') }}"
+                <img class="img-fluid m-3" src="{{ asset('assets/landingPageAsset/img/Multi-Lang.png') }}"
                     alt="image" />
             </div>
         </section>
-        <!--multi language end--->
-        <!---support section start---->
+
+        <!--- @TODO: Support---->
         <section class="support">
             <div class="container-fluid">
-                <div class="row support">
+                <div class="row pb-5">
                     <div class="col-md-7 text-center">
                         <h3 class="support-title">Support</h3>
                         <div class="py-3">
                             <h5>MGES // Welfare & Support</h5>
                             <p>You are not alone!</p>
                         </div>
-                        <img src="{{ asset('assets/landingPageAsset/img/Artboard-53.png') }}" class="Support-image"
-                            alt="" />
+                        <img width="80%" src="{{ asset('assets/landingPageAsset/img/Artboard-53.png') }}"
+                            class="img-fluid px-4 mx-3" alt="" />
                     </div>
-                    <div class="col-md-5 support-text-container">
-                        <h2>19%</h2>
-                        <p class="text-dark">
-                            Of foreign workers leave their jobs in an illegal way because
-                            they do not have someone better to advise them for.
-                        </p>
+                    <div class="col-md-5 d-flex justify-content-center align-items-center">
+                        <div class="p-3">
+                            <h2 class="text-center">19%</h2>
+                            <p class="text-dark">
+                                <big>
+                                    Of foreign workers leave their jobs in an illegal way because
+                                    they do not have someone better to advise them for.
+                                </big>
 
-                        <p class="text-dark">
-                            e-FWS Welfare & Support program would provide legal as-
-                            sistance and expert advice on the matters faced during work.
-                            This would not only mitigate any adverse situation but by
-                            having proper advice, workers would refrain from running away
-                            and working illegally in the country.
-                        </p>
+                            </p>
+
+                            <p class="text-dark">
+                                <big>
+                                    e-FWS Welfare & Support program would provide legal as-
+                                    sistance and expert advice on the matters faced during work.
+                                    This would not only mitigate any adverse situation but by
+                                    having proper advice, workers would refrain from running away
+                                    and working illegally in the country.
+                                </big>
+
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-        <!---support section end---->
-        <!-----question start -->
+
+        <!-- @TODO: Ask question -->
         <section class="question">
             <div class="container-fluid">
                 <div class="row question py-5">
                     <div class="col-md-8 d-flex justify-content-center align-items-center">
                         <div class="text-center">
 
-                            <img src="{{ asset('assets/landingPageAsset/img/Questions.png') }}" alt="">
-                            <a href="#" class="btn question-button">Any Question?</a>
+                            <img class="img-fluid anyQuestionImg"
+                                src="{{ asset('assets/landingPageAsset/img/Questions.png') }}" alt="">
+                            <div class="m-3">
+                                <a href="#" class="btn question-button">Any Question?</a>
+                            </div>
+
                             <p class="py-2">We love to talk <a href="#">Contact Us</a></p>
 
                         </div>
 
                     </div>
-                    <div class="col-md-4 px-3">
+                    <div class="col-md-4">
                         <img src="{{ asset('assets/landingPageAsset/img/ques.png') }}" class="puestion-image"
                             alt="sas" />
                     </div>

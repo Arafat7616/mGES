@@ -39,4 +39,9 @@ class FrontendController extends Controller
     {
         return view('LandingPage.contact');
     }
+
+    public function medicalCenter()
+    {
+        return view('LandingPage.madicalCenter');
+    }
 }
