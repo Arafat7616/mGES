@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/landingPageAsset/css/login.css" />
+    <!-- <link rel="stylesheet" href="assets/landingPageAsset/css/login.css" /> -->
+    <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/loginRegisterPage.css') }}" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
@@ -23,13 +24,17 @@
 
 <body>
     <div class="bodyHeight">
-        <div class="row">
+        <div class="row registerBg">
             <div class="col-md-6 d-flex justify-content-center align-items-center my-2">
                 <div class="p-4 bg-light bgShadow">
 
                     <form action="{{ route('login') }}" method="post">
                         @csrf
                         <div class="text-center">
+                            <div class="d-flex justify-content-center">
+                            <img src="assets/landingPageAsset/img/credintialImg/AllOutput/MGES-Logo-Orginal-Color.png" class="img-fluid my-3 mgesLogo text-center" width="100px" alt="">
+                            </div>
+                            
                             <h5 class="my-4 fw-bolder">Member Login</h5>
                             <input type="email" name="email" value="{{ old('email') }}"
                                 class="form-control inputBorder" placeholder="&#xf0e0; Mail"
@@ -52,19 +57,8 @@
                 </div>
             </div>
             <div class="col-md-6 rightSideContainer d-flex flex-column justify-content-evenly">
-                <div class="d-flex justify-content-around">
-                    <div></div>
-                    <img class="img-fluid mGesWhite"
-                        src="assets/landingPageAsset/img/credintialImg/AllOutput/MGES-Logo-White.png" width="250px"
-                        alt="" />
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="d-flex justify-content-end airFlying p-3">
-                        <img class="p-5 borderRadiusAirplane ms-5"
-                            src="assets/landingPageAsset/img/credintialImg/airplane.gif" width="400px" alt="" />
-                    </div>
-                </div>
-                <div></div>
+              
+            
             </div>
         </div>
     </div>
