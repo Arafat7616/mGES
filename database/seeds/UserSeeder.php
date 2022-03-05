@@ -206,6 +206,7 @@ class UserSeeder extends Seeder
             'document2' => NULL,
         ]);
 
+
         // Malaysian Employer company seeder starts
 
         User::create([
@@ -416,5 +417,6 @@ class UserSeeder extends Seeder
             'active_status' => 'Approved',
         ]);
         // Bangladesh Recruiting Agency company seeder ends
+
     }
 }

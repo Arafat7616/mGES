@@ -57,7 +57,7 @@
                                             <td>{{ $braInterest->jobPost->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $braInterest->jobPost->job_vacancy ?? '-' }}</td>
                                             <td>{{ $braInterest->jobPost->app_vacancy ?? '-' }}</td>
-                                            <td>{{ $braInterest->jobPost->created_at }}</td>
+                                            <td>{{ $braInterest->jobPost->created_at ?? '-' }}</td>
                                             <td>
                                                 @if ($braInterest->status == 'Rejected')
                                                 @elseif ($braInterest->status == 'Approved')
