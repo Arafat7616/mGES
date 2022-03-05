@@ -1,7 +1,7 @@
 @extends('LandingPage.Layout.app')
 @section('body')
     <section id="banner">
-        <div class="container-fluid banner-container">
+        <div class="container-fluid banner-container-medical">
             <div class="text-center">
                 <div class="typeing">
                     <h1>
