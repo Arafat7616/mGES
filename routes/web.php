@@ -8,7 +8,7 @@ use App\Http\Controllers\RatingController;
 use App\Http\Controllers\FrontendController;
 
 use App\Http\Controllers\DemandLetterController;
-
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +21,16 @@ use App\Http\Controllers\DemandLetterController;
 |
 */
 
+
+
 Route::get('/', 'FrontendController@index')->name('homePage');
 Route::get('/about', 'FrontendController@about')->name('aboutPage');
 Route::get('/mges/about', 'FrontendController@mgesAbout')->name('mgesAbout');
 Route::get('/conatact', 'FrontendController@contact')->name('conatactPage');
 // Route::get('/', 'WelcomeController@index')->name('welcome');
+
+// For system reboot 
+Route::get('reboot','FrontendController@reboot');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');

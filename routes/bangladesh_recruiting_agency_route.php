@@ -29,6 +29,12 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
         Route::get('show/{job_post_id}', 'InterestedJobController@show')->name('show');
     });
 
+    // interested-job
+    Route::group(['prefix' => 'get-distributed-job/', 'as' => 'getDistributed.'], function () {
+        Route::get('/', 'GetDistributedJobController@index')->name('index');
+        Route::get('show/{job_post_id}', 'GetDistributedJobController@show')->name('show');
+    });
+
     //Candidates
     Route::group(['prefix' => 'candidate/', 'as' => 'candidate.'], function () {
         Route::get('new', 'CandidateController@new')->name('new');
