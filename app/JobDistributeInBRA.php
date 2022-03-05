@@ -10,4 +10,8 @@ class JobDistributeInBRA extends Model
     {
         return $this->belongsTo(User::class, 'bra_id');
     }
+    public function braInterest()
+    {
+        return $this->belongsTo(BRAInterest::class, 'bra_interest_id');
+    }
 }

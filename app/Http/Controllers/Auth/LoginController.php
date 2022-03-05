@@ -71,8 +71,12 @@ class LoginController extends Controller
         } elseif (Auth::user()->user_type == 'bangladeshi-admin') {
             return 'bangladesh-admin/dashboard';
         }
-         elseif (Auth::user()->user_type == 'employer') {
-        } else {
+        elseif (Auth::user()->user_type == 'employer') {
+        } 
+        elseif (Auth::user()->user_type == 'call-center') {
+            return 'call-center/dashboard';
+        } 
+        else {
             return route('login');
         }
     }

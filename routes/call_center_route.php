@@ -12,6 +12,13 @@ Route::group(['prefix' => 'call-center/', 'namespace' => 'CallCenter', 'as' => '
 
     Route::post('/company-profile-submit', 'DashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
 
+    // Call Center route
+
+  
+        Route::get('/selected-from-db','CallCenterController@selectedFromDB')->name('selectedFromDB');
+        Route::get('/selected-from-db/{id}','CallCenterController@show')->name('show');
+ 
+
     // //visa Process
     // Route::get('/stamping-requested', 'VisaProcessController@stampingRequested')->name('stampingRequested');
     // Route::get('/stamping-approved','VisaProcessController@stampingApproved')->name('stampingApproved');

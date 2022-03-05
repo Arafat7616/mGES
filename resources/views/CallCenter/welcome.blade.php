@@ -1,4 +1,4 @@
-@extends("MalaysiaEmbassy.master")
+@extends("CallCenter.master")
 @section('main-content')
     <div class="content">
         <div class="container">

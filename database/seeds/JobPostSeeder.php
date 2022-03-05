@@ -138,7 +138,7 @@ class JobPostSeeder extends Seeder
             'age_limit'  => rand(20, 50),
             'salary'  => rand(5000, 50000),
             'job_location'  => 'Kuala lampur , Malaysia',
-            'job_vacancy'  => rand(50, 99),
+            'job_vacancy'  => 61,
             'end_date'  => now(),
             'demand_letter'  => null,
             'selected_wsc'  => null,
@@ -148,7 +148,6 @@ class JobPostSeeder extends Seeder
             'status'  => 'Approved',
             'bd_embasy_status' => 'Approved',
             'ma_status' => 'Approved',
-            'created_at' => Carbon::now()
         ]);
     }
 }

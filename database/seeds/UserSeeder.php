@@ -207,5 +207,27 @@ class UserSeeder extends Seeder
             'document1' => 'uploads/profile/VRlWh9l1mzJVK2GyvZZ0-1646218058.pdf',
             'document2' => NULL,
         ]);
+
+        User::create([
+            'role_id' => 18,
+            'country_id' => 18,
+            'name' => 'Call Center',
+            'email' => 'call-center@gmail.com',
+            'user_type' => 'call-center',
+            'active_status' => 'Approved',
+            'domain' => 'call-center.com',
+            'company_name' => 'Call Center',
+            'company_register_number' => '1313164',
+            'abbr' => 'cc',
+            'phone' => '01852525125',
+            'city' => 'Dhaka',
+            'state' => 'Dhaka',
+            'password' => Hash::make('12345'),
+            'address1' => 'Dhaka Banani',
+            'address2' => 'Dkaha Banani',
+            'logo' => 'uploads/profile/vogkW72ZyKCZX5D50xjm-1646218057.png',
+            'document1' => 'uploads/profile/VRlWh9l1mzJVK2GyvZZ0-1646218058.pdf',
+            'document2' => NULL,
+        ]);
     }
 }
