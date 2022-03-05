@@ -1,0 +1,113 @@
+.rightSideContainer {
+    background-image: url(../img/MGES-WEB-UI.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+}
+
+.rightSideContainerRegister {
+    background-image: url(../img/MGES-WEB-UI.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+}
+
+.leftSideContainer {
+    min-height: 100vh;
+}
+
+.inputBorder {
+    border-radius: 20px !important;
+    border: 2px solid #358999 !important;
+}
+
+.signInButton {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 36, 27, 0.6082808123249299) 0%,
+        rgba(9, 121, 118, 0.9808298319327731) 48%,
+        rgba(0, 212, 255, 1) 100%
+    ) !important;
+    color: white !important;
+}
+
+.bgShadow {
+    width: 22rem !important;
+    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+    border-radius: 25px !important;
+}
+
+.borderRadiusAirplane {
+    border-radius: 50%;
+    height: 400px;
+}
+
+/* .borderRadiusAirplane {
+    border-radius: 20px !important;
+  } */
+
+.bodyHeight {
+    overflow-x: hidden;
+}
+
+.airFlying {
+    background-image: url(../img/credintialImg/Login-Elements/Login-Elements.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loginPage {
+    min-height: 100vh;
+}
+
+.displayMges {
+    display: none;
+}
+
+.loginBg {
+    min-height: 100vh;
+}
+
+.registerBg {
+    min-height: 100vh;
+}
+
+.mgesLogo {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .rightSideContainer {
+        display: none !important;
+    }
+
+    .rightSideContainerRegister {
+        display: none !important;
+    }
+    .mgesLogo {
+        display: block;
+    }
+    .bgShadow {
+        height: 95vh;
+        box-shadow: none;
+        border-radius: 0px;
+    }
+}
+
+.iti {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.inputField::placeholder {
+    color: #bbb !important;
+}
+
+/* .mGesWhite{
+    background-position: right !important;
+  } */
