@@ -595,14 +595,14 @@
                             <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('medicalCenter') }}"><button class="w-100  BtnView py-3"> View All</button></a>
                     </div>
 
                     <div class="col-md-4 MedicalCard mx-4">
                         <div class="card btn justify-content-center align-items-center">
-                            <p>Endorsed</p>
-                            <h5 class="card-Title">MEDICAL CENTERS</h5>
-                            <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
+                            <p>Registered</p>
+                            <h5 class="card-Title">RECRUITMENT AGENCIES</h5>
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-07.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
                         <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
@@ -610,9 +610,9 @@
 
                     <div class="col-md-4 MedicalCard mx-4">
                         <div class="card btn justify-content-center align-items-center">
-                            <p>Endorsed</p>
-                            <h5 class="card-Title">MEDICAL CENTERS</h5>
-                            <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
+                            <p>Accompanying</p>
+                            <h5 class="card-Title">INSURANCE PROVIDERS</h5>
+                            <img src="{{ asset('assets/landingPageAsset/img/Icon-08.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
                         <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
