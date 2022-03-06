@@ -244,8 +244,8 @@
                 </p>
                 <div class="row">
                     <!-- <div class="col-md-2">
-                          <h1>This is Joti</h1>
-                        </div> -->
+                                          <h1>This is Joti</h1>
+                                        </div> -->
                     <div class="col-md-10 mx-auto">
                         <img class="img-fluid"
                             src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
@@ -255,14 +255,14 @@
             </div>
 
             <!-- <div class="row mx-auto d-flex justify-content-center">
-                      <div class="col-md-12">
-                        <img
-                          class="img-fluid"
-                          src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
-                          alt=""
-                        />
-                      </div>
-                    </div> -->
+                                      <div class="col-md-12">
+                                        <img
+                                          class="img-fluid"
+                                          src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
+                                          alt=""
+                                        />
+                                      </div>
+                                    </div> -->
         </section>
 
         <!-- //TODO: Smart Platform -->
@@ -284,7 +284,7 @@
                         <div>
                             <div class="d-flex my-4">
 
-                                <img width="75px" class="img-fluid me-2" 
+                                <img width="75px" class="img-fluid me-2"
                                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
                                     alt="" />
 
@@ -298,7 +298,7 @@
                             </div>
                             <div class="d-flex my-4">
 
-                                <img class="img-fluild me-2" width="75px" 
+                                <img class="img-fluild me-2" width="75px"
                                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-12.png') }}"
                                     alt="" />
 
@@ -312,7 +312,7 @@
                             </div>
                             <div class="d-flex my-4">
 
-                                <img class="img-fluid me-2" width="75px" 
+                                <img class="img-fluid me-2" width="75px"
                                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Icon-13.png') }}"
                                     alt="" />
 
