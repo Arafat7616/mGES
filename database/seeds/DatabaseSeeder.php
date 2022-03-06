@@ -1,6 +1,9 @@
 <?php
 
+// use Database\Seeders\BRAInterestSeeder;
+// use Database\Seeders\JobDistributeInBRASeeder;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,6 +46,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RegistrationCertificateSeeder::class);
         $this->call(BRAInterestSeeder::class);
         $this->call(JobDistributeInBRASeeder::class);
-        // $this->call(NotificationSeeder::class);
+        $this->call(NotificationSeeder::class);
     }
 }
