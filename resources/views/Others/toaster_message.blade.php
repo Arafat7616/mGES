@@ -46,7 +46,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var errors = <?php echo json_encode($errors->all()); ?>;
-          
+
             var errorMessage = '<div class="card bg-danger">\n' +
                 '                        <div class="card-body text-center p-5">\n' +
                 '                            <span class="text-white">';

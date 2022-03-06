@@ -83,6 +83,8 @@ class JobPostController extends Controller
         try {
             $appliedJob->save();
             return back()->withToastSuccess('Successfully saved.');
+            session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
