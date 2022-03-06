@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // malaysia-recruiting-agency route
-Route::group(['prefix' => 'malaysia-recruiting-agency/', 'namespace' => 'MalaysiaRecruitingAgency', 'as' => 'MalaysiaRecruitingAgency.', 'middleware' => ['auth', 'malaysia-recruiting-agency']], function () {
+Route::group(['prefix' => 'malaysia-recruiting-agency/', 'namespace' => 'MalaysiaRecruitingAgency', 'as' => 'MalaysiaRecruitingAgency.', 'middleware' => ['auth', 'malaysia-recruiting-agency','prevent-back-history']], function () {
     Route::get('/dashboard', 'MalaysiaRecruitingAgencyDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'MalaysiaRecruitingAgencyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'MalaysiaRecruitingAgencyDashboardController@companyPrfileView')->name('companyPrfileView');

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Bangladesh High Commission  route
-Route::group(['prefix' => 'bangladesh-high-commission/', 'namespace' => 'BangladeshHighCommission', 'as' => 'BangladeshHighCommission.', 'middleware' => ['auth', 'bangladesh-high-commission']], function () {
+Route::group(['prefix' => 'bangladesh-high-commission/', 'namespace' => 'BangladeshHighCommission', 'as' => 'BangladeshHighCommission.', 'middleware' => ['auth', 'bangladesh-high-commission','prevent-back-history']], function () {
     Route::get('/dashboard', 'BangladeshHighCommissionDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'BangladeshHighCommissionDashboardController@companyPrfileView')->name('companyPrfileView');
     Route::get('/edit-profile', 'BangladeshHighCommissionDashboardController@editProfile')->name('editProfile');

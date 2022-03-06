@@ -73,7 +73,8 @@ class CandidateController extends Controller
         $offeredCandidate->result_status = 'Updated';
         try {
             $offeredCandidate->save();
-            return back()->withToastSuccess('Successfully saved.');
+            session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -85,7 +86,8 @@ class CandidateController extends Controller
         $offeredCandidate->result_status = 'Recommended';
         try {
             $offeredCandidate->save();
-            return back()->withToastSuccess('Successfully saved.');
+            session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

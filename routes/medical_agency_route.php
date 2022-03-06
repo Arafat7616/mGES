@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Medical Agency middleware route
-Route::group(['prefix' => 'medical-agency/', 'namespace' => 'MedicalAgency', 'as' => 'MedicalAgency.', 'middleware' => ['auth', 'medical-agency']], function () {
+Route::group(['prefix' => 'medical-agency/', 'namespace' => 'MedicalAgency', 'as' => 'MedicalAgency.', 'middleware' => ['auth', 'medical-agency','prevent-back-history']], function () {
     Route::get('/dashboard', 'MedicalAgencyDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'MedicalAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
 

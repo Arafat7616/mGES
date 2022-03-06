@@ -56,7 +56,8 @@ class ChangeEmployerServiceController extends Controller
         $changeEmployerService->fees = $request->fees;
         try {
             $changeEmployerService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -105,7 +106,7 @@ class ChangeEmployerServiceController extends Controller
         $changeEmployerService->delivery_type = $request->deliveryStatus;
         $changeEmployerService->delivery_to = $request->deliveryTo;
         $changeEmployerService->service_status = $request->legalStatus;
-        
+
         if ($request->hasFile('document')) {
             $pdf             = $request->file('document');
             $folder_path       = 'uploads/document/';
@@ -116,7 +117,8 @@ class ChangeEmployerServiceController extends Controller
         }
         try {
             $changeEmployerService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

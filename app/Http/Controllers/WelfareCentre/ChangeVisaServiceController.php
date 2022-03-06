@@ -56,7 +56,8 @@ class ChangeVisaServiceController extends Controller
         $changeVisaService->fees = $request->fees;
         try {
             $changeVisaService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -105,7 +106,7 @@ class ChangeVisaServiceController extends Controller
         $changeVisaService->delivery_type = $request->deliveryStatus;
         $changeVisaService->delivery_to = $request->deliveryTo;
         $changeVisaService->service_status = $request->legalStatus;
-        
+
         if ($request->hasFile('document')) {
             $pdf             = $request->file('document');
             $folder_path       = 'uploads/document/';
@@ -116,7 +117,8 @@ class ChangeVisaServiceController extends Controller
         }
         try {
             $changeVisaService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

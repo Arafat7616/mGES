@@ -38,7 +38,8 @@ class LostPassportController extends Controller
         $lostPassport->save();
         try {
             $lostPassport->save();
-            return back()->withToastSuccess('Successfully saved.');
+            session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

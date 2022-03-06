@@ -95,7 +95,8 @@ class PostJobController extends Controller
 
         try {
             $job_post->save();
-            return back()->withToastSuccess('Successfully saved.');
+            session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -125,7 +126,8 @@ class PostJobController extends Controller
         $job_post->forward_status = 'Forwarded';
         try {
             $job_post->save();
-            return back()->withToastSuccess('Successfully Forwarded.');
+            session()->flash('success', 'Successfully Forwarded !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -136,7 +138,8 @@ class PostJobController extends Controller
         $job_post->forward_to_bhc = 1;
         try {
             $job_post->save();
-            return back()->withToastSuccess('Successfully Forwarded to Bangladesh High Comission.');
+            session()->flash('success', 'Successfully Forwarded to Bangladesh High Comission !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -183,7 +186,8 @@ class PostJobController extends Controller
 
         try {
             $job_post->save();
-            return back()->withToastSuccess('Successfully saved.');
+            session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
