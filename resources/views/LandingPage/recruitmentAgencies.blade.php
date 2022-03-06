@@ -1,11 +1,15 @@
 @extends('LandingPage.Layout.app')
+@section('add-on-css')
+    <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/Requirtment-Agency.css') }}" />
+@endsection
 @section('body')
+    <!-- banner start -->
     <section id="banner">
-        <div class="container-fluid banner-container-about">
+        <div class="container-fluid banner-container">
             <div class="text-center">
                 <div class="typeing">
                     <h1>
-                        <a href="" class="typewrite" data-period="2000" data-type='[ "Medical Center !!!" ]'>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Requirement Agency !!!" ]'>
                             <span class="wrap"></span>
                         </a>
                     </h1>
@@ -18,8 +22,8 @@
                         Migration Governance Eco system
                     </h2>
                     <h5 class="text-light main-subtitle">Migration with rights</h5>
-                    <!-- <h5 class="text-light main-subtitle">A foreign employee recruitment </h5> -->
-                    <!-- <h5 class="text-light main-subtitle">and management System</h5> -->
+                    <!-- <h5 class="text-light main-subtitle">A foreign employee recruitment </h5>
+                                  <h5 class="text-light main-subtitle">and management System</h5> -->
                     <div class="my-4">
                         <span class="mx-2"><i class="fa-brands fa-instagram banner-icons"></i></span>
                         <span class="mx-2"><i class="fa-brands fa-google-plus-g banner-icons"></i></span>
@@ -34,13 +38,16 @@
             </div>
         </div>
     </section>
+    <!-- banner end -->
+
+    <!--
+                      table content start -->
+
     <section id="table">
         <div class="container wrapper">
             <div class="card table-card p-3">
-                <h3 class="">MEDICAL CENTERS</h3>
-                <p class="text-muted">
-                    These are the list of Endorsed Medical Centers in source countries
-                </p>
+                <h3 class="">RECRUITMENT AGENCIES</h3>
+
                 <div class="table-head d-flex justify-content-between">
                     <div>
                         Show
@@ -65,115 +72,105 @@
 
                 <table>
                     <tr>
-                        <th>Country</th>
-                        <th>Region</th>
-                        <th>Medical Center Name</th>
-                        <th>Address</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Company Name</th>
+                        <th>RL No.</th>
                     </tr>
                     <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Ishtiyaq Medical Center</td>
-                        <td>
-                            <p>House-17, Road-10, Block-B, Banani, Dhaka-1213</p>
-                            <p>Mirpur, Dhaka-1216</p>
-                            <p>Phone: Tel: - +8801711-1179238</p>
-                            <p>Email:- rifat.abulbashar@gmail.com</p>
-                        </td>
+                        <td>Mohammad Abdul Mannan</td>
+                        <td>Proprietor</td>
+                        <td>Eastern Bay Bangladesh</td>
+                        <td>162</td>
                     </tr>
                     <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Human Diagnostic & Medical Centre</td>
-                        <td>
-                            <p>
-                                1/A, D I T Extension Road (3rd Floor), Fakirapool, Motijheel,
-                                Dhaka-1000
-                            </p>
-                            <p>Dhaka-100, Bangladesh</p>
-                            <p>Tel: 01737154982</p>
-                            <p>Email: - marhabamedicalltd@gmail.com</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Life Diagnostic Centre Ltd.</td>
-                        <td>
-                            <p>
-                                4 Inner Circular Road, Hotel Asor (1st Floor), Fakirapool,
-                            </p>
-                            <p>Motijheel, Dhaka-1000</p>
-                            <p>License No: - HSM 4510040</p>
-                            <p>Email: info@lifemedicalbd.com</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Life Diagnostic Centre Ltd.</td>
-                        <td>
-                            <p>376, Tongi Diverson Road, Bara Moghbazar, Dhaka-1217</p>
-                            <p>Dhaka-100, Bangladesh</p>
-                            <p>License No. HSM46204</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Human Diagnostic & Medical Centre</td>
-                        <td>
-                            <p>153/1, Green Road, Panthapath, Dhaka 1205.</p>
-                            <p>License No. HSM4511755</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>AOC Group</td>
-                        <td>
-                            <p>571 (First Floor), ECB Chottor, Main Road, South</p>
-                            <p>Manikdi, Dhaka 1206, Bangladesh.</p>
-                            <p>el: - +88 02 9836828 | +88 02 9836829.</p>
-                            <p>Email: enam1971@gmail.com</p>
-                        </td>
+                        <td>Md. Gias Uddin</td>
+                        <td>Chairman</td>
+                        <td>Sarkar Recruiting Agency Ltd.</td>
+                        <td>82</td>
                     </tr>
 
                     <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>MEDICUS Diagnostic and Medical Centre</td>
-                        <td>
-                            <p>48 Noyapaltan, Palton Dhaka-</p>
-                            <p>1000. License No :- HSM 4513027.</p>
-                            <p>Cell: - 01757-738384</p>
-                            <p>Email: marhabamedicalltd@gmail.com</p>
-                        </td>
+                        <td>Mohammed Abul Basher</td>
+                        <td>Managing Director</td>
+                        <td>Golden Arrow Ltd.</td>
+                        <td>19</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mostafizur Rahman</td>
+                        <td>Managing Partner</td>
+                        <td>Nac International</td>
+                        <td>680</td>
+                    </tr>
+
+                    <tr>
+                        <td>Abdur Rakib Muku</td>
+                        <td>Proprietor</td>
+                        <td>Tribeni International</td>
+                        <td>186</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mohad. Saiful Noor</td>
+                        <td>Managing Partner</td>
+                        <td>Orchid View Ltd.</td>
+                        <td>101</td>
+                    </tr>
+
+                    <tr>
+                        <td>M.A. Sobhan Bhuiyan</td>
+                        <td>Managing Director</td>
+                        <td>Kazi International</td>
+                        <td>103</td>
                     </tr>
                     <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Ishtiyaq Medical Center</td>
-                        <td>
-                            <p>House-17, Road-10, Block-B, Banani, Dhaka-1213</p>
-                            <p>Mirpur, Dhaka-1216</p>
-                            <p>Phone: Tel: - +8801711-1179238</p>
-                            <p>Email:- rifat.abulbashar@gmail.com</p>
-                        </td>
+                        <td>Mohammad Obaidul Areef</td>
+                        <td>Proprietor</td>
+                        <td>Orbitals Enterprise</td>
+                        <td>112</td>
                     </tr>
+
                     <tr>
-                        <td>Bangladesh</td>
-                        <td>Dhaka</td>
-                        <td>Ishtiyaq Medical Center</td>
-                        <td>
-                            <p>
-                                1/A, D I T Extension Road (3rd Floor), Fakirapool, Motijheel,
-                                Dhaka-1000
-                            </p>
-                            <p>Dhaka-100, Bangladesh</p>
-                            <p>Tel: 01737154982</p>
-                            <p>Email: - marhabamedicalltd@gmail.com</p>
-                        </td>
+                        <td>Kazi A.T.M. Anisur Rahman Bulbul</td>
+                        <td>Managing Director</td>
+                        <td>5M International Ltd.</td>
+                        <td>389</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mrs. Kashmiri Kamal</td>
+                        <td>Managing Director</td>
+                        <td>Green Land Overseas</td>
+                        <td>1080</td>
+                    </tr>
+
+                    <tr>
+                        <td>Ali Haider Chowdhury</td>
+                        <td>Director</td>
+                        <td>A-Plus International</td>
+                        <td>166</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mohammad Abdul Hye</td>
+                        <td>Proprietor</td>
+                        <td>Navira Ltd.</td>
+                        <td>581</td>
+                    </tr>
+
+                    <tr>
+                        <td>Shaikh Mohammad Shahidur Rahman</td>
+                        <td>Managing Director</td>
+                        <td>Akash Bhraman</td>
+                        <td>181</td>
+                    </tr>
+
+                    <tr>
+                        <td>Monsur Ahmed Kalam</td>
+                        <td>Proprietor</td>
+                        <td>Simplex International</td>
+                        <td>101</td>
                     </tr>
                 </table>
 
@@ -187,7 +184,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Footer start -->
     <div class="Footer justify-content-center pt-4 pb-4  align-items-center text-light ">
@@ -212,7 +208,7 @@
         <!-- Footer end -->
 
         <!--
-                table content end -->
+                      table content end -->
 
         <script>
             $(document).ready(function() {
@@ -280,6 +276,10 @@
                 document.body.appendChild(css);
             };
         </script>
+
+
+
+
         <script src="{{ asset('assets/landingPageAsset/js/main.js') }}"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -288,4 +288,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
                 integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
         </script>
+        <script src="{{ asset('assets/landingPageAsset/js/contact.js') }}"></script>
     @endsection
