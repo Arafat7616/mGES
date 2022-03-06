@@ -38,6 +38,7 @@ class RegisterController extends Controller
     public function redirectTo()
     {
 
+
         if (Auth::user()->user_type == 'super-admin') {
             return 'super-admin/dashboard';
         } elseif (Auth::user()->user_type == 'malaysian-employer') {
@@ -100,7 +101,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:5'],
-            'country' => 'required',
+            'phone' => 'required',
             'role' => 'required',
             'terms' => 'required',
         ]);
@@ -163,7 +164,7 @@ class RegisterController extends Controller
             'role_id' => $data['role'],
             'user_type' => $userType,
             'active_status' => "New",
-            'country_id' => $data['country'],
+            'phone' => $data['phone'],
         ]);
     }
     public function showRegistrationForm()
