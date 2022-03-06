@@ -14,26 +14,14 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-<link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="./asset/css/login.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 
     <script src={{ asset('assets/landingPageAsset/js/login') }}></script>
     <title>mGES SignUp</title>
@@ -54,64 +42,35 @@
                         @csrf
                         <div class="text-center">
                             <div class="d-flex justify-content-center">
-                            <img src="assets/landingPageAsset/img/credintialImg/AllOutput/MGES-Logo-Orginal-Color.png" class="img-fluid my-3 mgesLogo" width="100px" alt="">
+                                <img src="assets/landingPageAsset/img/credintialImg/AllOutput/MGES-Logo-Orginal-Color.png"
+                                    class="img-fluid my-3 mgesLogo" width="100px" alt="">
                             </div>
-                        
+
                             <h5 class="mt-4 fw-bolder">Registration From</h5>
-                            <input
-                  type="text"
-                  name=""
-                  class="form-control inputBorder my-4"
-                  placeholder="&#xf0e0; Name"
-                  style="font-family: Arial, FontAwesome"
-                  id=""
-                />
+                            <input type="text" name="name" class="form-control inputBorder my-4" placeholder="&#xf0e0; Name"
+                                style="font-family: Arial, FontAwesome" id="" />
                             @error('name')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
-                            <input
-                  type="email"
-                  name=""
-                  class="form-control inputBorder my-4"
-                  placeholder="&#xf0e0; Mail"
-                  style="font-family: Arial, FontAwesome"
-                  id=""
-                />
+                            <input type="email" name="email" class="form-control inputBorder my-4"
+                                placeholder="&#xf0e0; Mail" style="font-family: Arial, FontAwesome" id="" />
                             @error('email')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
-                            <input
-                  type="password"
-                  class="form-control inputBorder my-4"
-                  placeholder="&#xf023; Password"
-                  style="font-family: Arial, FontAwesome"
-                  name=""
-                  id=""
-                />
+                            <input type="password" class="form-control inputBorder my-4" placeholder="&#xf023; Password"
+                                style="font-family: Arial, FontAwesome" name="password" id="" />
 
                             @error('password')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
 
-                            <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="form-control inputBorder my-4"
-                  style="font-family: Arial, FontAwesome"
-                />
+                            <input type="tel" id="phone" name="phone" class="form-control inputBorder my-4"
+                                style="font-family: Arial, FontAwesome" />
 
-                            <!-- <select class="form-control inputBorder mt-4" name="country">
-                                <option disabled value="0" selected disabled>Select user country</option>
-                                @foreach ($countries as $country)
-                                    <option value="{{ $country->id }}">{{ $country->country_name }}</option>
-                                @endforeach
-                            </select> -->
-
-                            @error('country')
+                            @error('phone')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
@@ -133,7 +92,7 @@
                                 <input type="checkbox" class="mt-1 me-3" id="agreeTerms" name="terms" value="agree"
                                     required>
                                 <label for="agreeTerms">
-                                I agree to the Teams
+                                    I agree to the Teams
                                 </label>
                                 @error('terms')
                                     <br>
@@ -152,14 +111,14 @@
                 </div>
             </div>
             <div class="col-md-6 rightSideContainerRegister">
-              
-                
+
+
             </div>
         </div>
     </div>
 
 
- 
+
 </body>
 
 </html>
@@ -263,12 +222,9 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script>
-      const phoneInputField = document.querySelector("#phone");
-      const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-      });
-    </script>
-
-
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
