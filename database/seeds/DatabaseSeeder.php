@@ -47,5 +47,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BRAInterestSeeder::class);
         $this->call(JobDistributeInBRASeeder::class);
         $this->call(NotificationSeeder::class);
+
     }
 }

@@ -28,11 +28,13 @@ Route::get('/', 'FrontendController@index')->name('homePage');
 Route::get('/about', 'FrontendController@about')->name('aboutPage');
 Route::get('/mges/about', 'FrontendController@mgesAbout')->name('mgesAbout');
 Route::get('/mges/medical-center', 'FrontendController@medicalCenter')->name('medicalCenter');
+Route::get('/mges/requirtment-agency', 'FrontendController@requirtmentAgency')->name('requirtmentAgency');
+Route::get('/mges/insurance', 'FrontendController@insurance')->name('Insurance');
 Route::get('/conatact', 'FrontendController@contact')->name('conatactPage');
 // Route::get('/', 'WelcomeController@index')->name('welcome');
 
 // For system reboot
-Route::get('reboot','FrontendController@reboot');
+Route::get('reboot', 'FrontendController@reboot');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');

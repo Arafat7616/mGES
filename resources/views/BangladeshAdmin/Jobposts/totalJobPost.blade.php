@@ -14,6 +14,83 @@
 @endsection
 
 @section('main-content')
+    <style>
+        .join {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .overlay {
+            display: none;
+            background: rgba(0, 0, 0, 0.4);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .overlay .modal__locked {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 260px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .overlay .modal__locked .modal-body {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+        }
+
+        .overlay .modal__locked .modal-body center {
+            margin: 20px;
+        }
+
+        .overlay .modal__locked .modal-body center strong {
+            font-size: 25px;
+            position: relative;
+            top: -30px;
+        }
+
+        .overlay .modal__locked .modal-body center p {
+            position: relative;
+            top: -10px;
+            font-size: 13px;
+        }
+
+        .overlay .modal__locked .modal-buttons {
+            position: absolute;
+            bottom: 30px;
+            right: 10px;
+        }
+
+        .overlay .btn {
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            width: 145px;
+            height: 45px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            margin: 0 10px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .overlay .modal__locked .modal-buttons button.btn-purple {
+            background: rgba(150, 39, 234, 1);
+            color: white;
+        }
+
+    </style>
     <!-- Start content -->
     <div class="content">
         <div class="container">
@@ -111,12 +188,12 @@
                                                     <circle cx="150" cy="150" r="115" style="fill: #77afb5;" />
                                                     <path
                                                         style="
-                                                                                                                                                                                                                                                                                                    stroke: #1f244f;
-                                                                                                                                                                                                                                                                                                    stroke-dasharray: 820;
-                                                                                                                                                                                                                                                                                                    stroke-dashoffset: 820;
-                                                                                                                                                                                                                                                                                                    stroke-width: 18;
-                                                                                                                                                                                                                                                                                                    fill: transparent;
-                                                                                                                                                                                                                                                                                                    "
+                                                                                                                                                                                                                                                                                                                                                                                                                    stroke: #1f244f;
+                                                                                                                                                                                                                                                                                                                                                                                                                    stroke-dasharray: 820;
+                                                                                                                                                                                                                                                                                                                                                                                                                    stroke-dashoffset: 820;
+                                                                                                                                                                                                                                                                                                                                                                                                                    stroke-width: 18;
+                                                                                                                                                                                                                                                                                                                                                                                                                    fill: transparent;
+                                                                                                                                                                                                                                                                                                                                                                        "
                                                         d="M150,150 m0,-130 a 130,130 0 0,1 0,260 a 130,130 0 0,1 0,-260">
                                                         <animate attributeName="stroke-dashoffset" dur="6s" to="-820"
                                                             repeatCount="indefinite" />
@@ -214,30 +291,32 @@
     <!--End content -->
 
     <!-- Modal HTML -->
-    <div id="myModal2" class="modal fade" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal Title</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p>This is a simple Bootstrap modal. Click the "Cancel button", "cross icon" or "dark gray area" to
-                        close or hide the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
+
+    <div class="overlay">
+        <div class="modal__locked">
+            <div class="modal-body">
+                <center>
+                    <strong>Locked Feature</strong>
+                    <p>
+                        This offer is not valid for your plan. Please upgrade your account to enjoy more features.
+                    </p>
+                </center>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-footer btn-white">Cancel</button>
+                <button class="btn btn-footer btn-purple">Upgrade</button>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
 
+    </script>
     <script>
         jQuery(function($) {
             $(document).ready(function() {
+
 
             })
             $(document).ajaxSend(function() {
@@ -260,7 +339,7 @@
 
                         let timerInterval
                         Swal.fire({
-                            title: 'Finding Match in Data Bank',
+                            title: 'Finding data form Data Bank',
                             html: '<h3>Checking <b></b> data</h3>',
                             timer: 5000,
                             timerProgressBar: true,
@@ -283,7 +362,7 @@
                         }).then((result) => {
                             /* Read more about handling dismissals below */
                             if (result.dismiss === Swal.DismissReason.timer) {
-
+                                // $('.overlay').css('display', 'block');
                                 Swal.fire({
                                     icon: 'success',
                                     title: '<h1>' + random_vacancy +
