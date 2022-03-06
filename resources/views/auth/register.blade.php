@@ -48,7 +48,8 @@
 <body>
     <div class="bodyHeight">
         <div class="row loginBg">
-            <div class="col-md-6 d-flex justify-content-center align-items-center my-2">
+            <div class="col-md-6 d-flex justify-content-around align-items-center my-2">
+                <div></div>
                 <div class="p-4 bg-light bgShadow">
                     <form action="{{ route('register') }}" method="post">
                         @csrf
@@ -59,37 +60,37 @@
                         
                             <h5 class="mt-4 fw-bolder">Registration From</h5>
                             <input
-                  type="text"
-                  name=""
-                  class="form-control inputBorder my-4"
-                  placeholder="&#xf0e0; Name"
-                  style="font-family: Arial, FontAwesome"
-                  id=""
-                />
+                            type="text"
+                            name=""
+                            class="form-control inputBorder my-4"
+                            placeholder="&#xf0e0; Name"
+                            style="font-family: Arial, FontAwesome"
+                            id=""
+                            />
                             @error('name')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
                             <input
-                  type="email"
-                  name=""
-                  class="form-control inputBorder my-4"
-                  placeholder="&#xf0e0; Mail"
-                  style="font-family: Arial, FontAwesome"
-                  id=""
-                />
+                            type="email"
+                            name=""
+                            class="form-control inputBorder my-4"
+                            placeholder="&#xf0e0; Mail"
+                            style="font-family: Arial, FontAwesome"
+                            id=""
+                            />
                             @error('email')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
                             <input
-                  type="password"
-                  class="form-control inputBorder my-4"
-                  placeholder="&#xf023; Password"
-                  style="font-family: Arial, FontAwesome"
-                  name=""
-                  id=""
-                />
+                            type="password"
+                            class="form-control inputBorder my-4"
+                            placeholder="&#xf023; Password"
+                            style="font-family: Arial, FontAwesome"
+                            name=""
+                            id=""
+                            />
 
                             @error('password')
                                 <p class="text-danger">{{ $message }}</p>
@@ -97,12 +98,12 @@
 
 
                             <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="form-control inputBorder my-4"
-                  style="font-family: Arial, FontAwesome"
-                />
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            class="form-control inputBorder my-4"
+                            style="font-family: Arial, FontAwesome"
+                            />
 
                             <!-- <select class="form-control inputBorder mt-4" name="country">
                                 <option disabled value="0" selected disabled>Select user country</option>

@@ -25,7 +25,8 @@
 <body>
     <div class="bodyHeight">
         <div class="row registerBg">
-            <div class="col-md-6 d-flex justify-content-center align-items-center my-2">
+            <div class="col-md-6 d-flex justify-content-around align-items-center my-2">
+                <div></div>
                 <div class="p-4 bg-light bgShadow">
 
                     <form action="{{ route('login') }}" method="post">
