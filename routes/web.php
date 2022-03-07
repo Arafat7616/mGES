@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
+
 Route::group([ 'middleware' => 'prevent-back-history'], function () {
     Route::get('/', 'FrontendController@index')->name('homePage');
     Route::get('/about', 'FrontendController@about')->name('aboutPage');
@@ -47,11 +48,14 @@ Route::group([ 'middleware' => 'prevent-back-history'], function () {
 
     //Rating route
     Route::get('/rating', [RatingController::class, 'index']);
+    Route::get('/review_modal/{id}', [RatingController::class, 'modal'])->name('review_modal');
+    Route::post('submit_review/{id}', [RatingController::class, 'submit']);
 
     //PDF Generate Route
     Route::get('/print_pdf', 'PdfController@print')->name('print_pdf');
 
 });
+
 
 include('child_oss_route.php');
 include('one_stop_service_route.php');

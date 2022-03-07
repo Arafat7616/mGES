@@ -58,6 +58,10 @@
                                     class="fa fa-arrow-circle-right"></i> Visa Rejected</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{ route('MalaysianEmployer.review.index') }}" class="waves-effect"><i
+                            class="fa fa-star"></i><span> Review </span></a>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>

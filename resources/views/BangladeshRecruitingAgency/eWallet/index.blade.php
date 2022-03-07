@@ -1,4 +1,4 @@
-@extends("BangladeshAdmin.master")
+@extends("BangladeshRecruitingAgency.master")
 
 @section('main-content')
 <div class="content">
@@ -59,7 +59,7 @@
 
             </form>
             <footer class="modal_footer">
-              <a type="button" href="{{ route('BangladeshAdmin.eWallet.wallet_card') }}" class="footer_text_btn">Add Card</a>
+              <a type="button" href="{{ route('BangladeshRecruitingAgency.eWallet.wallet_card') }}" class="footer_text_btn">Add Card</a>
             </footer>
             <a href="#" class="modal__close">&times;</a>
         </div>

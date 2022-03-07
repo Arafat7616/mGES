@@ -107,4 +107,9 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('wallet', 'EWalletController@index')->name('index');
         Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
     });
+
+    //Review
+    Route::group(['prefix' => 'review/', 'as' => 'review.'], function () {
+        Route::get('list', 'ReviewController@index')->name('index');
+    });
 });

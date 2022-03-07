@@ -61,4 +61,9 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
         Route::get('rejected', 'VisaProcessController@visa_rejected')->name('rejected');
         Route::get('show-rejected-candidate/{offered_candidate_id}', 'VisaProcessController@showVisaRejectedCandidate')->name('showVisaRejectedCandidate');
     });
+
+    //Review
+    Route::group(['prefix' => 'review/', 'as' => 'review.'], function () {
+        Route::get('list', 'ReviewController@index')->name('index');
+    });
 });

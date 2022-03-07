@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -55,5 +56,10 @@ class User extends Authenticatable
     public function braInterested()
     {
         return $this->hasOne(BRAInterest::class, 'bra_id');
+    }
+
+    public function star()
+    {
+        return $this->hasOne(Review::class, 'receiver_id')->where('provider_id', Auth::user()->id);
     }
 }

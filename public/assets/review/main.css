@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+* {
+
+  font-family: "Montserrat";
+}
+.join {
+
+  margin: 10px 0;
+}
+
+.overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+
+
+.overlay .modal__locked {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 260px;
+  background: white;
+  border-radius: 20px;
+}
+.overlay .modal__locked .modal-body {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.overlay .modal__locked .modal-body center strong {
+  font-size: 25px;
+  position: relative;
+  top: -15px;
+}
+
+.overlay .modal__locked .modal-body center p {
+  position: relative;
+  top: -10px;
+  font-size: 13px;
+}
+
+.overlay .modal__locked .modal-buttons {
+  position: absolute;
+  bottom: 30px;
+  right: 22px;
+}
+.modal-buttons {
+  width: 100%;
+  text-align: center;
+}
+.btn2 {
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  width: 145px;
+  height: 45px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay .modal__locked .modal-buttons button.btn-purple {
+  background: #2AA9F4;
+  color: white;
+}
+
+/* Base setup */
+
+/* h1 {
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+} */
+
+
+.modal {
+    text-align: center;
+
+  }
+
+  .modal-content{
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .modal:before {
+      display: inline-block;
+      vertical-align: middle;
+      content: " ";
+      height: 100%;
+    }
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+
+
+  .rating input[type="radio"]:not(:nth-of-type(0)) {
+    /* hide visually */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 4px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 4px;
+  }
+
+  .rating [type="radio"]:not(:nth-of-type(0))+label {
+    display: none;
+  }
+
+  label[for]:hover {
+    cursor: pointer;
+  }
+
+  .rating .stars label:before {
+    content: "★";
+    font-size: 40px;
+  }
+
+  .stars label {
+    color: lightgray;
+    font-size: 25px;
+  }
+
+  .stars label:hover {
+    text-shadow: 0 0 1px #000;
+  }
+
+  .rating [type="radio"]:nth-of-type(1):checked~.stars label:nth-of-type(-n+1),
+  .rating [type="radio"]:nth-of-type(2):checked~.stars label:nth-of-type(-n+2),
+  .rating [type="radio"]:nth-of-type(3):checked~.stars label:nth-of-type(-n+3),
+  .rating [type="radio"]:nth-of-type(4):checked~.stars label:nth-of-type(-n+4),
+  .rating [type="radio"]:nth-of-type(5):checked~.stars label:nth-of-type(-n+5) {
+    color: orange;
+  }
+
+  .rating [type="radio"]:nth-of-type(1):focus~.stars label:nth-of-type(1),
+  .rating [type="radio"]:nth-of-type(2):focus~.stars label:nth-of-type(2),
+  .rating [type="radio"]:nth-of-type(3):focus~.stars label:nth-of-type(3),
+  .rating [type="radio"]:nth-of-type(4):focus~.stars label:nth-of-type(4),
+  .rating [type="radio"]:nth-of-type(5):focus~.stars label:nth-of-type(5) {
+    color: darkorange;
+  }
+
+  .btn2 {
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 145px;
+    height: 45px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    margin: 0 10px;
+    color: rgba(0, 0, 0, 0.5);
+  }

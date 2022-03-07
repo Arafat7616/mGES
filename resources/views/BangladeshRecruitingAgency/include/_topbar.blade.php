@@ -49,14 +49,20 @@
                                 </p>
                                 <center><small>{{ Auth::user()->email }}</small></center>
                                 @if(Auth::user()->user_type == 'bangladesh-recruiting-agency')
-                                <center><small>Review</small></center>
+
+
+                                @php
+                                    $data = App\Review::where('receiver_id',Auth::user()->id);
+                                    $avg = $data->sum('ratings') / $data->count();
+                                @endphp
+
+                                <center><small>Ratings ({{ number_format($avg, 2) }})</small></center>
+
                                 <center>
                                     <small>
-                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
-                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
-                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
-                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
-                                        <img height="20px;" width="20px;" class="star-image" src="{{ asset('assets/images/icon/Icon-star.png') }}" alt="">
+                                        @for($i=0; $i< number_format($avg); $i++)
+                                            <i class="fa fa-star" style="color: orange; font-size: 22px"></i>
+                                        @endfor
                                     </small>
                                 </center>
                                 @endif
