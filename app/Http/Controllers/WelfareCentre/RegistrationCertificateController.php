@@ -56,7 +56,8 @@ class RegistrationCertificateController extends Controller
         $registrationCertificate->fees = $request->fees;
         try {
             $registrationCertificate->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -105,7 +106,7 @@ class RegistrationCertificateController extends Controller
         $registrationCertificate->delivery_type = $request->deliveryStatus;
         $registrationCertificate->delivery_to = $request->deliveryTo;
         $registrationCertificate->service_status = $request->legalStatus;
-        
+
         if ($request->hasFile('document')) {
             $pdf             = $request->file('document');
             $folder_path       = 'uploads/document/';
@@ -116,7 +117,8 @@ class RegistrationCertificateController extends Controller
         }
         try {
             $registrationCertificate->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

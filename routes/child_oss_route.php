@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Child One Stop Service
-Route::group(['prefix' => 'child-one-stop-service/', 'namespace' => 'OneStopService_Child', 'as' => 'OneStopService_Child.', 'middleware' => ['auth', 'child-one-stop-service']], function () {
+Route::group(['prefix' => 'child-one-stop-service/', 'namespace' => 'OneStopService_Child', 'as' => 'OneStopService_Child.', 'middleware' => ['auth', 'child-one-stop-service','prevent-back-history']], function () {
     Route::get('/dashboard', 'OneStopService_ChildDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'OneStopService_ChildDashboardController@companyPrfileView')->name('companyPrfileView');
     Route::get('/edit-profile', 'OneStopService_ChildDashboardController@editProfile')->name('editProfile');

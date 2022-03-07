@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // TravelAgency
-Route::group(['prefix' => 'travel-agency/', 'namespace' => 'TravelAgency', 'as' => 'TravelAgency.', 'middleware' => ['auth', 'travel-agency']], function () {
+Route::group(['prefix' => 'travel-agency/', 'namespace' => 'TravelAgency', 'as' => 'TravelAgency.', 'middleware' => ['auth', 'travel-agency','prevent-back-history']], function () {
     Route::get('/dashboard', 'TravelAgencyDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'TravelAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
 

@@ -20,7 +20,6 @@
             <div class="col-12">
                 <form action="{{ route('BangladeshHighCommission.updateProfile') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @include('Others.message')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Edit {{ $user->name }}'s information</h3>
@@ -57,7 +56,6 @@
         </div> <!-- End Row -->
     </div> <!-- container -->
 </div> <!-- content -->
-@include('Others.toaster_message')
 @endsection
 @section('js')
     <script src="{{ asset('assets/pages/dashborad.js') }}"></script>

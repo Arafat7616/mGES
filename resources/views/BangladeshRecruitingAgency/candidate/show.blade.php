@@ -92,6 +92,7 @@
                                     <hr>
                                     <strong><i class="fa fa-map-marker mr-1"></i> Permanent Address</strong>
                                     <p class="text-muted">{{ $candidate->permanent_address }}</p>
+                                   
                                 </div> <!-- /.tab-pane -->
                                 <div class="tab-pane" id="timeline">
                                     @if ($candidate->candidate_resume)
@@ -169,7 +170,10 @@
                                             </div>
                                         </a>
                                     @endif
+
+                                   
                                 </div>
+                            
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="results">
                                     <strong><i class="fa fa-user mr-1"></i> Company Name</strong>
@@ -196,7 +200,8 @@
                                             </div>
                                         </a>
                                     @endif
-                                </div> <!-- /.tab-content -->
+                                </div> 
+                                {!! QrCode::size(300)->generate($link) !!}
                             </div><!-- /.card-body -->
                         </div> <!-- /.nav-tabs-custom -->
                     </div> <!-- /.col -->
