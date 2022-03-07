@@ -275,16 +275,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">1</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">Employer</p>
+                                    <p class="text-center mb-3 infoText">Malaysia Admin</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">Employer</h6>
+                                    <h6 class="fw-bold ">Malaysia Admin</h6>
                                 </div>
-                                <p class="text-center px-1"> Employer can do most of the process except ground handling at
-                                    airport and
-                                    quarantine</p>
+                                <p class="text-center px-1 pText-sm">Grant Permission of Job Quota given by the Employer of Malaysia.</p>
                             </div>
                         </div>
                     </div>
@@ -298,16 +296,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">2</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">EMP Agency (MY)</p>
+                                    <p class="text-center mb-3 infoText">Malaysia Employer</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">EMP Agency (MY)</h6>
+                                    <h6 class="fw-bold ">Malaysia Employer</h6>
                                 </div>
-                                <p class="text-center px-1">Will act on behalf of their clients (employers) on VDR
-                                    application and all
-                                    ground handling.</p>
+                                <p class="text-center px-1 pText-sm">Requirement of worker needed and posted to Bangladesh Admin or via Malaysia Recruiting Agency as a third party.</p>
                             </div>
                         </div>
                     </div>
@@ -321,16 +317,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">3</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">KDN SSC</p>
+                                    <p class="text-center mb-3 infoText">Malaysia Recruiting Agency</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">KDN SSC</h6>
+                                    <h6 class="fw-bold ">Malaysia Recruiting Agency</h6>
                                 </div>
-                                <p class="text-center px-1">Employers will only able to access the approval once it is
-                                    shared by OSC.
-                                </p>
+                                <p class="text-center px-1 pText-sm"> This agency works for the Malaysia Employers and manage to get the requirements as they want then they can post is to the Bangladesh Admin. </p>
                             </div>
                         </div>
                     </div>
@@ -344,16 +338,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">4</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">EMP. Agency (BGD)</p>
+                                    <p class="text-center mb-3 infoText">Bangladesh High Commission (Malaysia)</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">EMP. Agency (BGD)</h6>
+                                    <h6 class="fw-bold ">Bangladesh High Commission (Malaysia)</h6>
                                 </div>
-                                <p class="text-center px-1">Bangladesh’s licensed agencies will participate. Better
-                                    selection and faster
-                                    recruitment.</p>
+                                <p class="text-center px-1 pText-sm"> High Commission verifies the Malaysia Employer through WSC whether the Employer Company is eligible for the worker or not. Labor Counselor is a representative who works here. After all the verification they generates the QR code.</p>
                             </div>
                         </div>
                     </div>
@@ -367,16 +359,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">5</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">Attestation</p>
+                                    <p class="text-center mb-3 infoText">Welfare Service Center</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">Attestation</h6>
+                                    <h6 class="fw-bold ">Welfare Service Center</h6>
                                 </div>
-                                <p class="text-center px-1">Bangladeshi High Commission in Kuala Lumpur will determine the
-                                    procedure and
-                                    after verification they will generate QR code of the employer.</p>
+                                <p class="text-center px-1 pText-sm">Welfare service center is assigned to check the Malaysia Employer office physically and they work under Bangladesh High Commission (Malaysia). After all the verification they generates the QR code.</p>
                             </div>
                         </div>
                     </div>
@@ -390,16 +380,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">6</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">Candidates</p>
+                                    <p class="text-center mb-3 infoText">Bangladesh Recruiting Agency</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">Candidates</h6>
+                                    <h6 class="fw-bold ">Bangladesh Recruiting Agency</h6>
                                 </div>
-                                <p class="text-center px-1">Online interview will assist the employer to select the most
-                                    reliable
-                                    candidates.</p>
+                                <p class="text-center px-1 pText-sm"> This agency is work for Bangladesh side for recruiting candidates. They got the candidates for the further process and Bangladesh Admin sends candidates through Artificial Intelligence and after getting the reviews and stars, they get the number of the candidates from Bangladesh Admin. </p>
                             </div>
                         </div>
                     </div>
@@ -413,16 +401,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">7</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">E-Medical</p>
+                                    <p class="text-center mb-3 infoText">Bangladesh Admin</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">E-Medical</h6>
+                                    <h6 class="fw-bold ">Bangladesh Admin</h6>
                                 </div>
-                                <p class="text-center px-1">All registered medical center in Bangladesh will upload the
-                                    medical result.
-                                </p>
+                                <p class="text-center px-1 pText-sm"> This is the most vital role of the system and it controls everything whatever rolling into the system. Bangladesh admin gets the preliminary letter to the final procedure to complete the cycle of the eco-system. Most of the stakeholders are connected to the Bangladesh Admin. </p>
                             </div>
                         </div>
                     </div>
@@ -436,16 +422,14 @@
                                     <div class="text-center mt-4">
                                         <h1 class="fw-bold infoText">8</h1>
                                     </div>
-                                    <p class="text-center mb-3 infoText">Orientation</p>
+                                    <p class="text-center mb-3 infoText">Data Bank</p>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="text-center mt-3">
-                                    <h6 class="fw-bold ">Orientation</h6>
+                                    <h6 class="fw-bold ">Data Bank</h6>
                                 </div>
-                                <p class="text-center px-1">Orientation session and basic knowledge about work & terms for
-                                    employees.
-                                </p>
+                                <p class="text-center px-1 pText-sm">The data bank stores data of the applicants and candidates where any no of job quota requirements sends by the Bangladesh Admin (BA) then by Artificial Intelligence (AI) the data will be distributed. </p>
                             </div>
                         </div>
                     </div>
@@ -466,7 +450,7 @@
                                 <div class="text-center mt-3">
                                     <h6 class="fw-bold ">Immigration</h6>
                                 </div>
-                                <p class="text-center px-1"> Integrated module for immigration department for calling visa
+                                <p class="text-center px-1 pText-sm"> Integrated module for immigration department for calling visa
                                     application,
                                     Sticker, face matching through Artificial Intelligence (AI) and flights.</p>
                             </div>
@@ -489,7 +473,7 @@
                                 <div class="text-center mt-3">
                                     <h6 class="fw-bold ">VDR Sticker mGES</h6>
                                 </div>
-                                <p class="text-center px-1">mGES official counter in Dhaka will handle all candidate's
+                                <p class="text-center px-1 pText-sm">mGES official counter in Dhaka will handle all candidate's
                                     documents
                                     securely.</p>
                             </div>
@@ -512,7 +496,7 @@
                                 <div class="text-center mt-3">
                                     <h6 class="fw-bold ">VDR Sticker High Commission</h6>
                                 </div>
-                                <p class="text-center px-1">To ensure safety and data security, only authorized Immigration
+                                <p class="text-center px-1 pText-sm">To ensure safety and data security, only authorized Immigration
                                     officers
                                     will be given the access to mGES data</p>
                             </div>
@@ -535,7 +519,7 @@
                                 <div class="text-center mt-3">
                                     <h6 class="fw-bold ">BMET</h6>
                                 </div>
-                                <p class="text-center px-1">Bangladesh Bureau of Manpower, Employment, and Training (BMET)
+                                <p class="text-center px-1 pText-sm">Bangladesh Bureau of Manpower, Employment, and Training (BMET)
                                     will
                                     determine the procedure and the service fees.</p>
                             </div>
@@ -558,7 +542,7 @@
                                 <div class="text-center mt-3">
                                     <h6 class="fw-bold ">Labor Department</h6>
                                 </div>
-                                <p class="text-center px-1">Malaysian Labor Department will determine the kind of reports
+                                <p class="text-center px-1 pText-sm">Malaysian Labor Department will determine the kind of reports
                                     they require
                                     from the employers and the agencies</p>
                             </div>
