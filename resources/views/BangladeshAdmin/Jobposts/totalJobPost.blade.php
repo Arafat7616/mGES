@@ -11,87 +11,13 @@
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/approval_vacancy.css') }}" rel="stylesheet" type="text/css" />
-    
+    <link href="{{ asset('assets/css/flipCounter.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/customModalTotalJob.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 
 @section('main-content')
-    <style>
-        .join {
-            text-align: center;
-            margin: 10px 0;
-        }
 
-        .overlay {
-            display: none;
-            background: rgba(0, 0, 0, 0.4);
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-        }
-
-        .overlay .modal__locked {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 450px;
-            height: 260px;
-            background: white;
-            border-radius: 5px;
-        }
-
-        .overlay .modal__locked .modal-body {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-        }
-
-        .overlay .modal__locked .modal-body center {
-            margin: 20px;
-        }
-
-        .overlay .modal__locked .modal-body center strong {
-            font-size: 25px;
-            position: relative;
-            top: -30px;
-        }
-
-        .overlay .modal__locked .modal-body center p {
-            position: relative;
-            top: -10px;
-            font-size: 13px;
-        }
-
-        .overlay .modal__locked .modal-buttons {
-            position: absolute;
-            bottom: 30px;
-            right: 10px;
-        }
-
-        .overlay .btn {
-            border: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 10px;
-            width: 145px;
-            height: 45px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-            margin: 0 10px;
-            color: rgba(0, 0, 0, 0.5);
-        }
-
-        .overlay .modal__locked .modal-buttons button.btn-purple {
-            background: rgba(150, 39, 234, 1);
-            color: white;
-        }
-
-    </style>
     <!-- Start content -->
     <div class="content">
         <div class="container">
@@ -181,146 +107,34 @@
                                 <div id="overlay">
                                     <div class="cv-spinner">
                                         <span class="spinner">
-                                        <div class="demo">
+                                            <div class="demo">
                                                 <div class="demo__colored-blocks">
-                                                <div class="demo__colored-blocks-rotater">
-                                                    <div class="demo__colored-block"></div>
-                                                    <div class="demo__colored-block"></div>
-                                                    <div class="demo__colored-block"></div>
-                                                </div>
-                                                <div class="demo__colored-blocks-inner"></div>
-                                                <div class="demo__text">Initiating Auto Match</div>
+                                                    <div class="demo__colored-blocks-rotater">
+                                                        <div class="demo__colored-block"></div>
+                                                        <div class="demo__colored-block"></div>
+                                                        <div class="demo__colored-block"></div>
+                                                    </div>
+                                                    <div class="demo__colored-blocks-inner"></div>
+                                                    <div class="demo__text">Initiating Auto Match</div>
                                                 </div>
                                                 <div class="demo__inner">
-                                                <svg class="demo__numbers" viewBox="0 0 100 100">
-                                                    <defs>
-                                                    <path class="demo__num-path-1" d="M40,28 55,22 55,78" />
-                                                    <path
-                                                        class="demo__num-join-1-2"
-                                                        d="M55,78 55,83 a17,17 0 1,0 34,0 a20,10 0 0,0 -20,-10"
-                                                    />
-                                                    <path
-                                                        class="demo__num-path-2"
-                                                        d="M69,73 l-35,0 l30,-30 a16,16 0 0,0 -22.6,-22.6 l-7,7"
-                                                    />
-                                                    <path
-                                                        class="demo__num-join-2-3"
-                                                        d="M28,69 Q25,44 34.4,27.4"
-                                                    />
-                                                    <path
-                                                        class="demo__num-path-3"
-                                                        d="M30,20 60,20 40,50 a18,15 0 1,1 -12,19"
-                                                    />
-                                                    </defs>
-                                                    <path
-                                                    class="demo__numbers-path"
-                                                    d="M-10,20 60,20 40,50 a18,15 0 1,1 -12,19 
-                                                            Q25,44 34.4,27.4
-                                                            l7,-7 a16,16 0 0,1 22.6,22.6 l-30,30 l35,0 L69,73 
-                                                            a20,10 0 0,1 20,10 a17,17 0 0,1 -34,0 L55,83 
-                                                            l0,-61 L40,28"
-                                                    />
-                                                </svg>
+                                                    <svg class="demo__numbers" viewBox="0 0 100 100">
+                                                        <defs>
+                                                            <path class="demo__num-path-1" d="M40,28 55,22 55,78" />
+                                                            <path class="demo__num-join-1-2"
+                                                                d="M55,78 55,83 a17,17 0 1,0 34,0 a20,10 0 0,0 -20,-10" />
+                                                            <path class="demo__num-path-2"
+                                                                d="M69,73 l-35,0 l30,-30 a16,16 0 0,0 -22.6,-22.6 l-7,7" />
+                                                            <path class="demo__num-join-2-3" d="M28,69 Q25,44 34.4,27.4" />
+                                                            <path class="demo__num-path-3"
+                                                                d="M30,20 60,20 40,50 a18,15 0 1,1 -12,19" />
+                                                        </defs>
+                                                        <path class="demo__numbers-path"
+                                                            d="M-10,20 60,20 40,50 a18,15 0 1,1 -12,19Q25,44 34.4,27.4 l7,-7 a16,16 0 0,1 22.6,22.6 l-30,30 l35,0 L69,73a20,10 0 0,1 20,10 a17,17 0 0,1 -34,0 L55,83l0,-61 L40,28" />
+                                                    </svg>
                                                 </div>
                                             </div>
-                                            <!-- <svg id="wrap" width="300" height="300">
-                                              
-                                                <svg>
-                                                    <circle cx="150" cy="150" r="130"
-                                                        style="stroke: lightblue; stroke-width: 18; fill: transparent;" />
-                                                    <circle cx="150" cy="150" r="115" style="fill: #77afb5;" />
-                                                    <path
-                                                        style="
-                                                                                                                                                                                                                                                                                                                                                                                                                    stroke: #1f244f;
-                                                                                                                                                                                                                                                                                                                                                                                                                    stroke-dasharray: 820;
-                                                                                                                                                                                                                                                                                                                                                                                                                    stroke-dashoffset: 820;
-                                                                                                                                                                                                                                                                                                                                                                                                                    stroke-width: 18;
-                                                                                                                                                                                                                                                                                                                                                                                                                    fill: transparent;
-                                                                                                                                                                                                                                                                                                                                                                        "
-                                                        d="M150,150 m0,-130 a 130,130 0 0,1 0,260 a 130,130 0 0,1 0,-260">
-                                                        <animate attributeName="stroke-dashoffset" dur="6s" to="-820"
-                                                            repeatCount="indefinite" />
-                                                    </path>
-                                                </svg>
 
-                                       
-                                                <svg>
-                                                    <path id="hourglass"
-                                                        d="M150,150 C60,85 240,85 150,150 C60,215 240,215 150,150 Z"
-                                                        style="stroke: red; stroke-width: 5; fill: yellow;" />
-
-                                                    <path id="frame"
-                                                        d="M100,97 L200, 97 M100,203 L200,203 M110,97 L110,142 M110,158 L110,200 M190,97 L190,142 M190,158 L190,200 M110,150 L110,150 M190,150 L190,150"
-                                                        style="stroke: green; stroke-width: 6; stroke-linecap: round;" />
-
-                                                    <animateTransform xlink:href="#frame" attributeName="transform"
-                                                        type="rotate" begin="0s" dur="3s"
-                                                        values="0 150 150; 0 150 150; 180 150 150" keyTimes="0; 0.8; 1"
-                                                        repeatCount="indefinite" />
-                                                    <animateTransform xlink:href="#hourglass" attributeName="transform"
-                                                        type="rotate" begin="0s" dur="3s"
-                                                        values="0 150 150; 0 150 150; 180 150 150" keyTimes="0; 0.8; 1"
-                                                        repeatCount="indefinite" />
-                                                </svg>
-
-                                            
-                                                <svg>
-                                               
-                                                    <polygon id="upper" points="120,125 180,125 150,147"
-                                                        style="fill: #2c3e50;">
-                                                        <animate attributeName="points" dur="3s" keyTimes="0; 0.8; 1"
-                                                            values="120,125 180,125 150,147; 150,150 150,150 150,150; 150,150 150,150 150,150"
-                                                            repeatCount="indefinite" />
-                                                    </polygon>
-
-                                       
-                                                    <path id="line" stroke-linecap="round" stroke-dasharray="1,4"
-                                                        stroke-dashoffset="200.00" stroke="#2c3e50" stroke-width="2"
-                                                        d="M150,150 L150,198">
-                                              
-                                                        <animate attributeName="stroke-dashoffset" dur="3s" to="1.00"
-                                                            repeatCount="indefinite" />
-                                                   
-                                                        <animate attributeName="d" dur="3s" to="M150,195 L150,195"
-                                                            values="M150,150 L150,198; M150,150 L150,198; M150,198 L150,198; M150,195 L150,195"
-                                                            keyTimes="0; 0.65; 0.9; 1" repeatCount="indefinite" />
-                                                     
-                                                        <animate attributeName="stroke" dur="3s" keyTimes="0; 0.65; 0.8; 1"
-                                                            values="#2c3e50;#2c3e50;transparent;transparent"
-                                                            to="transparent" repeatCount="indefinite" />
-                                                    </path>
-
-                                        
-                                                    <g id="lower">
-                                                        <path d="M150,180 L180,190 A28,10 0 1,1 120,190 L150,180 Z"
-                                                            style="stroke: transparent; stroke-width: 5; fill: #2c3e50;">
-                                                            <animateTransform attributeName="transform" type="translate"
-                                                                keyTimes="0; 0.65; 1" values="0 15; 0 0; 0 0" dur="3s"
-                                                                repeatCount="indefinite" />
-                                                        </path>
-                                                        <animateTransform xlink:href="#lower" attributeName="transform"
-                                                            type="rotate" begin="0s" dur="3s"
-                                                            values="0 150 150; 0 150 150; 180 150 150" keyTimes="0; 0.8; 1"
-                                                            repeatCount="indefinite" />
-                                                    </g>
-
-                                   
-                                                    <path d="M150,150 C60,85 240,85 150,150 C60,215 240,215 150,150 Z"
-                                                        style="stroke: white; stroke-width: 5; fill: transparent;">
-                                                        <animateTransform attributeName="transform" type="rotate" begin="0s"
-                                                            dur="3s" values="0 150 150; 0 150 150; 180 150 150"
-                                                            keyTimes="0; 0.8; 1" repeatCount="indefinite" />
-                                                    </path>
-
-                          
-                                                    <path id="frame" d="M100,97 L200, 97 M100,203 L200,203"
-                                                        style=" stroke: lightblue; stroke-width: 6; stroke-linecap:  round;">
-                                                        <animateTransform attributeName="transform" type="rotate" begin="0s"
-                                                            dur="3s" values="0 150 150; 0 150 150; 180 150 150"
-                                                            keyTimes="0; 0.8; 1" repeatCount="indefinite" />
-                                                    </path>
-                                                </svg>
-                                            </svg> -->
                                         </span>
                                     </div>
                                 </div>
@@ -339,22 +153,28 @@
         <div class="modal__locked">
             <div class="modal-body">
                 <center>
-                    <strong>Locked Feature</strong>
-                    <p>
-                        This offer is not valid for your plan. Please upgrade your account to enjoy more features.
-                    </p>
+                    <div class="clock" style="margin: 2em;"></div>
+                    <h5 class=" text-white">Total candidates found from data Bank</h5>
+
+                    <input type="hidden" value="{{ $jobPost->job_vacancy }}" id="counterValue" />
+
+                    <button class="btn btn-warning" id="close_custome_modal" style="margin-top: 20px">Ok</button>
                 </center>
             </div>
-            <div class="modal-buttons">
+            {{-- <div class="modal-buttons">
                 <button class="btn btn-footer btn-white">Cancel</button>
                 <button class="btn btn-footer btn-purple">Upgrade</button>
-            </div>
+            </div> --}}
         </div>
     </div>
 
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.6.2/sass.min.js" integrity="sha512-lmuNSGprTM9SdDQ8WuvkeGSgUn4R7jogp37VuQ8rrdNOSHQ9UDY9PF5f/gXjhMytuvxf3NADUXL+eb7K0DvIcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.6.2/sass.min.js"
+        integrity="sha512-lmuNSGprTM9SdDQ8WuvkeGSgUn4R7jogp37VuQ8rrdNOSHQ9UDY9PF5f/gXjhMytuvxf3NADUXL+eb7K0DvIcw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
 
@@ -362,10 +182,23 @@
     </script>
     <script>
         jQuery(function($) {
-            $(document).ready(function() {
 
-
+            $('#close_custome_modal').click(function() {
+                $('.overlay').fadeOut(300);
             })
+
+
+            //flip counter
+            var clock;
+
+            function flipCounter() {
+                clock = new FlipClock($(".clock"), 300, {
+                    clockFace: "Counter",
+                    autoStart: true,
+                    countdown: true
+                });
+            }
+
             $(document).ajaxSend(function() {
                 $("#overlay").fadeIn(300);
             });
@@ -375,6 +208,8 @@
                 var minimum_vacancy = parseInt(max_vacancy / 2)
                 var random_vacancy = Math.floor(Math.random() * (max_vacancy - minimum_vacancy + 1) +
                     minimum_vacancy)
+
+                $('#counterValue').val(50)
                 $.ajax({
                     type: "GET",
                     success: function(data) {
@@ -409,17 +244,19 @@
                         }).then((result) => {
                             /* Read more about handling dismissals below */
                             if (result.dismiss === Swal.DismissReason.timer) {
-                                // $('.overlay').css('display', 'block');
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: '<h1>' + random_vacancy +
-                                        '</h1>' +
-                                        '<h2> Candidates Matched </h2>',
-                                    imageHeight: 300,
-                                    imageWidth: 550,
-                                    imageAlt: 'Big image',
-                                    width: 600
-                                })
+
+                                flipCounter()
+                                $('.overlay').css('display', 'block');
+                                // Swal.fire({
+                                //     icon: 'success',
+                                //     title: '<h1>' + random_vacancy +
+                                //         '</h1>' +
+                                //         '<h2> Candidates Matched </h2>',
+                                //     imageHeight: 300,
+                                //     imageWidth: 550,
+                                //     imageAlt: 'Big image',
+                                //     width: 600
+                                // })
                             }
                         })
 
@@ -432,7 +269,7 @@
                         //     imageAlt: 'Big image',
                         //     width: 600
                         // })
-                    }, 9000);
+                    }, 3000);
                 });
             });
         });
@@ -459,4 +296,5 @@
     <script src="{{ asset('assets/plugins/datatables/dataTables.scroller.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/pages/datatables.init.js') }}"></script>
+    <script src="{{ asset('assets/js/flipCounter.js') }}"></script>
 @endsection
