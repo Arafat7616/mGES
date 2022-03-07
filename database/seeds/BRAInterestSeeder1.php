@@ -3,7 +3,7 @@
 use App\BRAInterest;
 use Illuminate\Database\Seeder;
 
-class BRAInterestSeeder extends Seeder
+class BRAInterestSeeder1 extends Seeder
 {
     /**
      * Run the database seeds.
