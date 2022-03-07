@@ -82,7 +82,8 @@ class AttestationCertificateController extends Controller
         $attestationCertificate->fees = $request->fees;
         try {
             $attestationCertificate->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -105,7 +106,7 @@ class AttestationCertificateController extends Controller
         $attestationCertificate->delivery_type = $request->deliveryStatus;
         $attestationCertificate->delivery_to = $request->deliveryTo;
         $attestationCertificate->service_status = $request->legalStatus;
-        
+
         if ($request->hasFile('document')) {
             $pdf             = $request->file('document');
             $folder_path       = 'uploads/document/';
@@ -116,7 +117,8 @@ class AttestationCertificateController extends Controller
         }
         try {
             $attestationCertificate->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

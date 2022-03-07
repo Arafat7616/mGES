@@ -77,6 +77,7 @@ class EmployerDemandController extends Controller
         $job_post->wsc_send_status = 1;
         $job_post->update();
 
-        return back()->withToastSuccess('Successfully Forwarded');
+        session()->flash('success', 'Successfully Forwarded !');
+        return back();
     }
 }

@@ -75,7 +75,7 @@ class EmployerDemandController extends Controller
         $job_post = JobPost::findOrFail($id);
         $job_post->forward_to_wsc = 1;
         $job_post->update();
-
-        return back()->withToastSuccess('Successfully Forwarded to Welfare Service Center');
+        session()->flash('success', 'Successfully Forwarded to Welfare Service Center !');
+        return back();
     }
 }

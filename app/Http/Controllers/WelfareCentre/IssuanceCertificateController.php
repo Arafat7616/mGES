@@ -77,7 +77,8 @@ class IssuanceCertificateController extends Controller
         $issuanceCertificate->fees = $request->fees;
         try {
             $issuanceCertificate->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -94,7 +95,7 @@ class IssuanceCertificateController extends Controller
         $issuanceCertificate->delivery_type = $request->deliveryStatus;
         $issuanceCertificate->delivery_to = $request->deliveryTo;
         $issuanceCertificate->service_status = $request->legalStatus;
-        
+
         if ($request->hasFile('document')) {
             $pdf             = $request->file('document');
             $folder_path       = 'uploads/document/';
@@ -105,7 +106,8 @@ class IssuanceCertificateController extends Controller
         }
         try {
             $issuanceCertificate->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

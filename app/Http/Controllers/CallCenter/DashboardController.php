@@ -54,13 +54,13 @@ class DashboardController extends Controller
         }
         try {
             $user->save();
-            // return back()->withSuccess('Updated successfully!');
-            Session::flash('success', 'Successfully Updated !!');
-            return redirect()->back();
+
+            session()->flash('success', 'Successfully Updated !!');
+            return back();
         } catch (\Exception $exception) {
-            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
+
             Session::flash('danger', $exception->getMessage());
-            return redirect()->back();
+            return back();
         }
     }
 

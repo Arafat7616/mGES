@@ -85,7 +85,8 @@ class JobPostController extends Controller
 
         try {
             $intersted->save();
-            return back()->withToastSuccess('Your Action is Recorded');
+            session()->flash('success', 'Your Action is Recorded !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
