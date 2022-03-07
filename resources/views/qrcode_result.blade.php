@@ -79,13 +79,13 @@
 <body>
     <div class="container custom_container  ">
         <div class="row m-4  ">
-            <i> <h2 class="Tot fw-bold mt-4 ">MinebeaMitsumi</h2> </i>
+            <i> <h2 class="Tot fw-bold mt-4 ">{{ $post->user->name }}</h2> </i>
             <small class="">
                 <i> <b></b> Passion <span class="text-primary">to Create Valu through
                         <span class="text-danger">Difference</span></span></i>
             </small>
            
-            <h1 class=""> <img src="{{ asset($post->user->logo) }}" alt=""  height="50px" width="50px">{{ $post->user->name }} </h1>
+            <h1 class=""> <img src="{{ asset($post->user->logo ?? get_static_option('no_image')) }}" alt=""  height="50px" width="50px">{{ $post->user->name }} </h1>
             <span class="col-7 ">
                 [Company No: {{ $post->user->id }}]
             </span>
