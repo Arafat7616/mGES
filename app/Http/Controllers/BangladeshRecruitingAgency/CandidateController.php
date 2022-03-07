@@ -36,7 +36,7 @@ class CandidateController extends Controller
 
     public function selected()
     {
-        $selectedCandidates = Candidate::orderBy('id', 'DESC')->limit('800')->get();
+        $selectedCandidates = Candidate::orderBy('id', 'DESC')->where('sending_status',null)->limit('800')->get();
         return view('BangladeshRecruitingAgency.candidate.selected', compact('selectedCandidates'));
     }
 
@@ -50,6 +50,24 @@ class CandidateController extends Controller
     {
         $CandidatesList = Candidate::where('job_id', $id)->orderBy('id', 'DESC')->get();
         return view('BangladeshRecruitingAgency.candidate.viewSelected', compact('CandidatesList'));
+    }
+
+    public function forwardToBA(Request $request){
+
+        $request->validate(
+            [
+                'all_option' => 'required',
+            ],
+            [
+                'all_option.required' => 'Please Sellect Some Data!!',
+            ]
+        );
+
+        Candidate::whereIn('id', $request->all_option)->update([
+            'sending_status' => 1,
+        ]);
+
+        return back()->withToastSuccess('Successfully forward.');
     }
 
     public function store(Request $request)

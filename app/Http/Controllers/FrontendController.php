@@ -20,6 +20,10 @@ class FrontendController extends Controller
         return '<center><h1>System Rebooted!</h1></center>';
     }
 
+    public function candidateCV(){
+        return view('Candidate.cv.workerpdf');
+    }
+
     public function index()
     {
         return view('LandingPage.index');

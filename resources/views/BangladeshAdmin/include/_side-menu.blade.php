@@ -98,6 +98,10 @@
                                     class="fa fa-arrow-circle-right"></i> Finalized Candidates</a></li>
                         <li><a href="{{ route('BangladeshAdmin.candidate.tickets_booked_List') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Tickets Booked List</a></li>
+
+                        <li><a href="{{ route('BangladeshAdmin.candidate.fromBra') }}"><i
+                                    class="fa fa-arrow-circle-right"></i>Received From BRA</a></li>
+
                     </ul>
                 </li>
 

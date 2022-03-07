@@ -1,0 +1,102 @@
+
+.worker{
+
+}
+.worker-container{
+    width: 700px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    margin-top: 50px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(239, 239, 241);
+}
+.head-left{
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.worker-header{
+    margin-top: 20px;
+}
+.worker-header1{
+    margin-top: 20px;
+    background-color: #d0d4d4;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.name{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.passion{
+    font-size: 18px;
+    margin-top: 2px;
+    margin-bottom:5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.objectives{
+    font-size: 22px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.objective-details{
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid rgb(8, 8, 8);
+  padding: 5px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top:2px;
+  padding-bottom: 2px;
+  text-align: left;
+  background-color: #d0d4d4;
+}
+
+.Personal td{
+    padding: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cvId{
+    position: relative;
+}
+.CVtop{
+    position: absolute;
+    top: 50px;
+    right: 55px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cvImg{
+    position: relative;
+}
+.cvImgTop{
+    position: absolute;
+    top: 80px;
+    width: 130px;
+    right: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cvFooter{
+    margin-bottom: 50px;
+}

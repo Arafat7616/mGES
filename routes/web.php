@@ -38,6 +38,7 @@ Route::group([ 'middleware' => 'prevent-back-history'], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
     /*Route::get('/', 'HomeController@index')->name('admin.login');*/
+    Route::get('/cv', 'FrontendController@candidateCV')->name('candidateCV');
 
     //others
     Route::get('/qr_code', [QrCodeController::class, 'index']);
