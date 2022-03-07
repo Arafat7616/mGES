@@ -68,8 +68,6 @@
                                                     <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.assignSelectedCandidate', $candidate->id) }}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                @else
-
                                                 @endif
                                                 <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
