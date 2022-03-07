@@ -69,6 +69,11 @@
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 @endif
+                                                @if($candidate->candidate_picture == null)
+                                                    <a class="btn btn-success btn-sm" href="{{ route('OneStopService.candidate.uploadFace', $candidate->id) }}">
+                                                        <i class="fa fa-edit"></i> Upload Face
+                                                    </a>
+                                                @endif
                                                 <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>

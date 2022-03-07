@@ -1,6 +1,6 @@
 @extends("OneStopService.master")
 
-@section('title', 'Assign One Stop Centre')
+@section('title', 'Upload Face')
 @section('DataTableCss')
 
 @endsection
@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Assign One Stop Centre</h4>
+                        <h4 class="pull-left page-title">Upload Face</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">One Stop Centre
                                 </a></li>
-                            <li class="active">Assign One Stop Centre</li>
+                            <li class="active">Upload Face</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -28,10 +28,10 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Assign One Stop Service Centre to the selected candidate</h3>
+                            <h3 class="panel-title">Upload Face</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="{{ route('OneStopService.candidate.assignSelectedCandidateStore', $candidate->id) }}" method="POST"
+                            <form role="form" action="{{ route('OneStopService.candidate.uploadFaceStore', $candidate->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')
@@ -60,26 +60,17 @@
                                     <!-- Horizontal form -->
                                     <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                         <div class="panel-body">
-
                                             <div class="form-group">
                                                 <label for="address">Address</label>
                                                 <textarea readonly class="form-control" name="address" id="address" type="text"
                                                     cols="30" rows="2">{{ $candidate->permanent_address }}</textarea>
                                             </div>
                                             <div class="form-group">
-                                                <label for="fees">Payable Fees</label>
-                                                <input type="text" class="form-control" name="fees" id="fees">
+                                                <img id="imagePreview" onchange="validateMultipleImage('imagePreview')" alt="imagePreview" src="" height="100px" width="100px" onerror="this.onerror=null;this.src='{{ asset($candidate->candidate_picture ?? get_static_option('no_image')) }}';" required/>
                                             </div>
                                             <div class="form-group">
-                                                <label for="wsc">Select WSC</label>
-                                                <select class="form-control" name="wsc">
-                                                    <option value="">Select WSC</option>
-                                                    @foreach ($wscList as $wsc)
-                                                        <option @if ( old('wsc') == $wsc->id) selected @endif
-                                                            value="{{ $wsc->id }}">{{ $wsc->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
+                                                <label for="candidate_picture">Face (Picture of candidate)</label>
+                                                <input type="file" class="mt-2" id="candidate_picture" name="candidate_picture" onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0]); show(this)" accept=".jfif,.jpg,.jpeg,.png,.gif" >
                                             </div>
                                         </div> <!-- panel-body -->
                                     </div> <!-- col -->
@@ -90,7 +81,6 @@
                                                 class="btn btn-info waves-effect waves-ligh">Submit</button>
                                         </div>
                                     </div>
-
                                 </div> <!-- End row -->
                             </form>
                         </div><!-- panel-body -->
