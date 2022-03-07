@@ -1,4 +1,7 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    About mGES
+@endsection
 @section('add-on-css')
     <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/mGESabout.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/contact.css') }}" />
@@ -244,8 +247,8 @@
                 </p>
                 <div class="row">
                     <!-- <div class="col-md-2">
-                                          <h1>This is Joti</h1>
-                                        </div> -->
+                                              <h1>This is Joti</h1>
+                                            </div> -->
                     <div class="col-md-10 mx-auto">
                         <img class="img-fluid"
                             src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
@@ -255,14 +258,14 @@
             </div>
 
             <!-- <div class="row mx-auto d-flex justify-content-center">
-                                      <div class="col-md-12">
-                                        <img
-                                          class="img-fluid"
-                                          src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
-                                          alt=""
-                                        />
-                                      </div>
-                                    </div> -->
+                                          <div class="col-md-12">
+                                            <img
+                                              class="img-fluid"
+                                              src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/Financial-Inclusion.png') }}"
+                                              alt=""
+                                            />
+                                          </div>
+                                        </div> -->
         </section>
 
         <!-- //TODO: Smart Platform -->

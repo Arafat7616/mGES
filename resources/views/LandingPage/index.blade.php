@@ -1,4 +1,7 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    Home
+@endsection
 @section('body')
     <!-- banner start -->
     <section id="banner">
@@ -595,7 +598,8 @@
                             <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="{{ route('medicalCenter') }}"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('medicalCenter') }}"><button class="w-100  BtnView py-3"> View
+                                All</button></a>
                     </div>
 
                     <div class="col-md-4 MedicalCard mx-4">
@@ -605,7 +609,8 @@
                             <img src="{{ asset('assets/landingPageAsset/img/Icon-07.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('requirtmentAgency') }}"><button class="w-100  BtnView py-3"> View
+                                All</button></a>
                     </div>
 
                     <div class="col-md-4 MedicalCard mx-4">
@@ -615,7 +620,7 @@
                             <img src="{{ asset('assets/landingPageAsset/img/Icon-08.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('Insurance') }}"><button class="w-100  BtnView py-3"> View All</button></a>
                     </div>
 
                 </div>
