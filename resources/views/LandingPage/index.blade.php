@@ -2,7 +2,7 @@
 @section('body')
     <!-- banner start -->
     <section id="banner">
-        <div class="container-fluid banner-container">
+        <div class="container-fluid banner-container-mainPage ">
             <div class="text-center">
                 <div class="typeing">
                     <h1>

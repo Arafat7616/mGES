@@ -2,6 +2,7 @@
 @section('body')
     <section id="banner">
         <div class="container-fluid banner-container-about">
+
             <div class="text-center">
                 <div class="typeing">
                     <h1>
