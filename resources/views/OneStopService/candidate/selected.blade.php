@@ -74,6 +74,11 @@
                                                         <i class="fa fa-edit"></i> Upload Face
                                                     </a>
                                                 @endif
+                                                @if($candidate->pre_medical_id == null)
+                                                    <a class="btn btn-primary btn-sm" href="{{ route('OneStopService.candidate.assignMedicalAgency', $candidate->id) }}">
+                                                        <i class="fa fa-edit"></i> Assign Medical Agency
+                                                    </a>
+                                                @endif
                                                 <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>

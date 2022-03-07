@@ -23,12 +23,13 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.upload-face', compact('candidate'));
     }
 
+
     public function uploadFaceStore(Request $request, $candidate_id){
         $candidate = Candidate::findOrFail($candidate_id);
 
         if($request->hasFile('candidate_picture')){
             if ($candidate->candidate_picture != null)
-                File::delete(public_path($candidate->candidate_picture)); // Old image delete
+            File::delete(public_path($candidate->candidate_picture)); // Old image delete
             $image             = $request->file('candidate_picture');
             $folder_path       = 'uploads/images/users/';
             $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
@@ -36,6 +37,22 @@ class CandidateController extends Controller
             Image::make($image->getRealPath())->save($folder_path.$image_new_name);
             $candidate->candidate_picture   = $folder_path . $image_new_name;
         }
+        try {
+            $candidate->save();
+            session()->flash('success', 'Successfully saved !');
+            return back();
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
+    }
+    public function assignMedicalAgency($candidate_id){
+        $medicalAgencies = User::where('user_type', 'medical-agency')->where('active_status', 'Approved')->get();
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('OneStopService.candidate.assign-medical-agency', compact('candidate', 'medicalAgencies'));
+    }
+    public function assignMedicalAgencyStore(Request $request, $candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+        $candidate->pre_medical_id = $request->medical;
         try {
             $candidate->save();
             session()->flash('success', 'Successfully saved !');
