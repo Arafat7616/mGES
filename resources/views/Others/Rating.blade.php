@@ -19,11 +19,11 @@
         @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap");
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 * {
-  
+
   font-family: "Montserrat";
 }
 .join {
- 
+
   margin: 10px 0;
 }
 
@@ -164,7 +164,7 @@ label:hover ~ input:checked ~ label /* highlight previous selected stars */ {
 
     </style>
 
-    
+
   </head>
   <body>
     <div class="join">

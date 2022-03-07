@@ -14,10 +14,10 @@ Route::group(['prefix' => 'call-center/', 'namespace' => 'CallCenter', 'as' => '
 
     // Call Center route
 
-  
+
         Route::get('/selected-from-db','CallCenterController@selectedFromDB')->name('selectedFromDB');
         Route::get('/selected-from-db/{id}','CallCenterController@show')->name('show');
- 
+
 
     // //visa Process
     // Route::get('/stamping-requested', 'VisaProcessController@stampingRequested')->name('stampingRequested');
@@ -27,4 +27,12 @@ Route::group(['prefix' => 'call-center/', 'namespace' => 'CallCenter', 'as' => '
     // Route::get('/requested-candidate-profile/{offered_candidate_id}', 'VisaProcessController@requestedCandidateProfile')->name('visaProcess.requestedCandidateProfile');
     // Route::get('/approved-candidate-profile/{offered_candidate_id}', 'VisaProcessController@approvedCandidateProfile')->name('visaProcess.approvedCandidateProfile');
     // Route::get('/rejected-candidate-profile/{offered_candidate_id}', 'VisaProcessController@rejectedCandidateProfile')->name('visaProcess.rejectedCandidateProfile');
+
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
+
 });

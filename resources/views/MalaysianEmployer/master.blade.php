@@ -40,5 +40,36 @@
 <!-- jQuery  -->
 @include("MalaysianEmployer.include._scripts")
 
+@include("Others.review_modal")
+
+    <script>
+
+        function Show(title,link,style = '') {
+
+            $('#modal').modal();
+            $('#modal-title').html(title);
+            $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
+            $('#modal-dialog').attr('style',style);
+            $.ajax({
+                url: link,
+                type: 'GET',
+                data: {},
+            })
+            .done(function(response) {
+                $('#modal-body').html(response);
+            });
+        }
+
+
+        function sweet(message){
+            Swal.fire({
+                        icon: 'error',
+                        title: message,
+                         footer: ''
+                    });
+        }
+
+    </script>
+
 </body>
 </html>

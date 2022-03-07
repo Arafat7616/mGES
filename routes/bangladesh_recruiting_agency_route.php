@@ -46,4 +46,10 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
         Route::get('selected', 'CandidateController@selected')->name('selected');
         Route::get('view-selected/{id}', 'CandidateController@viewSelected')->name('viewSelected');
     });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
+    });
 });

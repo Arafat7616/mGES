@@ -46,6 +46,8 @@ Route::get('job-post/demand-latter/{id}', [DemandLetterController::class, 'deman
 
 //Rating route
 Route::get('/rating', [RatingController::class, 'index']);
+Route::get('/review_modal/{id}', [RatingController::class, 'modal'])->name('review_modal');
+Route::post('submit_review/{id}', [RatingController::class, 'submit']);
 
 //PDF Generate Route
 Route::get('/print_pdf', 'PdfController@print')->name('print_pdf');
