@@ -93,7 +93,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('CallCenter.candidate.show', $candidate->id) }}">
+                                                    href="{{ route('CallCenter.show', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
