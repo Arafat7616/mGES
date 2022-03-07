@@ -2,7 +2,7 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="{{ route('BangladeshAdmin.dashboard') }}" class="logo"><img src="{{ asset('assets/images/mges.png') }}" height="72px" width="100%" style="background: #03a9f4;"></a>
+            <a href="{{ route('BangladeshAdmin.dashboard') }}" class="logo"><img src="{{ asset('assets/images/mges-old.png') }}" height="45px" width="80%"></a>
             <a href="{{ route('BangladeshAdmin.dashboard') }}" class="logo-sm"><img src="{{ asset('assets/images/mges-sm.png') }}" height="72px" width="100%" style="background: #03a9f4;"></a>
         </div>
     </div>

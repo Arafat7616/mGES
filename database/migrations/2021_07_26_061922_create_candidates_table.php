@@ -19,6 +19,13 @@ class CreateCandidatesTable extends Migration
             $table->unsignedBigInteger('job_category_id');
             $table->unsignedBigInteger('job_id')->nullable();
             $table->unsignedBigInteger('company_id')->nullable();
+            $table->unsignedBigInteger('created_id')->nullable();
+            $table->unsignedBigInteger('updated_id')->nullable();
+            $table->unsignedBigInteger('pre_medical_id')->nullable();
+            $table->unsignedBigInteger('pre_training_id')->nullable();
+            $table->unsignedBigInteger('selected_osc_id')->nullable();
+            $table->text('present_address')->nullable();
+            $table->text('permanent_address')->nullable();
             $table->string('candidate_name')->nullable();
             $table->string('candidate_dob')->nullable();
             $table->string('candidate_gender')->nullable();
@@ -28,8 +35,6 @@ class CreateCandidatesTable extends Migration
             $table->string('candidate_password')->nullable();
             $table->string('country')->nullable();
             $table->string('nationality')->nullable();
-            $table->text('present_address')->nullable();
-            $table->text('permanent_address')->nullable();
             $table->string('active_status')->default('Active');
             $table->string('candidate_picture')->nullable();
             $table->string('candidate_resume')->nullable();
@@ -37,12 +42,7 @@ class CreateCandidatesTable extends Migration
             $table->string('pre_medical_certificate')->nullable();
             $table->string('pre_traning_certificate')->nullable();
             $table->string('created_by')->nullable();
-            $table->unsignedBigInteger('created_id')->nullable();
             $table->string('updated_by')->nullable();
-            $table->unsignedBigInteger('updated_id')->nullable();
-            $table->unsignedBigInteger('pre_medical_id')->nullable();
-            $table->unsignedBigInteger('pre_training_id')->nullable();
-            $table->unsignedBigInteger('selected_osc_id')->nullable();
             $table->string('pre_updated_dt')->nullable();
             $table->string('pre_medical_report')->nullable();
             $table->string('pre_training_report')->nullable();
@@ -50,7 +50,6 @@ class CreateCandidatesTable extends Migration
             $table->string('pre_training_dt')->nullable();
             $table->string('pre_medical_comments')->nullable();
             $table->string('pre_training_comments')->nullable();
-            $table->boolean('offered_status')->default(0);
             $table->string('pre_medical_status')->nullable();
             $table->string('pre_training_status')->nullable();
             $table->string('approval_status')->nullable();
@@ -61,6 +60,7 @@ class CreateCandidatesTable extends Migration
             $table->string('sending_status')->nullable();
             $table->string('offer_letter')->nullable();
             $table->string('employer_comments')->nullable();
+            $table->boolean('offered_status')->default(0);
             $table->timestamps();
         });
     }
