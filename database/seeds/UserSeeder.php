@@ -63,6 +63,9 @@ class UserSeeder extends Seeder
             'email' => 'bra@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
 
@@ -189,7 +192,7 @@ class UserSeeder extends Seeder
             'country_id' => 18,
             'name' => 'Sonet Recruiting Agency BD',
             'email' => 'srab@gmail.com',
-            'user_type' => 'bangladesh-recruiting-agency',
+            'user_type' => '',
             'active_status' => 'Approved',
             'domain' => 'srab.com',
             'company_name' => 'Sonet Recruiting Agency BD',
@@ -323,6 +326,9 @@ class UserSeeder extends Seeder
             'email' => 'a-plus-international@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -333,6 +339,9 @@ class UserSeeder extends Seeder
             'email' => 'Eastern-Bay-Bangladesh@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
 
@@ -344,6 +353,9 @@ class UserSeeder extends Seeder
             'email' => 'simplex-international@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -354,6 +366,9 @@ class UserSeeder extends Seeder
             'email' => 'sarkar-recruiting-ggency-ltd.@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -364,6 +379,9 @@ class UserSeeder extends Seeder
             'email' => 'golden-arrow-ltd@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -374,6 +392,9 @@ class UserSeeder extends Seeder
             'email' => 'nac-international@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -384,6 +405,9 @@ class UserSeeder extends Seeder
             'email' => 'tribeni-international@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -394,6 +418,9 @@ class UserSeeder extends Seeder
             'email' => 'Binimoyinternational@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -404,6 +431,9 @@ class UserSeeder extends Seeder
             'email' => 'orchid-view-ltd@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         User::create([
@@ -414,6 +444,9 @@ class UserSeeder extends Seeder
             'email' => 'kazi-international@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
+            'address1' => 'Banani,Dhaka,Bangladesh',
+            'address2' => 'Mirpur,Dhaka,Bangladesh',
+            'company_register_number' => '154954897',
             'active_status' => 'Approved',
         ]);
         // Bangladesh Recruiting Agency company seeder ends

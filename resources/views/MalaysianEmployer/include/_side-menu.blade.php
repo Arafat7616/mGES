@@ -22,6 +22,9 @@
 
                         <li><a href="{{ route('MalaysianEmployer.postJob.bhcApproved') }}"><i
                                 class="fa fa-arrow-circle-right"></i>BHC Approval</a></li>
+
+                        <li><a href="{{ route('MalaysianEmployer.postJob.getDemandLetter') }}"><i
+                                class="fa fa-arrow-circle-right"></i>Demand Leeter</a></li>
                     </ul>
                 </li>
 

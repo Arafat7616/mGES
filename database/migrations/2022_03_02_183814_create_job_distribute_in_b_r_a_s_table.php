@@ -19,6 +19,7 @@ class CreateJobDistributeInBRASTable extends Migration
             $table->unsignedBigInteger('bra_id')->nullable();
             $table->unsignedBigInteger('bra_interest_id')->nullable();
             $table->string('distributed_vacancy')->nullable();
+            $table->string('memp_status')->nullable();
             $table->timestamps();
         });
     }

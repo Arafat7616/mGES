@@ -144,6 +144,21 @@ class JobPostController extends Controller
         return view('BangladeshAdmin.Jobposts.bhcApproval', compact('job_posts'));
     }
 
+    public function sendDemandLetter($job_post_id){
+
+        $job_post = JobPost::findOrFail($job_post_id);
+
+        $jobDistributedBras = $job_post->jobDistributedBras;
+
+        foreach ($jobDistributedBras as $key => $jobDistributedBra) {
+            $jobDistributedBra->memp_status = 'Demand'; 
+            $jobDistributedBra->save();
+        }
+        session()->flash('success', 'Demand Letter Send Successfully!');
+        return back();
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

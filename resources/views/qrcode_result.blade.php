@@ -100,16 +100,18 @@
             <span class="col-3 ">Fax: 07-4315333</span>
             <div class="DateS  text-end  ">Date: {{ date('d M,Y',strtotime($post->created_at)) }}</div>
             
-            {{-- @if ($post->ma_status == 'Approved')
-            <p>To,</p>
-            <i> <b class="btext"> NICE OVERSEAS PVT. LTD.</b> </i>
-            <i> <b class="btext"> Gaushala,Kathmandu,Nepal</b> </i>
-            <i> <b class="btext"> Licence no :1089/073/074</b> </i>
-            <i> <b class="btext"> G.P.O Box 8974, CPS 312, Samakhusi-26,</b> </i>
-            <i> <b class="btext"> Town Planning Near Swimming Pool,</b> </i>
-            <i> <b class="btext"> Kathmandu, Nepal</b> </i>
-            @endif --}}
+            @if (isset($jobDistributedBra))
+                @if ($jobDistributedBra->memp_status == 'Demand')
+                    <p>To,</p>
+                    <i> <b class="btext"> {{ $jobDistributedBra->bra->name }}</b> </i>
+                    <i> <b class="btext">  {{ $jobDistributedBra->bra->address }}</b> </i>
+                    <i> <b class="btext"> Licence no :  {{ $jobDistributedBra->bra->company_register_number }}</b> </i>
+                    {{-- <i> <b class="btext"> G.P.O Box 8974, CPS 312, Samakhusi-26,</b> </i>
+                    <i> <b class="btext"> Town Planning Near Swimming Pool,</b> </i> --}}
+                    <i> <b class="btext"> {{ $jobDistributedBra->bra->address2 }}</b> </i>
+                @endif
 
+            @endif
             <p class="mt-3">Dear Sir/Madam,</p>
             <b>Re: DEMAND LETTER FOR RECRUITMENT OF WORKERS FROM {{ $post->user->country_name }}</b>
             <p>We hereby appoint your company to recruit Nepal male workers for employment with our
