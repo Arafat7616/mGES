@@ -1,13 +1,14 @@
 <header class="sticky-top">
     <nav class="navbar  navbar-expand-lg navbar-light topHeading shadow-lg" style="z-index: 1">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('homePage') }}">
-                <img src="{{ asset('assets/landingPageAsset/img/MGES-Logo-Orginal-Color.png') }}" alt=""
-                    style="height: 60px" />
+
+            <a class="navbar-brand m-0 p-0 " href="{{ route('homePage') }}">
+                <img src="{{ asset('assets/landingPageAsset/img/MGES-Logo-Orginal-Color.png') }}" alt="" style="height: 70px" />
+
             </a>
 
             <div>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ">
                     <li class="nav-item">
                         <a class="nav-link topHeaderLink" href="{{ route('login') }}">LOGIN</a>
                     </li>
