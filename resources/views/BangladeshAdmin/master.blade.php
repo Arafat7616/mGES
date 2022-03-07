@@ -33,6 +33,7 @@
         <div class="content-page">
             @yield('main-content')
             @include('BangladeshAdmin.include._footer')
+            @include('Others.toaster_message')
         </div>
 
     </div>

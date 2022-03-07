@@ -31,7 +31,8 @@ class InsuranceController extends Controller
         $insuranceService->service_status = $request->serviceStatus;
         try {
             $insuranceService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

@@ -32,7 +32,8 @@ class MeetAndGreetController extends Controller
         $meetAndGreet->active_status = $request->serviceStatus;
         try {
             $meetAndGreet->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
