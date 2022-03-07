@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Malaysia Admin route
-Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as' => 'MalaysiaAdmin.', 'middleware' => ['auth', 'malaysia-admin']], function () {
+Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as' => 'MalaysiaAdmin.', 'middleware' => ['auth', 'malaysia-admin','prevent-back-history']], function () {
     Route::get('/dashboard', 'MalaysiaAdminDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'MalaysiaAdminDashboardController@companyPrfileView')->name('companyPrfileView');
 
@@ -19,7 +19,7 @@ Route::group(['prefix' => 'malaysia-admin/', 'namespace' => 'MalaysiaAdmin', 'as
 
 
     /* Code By Monir
-        Malaysia Recruiting Agency Approval 
+        Malaysia Recruiting Agency Approval
     */
     Route::group(['prefix' => 'mra-request/', 'as' => 'mraRequest.'], function () {
         Route::get('new', 'MraRequestController@new')->name('new');
