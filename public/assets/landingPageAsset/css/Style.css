@@ -1,8 +1,8 @@
 body {
   overflow-x: hidden;
 }
-.banner-container {
-  background-image: url("../img/banner3.png");
+.banner-container-mainPage {
+  background-image: url("../img/finalbanner.png");
 
   /* height: 50%; */
   background-repeat: no-repeat;
