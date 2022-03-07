@@ -194,6 +194,13 @@ class PostJobController extends Controller
 
     }
 
+    public function getDemandLetter(){
+
+        $jobPosts = JobPost::where('user_id',Auth::user()->id)->get();
+        // $jobDistributedBras = JobDistributeInBRA::where('memp_status','Demand')->get();
+        return view('MalaysianEmployer.PostJob.getDemandLetter', compact('jobPosts'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

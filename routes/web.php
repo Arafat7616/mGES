@@ -43,7 +43,7 @@ Route::group([ 'middleware' => 'prevent-back-history'], function () {
     //others
     Route::get('/qr_code', [QrCodeController::class, 'index']);
     Route::get('/qr_code_result', [QrCodeController::class, 'result']);
-    Route::get('job-post/demand-latter/{id}', [DemandLetterController::class, 'demandLetter'])->name('postJob.viewDemandLetter');
+    Route::get('job-post/demand-latter/{job_post_id}/{jobDistributedBra?}', [DemandLetterController::class, 'demandLetter'])->name('postJob.viewDemandLetter');
 
     //Rating route
     Route::get('/rating', [RatingController::class, 'index']);

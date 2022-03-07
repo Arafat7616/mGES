@@ -82,6 +82,16 @@
                                                         value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
                                                         <i class="fa fa-sitemap"></i>Distribute candidates
                                                     </a>
+                                                    @if ($jobPost->jobDistributedBras->where('memp_status','Demand')->count() > 0)
+                                                    <a class="btn btn-success" disabled href="javascript:void(0);">
+                                                        <i class="fa fa-pdf"></i>Send Demand Letter
+                                                    </a>
+                                                    @else
+                                                    <a class="btn btn-success" href="{{ route('BangladeshAdmin.jobPost.sendDemandLetter',$jobPost->id) }}">
+                                                        <i class="fa fa-pdf"></i>Send Demand Letter
+                                                    </a>
+                                                    @endif
+                                                  
                                                 @else
                                                     <a class="btn btn-warning button" fhgkd="{{ $jobPost->id }}"
                                                         value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
@@ -179,7 +189,9 @@
     <script>
         jQuery(function($) {
             $(document).on('click', '#close_custome_modal', function() {
-                $('.overlay').fadeOut(300);;
+                $('.overlay').fadeOut(300);
+                location.reload();
+
             })
             $(document).ajaxSend(function() {
                 $("#overlay").fadeIn(300);
@@ -215,6 +227,8 @@
                                 console.log(data);
                                 $('#custome_modal_body').html(data);
                                 $('.overlay').css('display', 'block');
+
+                            
 
                             },
                         })
