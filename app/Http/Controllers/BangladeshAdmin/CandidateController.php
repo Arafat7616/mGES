@@ -47,6 +47,32 @@ class CandidateController extends Controller
         return view('BangladeshAdmin.Candidate.tickets_booked_List', compact('offeredCandidates'));
     }
 
+    public function fromBra(){
+        $data = [
+            'candidates' => Candidate::where('sending_status',1)->orderBy('id','DESC')->get(),
+        ];
+
+        return view('BangladeshAdmin.Candidate.from_bra',$data);
+    }
+
+    public function forwardToSSC(Request $request){
+        // dd($request->all());
+        $request->validate(
+            [
+                'all_option' => 'required',
+            ],
+            [
+                'all_option.required' => 'Please Sellect Some Data!!',
+            ]
+        );
+
+        Candidate::whereIn('id', $request->all_option)->update([
+            'sending_status' => 2, 
+        ]);
+
+        return back()->withToastSuccess('Successfully forward.');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -86,7 +112,8 @@ class CandidateController extends Controller
      */
     public function show($id){
         $candidate = Candidate::findOrFail($id);
-        return view('BangladeshAdmin.Candidate.show-profile', compact('candidate'));
+        $link = 'Name : '.$candidate->candidate_name.',Passport Number: '.$candidate->passport_number.',Phone Number:'.$candidate->phone_number;
+        return view('BangladeshAdmin.Candidate.show-profile', compact('candidate','link'));
     }
 
     public function showFinalCandidate($offered_candidate_id){

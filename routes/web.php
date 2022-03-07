@@ -36,6 +36,10 @@ Route::get('/conatact', 'FrontendController@contact')->name('conatactPage');
 // For system reboot
 Route::get('reboot', 'FrontendController@reboot');
 
+
+Route::get('/cv', 'FrontendController@candidateCV')->name('candidateCV');
+
+
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('change-password', 'HomeController@changePassword')->name('changePassword');
 /*Route::get('/', 'HomeController@index')->name('admin.login');*/

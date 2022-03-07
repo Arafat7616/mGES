@@ -46,5 +46,6 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
         Route::get('qr-code-generate/{id}', 'CandidateController@QrCodeGenerate')->name('QrCodeGenerate');
         Route::get('selected', 'CandidateController@selected')->name('selected');
         Route::get('view-selected/{id}', 'CandidateController@viewSelected')->name('viewSelected');
+        Route::post('forward-to-ba', 'CandidateController@forwardToBA')->name('forwardToBA');
     });
 });
