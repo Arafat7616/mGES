@@ -1,4 +1,7 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    About
+@endsection
 @section('body')
     <!-- banner start -->
     <section id="banner">

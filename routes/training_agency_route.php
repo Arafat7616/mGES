@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Training Agency middleware route
-Route::group(['prefix' => 'training-agency/', 'namespace' => 'TrainingAgency', 'as' => 'TrainingAgency.', 'middleware' => ['auth', 'training-agency']], function () {
+Route::group(['prefix' => 'training-agency/', 'namespace' => 'TrainingAgency', 'as' => 'TrainingAgency.', 'middleware' => ['auth', 'training-agency','prevent-back-history']], function () {
     Route::get('/dashboard', 'TrainingAgencyDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'TrainingAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
 

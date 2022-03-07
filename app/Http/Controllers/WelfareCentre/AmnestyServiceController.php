@@ -88,7 +88,8 @@ class AmnestyServiceController extends Controller
         $amnestyService->fees = $request->fees;
         try {
             $amnestyService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -105,7 +106,7 @@ class AmnestyServiceController extends Controller
         $amnestyService->delivery_type = $request->deliveryStatus;
         $amnestyService->delivery_to = $request->deliveryTo;
         $amnestyService->service_status = $request->legalStatus;
-        
+
         if ($request->hasFile('document')) {
             $pdf             = $request->file('document');
             $folder_path       = 'uploads/document/';
@@ -116,7 +117,8 @@ class AmnestyServiceController extends Controller
         }
         try {
             $amnestyService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

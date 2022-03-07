@@ -32,6 +32,7 @@
     <div class="content-page">
         @yield('main-content')
         @include('MalaysianEmployer.include._footer')
+            @include('Others.toaster_message')
     </div>
 
 </div>

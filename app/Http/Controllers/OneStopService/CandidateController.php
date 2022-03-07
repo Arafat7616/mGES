@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class CandidateController extends Controller
 {
@@ -15,9 +18,48 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.selected', compact('candidates'));
     }
 
-    public function uploadFaceMatch($candidate_id){
+    public function uploadFace($candidate_id){
         $candidate = Candidate::findOrFail($candidate_id);
-        return view('OneStopService.candidate.upload-face-match', compact('candidate','wscList'));
+        return view('OneStopService.candidate.upload-face', compact('candidate'));
+    }
+
+
+    public function uploadFaceStore(Request $request, $candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+
+        if($request->hasFile('candidate_picture')){
+            if ($candidate->candidate_picture != null)
+            File::delete(public_path($candidate->candidate_picture)); // Old image delete
+            $image             = $request->file('candidate_picture');
+            $folder_path       = 'uploads/images/users/';
+            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+            //resize and save to server
+            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            $candidate->candidate_picture   = $folder_path . $image_new_name;
+        }
+        try {
+            $candidate->save();
+            session()->flash('success', 'Successfully saved !');
+            return back();
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
+    }
+    public function assignMedicalAgency($candidate_id){
+        $medicalAgencies = User::where('user_type', 'medical-agency')->where('active_status', 'Approved')->get();
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('OneStopService.candidate.assign-medical-agency', compact('candidate', 'medicalAgencies'));
+    }
+    public function assignMedicalAgencyStore(Request $request, $candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+        $candidate->pre_medical_id = $request->medical;
+        try {
+            $candidate->save();
+            session()->flash('success', 'Successfully saved !');
+            return back();
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
     }
 
     public function interview(){
@@ -71,7 +113,8 @@ class CandidateController extends Controller
 
         try {
             $candidate->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -94,7 +137,8 @@ class CandidateController extends Controller
 
         try {
             $offeredCandidate->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // One Stop Service route
-Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 'as' => 'OneStopService.', 'middleware' => ['auth', 'one-stop-service']], function () {
+Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 'as' => 'OneStopService.', 'middleware' => ['auth', 'one-stop-service','prevent-back-history']], function () {
     Route::get('/dashboard', 'OneStopServiceDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'OneStopServiceDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'OneStopServiceDashboardController@companyPrfileView')->name('companyPrfileView');
@@ -62,7 +62,10 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::post('assign-interview-osc-store/{offered_candidate_id}', 'CandidateController@assignInterviewOscStore')->name('assignInterviewOscStore');
         Route::post('assign-selected-store/{offered_candidate_id}', 'CandidateController@assignSelectedCandidateStore')->name('assignSelectedCandidateStore');
         Route::get('selected', 'CandidateController@selected')->name('request');
-        Route::get('upload-face-match/{candidate_id}', 'CandidateController@uploadFaceMatch')->name('uploadFaceMatch');
+        Route::get('upload-face/{candidate_id}', 'CandidateController@uploadFace')->name('uploadFace');
+        Route::post('upload-face-store/{candidate_id}', 'CandidateController@uploadFaceStore')->name('uploadFaceStore');
+        Route::get('assign-medical-agency/{candidate_id}', 'CandidateController@assignMedicalAgency')->name('assignMedicalAgency');
+        Route::post('assign-medical-agency-store/{candidate_id}', 'CandidateController@assignMedicalAgencyStore')->name('assignMedicalAgencyStore');
         Route::get('interview', 'CandidateController@interview')->name('approved');
         Route::get('finalized', 'CandidateController@finalized')->name('rejected');
         Route::get('ticket-booked', 'CandidateController@ticketBooked')->name('ticketBooked');

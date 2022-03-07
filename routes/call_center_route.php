@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Malaysia Embassy route
-Route::group(['prefix' => 'call-center/', 'namespace' => 'CallCenter', 'as' => 'CallCenter.', 'middleware' => ['auth', 'call-center']], function () {
+Route::group(['prefix' => 'call-center/', 'namespace' => 'CallCenter', 'as' => 'CallCenter.', 'middleware' => ['auth', 'call-center','prevent-back-history']], function () {
     Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'DashboardController@companyPrfileView')->name('companyPrfileView');
 

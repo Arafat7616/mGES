@@ -47,46 +47,36 @@ class CandidateController extends Controller
         return view('BangladeshAdmin.Candidate.tickets_booked_List', compact('offeredCandidates'));
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function fromBra(){
+        $data = [
+            'candidates' => Candidate::where('sending_status',1)->orderBy('id','DESC')->get(),
+        ];
+
+        return view('BangladeshAdmin.Candidate.from_bra',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function forwardToSSC(Request $request){
+        // dd($request->all());
+        $request->validate(
+            [
+                'all_option' => 'required',
+            ],
+            [
+                'all_option.required' => 'Please Sellect Some Data!!',
+            ]
+        );
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        Candidate::whereIn('id', $request->all_option)->update([
+            'sending_status' => 2, 
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
+        return back()->withToastSuccess('Successfully forward.');
+    }
+    
     public function show($id){
         $candidate = Candidate::findOrFail($id);
-        return view('BangladeshAdmin.Candidate.show-profile', compact('candidate'));
+        $link = 'Name : '.$candidate->candidate_name.',Passport Number: '.$candidate->passport_number.',Phone Number:'.$candidate->phone_number;
+        return view('BangladeshAdmin.Candidate.show-profile', compact('candidate','link'));
     }
 
     public function showFinalCandidate($offered_candidate_id){
@@ -133,39 +123,5 @@ class CandidateController extends Controller
                 'message' => $exception->getMessage()
             ]);
         }
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Candidate $candidate)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Candidate $candidate)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Candidate $candidate)
-    {
-        //
     }
 }

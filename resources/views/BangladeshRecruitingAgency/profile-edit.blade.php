@@ -66,8 +66,7 @@
             </div> <!-- End Row -->
         </div> <!-- container -->
     </div> <!-- content -->
-    @include('Others.toaster_message')
-@endsection
+    @endsection
 @section('js')
     <script src="{{ asset('assets/pages/dashborad.js') }}"></script>
 @endsection

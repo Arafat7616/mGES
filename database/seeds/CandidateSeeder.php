@@ -23,7 +23,7 @@ class CandidateSeeder extends Seeder
                 'candidate_name' =>   'Mr. candidate ' . $i,
                 'role_id' => 15,
                 'job_id' => rand(1, 10),
-                'company_id' => rand(1, 10),
+                'company_id' =>$faker->numberBetween(1, 10),
                 'job_category_id' => rand(1, 10),
                 'candidate_dob' => '2021-30-07',
                 'candidate_gender' => 'male',
@@ -48,7 +48,7 @@ class CandidateSeeder extends Seeder
                 'candidate_name' =>   'Mr. candidate ' . $i,
                 'role_id' => 15,
                 'job_id' => $appliedJob->job_post_id,
-                'company_id' => $appliedJob->company_id,
+                'company_id' => $faker->numberBetween(1, 10),
                 'job_category_id' => $appliedJob->jobPost->job_category_id,
                 'candidate_dob' => '2021-30-07',
                 'candidate_gender' => 'male',
@@ -93,7 +93,7 @@ class CandidateSeeder extends Seeder
             $candidate->candidate_name      =  $faker->name();
             $candidate->role_id             = 15;
             $candidate->job_id              = $faker->numberBetween(1, 25);
-            $candidate->company_id          = rand(18, 27);
+            $candidate->company_id          = $faker->numberBetween(1, 10);
             $candidate->job_category_id     = rand(1, 13);
             $candidate->candidate_dob       = $faker->dateTimeBetween($startDate = '-40 years', $endDate = '-20 years', $timezone = null);
             $candidate->candidate_gender    = $faker->randomElements(['male', 'female'])[0];

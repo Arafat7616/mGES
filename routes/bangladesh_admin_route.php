@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Bangladesh Admin route
-Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin', 'as' => 'BangladeshAdmin.', 'middleware' => ['auth', 'bangladesh-admin']], function () {
+Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin', 'as' => 'BangladeshAdmin.', 'middleware' => ['auth', 'bangladesh-admin','prevent-back-history']], function () {
     Route::get('/dashboard', 'BangladeshAdminDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'BangladeshAdminDashboardController@companyPrfileView')->name('companyPrfileView');
     Route::get('/edit-profile', 'BangladeshAdminDashboardController@editProfile')->name('editProfile');
@@ -30,6 +30,8 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('request', 'CallCenterController@request')->name('request');
         Route::get('approved', 'CallCenterController@approved')->name('approved');
         Route::get('rejected', 'CallCenterController@rejected')->name('rejected');
+        Route::get('show/{id}', 'CandidateController@show')->name('show');
+        
     });
 
     // One stop services
@@ -87,6 +89,8 @@ Route::group(['prefix' => 'bangladesh-admin/', 'namespace' => 'BangladeshAdmin',
         Route::get('reviewed', 'CandidateController@reviewed')->name('reviewed');
         Route::get('finalized', 'CandidateController@finalized')->name('finalized');
         Route::get('tickets-booked-List', 'CandidateController@tickets_booked_List')->name('tickets_booked_List');
+        Route::get('from-bra', 'CandidateController@fromBra')->name('fromBra');
+        Route::post('forward-to-ssc', 'CandidateController@forwardToSSC')->name('forwardToSSC');
     });
 
     //Visa Process

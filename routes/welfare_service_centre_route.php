@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Welfare Company route
-Route::group(['prefix' => 'welfare-centre/', 'namespace' => 'WelfareCentre', 'as' => 'WelfareCentre.', 'middleware' => ['auth', 'welfare-centre']], function () {
+Route::group(['prefix' => 'welfare-centre/', 'namespace' => 'WelfareCentre', 'as' => 'WelfareCentre.', 'middleware' => ['auth', 'welfare-centre','prevent-back-history']], function () {
 
     Route::get('/dashboard', 'WelfareDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'WelfareDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');

@@ -14,12 +14,16 @@ class FrontendController extends Controller
         Artisan::call('cache:clear');
         Artisan::call('route:clear');
         Artisan::call('view:clear');
-        file_put_contents(storage_path('logs/laravel.log'),'');
+        file_put_contents(storage_path('logs/laravel.log'), '');
         Artisan::call('key:generate');
         Artisan::call('config:cache');
         return '<center><h1>System Rebooted!</h1></center>';
     }
-    
+
+    public function candidateCV(){
+        return view('Candidate.cv.workerpdf');
+    }
+
     public function index()
     {
         return view('LandingPage.index');
@@ -43,5 +47,15 @@ class FrontendController extends Controller
     public function medicalCenter()
     {
         return view('LandingPage.madicalCenter');
+    }
+
+    public function requirtmentAgency()
+    {
+        return view('LandingPage.recruitmentAgencies');
+    }
+
+    public function insurance()
+    {
+        return view('LandingPage.insurance');
     }
 }

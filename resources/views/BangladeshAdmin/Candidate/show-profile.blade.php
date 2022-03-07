@@ -191,6 +191,7 @@
                                         </a>
                                     @endif
                                 </div> <!-- /.tab-content -->
+                                {!! QrCode::size(300)->generate($link) !!}
                             </div><!-- /.card-body -->
                         </div> <!-- /.nav-tabs-custom -->
                     </div> <!-- /.col -->

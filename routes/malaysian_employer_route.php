@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // malaysian-employer Route
-Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmployer', 'as' => 'MalaysianEmployer.', 'middleware' => ['auth', 'malaysian-employer']], function () {
+Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmployer', 'as' => 'MalaysianEmployer.', 'middleware' => ['auth', 'malaysian-employer','prevent-back-history']], function () {
     Route::get('/dashboard', 'MalaysianEmployerDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'MalaysianEmployerDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'MalaysianEmployerDashboardController@companyPrfileView')->name('companyPrfileView');

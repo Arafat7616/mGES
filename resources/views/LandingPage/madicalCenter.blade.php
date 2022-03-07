@@ -1,11 +1,10 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    Medical center
+@endsection
 @section('body')
     <section id="banner">
-<<<<<<< Updated upstream
-        <div class="container-fluid banner-container-medical">
-=======
         <div class="container-fluid banner-container-about">
->>>>>>> Stashed changes
             <div class="text-center">
                 <div class="typeing">
                     <h1>
@@ -216,7 +215,7 @@
         <!-- Footer end -->
 
         <!--
-            table content end -->
+                    table content end -->
 
         <script>
             $(document).ready(function() {
