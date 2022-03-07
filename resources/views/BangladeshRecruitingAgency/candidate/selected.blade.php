@@ -43,30 +43,35 @@
                                     <tr>
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
-                                        <th>Company Name</th>
+                                        {{-- <th>Company Name</th> --}}
                                         <th>Job Category</th>
-                                        <th>Approved Vacancies</th>
-                                        <th>Candidates</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($selectedCandidates as $selectedCandidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->company->user_name }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->user->company_name }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->job_category->category_name }}</td>
-                                            <td>{{ $selectedCandidate->approved_vacancy }}</td>
+                                            <td>{{ $selectedCandidate->company->user_name }}</td>
+                                            {{-- <td>{{ $selectedCandidate->user->company_name }}</td> --}}
+                                            <td>{{ $selectedCandidate->job_category->category_name }}</td>
+                                           
                                             <td>
-                                                @if ($selectedCandidate->status == 'Applied')
+                                                {{-- @if ($selectedCandidate->result_status == 'Selected')
                                                     <a class="btn btn-info btn-sm"
                                                         href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $selectedCandidate->id) }}">
                                                         <i class="fa fa-eye"></i></a>
-                                                @elseif ($selectedCandidate->status == 'Approved')
+                                                @elseif ($selectedCandidate->result_status == 'Approved')
                                                     <a class="btn btn-info btn-sm"
                                                         href="{{ route('BangladeshRecruitingAgency.candidate.viewSelected', $selectedCandidate->job_post_id) }}"><i
                                                             class="fa fa-users"></i></a>
-                                                @endif
+                                                @endif --}}
+
+                                                <a class="btn btn-info btn-sm"
+                                                href="{{ route('BangladeshRecruitingAgency.candidate.show', $selectedCandidate->id) }}">
+                                                <i class="fa fa-eye"></i>&nbsp;View</a>
+
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -75,10 +80,8 @@
                                     <tr>
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
-                                        <th>Company Name</th>
                                         <th>Job Category</th>
-                                        <th>Approved Vacancies</th>
-                                        <th>Candidates</th>
+                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>

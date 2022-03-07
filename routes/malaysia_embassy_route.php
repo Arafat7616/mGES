@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Malaysia Embassy route
-Route::group(['prefix' => 'malaysia-embassy/', 'namespace' => 'MalaysiaEmbassy', 'as' => 'MalaysiaEmbassy.', 'middleware' => ['auth', 'malaysia-embassy']], function () {
+Route::group(['prefix' => 'malaysia-embassy/', 'namespace' => 'MalaysiaEmbassy', 'as' => 'MalaysiaEmbassy.', 'middleware' => ['auth', 'malaysia-embassy','prevent-back-history']], function () {
     Route::get('/dashboard', 'MalaysiaEmbassyDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'MalaysiaEmbassyDashboardController@companyPrfileView')->name('companyPrfileView');
 

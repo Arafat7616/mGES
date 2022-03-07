@@ -111,7 +111,7 @@
             @endif --}}
 
             <p class="mt-3">Dear Sir/Madam,</p>
-            <b>Re: DEMAND LETTER FOR RECRUITMENT OF WORKERS FROM NEPAL</b>
+            <b>Re: DEMAND LETTER FOR RECRUITMENT OF WORKERS FROM {{ $post->user->country_name }}</b>
             <p>We hereby appoint your company to recruit Nepal male workers for employment with our
                 company and liaise with relevant authorities concerning recruitment.</p>
             <p>Our recruitment terms and conditions are as follows:</p>
