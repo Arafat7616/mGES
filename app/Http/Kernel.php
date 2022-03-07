@@ -18,6 +18,7 @@ use App\Http\Middleware\MalaysiaRecruitingAgency;
 use App\Http\Middleware\BangladeshRecruitingAgency;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\MalaysiaAdmin;
+use App\Http\Middleware\PreventBackHistory;
 use App\Http\Middleware\WelfareCentre;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -99,5 +100,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'call-center' => CallCenter::class,
+        'prevent-back-history' => PreventBackHistory::class,
     ];
 }

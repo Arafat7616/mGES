@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // BiometricAgencies
-Route::group(['prefix' => 'biometric-agency/', 'namespace' => 'BiometricAgencies', 'as' => 'BiometricAgencies.', 'middleware' => ['auth', 'biometric-agency']], function () {
+Route::group(['prefix' => 'biometric-agency/', 'namespace' => 'BiometricAgencies', 'as' => 'BiometricAgencies.', 'middleware' => ['auth', 'biometric-agency','prevent-back-history']], function () {
     Route::get('/dashboard', 'BiometricAgenciesDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'BiometricAgenciesDashboardController@companyPrfileView')->name('companyPrfileView');
     Route::get('/edit-profile', 'BiometricAgenciesDashboardController@editProfile')->name('editProfile');

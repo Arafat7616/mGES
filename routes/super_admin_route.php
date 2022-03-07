@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Super Admin route
-Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => 'SuperAdmin.', 'middleware' => ['auth', 'super-admin']], function () {
+Route::group(['prefix' => 'super-admin/', 'namespace' => 'SuperAdmin', 'as' => 'SuperAdmin.', 'middleware' => ['auth', 'super-admin','prevent-back-history']], function () {
     Route::get('/dashboard', 'SuperAdminDashboardController@dashboard')->name('dashboard');
     Route::get('/company-profile-view', 'SuperAdminDashboardController@companyPrfileView')->name('companyPrfileView');
 

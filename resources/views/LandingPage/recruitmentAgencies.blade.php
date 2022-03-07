@@ -1,4 +1,7 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    Insurance
+@endsection
 @section('add-on-css')
     <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/Requirtment-Agency.css') }}" />
 @endsection
@@ -23,7 +26,7 @@
                     </h2>
                     <h5 class="text-light main-subtitle">Migration with rights</h5>
                     <!-- <h5 class="text-light main-subtitle">A foreign employee recruitment </h5>
-                                  <h5 class="text-light main-subtitle">and management System</h5> -->
+                                      <h5 class="text-light main-subtitle">and management System</h5> -->
                     <div class="my-4">
                         <span class="mx-2"><i class="fa-brands fa-instagram banner-icons"></i></span>
                         <span class="mx-2"><i class="fa-brands fa-google-plus-g banner-icons"></i></span>
@@ -41,7 +44,7 @@
     <!-- banner end -->
 
     <!--
-                      table content start -->
+                          table content start -->
 
     <section id="table">
         <div class="container wrapper">
@@ -208,7 +211,7 @@
         <!-- Footer end -->
 
         <!--
-                      table content end -->
+                          table content end -->
 
         <script>
             $(document).ready(function() {

@@ -1,4 +1,7 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    Home
+@endsection
 @section('body')
     <!-- banner start -->
     <section id="banner">
@@ -16,7 +19,7 @@
                     height="300px" width="300px" />
                 <div class="banner-content mt-2">
                     <h2 class="text-light main-title mb-4">
-                        Migration Governance Eco system
+                        Migration Governance Eco System
                     </h2>
                     <h5 class="text-light main-subtitle">Migration with rights</h5>
                     <!-- <h5 class="text-light main-subtitle">and management System</h5> -->
@@ -573,33 +576,35 @@
                     </div>
 
                     <div class="col-md-4 MedicalCard mx-4">
-                        <div class="card btn justify-content-center align-items-center">
-                            <p>Endorsed</p>
+                        <div class="card shadow btn justify-content-center align-items-center">
+                            <p class="mt-3">Endorsed</p>
                             <h5 class="card-Title">MEDICAL CENTERS</h5>
-                            <img src="{{ asset('assets/landingPageAsset/img/Icon-06.png') }}" class="IconView pye-4"
+                            <img src="{{ asset('assets/landingPageAsset/img/medical.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="{{ route('medicalCenter') }}"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('medicalCenter') }}"><button class="w-100  BtnView py-3"> View
+                                All</button></a>
                     </div>
 
                     <div class="col-md-4 MedicalCard mx-4">
-                        <div class="card btn justify-content-center align-items-center">
-                            <p>Registered</p>
-                            <h5 class="card-Title">RECRUITMENT AGENCIES</h5>
-                            <img src="{{ asset('assets/landingPageAsset/img/Icon-07.png') }}" class="IconView pye-4"
+                        <div class="card shadow btn justify-content-center align-items-center">
+                            <p class="mt-3" >Registered</p>
+                            <h5 class="card-Title r">RECRUITMENT AGENCIES</h5>
+                            <img src="{{ asset('assets/landingPageAsset/img/recruitment.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('requirtmentAgency') }}"><button class="w-100  BtnView py-3"> View
+                                All</button></a>
                     </div>
 
                     <div class="col-md-4 MedicalCard mx-4">
-                        <div class="card btn justify-content-center align-items-center">
-                            <p>Accompanying</p>
+                        <div class="card shadow btn justify-content-center align-items-center">
+                            <p class="mt-3">Accompanying</p>
                             <h5 class="card-Title">INSURANCE PROVIDERS</h5>
-                            <img src="{{ asset('assets/landingPageAsset/img/Icon-08.png') }}" class="IconView pye-4"
+                            <img src="{{ asset('assets/landingPageAsset/img/insurance.png') }}" class="IconView pye-4"
                                 alt="">
                         </div>
-                        <a href="./medical-centers/Medical.html"><button class="w-100  BtnView py-3"> View All</button></a>
+                        <a href="{{ route('Insurance') }}"><button class="w-100  BtnView py-3"> View All</button></a>
                     </div>
 
                 </div>
