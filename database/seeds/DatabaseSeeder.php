@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         $this->call(IssuanceCertificateSeeder::class);
         $this->call(AttestationCertificateSeeder::class);
         $this->call(RegistrationCertificateSeeder::class);
-        // $this->call(BRAInterestSeeder::class);
+        // $this->call(BraInterestSeeder::class);
         // $this->call(JobDistributeInBRASeeder::class);
         // $this->call(NotificationSeeder::class);
     }
