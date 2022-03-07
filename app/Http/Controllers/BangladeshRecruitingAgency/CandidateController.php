@@ -30,13 +30,20 @@ class CandidateController extends Controller
     public function show($id)
     {
         $candidate = Candidate::findOrFail($id);
-        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate'));
+        $link = 'Name : '.$candidate->candidate_name.',Passport Number: '.$candidate->passport_number.',Phone Number:'.$candidate->phone_number;
+        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate','link'));
     }
 
     public function selected()
     {
-        $selectedCandidates = AppliedJob::where('applier_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        $selectedCandidates = Candidate::orderBy('id', 'DESC')->limit('800')->get();
         return view('BangladeshRecruitingAgency.candidate.selected', compact('selectedCandidates'));
+    }
+
+    public function QrCodeGenerate($id){
+        $candidate = Candidate::findOrFail($id);
+
+        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate'));
     }
 
     public function viewSelected($id)

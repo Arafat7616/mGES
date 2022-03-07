@@ -43,6 +43,7 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
         Route::post('store', 'CandidateController@store')->name('store');
         Route::get('all', 'CandidateController@all')->name('all');
         Route::get('show/{id}', 'CandidateController@show')->name('show');
+        Route::get('qr-code-generate/{id}', 'CandidateController@QrCodeGenerate')->name('QrCodeGenerate');
         Route::get('selected', 'CandidateController@selected')->name('selected');
         Route::get('view-selected/{id}', 'CandidateController@viewSelected')->name('viewSelected');
     });
