@@ -53,7 +53,14 @@
 
                                 @php
                                     $data = App\Review::where('receiver_id',Auth::user()->id);
-                                    $avg = $data->sum('ratings') / $data->count();
+
+                                    if($data->count() > 0)
+                                    {
+                                        $avg = $data->sum('ratings') / $data->count();
+                                    }
+                                    else {
+                                        $avg = 0;
+                                    }
                                 @endphp
 
                                 <center><small>Ratings ({{ number_format($avg, 2) }})</small></center>
