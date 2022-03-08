@@ -28,12 +28,12 @@ class CandidateController extends Controller
 
     public function  uploadMedicalReport(Request $request, $id){
 
-        $offeredCandidate = Candidate::findOrFail($id);
-        $offeredCandidate->pre_medical_status = $request->pre_medical_status;
-        $offeredCandidate->pre_medical_comments = $request->pre_medical_comments;
+        $candidate = Candidate::findOrFail($id);
+        $candidate->pre_medical_status = $request->pre_medical_status;
+        $candidate->pre_medical_comments = $request->pre_medical_comments;
 
         try {
-            $offeredCandidate->save();
+            $candidate->save();
            session()->flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {

@@ -18,6 +18,11 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.selected', compact('candidates'));
     }
 
+    public function medicalCompleted(){
+        $candidates = Candidate::where('pre_medical_id', '!=', null)->whereIn('pre_medical_status',[1,2])->orderBy('id','DESC')->get();
+        return view('OneStopService.candidate.medical-completed', compact('candidates'));
+    }
+
     public function uploadFace($candidate_id){
         $candidate = Candidate::findOrFail($candidate_id);
         return view('OneStopService.candidate.upload-face', compact('candidate'));
