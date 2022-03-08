@@ -3,9 +3,9 @@
     <div class="topbar-left">
         <div class="text-center">
             <a href="{{ route('BangladeshRecruitingAgency.dashboard') }}" class="logo"><img
-                    src="{{ asset('assets/images/mges.png') }}" height="28"></a>
+                    src="{{ asset('assets/images/mges.png') }}" height="40"></a>
             <a href="{{ route('BangladeshRecruitingAgency.dashboard') }}" class="logo-sm"><img
-                    src="{{ asset('assets/images/logo_sm.png') }}" height="36"></a>
+                    src="{{ asset('assets/images/mges.png') }}" height="30"></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
