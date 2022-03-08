@@ -57,6 +57,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('OneStopService.candidate.receivedFromBa') }}"><i class="fa fa-arrow-circle-right"></i> Received From BA</a></li>
                         <li><a href="{{ route('OneStopService.candidate.medicalCompleted') }}"><i class="fa fa-arrow-circle-right"></i> Medical Completed</a></li>
+                        <li><a href="{{ route('OneStopService.candidate.trainingCompleted') }}"><i class="fa fa-arrow-circle-right"></i> Training Completed</a></li>
                         {{-- <li><a href="{{ route('OneStopService.candidate.approved') }}"><i class="fa fa-arrow-circle-right"></i> Interview Candidates</a></li>
                         <li><a href="{{ route('OneStopService.candidate.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Finalized Candidates</a></li>
                         <li><a href="{{ route('OneStopService.candidate.ticketBooked') }}"><i class="fa fa-arrow-circle-right"></i> Appointed Candidates</a></li> --}}

@@ -1,6 +1,6 @@
-@extends("MedicalAgency.master")
+@extends("OneStopService.master")
 
-@section('title', 'Reported Candidates')
+@section('title', 'Selected Candidates')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -19,11 +19,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Reported Candidates</h4>
+                        <h4 class="pull-left page-title">Selected Candidates</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">Candidates</a></li>
-                            <li class="active">Reported Candidates</li>
+                            <li class="active">Selected Candidates</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -41,6 +41,7 @@
                                     <tr>
                                         <th>SL No</th>
                                         <th>Candidate Name</th>
+                                        <th>Training Agency</th>
                                         <th>Job Category</th>
                                         <th>Phone No</th>
                                         <th>Email</th>
@@ -54,22 +55,23 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $candidate->candidate_name }}</td>
+                                            <td>{{ $candidate->trainingAgency->name }}</td>
                                             <td>{{ $candidate->job_category->category_name }}</td>
                                             <td>{{ $candidate->phone_number }}</td>
                                             <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                @if ($candidate->pre_medical_status == 0)
-                                                    <span class=" badge badge-warning">Pending</span>
-                                                @elseif ($candidate->pre_medical_status == 1)
-                                                    <span class="badge badge-success">Passed</span>
-                                                @elseif($candidate->pre_medical_status == 2)
-                                                    <span class="badge badge-danger">Failed</span>
+                                                @if($candidate->offered_status == true)
+                                                    <span class=" badge badge-success">Selected</span>
+                                                @else
+                                                    <span class="badge badge-info">Pending</span>
                                                 @endif
                                             </td>
-                                            <td>{!! QrCode::size(100)->generate(url('medical-certificate/'.$candidate->id)) !!}</td>
+                                            <td>{!! QrCode::size(100)->generate(url('training-certificate/'.$candidate->id)) !!}</td>
                                             <td>
-                                                <a class="btn btn-info btn-sm"
-                                                    href="{{ route('MedicalAgency.candidate.show', $candidate->id) }}">
+                                                <a class="btn btn-info" target="_blank" href="{{ route('trainingCertificate', $candidate->id) }}">
+                                                    <i class="mdi mdi-file"></i> Training Certificate
+                                                </a>
+                                                <a class="btn btn-info" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
@@ -80,6 +82,7 @@
                                     <tr>
                                         <th>SL No</th>
                                         <th>Candidate Name</th>
+                                        <th>Training Agency</th>
                                         <th>Job Category</th>
                                         <th>Phone No</th>
                                         <th>Email</th>
@@ -95,7 +98,6 @@
             </div> <!-- End Row -->
         </div> <!-- container -->
     </div>
-    <!--End content -->
 @endsection
 
 @section('DataTableJs')
