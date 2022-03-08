@@ -19,17 +19,29 @@
     <table class="rwd-table" style="margin-top: 20px">
         <tbody>
             <tr>
-                <th style="width: 100px">BRA Id</th>
+                <th style="width: 100px">Id</th>
                 <th style="width: 750px">Name</th>
+                <th style="width: 300px">Rating</th>
                 <th>Vacancy</th>
             </tr>
             @foreach ($jobDistributeInBRAs as $jobDistributeInBRA)
                 <tr>
                     <td data-th="Supplier Name">
-                        {{ $jobDistributeInBRA->bra_id }}
+                        BRA{{ $jobDistributeInBRA->bra_id }}
                     </td>
                     <td data-th="Supplier Code">
                         {{ $jobDistributeInBRA->bra->name }}
+                    </td>
+                    <td>
+
+
+
+                        @for ($i = 0; $i < $jobDistributeInBRA->bra->starRecurtingAgency->ratings; $i++)
+                            <i class="fa fa-star" aria-hidden="true" style="color: #FFD700"></i>
+                        @endfor
+                        {{-- <i class="fa fa-star" aria-hidden="true" style="color: #FFD700"></i>
+                        <i class="fa fa-star" aria-hidden="true" style="color: #FFD700"></i>
+                        <i class="fa fa-star" aria-hidden="true" style="color: #FFD700"></i> --}}
                     </td>
                     <td data-th="Supplier Name">
                         {{ $jobDistributeInBRA->distributed_vacancy }}

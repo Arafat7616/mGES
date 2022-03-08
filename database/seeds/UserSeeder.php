@@ -348,8 +348,8 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 2,
             'country_id' => 2,
-            'name' => 'Simplex International',
-            'company_name' => 'Simplex International',
+            'name' => 'shohan International',
+            'company_name' => 'shohan International',
             'email' => 'simplex-international@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',

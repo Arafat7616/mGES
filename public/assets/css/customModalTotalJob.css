@@ -21,9 +21,9 @@
     transform: translate(-50%, -50%);
     width: 450px;
     height: 360px;
-    background: rgba(0, 111, 214, 0.89);
+    background: #a3a3a3;
     border-radius: 5px;
-    box-shadow: rgba(230, 226, 2, 0.747) 0px 0px 0px 3px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 3px;
 }
 
 .overlay .modal__locked .modal-body {

@@ -29,43 +29,38 @@ class JobPostController extends Controller
         // take array of all interested jobPost ids
         $array = [];
         $jobPostIdArrayFromInterest  = BRAInterest::all();
-        foreach($jobPostIdArrayFromInterest as $d){
-            array_push($array,$d->job_post_id);
+        foreach ($jobPostIdArrayFromInterest as $d) {
+            array_push($array, $d->job_post_id);
         }
         // take all interested jobPosts
-        $jobPosts = JobPost::whereIn('id',$array)->where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
+        $jobPosts = JobPost::whereIn('id', $array)->where('ma_status', 'Approved')->where('recruiting_type', '!=', null)->orderBy('id', 'DESC')->get();
         return view('BangladeshAdmin.Jobposts.braInterested', compact('jobPosts'));
-
     }
     public function JobPostShow($id)
     {
         $job_post = JobPost::FindOrFail($id);
         return view('BangladeshAdmin.Jobposts.JobPostsShow', compact('job_post'));
-
     }
 
     public function viewVacancy($applied_job_id)
     {
         $appliedJob = AppliedJob::FindOrFail($applied_job_id);
         return view('BangladeshAdmin.Jobposts.view-vacancy', compact('appliedJob'));
-
     }
 
     public function bhc_approval_list($applied_job_id)
     {
         $job_post = JobPost::FindOrFail($applied_job_id);
         return view('BangladeshAdmin.Jobposts.bhc_approval_view', compact('job_post'));
-
     }
 
     public function approveVacancy($applied_job_id)
     {
         $appliedJob = AppliedJob::FindOrFail($applied_job_id);
         return view('BangladeshAdmin.Jobposts.approve-vacancy', compact('appliedJob'));
-
     }
 
-    public function approveVacancyStore(Request $request,$id)
+    public function approveVacancyStore(Request $request, $id)
     {
         $request->validate([
             'approvedVacancy' =>  'required|numeric',
@@ -82,14 +77,15 @@ class JobPostController extends Controller
         $appliedJob->status       = "Approved";
         try {
             $appliedJob->save();
-           session()->flash('success', 'Successfully saved !');
+            session()->flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
     }
 
-    public function rejectVacancy($id){
+    public function rejectVacancy($id)
+    {
         $appliedJob = AppliedJob::FindOrFail($id);
         $appliedJob->status = "Rejected";
         try {
@@ -98,7 +94,7 @@ class JobPostController extends Controller
                 'type' => 'success',
                 'message' => 'Successfully Rejected'
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
                 'message' => $exception->getMessage()
@@ -106,16 +102,17 @@ class JobPostController extends Controller
         }
     }
 
-    public function notificationStore($job_post_id){
+    public function notificationStore($job_post_id)
+    {
         $jobPost = JobPost::find($job_post_id);
 
         $notification = new Notification();
         $notification->title = 'New Job Post';
 
-        $notification->text = 'Need '.$jobPost->job_vacancy.' employe for '.$jobPost->user->name;
+        $notification->text = 'Need ' . $jobPost->job_vacancy . ' employe for ' . $jobPost->user->name;
 
         $notification->notification_for = 'bangladesh-recruiting-agency';
-        $notification->notification_from =$jobPost->user_id;
+        $notification->notification_from = $jobPost->user_id;
         $notification->created_by =  Auth::user()->id;
         $notification->job_post_id = $job_post_id;
         $notification->save();
@@ -127,8 +124,6 @@ class JobPostController extends Controller
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
-
-
     }
 
     public function vacancy_approval()
@@ -140,23 +135,23 @@ class JobPostController extends Controller
 
     public function bhc_approval()
     {
-        $job_posts = JobPost::where('bhc_approval',1)->latest()->get();
+        $job_posts = JobPost::where('bhc_approval', 1)->latest()->get();
         return view('BangladeshAdmin.Jobposts.bhcApproval', compact('job_posts'));
     }
 
-    public function sendDemandLetter($job_post_id){
+    public function sendDemandLetter($job_post_id)
+    {
 
         $job_post = JobPost::findOrFail($job_post_id);
 
         $jobDistributedBras = $job_post->jobDistributedBras;
 
         foreach ($jobDistributedBras as $key => $jobDistributedBra) {
-            $jobDistributedBra->memp_status = 'Demand'; 
+            $jobDistributedBra->memp_status = 'Demand';
             $jobDistributedBra->save();
         }
         session()->flash('success', 'Demand Letter Send Successfully!');
         return back();
-
     }
 
     /**
@@ -195,45 +190,69 @@ class JobPostController extends Controller
         $BRAInterests  = BRAInterest::where('job_post_id', $job_post_id)->get();
         $BRAInterestsCountedValue  = BRAInterest::where('job_post_id', $job_post_id)->count();
 
-        $totalAmount = $jobPost->job_vacancy;
+        $totalAmount = ($jobPost->job_vacancy - 200);
 
-        $average = $totalAmount/$BRAInterestsCountedValue;
-        $first_avg =  round($average);
-        $loop_updateable_value = $first_avg;
-
-        $getedValue = [];
-        for ($i=1; $i <=$BRAInterestsCountedValue; $i++) {
-            if($i == 1){
-                array_push($getedValue, $first_avg);
-                $loop_updateable_value = $loop_updateable_value;
-            }elseif ($i == $BRAInterestsCountedValue) {
-                $loop_updateable_value = $loop_updateable_value+$first_avg;
-                if($loop_updateable_value > $totalAmount){
-                    $loop_updateable_value = $loop_updateable_value-1;
-                    array_push($getedValue, $first_avg-1);
-                }else{
-                    array_push($getedValue, $first_avg);
-                }
-            }else{
-                array_push($getedValue, $first_avg);
-                $loop_updateable_value = $loop_updateable_value+$first_avg;
-            }
+        $totalReatingArray = [];
+        foreach ($BRAInterests as $BRAInterest) {
+            array_push($totalReatingArray, $BRAInterest->bra->starRecurtingAgency->ratings);
         }
-        $messageArray = [];
+        $totalRating = array_sum($totalReatingArray);
+
+
+        $perRating =  ($totalAmount / $totalRating);
 
         foreach ($BRAInterests as $key => $BRAInterest) {
+
             $jobDistributeInBRA = new JobDistributeInBRA();
             $jobDistributeInBRA->job_post_id = $job_post_id;
             $jobDistributeInBRA->bra_id = $BRAInterest->bra_id;
             $jobDistributeInBRA->bra_interest_id = $BRAInterest->id;
-            $jobDistributeInBRA->distributed_vacancy = $getedValue[$key];
+            $jobDistributeInBRA->distributed_vacancy = round($perRating * $BRAInterest->bra->starRecurtingAgency->ratings);
             $jobDistributeInBRA->save();
 
             //array_push($messageArray, $BRAInterest->bra->name, $getedValue[$key]);
         }
 
-        $jobDistributeInBRAs = JobDistributeInBRA::where('job_post_id',$job_post_id)->get();
-        return view('BangladeshAdmin.Jobposts.DistributeAlertTable',compact('jobDistributeInBRAs'));
+        $jobDistributeInBRAs = JobDistributeInBRA::where('job_post_id', $job_post_id)->get();
+        return view('BangladeshAdmin.Jobposts.DistributeAlertTable', compact('jobDistributeInBRAs'));
+
+        // $average = $totalAmount / $BRAInterestsCountedValue;
+        // $first_avg =  round($average);
+        // $loop_updateable_value = $first_avg;
+
+        // $getedValue = [];
+        // for ($i = 1; $i <= $BRAInterestsCountedValue; $i++) {
+        //     if ($i == 1) {
+        //         array_push($getedValue, $first_avg);
+        //         $loop_updateable_value = $loop_updateable_value;
+        //     } elseif ($i == $BRAInterestsCountedValue) {
+        //         $loop_updateable_value = $loop_updateable_value + $first_avg;
+        //         if ($loop_updateable_value > $totalAmount) {
+        //             $loop_updateable_value = $loop_updateable_value - 1;
+        //             array_push($getedValue, $first_avg - 1);
+        //         } else {
+        //             array_push($getedValue, $first_avg);
+        //         }
+        //     } else {
+        //         array_push($getedValue, $first_avg);
+        //         $loop_updateable_value = $loop_updateable_value + $first_avg;
+        //     }
+        // }
+        // $messageArray = [];
+
+        // foreach ($BRAInterests as $key => $BRAInterest) {
+        //     $jobDistributeInBRA = new JobDistributeInBRA();
+        //     $jobDistributeInBRA->job_post_id = $job_post_id;
+        //     $jobDistributeInBRA->bra_id = $BRAInterest->bra_id;
+        //     $jobDistributeInBRA->bra_interest_id = $BRAInterest->id;
+        //     $jobDistributeInBRA->distributed_vacancy = $getedValue[$key];
+        //     $jobDistributeInBRA->save();
+
+        //     //array_push($messageArray, $BRAInterest->bra->name, $getedValue[$key]);
+        // }
+
+        // $jobDistributeInBRAs = JobDistributeInBRA::where('job_post_id', $job_post_id)->get();
+        // return view('BangladeshAdmin.Jobposts.DistributeAlertTable', compact('jobDistributeInBRAs'));
 
         // try {
         //     return response()->json([

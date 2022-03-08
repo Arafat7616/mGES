@@ -4368,7 +4368,7 @@ var Base = function () {
        * Timer interval (1 second by default)
        */
 
-      interval: 10,
+      interval: 7,
 
       /**
        * The rate of the animation in milliseconds (not currently in use)
