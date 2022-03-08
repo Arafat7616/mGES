@@ -26,6 +26,29 @@ class FrontendController extends Controller
         return view('Candidate.cv.workerpdf')->with('candidate', $candidate);
     }
 
+    public function policeCertificate($id){
+
+        $candidate = Candidate::find($id);
+        return view('Others.policeCertificate.certificate')->with('candidate', $candidate);
+    }
+
+    public function medicalCertificate($id){
+
+        $candidate = Candidate::find($id);
+        return view('Others.medical_certificate')->with('candidate', $candidate);
+    }
+    public function trainingCertificate($id){
+
+        $candidate = Candidate::find($id);
+        return view('Others.training_certificate')->with('candidate', $candidate);
+    }
+
+    public function biomatricCertificate($id){
+
+        $candidate = Candidate::find($id);
+        return view('Others.biomatric_certificate')->with('candidate', $candidate);
+    }
+
     public function index()
     {
         return view('LandingPage.index');

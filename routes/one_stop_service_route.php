@@ -69,6 +69,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('interview', 'CandidateController@interview')->name('approved');
         Route::get('finalized', 'CandidateController@finalized')->name('rejected');
         Route::get('ticket-booked', 'CandidateController@ticketBooked')->name('ticketBooked');
+        Route::get('police-clearance', 'CandidateController@policeCertificate')->name('policeCertificate');
     });
 
     // Visa Process
