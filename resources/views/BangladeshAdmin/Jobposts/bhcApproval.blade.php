@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -62,7 +61,7 @@
                                             <td>{{ $job_post->job_vacancy }}</td>
                                             <td>{!! QrCode::size(100)->generate(url('job-post/demand-latter/'.$job_post->id)) !!}</td>
                                             <td>
-                                       
+
                                                 <button type="button" name="Verified"
                                                         class="btn btn-info btn-xs update">Verified by BHC</button>
                                             </td>

@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -63,7 +62,7 @@
                                                @if ($job_post->ma_status == 'New')
                                                     <button type="button" name="New"
                                                         class="btn btn-primary btn-xs update">New</button>
-                                                      
+
                                                 @elseif ($job_post->ma_status == "Rejected")
                                                     <button type="button" name="Rejected"
                                                         class="btn btn-warning btn-xs update">Rejected</button>
