@@ -68,11 +68,11 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('TrainingAgency.candidate.post_training_report', $candidate->id) }}">
+                                                    href="{{ route('TrainingAgency.candidate.trainingReport', $candidate->id) }}">
                                                     <i class="fa fa-edit"></i> Upload Report
                                                 </a>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('MedicalAgency.candidate.show', $candidate->id) }}">
+                                                    href="{{ route('TrainingAgency.candidate.show', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>

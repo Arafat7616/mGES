@@ -4,19 +4,25 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a href="{{ route('TrainingAgency.dashboard') }}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
+                    <a href="{{ route('TrainingAgency.dashboard') }}" class="waves-effect"><i
+                            class="ti-home"></i><span> Dashboard </span></a>
                 </li>
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="nav-icon fa fa-users"></i></i><span> Post Training</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="nav-icon fa fa-users"></i></i><span>
+                            Post Training</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('TrainingAgency.candidate.new') }}"><i class="fa fa-arrow-circle-right"></i> New Candidates</a></li>
-                        <li><a href="{{ route('TrainingAgency.candidate.reported') }}"><i class="fa fa-arrow-circle-right"></i> Reported Candidates</a></li>
+                        <li><a href="{{ route('TrainingAgency.candidate.new') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> New Candidates</a></li>
+                        <li><a href="{{ route('TrainingAgency.candidate.reported') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> Reported Candidates</a></li>
                     </ul>
                 </li>
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-money"></i> <span> E-Wallet</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-money"></i> <span>
+                            E-Wallet</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('TrainingAgency.eWallet.wallet_card') }}"><i class="fa fa-arrow-circle-right"></i> Wallet</a></li>
+                        <li><a href="{{ route('TrainingAgency.eWallet.wallet_card') }}"><i
+                                    class="fa fa-arrow-circle-right"></i> Wallet</a></li>
                     </ul>
                 </li>
 

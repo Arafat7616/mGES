@@ -31,7 +31,9 @@
                             <h3 class="panel-title">Update Candidates training report</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="" method="POST" enctype="multipart/form-data">
+                            <form role="form"
+                                action="{{ route('TrainingAgency.candidate.uploadTrainingReport', $candidate->id) }}"
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')
                                 <div class="row">
@@ -67,21 +69,21 @@
                                         <div class="panel-body">
 
                                             <div class="form-group">
-                                                <label for="pre_medical_status">Post-Training Status</label>
-                                                <select class="form-control custom-select" name="pre_medical_status"
+                                                <label for="pre_training_status">Post-Training Status</label>
+                                                <select class="form-control custom-select" name="pre_training_status"
                                                     required="">
                                                     <option selected="" disabled="" value="">Select candidate status
                                                     </option>
-                                                    <option @if ($candidate->pre_medical_status == 1)  @endif value="1">Trainingly
+                                                    <option @if ($candidate->pre_training_status == 1)  @endif value="1">Trainingly
                                                         fit (Pass)</option>
-                                                    <option @if ($candidate->pre_medical_status == 2)  @endif value="2">Trainingly
+                                                    <option @if ($candidate->pre_training_status == 2)  @endif value="2">Trainingly
                                                         Unfit (Fail)</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="pre_medical_comments">Comments</label>
-                                                <textarea id="pre_medical_comments" class="form-control" rows="4"
-                                                    name="pre_medical_comments"></textarea>
+                                                <label for="pre_training_comments">Comments</label>
+                                                <textarea id="pre_training_comments" class="form-control" rows="4"
+                                                    name="pre_training_comments"></textarea>
                                             </div>
                                         </div> <!-- panel-body -->
                                     </div> <!-- col -->
