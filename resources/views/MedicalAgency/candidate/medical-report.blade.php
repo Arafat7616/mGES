@@ -31,7 +31,7 @@
                             <h3 class="panel-title">Update Candidates medical report</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="{{ route('MedicalAgency.candidate.add_medical_report', $candidate->id) }}" method="POST"
+                            <form role="form" action="{{ route('MedicalAgency.candidate.uploadMedicalReport', $candidate->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')

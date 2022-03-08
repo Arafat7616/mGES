@@ -55,7 +55,7 @@ class JobCategorySeeder extends Seeder
         ]);
 
         Jobcategory::create([
-            'category_name' => 'Sales Man',
+            'category_name' => 'Driver',
             'status' => 'Active'
         ]);
 
