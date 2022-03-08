@@ -63,7 +63,9 @@
                                     }
                                 @endphp
 
-                                <center><small>Ratings ({{ number_format($avg, 2) }})</small></center>
+                                <center>
+                                    <small>Ratings ({{ number_format($avg, 2) }})</small>
+                                </center>
 
                                 <center>
                                     <small>
@@ -71,7 +73,16 @@
                                             <i class="fa fa-star" style="color: orange; font-size: 22px"></i>
                                         @endfor
                                     </small>
+
                                 </center>
+
+                                <div class="star-center">
+                                    <span class="stars">{{ number_format($avg, 2) }}</span>
+                                </div>
+
+
+
+
                                 @endif
 
                             </li>
