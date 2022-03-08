@@ -101,6 +101,8 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.assign-selected-candidate', compact('candidate','wscList'));
     }
 
+
+
     public function assignSelectedCandidateStore(Request $request , $candidate_id){
         $request->validate([
             'fees' =>  'required',
@@ -159,5 +161,10 @@ class CandidateController extends Controller
                 'message' => $exception->getMessage()
             ]);
         }
+    }
+
+    public function policeCertificate(){
+         $candidates = Candidate::orderBy('id','desc')->limit(5)->get();
+        return view('OneStopService.candidate.police_clearance',compact('candidates'));
     }
 }
