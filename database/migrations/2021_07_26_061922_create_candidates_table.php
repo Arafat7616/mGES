@@ -34,6 +34,8 @@ class CreateCandidatesTable extends Migration
             $table->text('present_address')->nullable();
             $table->text('permanent_address')->nullable();
             $table->string('candidate_name')->nullable();
+            $table->string('father_name')->nullable();
+            $table->string('mother_name')->nullable();
             $table->string('nationality')->nullable();
             $table->string('candidate_dob')->nullable();
             $table->string('candidate_gender')->nullable();

@@ -7,7 +7,7 @@
         <div class="container-pdf ">
             <img src="{{ asset('assets/images/Biometric-Certificate.png') }}" class="bio-img" alt="">
         </div>
-        <div class="user-name">Apurbo Kumar</div>
+        <div class="user-name">{{ $candidate->candidate_name }}</div>
         <div class="user-text">He has successfully matched with our system and he is verified with police verification.
         </div>
         <div class="user-date">9th Apr 2022</div>

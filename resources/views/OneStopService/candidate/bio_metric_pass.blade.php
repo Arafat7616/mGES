@@ -1,6 +1,6 @@
 @extends("OneStopService.master")
 
-@section('title', 'Security Clearance Candidates')
+@section('title', 'Biometric Passed Candidates')
 @section('DataTableCss')
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
@@ -19,11 +19,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Security Clearance Candidates</h4>
+                        <h4 class="pull-left page-title">Biometric Passed Candidates</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">Candidates</a></li>
-                            <li class="active">Security Clearance Candidates</li>
+                            <li class="active">Biometric Passed Candidates</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Candidates Security Clearance by employer</h3>
+                            <h3 class="panel-title">Candidates Biometric Passed by employer</h3>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -57,11 +57,11 @@
                                             <td>{{ $candidate->phone_number }}</td>
                                             <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                {!! QrCode::size(100)->generate(url('police-certificate/'.$candidate->id)) !!}
+                                                {!! QrCode::size(100)->generate(url('biomatric-certificate/'.$candidate->id)) !!}
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-xs"
-                                                href="{{ route('OneStopService.candidate.showPloice', $candidate->id) }}">
+                                                href="{{ route('OneStopService.candidate.showBiometric', $candidate->id) }}">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                             </td>
