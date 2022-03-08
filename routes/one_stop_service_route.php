@@ -62,6 +62,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::post('assign-interview-osc-store/{offered_candidate_id}', 'CandidateController@assignInterviewOscStore')->name('assignInterviewOscStore');
         Route::post('assign-selected-store/{offered_candidate_id}', 'CandidateController@assignSelectedCandidateStore')->name('assignSelectedCandidateStore');
         Route::get('received-from-ba', 'CandidateController@receivedFromBa')->name('receivedFromBa');
+        Route::get('medical-completed', 'CandidateController@medicalCompleted')->name('medicalCompleted');
         Route::get('upload-face/{candidate_id}', 'CandidateController@uploadFace')->name('uploadFace');
         Route::post('upload-face-store/{candidate_id}', 'CandidateController@uploadFaceStore')->name('uploadFaceStore');
         Route::get('assign-medical-agency/{candidate_id}', 'CandidateController@assignMedicalAgency')->name('assignMedicalAgency');
