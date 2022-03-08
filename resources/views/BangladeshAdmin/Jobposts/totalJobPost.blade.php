@@ -159,9 +159,9 @@
             <div class="modal-body">
                 <center>
                     <div class="clock" style="margin: 2em;"></div>
-                    <h5 class=" text-white">Total candidates found from data Bank</h5>
+                    <h5 class=" text-dark">Total candidates found from data Bank</h5>
 
-                    <input type="hidden" value="{{ $jobPost->job_vacancy }}" id="counterValue" />
+                    <input type="hidden" value="{{ $jobPost->job_vacancy - 200 }}" id="counterValue" />
 
                     <button class="btn btn-warning" id="close_custome_modal" style="margin-top: 20px">Ok</button>
                 </center>
@@ -228,7 +228,7 @@
                         Swal.fire({
                             title: 'Finding data form Data Bank',
                             html: '<h3>Checking <b></b> data</h3>',
-                            timer: 5000,
+                            timer: 10000,
                             timerProgressBar: true,
                             imageUrl: 'https://c.tenor.com/xyl_b-fpgWkAAAAd/matrix-green.gif',
                             imageHeight: 300,
@@ -243,9 +243,9 @@
                                     b.textContent = Swal.getTimerLeft()
                                 }, 100)
                             },
-                            // willClose: () => {
-                            //     clearInterval(timerInterval)
-                            // }
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
                         }).then((result) => {
                             /* Read more about handling dismissals below */
                             if (result.dismiss === Swal.DismissReason.timer) {

@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Review::class, 'receiver_id')->where('provider_id', Auth::user()->id);
     }
+
+    public function starRecurtingAgency()
+    {
+        return $this->hasOne(Review::class, 'receiver_id');
+    }
 }

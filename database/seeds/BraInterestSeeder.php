@@ -12,14 +12,62 @@ class BraInterestSeeder extends Seeder
      */
     public function run()
     {
-        BRAInterest::insert([
+        BRAInterest::create([
             'bra_id' => 5,
             'job_post_id' => 31,
             'status' =>  true
         ]);
 
-        BRAInterest::insert([
-            'bra_id' => 18,
+        BRAInterest::create([
+            'bra_id' => 35,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 28,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 29,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 30,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 31,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 32,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 33,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 34,
+            'job_post_id' => 31,
+            'status' =>  true
+        ]);
+
+        BRAInterest::create([
+            'bra_id' => 36,
             'job_post_id' => 31,
             'status' =>  true
         ]);

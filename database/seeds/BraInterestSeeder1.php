@@ -12,16 +12,5 @@ class BraInterestSeeder1 extends Seeder
      */
     public function run()
     {
-        BRAInterest::insert([
-            'bra_id' => 5,
-            'job_post_id' => 31,
-            'status' =>  true
-        ]);
-
-        BRAInterest::insert([
-            'bra_id' => 18,
-            'job_post_id' => 31,
-            'status' =>  true
-        ]);
     }
 }
