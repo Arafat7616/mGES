@@ -41,13 +41,13 @@ class CreateOfferedCandidatesTable extends Migration
             $table->string('biometric_fee')->nullable();
             $table->string('bio_status')->nullable();
             $table->string('bio_report')->nullable();
-            $table->string('post_medical_status')->nullable()->comment('New,Pass,Fail');
+            $table->string('pre_medical_status')->nullable()->comment('New,Pass,Fail');
             $table->string('post_training_status')->nullable()->comment('New,Pass,Fail');
             $table->string('post_medical_report')->nullable();
             $table->string('post_training_report')->nullable();
             $table->string('medical_fee')->nullable();
             $table->string('training_fee')->nullable();
-            $table->text('post_medical_comments')->nullable();
+            $table->text('pre_medical_comments')->nullable();
             $table->text('post_training_comments')->nullable();
             $table->string('visa_document')->nullable();
             $table->text('visa_reason')->nullable();

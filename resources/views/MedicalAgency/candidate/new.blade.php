@@ -67,8 +67,8 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('MedicalAgency.candidate.post_medical_report', $candidate->id) }}">
-                                                    <i class="fa fa-edit"></i>
+                                                    href="{{ route('MedicalAgency.candidate.medicalReport', $candidate->id) }}">
+                                                    <i class="fa fa-edit"></i> Upload Report
                                                 </a>
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('MedicalAgency.candidate.show', $candidate->id) }}">

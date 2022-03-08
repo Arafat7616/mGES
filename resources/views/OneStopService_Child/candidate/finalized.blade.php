@@ -63,9 +63,9 @@
                                         <td>{{ $candidate->phone_number }}</td>
                                         <td>{{ $candidate->candidate_email }}</td>
                                         <td>
-                                            @if ($candidate->post_medical_status == 'Pass')
+                                            @if ($candidate->pre_medical_status == 'Pass')
                                                 <span class="badge badge-success">Pass</span>
-                                            @elseif($candidate->post_medical_status == 'Fail')
+                                            @elseif($candidate->pre_medical_status == 'Fail')
                                                 <span class="badge badge-danger">Fail</span>
                                             @else
                                                 <span class="badge badge-info">Pending</span>
@@ -105,14 +105,14 @@
                                                 </a>
                                             @elseif($candidate->bio_status ==null ||
                                                 $candidate->post_training_status ==null
-                                                ||$candidate->post_medical_status ==null )
+                                                ||$candidate->pre_medical_status ==null )
                                                 <a class="btn btn-primary btn-xs"
                                                     href="{{ route('OneStopService_Child.candidate.showBiometricCandidateProfile', $candidate->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                             @elseif($candidate->result_status == 'Post-Processing' &&
                                                 $candidate->bio_status !== null && $candidate->post_training_status !==
-                                                null && $candidate->post_medical_status !== null )
+                                                null && $candidate->pre_medical_status !== null )
                                                 <a class="btn btn-primary btn-xs"
                                                     href="{{ route('OneStopService_Child.candidate.showBiometricCandidateProfile', $candidate->id) }}">
                                                     <i class="fa fa-eye"></i>

@@ -16,35 +16,21 @@ class CandidateController extends Controller
         return view('MedicalAgency.candidate.new', compact('candidates'));
     }
 
-    public function show($id){
-         $offeredCandidate = OfferedCandidate::findOrFail($id);
-        return view('MedicalAgency.candidate.show-profile', compact('offeredCandidate'));
+    public function show($candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('MedicalAgency.candidate.show-profile', compact('candidate'));
     }
 
-
-    public function post_medical_report($id){
-        $offeredCandidate = OfferedCandidate::findOrFail($id);
-
-        return view('MedicalAgency.candidate.post_medical_report', compact('offeredCandidate'));
+    public function medicalReport($candidate_id){
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('MedicalAgency.candidate.medical-report', compact('candidate'));
     }
 
-    public function  add_medical_report(Request $request, $id){
-        $request->validate([
-            'post_medical_report' =>'mimes:pdf',
-        ]);
+    public function  uploadMedicalReport(Request $request, $id){
 
-        $offeredCandidate = OfferedCandidate::findOrFail($id);
-        $offeredCandidate->post_medical_status = $request->post_medical_status;
-        $offeredCandidate->post_medical_comments = $request->post_medical_comments;
-
-        if ($request->hasFile('post_medical_report')) {
-            $pdf             = $request->file('post_medical_report');
-            $folder_path       = 'uploads/candidate/post_medical_report/';
-            $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
-            // save to server
-            $request->post_medical_report->move(public_path($folder_path), $pdf_new_name);
-            $offeredCandidate->post_medical_report   = $folder_path . $pdf_new_name;
-        }
+        $offeredCandidate = Candidate::findOrFail($id);
+        $offeredCandidate->pre_medical_status = $request->pre_medical_status;
+        $offeredCandidate->pre_medical_comments = $request->pre_medical_comments;
 
         try {
             $offeredCandidate->save();
@@ -56,7 +42,7 @@ class CandidateController extends Controller
     }
 
     public function reported(){
-        $offeredCandidates = OfferedCandidate::where('post_medical_status', '!=', 'New')->where('pre_medical_id', Auth::user()->id )->orderBy('id','DESC')->get();
-        return view('MedicalAgency.candidate.reported', compact('offeredCandidates'));
+        $candidates = Candidate::where('pre_medical_id', Auth::user()->id)->whereIn('pre_medical_status',[1,2] )->orderBy('id','DESC')->get();
+        return view('MedicalAgency.candidate.reported', compact('candidates'));
     }
 }
