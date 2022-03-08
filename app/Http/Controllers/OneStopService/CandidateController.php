@@ -221,4 +221,19 @@ class CandidateController extends Controller
          $candidates = Candidate::orderBy('id','desc')->limit(5)->get();
         return view('OneStopService.candidate.police_clearance',compact('candidates'));
     }
+
+    public function biometricPass(){
+         $candidates = Candidate::orderBy('id','desc')->limit(5)->get();
+        return view('OneStopService.candidate.bio_metric_pass',compact('candidates'));
+    }
+
+    public function showBiometric($id){
+         $candidate = Candidate::find($id);
+        return view('OneStopService.candidate.show_biometric',compact('candidate'));
+    }
+
+    public function showPloice($id){
+         $candidate = Candidate::find($id);
+        return view('OneStopService.candidate.show_police',compact('candidate'));
+    }
 }

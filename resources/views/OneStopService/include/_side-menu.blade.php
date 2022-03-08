@@ -94,6 +94,7 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-money"></i> <span> Security Clearance</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('OneStopService.candidate.policeCertificate') }}"><i class="fa fa-arrow-circle-right"></i> Police Clearance</a></li>
+                        <li><a href="{{ route('OneStopService.candidate.biometricPass') }}"><i class="fa fa-arrow-circle-right"></i> Biometric Pass</a></li>
                     </ul>
                 </li>
 
