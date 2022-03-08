@@ -43,31 +43,34 @@
                                         <th>SL No</th>
                                         <th>Candidate Name</th>
                                         <th>Job Category</th>
+                                        <th>Phone No</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
                                         <th>Status</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($offeredCandidates as $offeredCandidate)
+                                    @foreach ($candidates as $candidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $offeredCandidate->candidate->candidate_name }}</td>
-                                            <td>{{ $offeredCandidate->jobPost->job_category->category_name }}</td>
-                                            <td>{{ $offeredCandidate->candidate->candidate_email }}</td>
-                                            <td>{{ $offeredCandidate->candidate->phone_number }}</td>
+                                            <td>{{ $candidate->candidate_name }}</td>
+                                            <td>{{ $candidate->job_category->category_name }}</td>
+                                            <td>{{ $candidate->phone_number }}</td>
+                                            <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                @if ($offeredCandidate->post_training_status == 'Pass')
-                                                    <span class=" badge badge-success">Pass</span>
-                                                @else
-                                                    <span
-                                                        class="badge badge-danger">{{ $offeredCandidate->post_training_status }}</span>
+                                                @if ($candidate->pre_training_status == 0)
+                                                    <span class=" badge badge-warning">Pending</span>
+                                                @elseif ($candidate->pre_training_status == 1)
+                                                    <span class="badge badge-success">Passed</span>
+                                                @elseif($candidate->pre_training_status == 2)
+                                                    <span class="badge badge-danger">Failed</span>
                                                 @endif
                                             </td>
+                                            <td>{!! QrCode::size(100)->generate(url('training-certificate/' . $candidate->id)) !!}</td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('TrainingAgency.candidate.show', $offeredCandidate->id) }}">
+                                                    href="{{ route('TrainingAgency.candidate.show', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
@@ -79,9 +82,10 @@
                                         <th>SL No</th>
                                         <th>Candidate Name</th>
                                         <th>Job Category</th>
+                                        <th>Phone No</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
                                         <th>Status</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -89,7 +93,8 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- End Row -->
+            </div>
+            <!-- End Row -->
         </div> <!-- container -->
     </div>
     <!--End content -->
