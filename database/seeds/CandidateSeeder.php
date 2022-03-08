@@ -20,7 +20,7 @@ class CandidateSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('candidates')->insert([
-                'candidate_name' =>   $faker->name(),
+                'candidate_name' =>   str_replace(['Prof. ','Dr. '],['',''],$faker->name()),
                 'role_id' => 15,
                 'job_id' => rand(1, 10),
                 'company_id' =>$faker->numberBetween(1, 10),
@@ -45,7 +45,7 @@ class CandidateSeeder extends Seeder
             $appliedJob = AppliedJob::findOrFail(11);
 
             $candidate_id =  DB::table('candidates')->insertGetId([
-                'candidate_name' =>   $faker->name(),
+                'candidate_name' =>   str_replace(['Prof. ','Dr. '],['',''],$faker->name()),
                 'role_id' => 15,
                 'job_id' => $appliedJob->job_post_id,
                 'company_id' => $faker->numberBetween(1, 10),
@@ -87,10 +87,9 @@ class CandidateSeeder extends Seeder
             $offeredCandidate->save();
         }
 
-
         for ($i=0; $i <800 ; $i++) {
             $candidate = new Candidate();
-            $candidate->candidate_name      =  $faker->name();
+            $candidate->candidate_name      = str_replace(['Prof. ','Dr. '],['',''],$faker->name());
             $candidate->role_id             = 15;
             $candidate->job_id              = $faker->numberBetween(1, 25);
             $candidate->company_id          = $faker->numberBetween(1, 10);

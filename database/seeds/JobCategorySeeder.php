@@ -15,7 +15,7 @@ class JobCategorySeeder extends Seeder
     public function run()
     {
         Jobcategory::create([
-            'category_name' => 'Software Engineer',
+            'category_name' => 'Plumber',
             'status' => 'Active'
         ]);
 
@@ -40,22 +40,22 @@ class JobCategorySeeder extends Seeder
         ]);
 
         Jobcategory::create([
-            'category_name' => 'Civil Engineer',
+            'category_name' => 'Car Cleaner',
             'status' => 'Active'
         ]);
 
         Jobcategory::create([
-            'category_name' => 'Mechanical engineer',
+            'category_name' => 'Welder',
             'status' => 'Active'
         ]);
 
         Jobcategory::create([
-            'category_name' => 'Electrical engineer',
+            'category_name' => 'Shafe',
             'status' => 'Active'
         ]);
 
         Jobcategory::create([
-            'category_name' => 'Sales Man',
+            'category_name' => 'Driver',
             'status' => 'Active'
         ]);
 
@@ -70,7 +70,7 @@ class JobCategorySeeder extends Seeder
         ]);
 
         Jobcategory::create([
-            'category_name' => 'Doctor',
+            'category_name' => 'Cleaner',
             'status' => 'Active'
         ]);
 
