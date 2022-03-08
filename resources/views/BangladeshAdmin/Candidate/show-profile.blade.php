@@ -58,7 +58,7 @@
                                     <b>Status</b> <span
                                         class="float-right badge badge-info">{{ $candidate->status }}</span>
                                 </li>
-                                @if ($candidate->status == 'Selected')
+                                {{-- @if ($candidate->status == 'Selected')
 
                                     <button class="btn btn-primary btn-block" onclick="forward(this)"
                                         value="{{ route('BangladeshAdmin.candidate.forwardNow', $candidate->id) }}">
@@ -69,7 +69,7 @@
                                         value="{{ route('BangladeshAdmin.candidate.forwardNow', $candidate->id) }}">
                                         <i class="fa fa-share"></i> Forward to
                                         recruiter</button>
-                                @endif
+                                @endif --}}
                             </ul>
                         </div>
                         <!-- /.panel-body -->
@@ -191,7 +191,7 @@
                                         </a>
                                     @endif
                                 </div> <!-- /.tab-content -->
-                                {!! QrCode::size(300)->generate($link) !!}
+                                {!! QrCode::size(300)->generate(url('cv/'.$candidate->id)) !!}
                             </div><!-- /.card-body -->
                         </div> <!-- /.nav-tabs-custom -->
                     </div> <!-- /.col -->

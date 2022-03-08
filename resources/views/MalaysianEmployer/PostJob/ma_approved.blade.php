@@ -78,7 +78,7 @@
 
                                                 @if ($job_post->forward_status == 'Forwarded')
                                                 <button type="button" name="Forwarded"
-                                                class="btn btn-info btn-xs update">Already Forwarded </button>
+                                                class="btn btn-info btn-xs update">Already Forwarded to BA</button>
                                                 @endif
                                             </td>
                                             <td>
@@ -87,15 +87,15 @@
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                                 @if ($job_post->recruiting_type == 'agency')
-                                                    <a class="btn btn-warning btn-sm"
+                                                    <a class="badge badge-danger badge-pill py-1"
                                                         href="#" disabled="disabled">
-                                                        <i class="fa fa-share"></i>&nbsp;Forward
+                                                        </i>&nbsp;Forwarded By MRA
                                                     </a>
                                                 @else
                                                     @if ($job_post->forward_status == null)
                                                         <a class="btn btn-warning btn-sm"
                                                         href="{{ route('MalaysianEmployer.postJob.forward', $job_post->id) }}">
-                                                        <i class="fa fa-share"></i>&nbsp;Forward
+                                                        <i class="fa fa-share"></i>&nbsp;Forward to Bangladesh Admin
                                                         </a>
                                                     @endif
                                                    

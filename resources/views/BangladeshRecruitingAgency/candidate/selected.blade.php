@@ -51,8 +51,9 @@
                                         </th>
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
-                                        {{-- <th>Company Name</th> --}}
+                                        
                                         <th>Job Category</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -64,20 +65,12 @@
                                             </td>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $selectedCandidate->company->user_name }}</td>
-                                            {{-- <td>{{ $selectedCandidate->user->company_name }}</td> --}}
                                             <td>{{ $selectedCandidate->job_category->category_name }}</td>
+                                            <td>
+                                                {!! QrCode::size(100)->generate(url('cv/'.$selectedCandidate->id)) !!}
+                                            </td>
 
                                             <td>
-                                                {{-- @if ($selectedCandidate->result_status == 'Selected')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $selectedCandidate->id) }}">
-                                                        <i class="fa fa-eye"></i></a>
-                                                @elseif ($selectedCandidate->result_status == 'Approved')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.candidate.viewSelected', $selectedCandidate->job_post_id) }}"><i
-                                                            class="fa fa-users"></i></a>
-                                                @endif --}}
-
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('BangladeshRecruitingAgency.candidate.show', $selectedCandidate->id) }}">
                                                     <i class="fa fa-eye"></i>&nbsp;View</a>
