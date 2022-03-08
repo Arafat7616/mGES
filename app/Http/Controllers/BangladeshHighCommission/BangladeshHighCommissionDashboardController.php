@@ -74,7 +74,8 @@ class BangladeshHighCommissionDashboardController extends Controller
 
         try {
             $user->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -108,13 +109,13 @@ class BangladeshHighCommissionDashboardController extends Controller
         }
         try {
             $user->save();
-            // return back()->withSuccess('Updated successfully!');
-            Session::flash('success', 'Successfully Updated !!');
-            return redirect()->back();
+
+            session()->flash('success', 'Successfully Updated !!');
+            return back();
         } catch (\Exception $exception) {
-            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
+
             Session::flash('danger', $exception->getMessage());
-            return redirect()->back();
+            return back();
         }
     }
 }

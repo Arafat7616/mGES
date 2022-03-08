@@ -3,6 +3,9 @@
     <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/mGESabout.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/landingPageAsset/css/contact.css') }}" />
 @endsection
+@section('title')
+    Contact
+@endsection
 @section('body')
     <section>
         <div class="bgAboutImage d-flex justify-content-center align-items-center">
@@ -11,18 +14,6 @@
                     <span class="txt-type" data-wait="3000" data-words='["Contact Us"]'></span>
                 </h1>
 
-                <!-- <div class="typeing">
-                      <h1>
-                        <a
-                          href=""
-                          class="typewrite"
-                          data-period="2000"
-                          data-type='[ "INTRODUCING !!!" ]'
-                        >
-                          <span class="wrap"></span>
-                        </a>
-                      </h1>
-                    </div> -->
                 <img class="mb-2 img-fluid"
                     src="{{ asset('assets/landingPageAsset/img/MGES-Web-Ui/All-Output/MGES-UI-All-Output/MGES-Logo-Orginal-Color.png') }}"
                     alt="" />

@@ -16,7 +16,7 @@ class CreateChangeEmployerServicesTable extends Migration
         Schema::create('change_employer_services', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidate_id');
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->unsignedBigInteger('wsc_id');
             $table->string('cpr')->nullable();
             $table->text('new_offer_letter')->nullable();

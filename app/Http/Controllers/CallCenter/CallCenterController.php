@@ -10,7 +10,7 @@ class CallCenterController extends Controller
 {
     public function selectedFromDB(){
         $data = [
-            'candidates' =>  Candidate::where('status',1)->get(),
+            'candidates' =>  Candidate::where('status','Active')->limit(800)->get(),
         ];
         return view('CallCenter.candidates.db',$data);
     }

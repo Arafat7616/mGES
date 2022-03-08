@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // malaysian-employer Route
-Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmployer', 'as' => 'MalaysianEmployer.', 'middleware' => ['auth', 'malaysian-employer']], function () {
+Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmployer', 'as' => 'MalaysianEmployer.', 'middleware' => ['auth', 'malaysian-employer','prevent-back-history']], function () {
     Route::get('/dashboard', 'MalaysianEmployerDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'MalaysianEmployerDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'MalaysianEmployerDashboardController@companyPrfileView')->name('companyPrfileView');
@@ -32,6 +32,8 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
     Route::get('approved-job-posts/forward/{id}', 'PostJobController@forward')->name('postJob.forward');
 
     Route::get('approved-job-posts/forward_to_bhc/{id}', 'PostJobController@forward_to_bhc')->name('postJob.forward_to_bhc');
+
+    Route::get('demand-letter-from-ba', 'PostJobController@getDemandLetter')->name('postJob.getDemandLetter');
 
 
     // candidates
@@ -60,5 +62,10 @@ Route::group(['prefix' => 'malaysian-employer/', 'namespace' => 'MalaysianEmploy
         Route::get('show-approved-candidate/{offered_candidate_id}', 'VisaProcessController@showVisaApprovedCandidate')->name('showVisaApprovedCandidate');
         Route::get('rejected', 'VisaProcessController@visa_rejected')->name('rejected');
         Route::get('show-rejected-candidate/{offered_candidate_id}', 'VisaProcessController@showVisaRejectedCandidate')->name('showVisaRejectedCandidate');
+    });
+
+    //Review
+    Route::group(['prefix' => 'review/', 'as' => 'review.'], function () {
+        Route::get('list', 'ReviewController@index')->name('index');
     });
 });

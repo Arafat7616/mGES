@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -56,12 +55,13 @@
                                 </li>
                             </ul>
 
-                            <a href="#" download="" class="btn btn-primary btn-block">
-                                <b><i class="fa fa-download"></i> Demand Letter </b>
+                            <a href="{{ url('job-post/demand-latter/'.$job_post->id) }}" class="btn btn-primary btn-block" target="_blank">
+                                <b><i class="fa fa-file"></i>&nbsp;&nbsp;Preliminary Demand Letter </b>
                             </a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -117,7 +117,7 @@
 
                             <br>
                             <p class="text-center">
-                                {!! QrCode::size(200)->generate(url('/qr_code_result')) !!}
+                                {!! QrCode::size(200)->generate(url('job-post/demand-latter/'.$job_post->id)) !!}
                             </p>
                           </div>
                     </div>

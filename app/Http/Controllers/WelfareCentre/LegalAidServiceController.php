@@ -31,7 +31,8 @@ class LegalAidServiceController extends Controller
         $legalAid->service_status = $request->serviceStatus;
         try {
             $legalAid->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

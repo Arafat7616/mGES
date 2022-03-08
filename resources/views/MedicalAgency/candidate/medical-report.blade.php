@@ -1,6 +1,6 @@
-@extends("OneStopService.master")
+@extends("MedicalAgency.master")
 
-@section('title', 'Assign One Stop Centre')
+@section('title', 'Update Candidates medical report')
 @section('DataTableCss')
 
 @endsection
@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Assign One Stop Centre</h4>
+                        <h4 class="pull-left page-title">Update Candidates medical report</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">One Stop Centre
                                 </a></li>
-                            <li class="active">Assign One Stop Centre</li>
+                            <li class="active">Update Candidates medical report</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -28,10 +28,10 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Assign One Stop Service Centre to the selected candidate</h3>
+                            <h3 class="panel-title">Update Candidates medical report</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="{{ route('OneStopService.candidate.assignSelectedCandidateStore', $candidate->id) }}" method="POST"
+                            <form role="form" action="{{ route('MedicalAgency.candidate.uploadMedicalReport', $candidate->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')
@@ -55,6 +55,11 @@
                                                 <input readonly type="text" class="form-control" name="phoneNo" id="phoneNo"
                                                     value="{{ $candidate->phone_number }}">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="address">Address</label>
+                                                <textarea readonly class="form-control" name="address" id="address" type="text"
+                                                    cols="30" rows="2">{{ $candidate->permanent_address }}</textarea>
+                                            </div>
                                         </div><!-- panel-body -->
                                     </div> <!-- col-->
                                     <!-- Horizontal form -->
@@ -62,24 +67,16 @@
                                         <div class="panel-body">
 
                                             <div class="form-group">
-                                                <label for="address">Address</label>
-                                                <textarea readonly class="form-control" name="address" id="address" type="text"
-                                                    cols="30" rows="2">{{ $candidate->permanent_address }}</textarea>
+                                                <label for="pre_medical_status">Post-Medical Status</label>
+                                                <select class="form-control custom-select" name="pre_medical_status" required="">
+                                                    <option selected="" disabled="" value="">Select candidate status</option>
+                                                    <option @if($candidate->pre_medical_status == 1) @endif value="1">Medically fit (Pass)</option>
+                                                    <option @if($candidate->pre_medical_status == 2) @endif value="2">Medically Unfit (Fail)</option>
+                                                  </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="fees">Payable Fees</label>
-                                                <input type="text" class="form-control" name="fees" id="fees">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="wsc">Select WSC</label>
-                                                <select class="form-control" name="wsc">
-                                                    <option value="">Select WSC</option>
-                                                    @foreach ($wscList as $wsc)
-                                                        <option @if ( old('wsc') == $wsc->id) selected @endif
-                                                            value="{{ $wsc->id }}">{{ $wsc->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
+                                                <label for="pre_medical_comments">Comments</label>
+                                                <textarea id="pre_medical_comments" class="form-control" rows="4" name="pre_medical_comments"></textarea>
                                             </div>
                                         </div> <!-- panel-body -->
                                     </div> <!-- col -->

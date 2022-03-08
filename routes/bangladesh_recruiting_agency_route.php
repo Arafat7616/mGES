@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // bangladesh-recruiting-agency route
-Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'BangladeshRecruitingAgency', 'as' => 'BangladeshRecruitingAgency.', 'middleware' => ['auth', 'bangladesh-recruiting-agency']], function () {
+Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'BangladeshRecruitingAgency', 'as' => 'BangladeshRecruitingAgency.', 'middleware' => ['auth', 'bangladesh-recruiting-agency','prevent-back-history']], function () {
     Route::get('/dashboard', 'BangladeshRecruitingAgencyDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'BangladeshRecruitingAgencyDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'BangladeshRecruitingAgencyDashboardController@companyPrfileView')->name('companyPrfileView');
@@ -43,7 +43,15 @@ Route::group(['prefix' => 'bangladesh-recruiting-agency/', 'namespace' => 'Bangl
         Route::post('store', 'CandidateController@store')->name('store');
         Route::get('all', 'CandidateController@all')->name('all');
         Route::get('show/{id}', 'CandidateController@show')->name('show');
+        Route::get('qr-code-generate/{id}', 'CandidateController@QrCodeGenerate')->name('QrCodeGenerate');
         Route::get('selected', 'CandidateController@selected')->name('selected');
         Route::get('view-selected/{id}', 'CandidateController@viewSelected')->name('viewSelected');
+        Route::post('forward-to-ba', 'CandidateController@forwardToBA')->name('forwardToBA');
+    });
+
+    //E-Wallet
+    Route::group(['prefix' => 'e-wallet/', 'as' => 'eWallet.'], function () {
+        Route::get('wallet', 'EWalletController@index')->name('index');
+        Route::get('wallet_card', 'EWalletController@wallet_card')->name('wallet_card');
     });
 });

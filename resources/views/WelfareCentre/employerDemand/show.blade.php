@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -37,9 +36,9 @@
 
                             <h3 style="font-weight:bolder;text-align:center;color:blue;">Company Details</h3>
 
-                            <h4 style="font-weight:bolder;text-align:center;">{{ $job_post->company->company_name }}</h4>
+                            <h4 style="font-weight:bolder;text-align:center;">{{ $job_post->user->name }}</h4>
 
-                            <h6 style="text-align:center;">{{ $job_post->company->email }}</h6>
+                            <h6 style="text-align:center;">{{ $job_post->user->email }}</h6>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">

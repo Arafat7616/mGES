@@ -38,11 +38,12 @@ class EnquiriesController extends Controller
     }
 
     public function applyStore(Request $request, $id ){
-        $request->validate([
-            'totalCost' =>  'required',
-        ]);
+        // $request->validate([
+        //     'totalCost' =>  'required',
+        // ]);
 
         $travelEnquiry = TravelEnquiry::findOrFail($id);
+
         $submittedTravelEnquiry = new SubmittedTravelEnquiry();
         $submittedTravelEnquiry->travel_agency_id  = Auth::user()->id;
         $submittedTravelEnquiry->enquiry_id        = $travelEnquiry->id;
@@ -53,8 +54,9 @@ class EnquiriesController extends Controller
         $submittedTravelEnquiry->submitted_date    = Carbon::now();
         $submittedTravelEnquiry->submitted_status  = 'New';
         try {
-            $travelEnquiry->save();
-            return back()->withToastSuccess('Successfully saved.');
+            $submittedTravelEnquiry->save();
+           session()->flash('success', 'Successfully Applied !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

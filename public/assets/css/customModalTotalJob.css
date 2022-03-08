@@ -1,0 +1,75 @@
+.join {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.overlay {
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.overlay .modal__locked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 360px;
+    background: #a3a3a3;
+    border-radius: 5px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 3px;
+}
+
+.overlay .modal__locked .modal-body {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.overlay .modal__locked .modal-body center {
+    margin: 20px;
+}
+
+.overlay .modal__locked .modal-body center strong {
+    font-size: 25px;
+    position: relative;
+    top: -30px;
+}
+
+.overlay .modal__locked .modal-body center p {
+    position: relative;
+    top: -10px;
+    font-size: 13px;
+}
+
+.overlay .modal__locked .modal-buttons {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+}
+
+.overlay .btn {
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 145px;
+    height: 45px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    margin: 0 10px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay .modal__locked .modal-buttons button.btn-purple {
+    background: rgba(150, 39, 234, 1);
+    color: white;
+}

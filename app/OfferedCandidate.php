@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class OfferedCandidate extends Model
 {
     protected $fillable = [
-
         'id',
         'candidate_id',
         'job_category_id',
@@ -16,7 +15,7 @@ class OfferedCandidate extends Model
         'created_id',
         'interview_osc_id',
         'selected_osc_id',
-        'post_medical_id',
+        'pre_medical_id',
         'post_training_id',
         'travel_agency_id',
         'welfare_center_id',
@@ -33,14 +32,14 @@ class OfferedCandidate extends Model
         'interview_result',
         'biometric_fee',
         'bio_status',
-        'post_medical_status',
+        'pre_medical_status',
         'post_training_status',
         'bio_report',
         'post_medical_report',
         'post_training_report',
         'medical_fee',
         'training_fee',
-        'post_medical_comments',
+        'pre_medical_comments',
         'post_training_comments',
         'visa_document',
         'visa_reason',

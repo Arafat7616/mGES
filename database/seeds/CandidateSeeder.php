@@ -20,10 +20,10 @@ class CandidateSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('candidates')->insert([
-                'candidate_name' =>   'Mr. candidate ' . $i,
+                'candidate_name' =>   str_replace(['Prof. ','Dr. '],['',''],$faker->name()),
                 'role_id' => 15,
                 'job_id' => rand(1, 10),
-                'company_id' => rand(1, 10),
+                'company_id' =>$faker->numberBetween(1, 10),
                 'job_category_id' => rand(1, 10),
                 'candidate_dob' => '2021-30-07',
                 'candidate_gender' => 'male',
@@ -45,10 +45,10 @@ class CandidateSeeder extends Seeder
             $appliedJob = AppliedJob::findOrFail(11);
 
             $candidate_id =  DB::table('candidates')->insertGetId([
-                'candidate_name' =>   'Mr. candidate ' . $i,
+                'candidate_name' =>   str_replace(['Prof. ','Dr. '],['',''],$faker->name()),
                 'role_id' => 15,
                 'job_id' => $appliedJob->job_post_id,
-                'company_id' => $appliedJob->company_id,
+                'company_id' => $faker->numberBetween(1, 10),
                 'job_category_id' => $appliedJob->jobPost->job_category_id,
                 'candidate_dob' => '2021-30-07',
                 'candidate_gender' => 'male',
@@ -77,23 +77,22 @@ class CandidateSeeder extends Seeder
             $offeredCandidate->job_post_id = $candidate->job_id;
             // $offeredCandidate->result_status = ($i == 11 ? 'Post-Processing' : 'Selected');
             $offeredCandidate->result_status = 'Recommended';
-            $offeredCandidate->post_medical_status = $i == 11 ? 'New' : null;
+            $offeredCandidate->pre_medical_status = $i == 11 ? 'New' : null;
             $offeredCandidate->employer_comments = Str::random(10);
             $offeredCandidate->created_at = Carbon::now();
             $offeredCandidate->created_id = 8;
             $offeredCandidate->welfare_center_id = 6;
             $offeredCandidate->travel_agency_id = 3;
-            $offeredCandidate->post_medical_id = 12;
+            $offeredCandidate->pre_medical_id = 12;
             $offeredCandidate->save();
         }
 
-
         for ($i=0; $i <800 ; $i++) {
             $candidate = new Candidate();
-            $candidate->candidate_name      =  $faker->name();
+            $candidate->candidate_name      = str_replace(['Prof. ','Dr. '],['',''],$faker->name());
             $candidate->role_id             = 15;
             $candidate->job_id              = $faker->numberBetween(1, 25);
-            $candidate->company_id          = rand(18, 27);
+            $candidate->company_id          = $faker->numberBetween(1, 10);
             $candidate->job_category_id     = rand(1, 13);
             $candidate->candidate_dob       = $faker->dateTimeBetween($startDate = '-40 years', $endDate = '-20 years', $timezone = null);
             $candidate->candidate_gender    = $faker->randomElements(['male', 'female'])[0];
@@ -109,6 +108,7 @@ class CandidateSeeder extends Seeder
             $candidate->created_id          = $faker->numberBetween(28,37);
             $candidate->permission_status   = $faker->numberBetween(1,2);
             $candidate->created_at          = Carbon::now();
+            $candidate->sending_status      = $faker->numberBetween(1,2);
             $candidate->save();
         }
     }

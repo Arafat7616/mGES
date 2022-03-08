@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -53,7 +52,7 @@
                                     @foreach ($selectedCandidates as $selectedCandidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->company->user_name }}</td>
+                                            <td>{{ $selectedCandidate->jobPost->user->name }}</td>
                                             <td>{{ $selectedCandidate->jobPost->user->company_name }}</td>
                                             <td>{{ $selectedCandidate->jobPost->job_category->category_name }}</td>
                                             <td>{{ $selectedCandidate->approved_vacancy }}</td>

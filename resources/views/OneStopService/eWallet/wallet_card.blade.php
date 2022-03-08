@@ -82,50 +82,11 @@
                 <td>1</td>
                 <td>2784237482743</td>
                 <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
+                <td>Mustafiz</td>
+                <td>XXXX BDT</td>
                 <td>27-02-22</td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
+
             </table>
           </div>
 

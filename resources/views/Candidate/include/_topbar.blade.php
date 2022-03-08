@@ -4,6 +4,7 @@
         <div class="text-center">
             <a href="index.html" class="logo"><img src="{{ asset('assets/images/mges.png') }}" height="40"></a>
             <a href="index.html" class="logo-sm"><img src="{{asset('assets/images/mges.png')}}" height="36"></a>
+
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->

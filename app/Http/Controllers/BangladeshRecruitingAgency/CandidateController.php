@@ -30,19 +30,44 @@ class CandidateController extends Controller
     public function show($id)
     {
         $candidate = Candidate::findOrFail($id);
-        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate'));
+        $link = 'Name : '.$candidate->candidate_name.',Passport Number: '.$candidate->passport_number.',Phone Number:'.$candidate->phone_number;
+        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate','link'));
     }
 
     public function selected()
     {
-        $selectedCandidates = AppliedJob::where('applier_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        $selectedCandidates = Candidate::orderBy('id', 'DESC')->where('sending_status',null)->limit('800')->get();
         return view('BangladeshRecruitingAgency.candidate.selected', compact('selectedCandidates'));
+    }
+
+    public function QrCodeGenerate($id){
+        $candidate = Candidate::findOrFail($id);
+
+        return view('BangladeshRecruitingAgency.candidate.show', compact('candidate'));
     }
 
     public function viewSelected($id)
     {
         $CandidatesList = Candidate::where('job_id', $id)->orderBy('id', 'DESC')->get();
         return view('BangladeshRecruitingAgency.candidate.viewSelected', compact('CandidatesList'));
+    }
+
+    public function forwardToBA(Request $request){
+
+        $request->validate(
+            [
+                'all_option' => 'required',
+            ],
+            [
+                'all_option.required' => 'Please Sellect Some Data!!',
+            ]
+        );
+
+        Candidate::whereIn('id', $request->all_option)->update([
+            'sending_status' => 1,
+        ]);
+
+        return back()->withToastSuccess('Successfully forward.');
     }
 
     public function store(Request $request)
@@ -127,7 +152,8 @@ class CandidateController extends Controller
 
         try {
             $candidate->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

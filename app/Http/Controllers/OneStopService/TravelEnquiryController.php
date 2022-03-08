@@ -23,6 +23,7 @@ class TravelEnquiryController extends Controller
     }
 
     public function newTravelStore(Request $request){
+
         $request->validate([
             'startingPoint' =>  'required',
             'endPoint' =>  'required',
@@ -44,7 +45,8 @@ class TravelEnquiryController extends Controller
         $travelEnquiry->created_date       = Carbon::now();
         try {
             $travelEnquiry->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

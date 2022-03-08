@@ -1,6 +1,6 @@
-@extends("MedicalAgency.master")
+@extends("OneStopService.master")
 
-@section('title', 'Update Candidates medical report')
+@section('title', 'Assign Medical Agency')
 @section('DataTableCss')
 
 @endsection
@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Update Candidates medical report</h4>
+                        <h4 class="pull-left page-title">Assign Medical Agency</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">One Stop Centre
                                 </a></li>
-                            <li class="active">Update Candidates medical report</li>
+                            <li class="active">Assign Medical Agency</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -28,10 +28,10 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Update Candidates medical report</h3>
+                            <h3 class="panel-title">Assign Medical Agency</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="{{ route('MedicalAgency.candidate.add_medical_report', $offeredCandidate->id) }}" method="POST"
+                            <form role="form" action="{{ route('OneStopService.candidate.assignMedicalAgencyStore', $candidate->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')
@@ -43,48 +43,39 @@
                                             <div class="form-group">
                                                 <label for="candidateName">Candidate Name</label>
                                                 <input readonly type="text" class="form-control" id="candidateName"
-                                                    name="candidateName" value="{{ $offeredCandidate->candidate->candidate_name }}">
+                                                    name="candidateName" value="{{ $candidate->candidate_name }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="email">Email</label>
                                                 <input readonly type="email" class="form-control" name="email" id="email"
-                                                    value="{{ $offeredCandidate->candidate->candidate_email }}">
+                                                    value="{{ $candidate->candidate_email }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="phoneNo">Phone Number</label>
                                                 <input readonly type="text" class="form-control" name="phoneNo" id="phoneNo"
-                                                    value="{{ $offeredCandidate->candidate->phone_number }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="address">Address</label>
-                                                <textarea readonly class="form-control" name="address" id="address" type="text"
-                                                    cols="30" rows="2">{{ $offeredCandidate->candidate->permanent_address }}</textarea>
+                                                    value="{{ $candidate->phone_number }}">
                                             </div>
                                         </div><!-- panel-body -->
                                     </div> <!-- col-->
                                     <!-- Horizontal form -->
                                     <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                         <div class="panel-body">
-
                                             <div class="form-group">
-                                                <label for="address">Post-Medical Status</label>
-                                                <select class="form-control custom-select" name="post_medical_status" required="">
-                                                    <option selected="" disabled="" value="">Select candidate status</option>
-                                                    <option value="Pass">Medically fit (Pass)</option>
-                                                    <option value="Fail">Medically Unfit (Fail)</option>
-                                                  </select>
+                                                <label for="address">Address</label>
+                                                <textarea readonly class="form-control" name="address" id="address" type="text"
+                                                    cols="30" rows="2">{{ $candidate->permanent_address }}</textarea>
                                             </div>
                                             <div class="form-group">
-                                                <label for="Candidate Address">Comments</label>
-                                                <textarea class="form-control" rows="4" name="post_medical_comments"></textarea>
+                                                <img id="imagePreview" onchange="validateMultipleImage('imagePreview')" alt="imagePreview" src="" height="100px" width="100px" onerror="this.onerror=null;this.src='{{ asset($candidate->candidate_picture ?? get_static_option('no_image')) }}';" required/>
                                             </div>
                                             <div class="form-group">
-                                                <label for="post_medical_report">Post-Medical Report</label>
-                                                <div class="input-group">
-                                                  <div class="col-sm-4" style="padding-top:6px;">
-                                                    <input type="file" accept="application/pdf" name="post_medical_report" id="post_medical_report">
-                                                  </div>
-                                                </div>
+                                                <label for="medical">Select Medical Agency</label>
+                                                <select class="form-control" name="medical" id="medical">
+                                                    <option value="" disabled selected >Select One</option>
+                                                        @foreach ($medicalAgencies as $medicalAgency)
+                                                            <option value="{{ $medicalAgency->id }}" {{ $medicalAgency->id == $candidate->pre_medical_id ? 'selected' : '' }}>{{ $medicalAgency->name }}</option>
+                                                        @endforeach
+                                                </select>
                                             </div>
                                         </div> <!-- panel-body -->
                                     </div> <!-- col -->
@@ -95,7 +86,6 @@
                                                 class="btn btn-info waves-effect waves-ligh">Submit</button>
                                         </div>
                                     </div>
-
                                 </div> <!-- End row -->
                             </form>
                         </div><!-- panel-body -->

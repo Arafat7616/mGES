@@ -98,6 +98,10 @@
                                     class="fa fa-arrow-circle-right"></i> Finalized Candidates</a></li>
                         <li><a href="{{ route('BangladeshAdmin.candidate.tickets_booked_List') }}"><i
                                     class="fa fa-arrow-circle-right"></i> Tickets Booked List</a></li>
+
+                        <li><a href="{{ route('BangladeshAdmin.candidate.fromBra') }}"><i
+                                    class="fa fa-arrow-circle-right"></i>Received From BRA</a></li>
+
                     </ul>
                 </li>
 
@@ -120,6 +124,11 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('BangladeshAdmin.eWallet.wallet_card') }}"><i class="fa fa-arrow-circle-right"></i> Wallet</a></li>
                     </ul>
+                </li>
+
+                <li>
+                    <a href="{{ route('BangladeshAdmin.review.index') }}" class="waves-effect"><i
+                            class="fa fa-star"></i><span> Review </span></a>
                 </li>
 
                 <!--<li class="has_sub">-->

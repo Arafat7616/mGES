@@ -57,13 +57,12 @@ class BangladeshRecruitingAgencyDashboardController extends Controller
         }
         try {
             $user->save();
-            // return back()->withSuccess('Updated successfully!');
-            Session::flash('success', 'Successfully Updated !!');
-            return redirect()->back();
+
+            session()->flash('success', 'Successfully Updated !!');
+            return back();
         } catch (\Exception $exception) {
-            // return back()->withErrors( 'Something went wrong !'.$exception->getMessage());
             Session::flash('danger', $exception->getMessage());
-            return redirect()->back();
+            return back();
         }
     }
 
@@ -115,7 +114,8 @@ class BangladeshRecruitingAgencyDashboardController extends Controller
 
         try {
             $user->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -123,7 +123,7 @@ class BangladeshRecruitingAgencyDashboardController extends Controller
 
     public function notification()
     {
-        $notifications = Notification::where('notification_for', 'bangladesh-recruiting-agency')->get();
+        $notifications = Notification::where('notification_for', 'bangladesh-recruiting-agency')->latest()->get();
 
         // return "hello";
 

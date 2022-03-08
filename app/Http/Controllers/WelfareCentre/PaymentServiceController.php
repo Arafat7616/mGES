@@ -56,7 +56,8 @@ class PaymentServiceController extends Controller
         $paymentService->fees = $request->fees;
         try {
             $paymentService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
@@ -116,7 +117,8 @@ class PaymentServiceController extends Controller
         }
         try {
             $paymentService->save();
-            return back()->withToastSuccess('Successfully Updated.');
+            session()->flash('success', 'Successfully Updated !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

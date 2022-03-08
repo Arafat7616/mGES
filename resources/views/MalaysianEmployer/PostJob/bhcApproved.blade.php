@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -55,7 +54,7 @@
                                     @foreach ($job_posts as $job_post)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $job_post->company->company_name ?? '-' }}</td>
+                                            <td>{{ $job_post->user->name ?? '-' }}</td>
                                             <td>{{ $job_post->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_date ?? '-' }}</td>

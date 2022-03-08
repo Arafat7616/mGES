@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -70,11 +69,19 @@
                                                     <button type="button" name="Pending"
                                                         class="btn btn-warning btn-xs update">Pending</button>
                                                 @endif
+
+                                                @if($job_post->forward_to_wsc == 1)
+                                                    <button type="button" class="badge badge-pill badge-danger py-1">Referred to WSC</button>
+                                                @endif
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('BangladeshHighCommission.employerDemand.show', $job_post->id) }}">
                                                     <i class="fa fa-eye"></i>
+                                                </a>
+                                                <a class="btn btn-info btn-sm"
+                                                    href="{{ url('job-post/demand-latter/'.$job_post->id) }}">
+                                                    <i class="fa fa-file"></i>
                                                 </a>
                                                 <a class="btn btn-success btn-sm"
                                                     href="{{ route('BangladeshHighCommission.employerDemand.edit', $job_post->id) }}">
@@ -84,7 +91,7 @@
                                                 @if($job_post->forward_to_wsc == 0)
                                                 <a class="btn btn-primary btn-sm"
                                                     href="{{ route('BangladeshHighCommission.employerDemand.forward_to_wsc', $job_post->id) }}">
-                                                    <i class="fa fa-send"></i>
+                                                    <i class="fa fa-send"></i> &nbsp; Refer to WSC
                                                 </a>
                                                 @endif
 

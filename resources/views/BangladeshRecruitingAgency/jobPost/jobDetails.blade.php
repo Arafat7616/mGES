@@ -59,9 +59,9 @@
                             </ul>
 
 
-                            <a href="../demandletter/172745224_23847221674930487_737226822608284999_n.jpg " download=""
-                                class="btn btn-defult btn-block">
-                                <b><i class="fa fa-download"></i> Demand Letter </b>
+                            <a href="{{ url('job-post/demand-latter/'.$job_post->id) }}" 
+                                class="btn btn-primary btn-block">
+                                <b><i class="fa fa-file"></i> Demand Letter </b>
                             </a>
 
                             <div class="job_approved_button">

@@ -4,7 +4,7 @@
     height: 160px;
     perspective: 1000px;
   }
-  
+
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -14,11 +14,11 @@
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgb(255, 255, 255);
   }
-  
+
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
+
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -26,18 +26,20 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+
   .flip-card-front {
     background-color: rgba(145, 230, 245, 0.671);
     color: black;
   }
-  
+
   .flip-card-back {
     background-color: white;
     color: rgb(11, 58, 102);
     transform: rotateY(180deg);
   }
-
+.pText-sm{
+    font-size: 12px;
+}
   @media only screen and (max-width: 1400px) {
     .flip-card {
         background-color: transparent;
@@ -72,21 +74,21 @@
         perspective: 1000px;
       }
 
-   
+
   }
 
 
-  
+
 @media only screen and (min-width: 1400px) {
-   
+
       .containerMZ {
         position: relative;
         text-align: center;
         color: rgb(0, 0, 0);
       }
-    
+
       .centeredMG{
-      
+
         background-color: rgba(50, 180, 255, 0.212);
         position: absolute;
         top: 50%;
@@ -95,7 +97,7 @@
         border-radius:30px;
         height:25vh;
         transform: translate(-50%, -50%);
-      
+
       }
   }
 

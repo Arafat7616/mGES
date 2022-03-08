@@ -1,7 +1,11 @@
 @extends('LandingPage.Layout.app')
+@section('title')
+    Medical center
+@endsection
 @section('body')
     <section id="banner">
         <div class="container-fluid banner-container-about">
+
             <div class="text-center">
                 <div class="typeing">
                     <h1>
@@ -212,7 +216,7 @@
         <!-- Footer end -->
 
         <!--
-                table content end -->
+                    table content end -->
 
         <script>
             $(document).ready(function() {

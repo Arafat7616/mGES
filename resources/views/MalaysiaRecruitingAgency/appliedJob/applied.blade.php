@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -59,9 +58,9 @@
                                     @foreach ($appliedJobs as $appliedJob)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $appliedJob->company->user_name ?? ''  }}</td>
-                                            <td>{{ $appliedJob->user->company_name ?? ''  }}</td>
-                                            <td>{{ $appliedJob->jobPost->job_category->category_name ?? '' }}</td>
+                                            <td>{{ $appliedJob->user->name ?? '-'  }}</td>
+                                            <td>{{ $appliedJob->user->company_name ?? '-'  }}</td>
+                                            <td>{{ $appliedJob->jobPost->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $appliedJob->job_vacancy }}</td>
                                             <td>{{ $appliedJob->applied_vacancy ?? '' }}</td>
                                             <td>{{ $appliedJob->approved_vacancy ?? '-' }}</td>

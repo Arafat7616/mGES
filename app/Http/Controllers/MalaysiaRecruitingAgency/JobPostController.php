@@ -40,23 +40,10 @@ class JobPostController extends Controller
         $job_post->status    =  "Applied";
         $job_post->forward_status = "Forwarded";
 
-
-        $applied_job = new AppliedJob();
-        $applied_job->job_post_id  = $job_post->id;
-        $applied_job->company_id   = $job_post->company->id;
-        $applied_job->applier_id   = Auth::user()->id;
-        $applied_job->job_vacancy  = $job_post->job_vacancy;
-        $applied_job->applied_vacancy   = $request->appliedVacancy;
-        $applied_job->remarks      = $request->remarks;
-        $applied_job->applier_agency_name   = Auth::user()->name;
-        $applied_job->datetime     = Carbon::now();
-        $applied_job->status       = "Applied";
-        
-
         try {
             $job_post->save();
-            $applied_job->save();
-            return back()->withToastSuccess('Successfully saved.');
+           session()->flash('success', 'Successfully saved !');
+            return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }

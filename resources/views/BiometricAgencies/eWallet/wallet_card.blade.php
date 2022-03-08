@@ -1,4 +1,4 @@
-@extends("MedicalAgency.master")
+@extends("BiometricAgencies.master")
 
 @section('main-content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -11,16 +11,16 @@
           <div class="card-img">
             <div class="all-img">
               <div class="img-cards">
-                <img src="https://www.paisabazaar.com/wp-content/uploads/2018/08/SBI-EMV-Chip-1280x720.jpg" height="200px" width="350px" alt="">
+                <img src="{{ asset('card_demo/Card-Design-01.png') }}" height="200px" width="350px" alt="">
               </div>
               <div class="img-cards ">
-                <img src="https://www.paisabazaar.com/wp-content/uploads/2018/08/SBI-EMV-Chip-1280x720.jpg" height="200px" width="350px" alt="">
+                <img src="{{ asset('card_demo/Card-Design-02.png') }}" height="200px" width="350px" alt="">
               </div>
               <div class="img-cards ">
-                <img src="https://www.paisabazaar.com/wp-content/uploads/2018/08/SBI-EMV-Chip-1280x720.jpg" height="200px" width="350px" alt="">
+                <img src="{{ asset('card_demo/Card-Design-03.png') }}" height="200px" width="350px" alt="">
               </div>
               <div class="img-cards ">
-                <img src="https://www.paisabazaar.com/wp-content/uploads/2018/08/SBI-EMV-Chip-1280x720.jpg" height="200px" width="350px" alt="">
+                <img src="{{ asset('card_demo/Card-Design-04.png') }}" height="200px" width="350px" alt="">
               </div>
             </div>
                   </div>
@@ -43,7 +43,7 @@
               <p ><span class="bg-danger upcontent">↓ 1230.20$</span></p>
             </div>
             <div class="container moneyContent">
-              <p>12,000.00 BDT</p>
+              <p>12,000 BDT</p>
             </div>
 
             <div class="button_contents" >
@@ -67,7 +67,7 @@
         <div class="row">
           <div class="col-md-12 ">
           <div class="custom_card_style" style="padding: 20px">
-            <h2>Transition History</h2>
+            <h2>Transection History</h2>
 
             <table>
               <tr>
@@ -83,49 +83,10 @@
                 <td>2784237482743</td>
                 <td>Purces</td>
                 <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
+                <td>12,000 BDT</td>
+                <td>02-03-22</td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2784237482743</td>
-                <td>Purces</td>
-                <td>Asif</td>
-                <td>$100</td>
-                <td>27-02-22</td>
-              </tr>
+
             </table>
           </div>
 

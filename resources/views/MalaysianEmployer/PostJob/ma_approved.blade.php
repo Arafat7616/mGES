@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -78,7 +77,7 @@
 
                                                 @if ($job_post->forward_status == 'Forwarded')
                                                 <button type="button" name="Forwarded"
-                                                class="btn btn-info btn-xs update">Already Forwarded </button>
+                                                class="btn btn-info btn-xs update">Already Forwarded to BA</button>
                                                 @endif
                                             </td>
                                             <td>
@@ -87,18 +86,18 @@
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                                 @if ($job_post->recruiting_type == 'agency')
-                                                    <a class="btn btn-warning btn-sm"
+                                                    <a class="badge badge-danger badge-pill py-1"
                                                         href="#" disabled="disabled">
-                                                        <i class="fa fa-share"></i>&nbsp;Forward
+                                                        </i>&nbsp;Forwarded By MRA
                                                     </a>
                                                 @else
                                                     @if ($job_post->forward_status == null)
                                                         <a class="btn btn-warning btn-sm"
                                                         href="{{ route('MalaysianEmployer.postJob.forward', $job_post->id) }}">
-                                                        <i class="fa fa-share"></i>&nbsp;Forward
+                                                        <i class="fa fa-share"></i>&nbsp;Forward to Bangladesh Admin
                                                         </a>
                                                     @endif
-                                                   
+
                                                 @endif
 
 

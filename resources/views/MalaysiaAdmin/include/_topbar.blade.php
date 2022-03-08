@@ -6,6 +6,7 @@
                 src="{{ asset('assets/images/mges.png') }}" height="40"></a>
         <a href="{{ route('BangladeshAdmin.dashboard') }}" class="logo-sm"><img
                 src="{{ asset('assets/images/mges.png') }}" height="36"></a>
+
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->

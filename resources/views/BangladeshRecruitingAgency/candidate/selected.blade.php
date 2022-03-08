@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -35,53 +34,64 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Selected candidates for the approved vacancies</h3>
+                            <h3 class="panel-title">Selected candidates</h3>
                         </div>
                         <div class="panel-body">
+                            <form action="{{ route('BangladeshRecruitingAgency.candidate.forwardToBA') }}" method="post">
+                                @csrf
                             <table id="datatable-buttons" class="table table-striped table-bordered">
+                                <center><button type="submit" class="btn btn-md btn-info">Forward to BA</button></center>
                                 <thead>
                                     <tr>
+                                        <th style="width:15%">
+                                            <label><input type="checkbox" name="select_option" id="select_option"
+                                                    onclick="checkedAll.call(this);">&nbsp;&nbsp;Select/Unsellect
+                                                All</label>
+                                        </th>
                                         <th>SL No</th>
-                                        <th>Recruiter Name</th>
-                                        <th>Company Name</th>
+                                        <th>Candidate Name</th>
                                         <th>Job Category</th>
-                                        <th>Approved Vacancies</th>
-                                        <th>Candidates</th>
+                                        <th>QR Code</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($selectedCandidates as $selectedCandidate)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->company->user_name }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->user->company_name }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->job_category->category_name }}</td>
-                                            <td>{{ $selectedCandidate->approved_vacancy }}</td>
                                             <td>
-                                                @if ($selectedCandidate->status == 'Applied')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $selectedCandidate->id) }}">
-                                                        <i class="fa fa-eye"></i></a>
-                                                @elseif ($selectedCandidate->status == 'Approved')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.candidate.viewSelected', $selectedCandidate->job_post_id) }}"><i
-                                                            class="fa fa-users"></i></a>
-                                                @endif
+                                                <input type="checkbox" name="all_option[]" value="{{ $selectedCandidate->id }}">
+                                            </td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $selectedCandidate->candidate_name }}</td>
+                                            <td>{{ $selectedCandidate->job_category->category_name }}</td>
+                                            <td>
+                                                {!! QrCode::size(100)->generate(url('cv/'.$selectedCandidate->id)) !!}
+                                            </td>
+                                            <td>
+ 
+                                                <a class="btn btn-info btn-sm"
+                                                    href="{{ route('BangladeshRecruitingAgency.candidate.show', $selectedCandidate->id) }}">
+                                                    <i class="fa fa-eye"></i>&nbsp;View</a>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th style="width:15%">
+                                            <label><input type="checkbox" name="select_option" id="select_option"
+                                                    onclick="checkedAll.call(this);">&nbsp;&nbsp;Select/Unsellect
+                                                All</label>
+                                        </th>
                                         <th>SL No</th>
-                                        <th>Recruiter Name</th>
-                                        <th>Company Name</th>
+                                        <th>Candidate Name</th>
                                         <th>Job Category</th>
-                                        <th>Approved Vacancies</th>
-                                        <th>Candidates</th>
+                                        <th>QR Code</th>
+                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -89,6 +99,18 @@
         </div> <!-- container -->
     </div>
     <!--End content -->
+
+    <script type="text/javascript">
+        function checkedAll() {
+
+            var elements = document.querySelectorAll('input[type="checkbox"]');
+            for (var i = elements.length; i--;) {
+                if (elements[i].type == 'checkbox') {
+                    elements[i].checked = this.checked;
+                }
+            }
+        }
+    </script>
 @endsection
 
 @section('DataTableJs')
