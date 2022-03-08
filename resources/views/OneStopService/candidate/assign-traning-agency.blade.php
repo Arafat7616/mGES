@@ -1,6 +1,6 @@
-@extends("TrainingAgency.master")
+@extends("OneStopService.master")
 
-@section('title', 'Update Candidates training report')
+@section('title', 'Assign Traning Agency')
 @section('DataTableCss')
 
 @endsection
@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Update Candidates training report</h4>
+                        <h4 class="pull-left page-title">Assign Training Agency</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">mGES</a></li>
                             <li><a href="#">One Stop Centre
                                 </a></li>
-                            <li class="active">Update Candidates training report</li>
+                            <li class="active">Assign Training Agency</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -28,10 +28,12 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Update Candidates training report</h3>
+                            <h3 class="panel-title">Assign Training Agency</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="" method="POST" enctype="multipart/form-data">
+                            <form role="form"
+                                action="{{ route('OneStopService.candidate.assignTraningAgencyStore', $candidate->id) }}"
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')
                                 <div class="row">
@@ -54,34 +56,33 @@
                                                 <input readonly type="text" class="form-control" name="phoneNo"
                                                     id="phoneNo" value="{{ $candidate->phone_number }}">
                                             </div>
+                                        </div><!-- panel-body -->
+                                    </div> <!-- col-->
+                                    <!-- Horizontal form -->
+                                    <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                        <div class="panel-body">
                                             <div class="form-group">
                                                 <label for="address">Address</label>
                                                 <textarea readonly class="form-control" name="address" id="address"
                                                     type="text" cols="30"
                                                     rows="2">{{ $candidate->permanent_address }}</textarea>
                                             </div>
-                                        </div><!-- panel-body -->
-                                    </div> <!-- col-->
-                                    <!-- Horizontal form -->
-                                    <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                                        <div class="panel-body">
-
                                             <div class="form-group">
-                                                <label for="pre_medical_status">Post-Training Status</label>
-                                                <select class="form-control custom-select" name="pre_medical_status"
-                                                    required="">
-                                                    <option selected="" disabled="" value="">Select candidate status
-                                                    </option>
-                                                    <option @if ($candidate->pre_medical_status == 1)  @endif value="1">Trainingly
-                                                        fit (Pass)</option>
-                                                    <option @if ($candidate->pre_medical_status == 2)  @endif value="2">Trainingly
-                                                        Unfit (Fail)</option>
-                                                </select>
+                                                <img id="imagePreview" onchange="validateMultipleImage('imagePreview')"
+                                                    alt="imagePreview" src="" height="100px" width="100px"
+                                                    onerror="this.onerror=null;this.src='{{ asset($candidate->candidate_picture ?? get_static_option('no_image')) }}';"
+                                                    required />
                                             </div>
                                             <div class="form-group">
-                                                <label for="pre_medical_comments">Comments</label>
-                                                <textarea id="pre_medical_comments" class="form-control" rows="4"
-                                                    name="pre_medical_comments"></textarea>
+                                                <label for="medical">Select Training Agency</label>
+                                                <select class="form-control" name="traning" id="medical">
+                                                    <option value="" disabled selected>Select One</option>
+                                                    @foreach ($traningAgencies as $traningAgency)
+                                                        <option value="{{ $traningAgency->id }}"
+                                                            {{ $traningAgency->id == $candidate->pre_training_id ? 'selected' : '' }}>
+                                                            {{ $traningAgency->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div> <!-- panel-body -->
                                     </div> <!-- col -->
@@ -92,7 +93,6 @@
                                                 class="btn btn-info waves-effect waves-ligh">Submit</button>
                                         </div>
                                     </div>
-
                                 </div> <!-- End row -->
                             </form>
                         </div><!-- panel-body -->

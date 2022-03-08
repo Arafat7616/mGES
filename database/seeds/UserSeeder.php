@@ -58,8 +58,8 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => 11,
             'country_id' => 2,
-            'name' => 'Bangladesh Recruiting agency',
-            'company_name' => 'Bangladesh Recruiting agency',
+            'name' => '5M International Ltd.',
+            'company_name' => '5M International Ltd.',
             'email' => 'bra@gmail.com',
             'password' => Hash::make('12345'),
             'user_type' => 'bangladesh-recruiting-agency',
