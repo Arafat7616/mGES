@@ -19,8 +19,14 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.selected', compact('candidates'));
     }
 
-    public function uploadFace($candidate_id)
-    {
+
+    public function medicalCompleted(){
+        $candidates = Candidate::where('pre_medical_id', '!=', null)->whereIn('pre_medical_status',[1,2])->orderBy('id','DESC')->get();
+        return view('OneStopService.candidate.medical-completed', compact('candidates'));
+    }
+
+    public function uploadFace($candidate_id){
+
         $candidate = Candidate::findOrFail($candidate_id);
         return view('OneStopService.candidate.upload-face', compact('candidate'));
     }
@@ -140,8 +146,11 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.assign-selected-candidate', compact('candidate', 'wscList'));
     }
 
-    public function assignSelectedCandidateStore(Request $request, $candidate_id)
-    {
+
+
+
+    public function assignSelectedCandidateStore(Request $request , $candidate_id){
+
         $request->validate([
             'fees' =>  'required',
             'wsc' =>  'required',
@@ -202,5 +211,10 @@ class CandidateController extends Controller
                 'message' => $exception->getMessage()
             ]);
         }
+    }
+
+    public function policeCertificate(){
+         $candidates = Candidate::orderBy('id','desc')->limit(5)->get();
+        return view('OneStopService.candidate.police_clearance',compact('candidates'));
     }
 }

@@ -56,9 +56,10 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="nav-icon fa fa-users"></i></i><span> Candidates</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('OneStopService.candidate.receivedFromBa') }}"><i class="fa fa-arrow-circle-right"></i> Received From BA</a></li>
-                        <li><a href="{{ route('OneStopService.candidate.approved') }}"><i class="fa fa-arrow-circle-right"></i> Interview Candidates</a></li>
+                        <li><a href="{{ route('OneStopService.candidate.medicalCompleted') }}"><i class="fa fa-arrow-circle-right"></i> Medical Completed</a></li>
+                        {{-- <li><a href="{{ route('OneStopService.candidate.approved') }}"><i class="fa fa-arrow-circle-right"></i> Interview Candidates</a></li>
                         <li><a href="{{ route('OneStopService.candidate.rejected') }}"><i class="fa fa-arrow-circle-right"></i> Finalized Candidates</a></li>
-                        <li><a href="{{ route('OneStopService.candidate.ticketBooked') }}"><i class="fa fa-arrow-circle-right"></i> Appointed Candidates</a></li>
+                        <li><a href="{{ route('OneStopService.candidate.ticketBooked') }}"><i class="fa fa-arrow-circle-right"></i> Appointed Candidates</a></li> --}}
                     </ul>
                 </li>
 
@@ -85,6 +86,13 @@
                         <li><a href="{{ route('OneStopService.travelQuotation.received') }}"><i class="fa fa-arrow-circle-right"></i>Received Quotations</a></li>
                         <li><a href="{{ route('OneStopService.travelQuotation.approved') }}"><i class="fa fa-arrow-circle-right"></i> Approved Quotations</a></li>
                         <li><a href="{{ route('OneStopService.travelQuotation.ticketBooked') }}"><i class="fa fa-arrow-circle-right"></i> Ticket Booked List</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-money"></i> <span> Security Clearance</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('OneStopService.candidate.policeCertificate') }}"><i class="fa fa-arrow-circle-right"></i> Police Clearance</a></li>
                     </ul>
                 </li>
 

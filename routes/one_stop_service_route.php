@@ -62,6 +62,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::post('assign-interview-osc-store/{offered_candidate_id}', 'CandidateController@assignInterviewOscStore')->name('assignInterviewOscStore');
         Route::post('assign-selected-store/{offered_candidate_id}', 'CandidateController@assignSelectedCandidateStore')->name('assignSelectedCandidateStore');
         Route::get('received-from-ba', 'CandidateController@receivedFromBa')->name('receivedFromBa');
+        Route::get('medical-completed', 'CandidateController@medicalCompleted')->name('medicalCompleted');
         Route::get('upload-face/{candidate_id}', 'CandidateController@uploadFace')->name('uploadFace');
         Route::post('upload-face-store/{candidate_id}', 'CandidateController@uploadFaceStore')->name('uploadFaceStore');
 
@@ -74,6 +75,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('interview', 'CandidateController@interview')->name('approved');
         Route::get('finalized', 'CandidateController@finalized')->name('rejected');
         Route::get('ticket-booked', 'CandidateController@ticketBooked')->name('ticketBooked');
+        Route::get('police-clearance', 'CandidateController@policeCertificate')->name('policeCertificate');
     });
 
     // Visa Process
@@ -92,6 +94,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('posted', 'TravelEnquiryController@postedTravel')->name('postedTravel');
         Route::get('show-posted/{travel_enquiry_id}', 'TravelEnquiryController@ShowPostedTravel')->name('ShowPostedTravel');
         Route::get('show-visa-stamping-approved-candidate/{offered_candidate_id}', 'TravelEnquiryController@showVisaStampingApprovedCandidate')->name('showVisaStampingApprovedCandidate');
+        Route::post('select_agency', 'TravelEnquiryController@select_agency')->name('select_agency');
     });
 
     // Travel  quotations

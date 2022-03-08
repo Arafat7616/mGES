@@ -41,6 +41,14 @@ Route::group([ 'middleware' => 'prevent-back-history'], function () {
     /*Route::get('/', 'HomeController@index')->name('admin.login');*/
     Route::get('/cv/{id}', 'FrontendController@candidateCV')->name('candidateCV');
 
+
+    Route::get('/police-certificate/{id}', 'FrontendController@policeCertificate')->name('policeCertificate');
+    Route::get('/medical-certificate/{id}', 'FrontendController@medicalCertificate')->name('medicalCertificate');
+    Route::get('/training-certificate/{id}', 'FrontendController@trainingCertificate')->name('trainingCertificate');
+    Route::get('/biomatric-certificate/{id}', 'FrontendController@biomatricCertificate')->name('biomatricCertificate');
+
+
+
     //others
     Route::get('/qr_code', [QrCodeController::class, 'index']);
     Route::get('/qr_code_result', [QrCodeController::class, 'result']);
