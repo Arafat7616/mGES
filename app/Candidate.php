@@ -60,6 +60,10 @@ class Candidate extends Model
     {
         return $this->belongsTo(User::class, 'pre_medical_id');
     }
+    public function trainingAgency()
+    {
+        return $this->belongsTo(User::class, 'pre_training_id');
+    }
 
     public function role()
     {

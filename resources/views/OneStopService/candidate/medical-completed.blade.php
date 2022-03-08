@@ -46,6 +46,7 @@
                                         <th>Phone No</th>
                                         <th>Email</th>
                                         <th>Status</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -65,8 +66,12 @@
                                                     <span class="badge badge-info">Pending</span>
                                                 @endif
                                             </td>
+                                            <td>{!! QrCode::size(100)->generate(url('medical-certificate/'.$candidate->id)) !!}</td>
                                             <td>
-                                                <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
+                                                <a class="btn btn-info" target="_blank" href="{{ route('medicalCertificate', $candidate->id) }}">
+                                                    <i class="mdi mdi-file"></i> Medical Certificate
+                                                </a>
+                                                <a class="btn btn-info" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
@@ -82,6 +87,7 @@
                                         <th>Phone No</th>
                                         <th>Email</th>
                                         <th>Status</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
