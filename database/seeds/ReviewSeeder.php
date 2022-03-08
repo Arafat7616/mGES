@@ -13,7 +13,7 @@ class ReviewSeeder extends Seeder
     public function run()
     {
         Review::create([
-            'receiver_id' => 5,
+            'receiver_id' => 28,
             'provider_id' => 2,
             'ratings' => 5
         ]);

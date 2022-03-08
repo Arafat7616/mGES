@@ -26,7 +26,7 @@ class JobPostSeeder extends Seeder
                 'age_limit'  => rand(20, 50),
                 'salary'  => rand(5000, 50000),
                 'job_location'  => 'Dhaka Bangladesh',
-                'job_vacancy'  => rand(50, 99),
+                'job_vacancy'  => rand(800, 1000),
                 'end_date'  => now(),
                 'demand_letter'  => Str::random(10),
                 'selected_wsc'  => rand(1, 10),
