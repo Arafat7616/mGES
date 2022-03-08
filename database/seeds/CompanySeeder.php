@@ -19,7 +19,7 @@ class CompanySeeder extends Seeder
                 'company_name' => 'Demo Name '.$i,
                 'company_email' => 'company'.$i.'@gmail.com',
                 'status' => 'Active',
-           ]);
+            ]);
        }
     }
 }
