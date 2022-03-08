@@ -49,7 +49,7 @@
                                                     All</label>
                                             </th>
                                             <th>SL No</th>
-                                            <th>Recruiter Name</th>
+                                            <th>Candidate Name</th>
                                             <th>Job Category</th>
                                             <th>QR Code</th>
                                             <th>Action</th>
@@ -63,7 +63,7 @@
                                                         value="{{ $candidate->id }}">
                                                 </td>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $candidate->user->name }}</td>
+                                                <td>{{ $candidate->candidate_name }}</td>
                                                 <td>{{ $candidate->job_category->category_name }}</td>
                                                 <td>
                                                     {!! QrCode::size(100)->generate(url('cv/'.$candidate->id)) !!}
@@ -79,8 +79,12 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            <th style="width:15%">
+                                                <label><input type="checkbox" name="select_option" id="select_option"
+                                                        onclick="checkedAll.call(this);">&nbsp;&nbsp;Select/Unsellect
+                                                    All</label>
+                                            </th>
                                             <th>SL No</th>
-                                            <th>Recruiter Name</th>
                                             <th>Job Category</th>
                                             <th>Action</th>
                                         </tr>
