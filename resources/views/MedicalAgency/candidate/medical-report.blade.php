@@ -31,7 +31,7 @@
                             <h3 class="panel-title">Update Candidates medical report</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="{{ route('MedicalAgency.candidate.add_medical_report', $offeredCandidate->id) }}" method="POST"
+                            <form role="form" action="{{ route('MedicalAgency.candidate.add_medical_report', $candidate->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @include('includes.errors')
@@ -43,22 +43,22 @@
                                             <div class="form-group">
                                                 <label for="candidateName">Candidate Name</label>
                                                 <input readonly type="text" class="form-control" id="candidateName"
-                                                    name="candidateName" value="{{ $offeredCandidate->candidate->candidate_name }}">
+                                                    name="candidateName" value="{{ $candidate->candidate_name }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="email">Email</label>
                                                 <input readonly type="email" class="form-control" name="email" id="email"
-                                                    value="{{ $offeredCandidate->candidate->candidate_email }}">
+                                                    value="{{ $candidate->candidate_email }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="phoneNo">Phone Number</label>
                                                 <input readonly type="text" class="form-control" name="phoneNo" id="phoneNo"
-                                                    value="{{ $offeredCandidate->candidate->phone_number }}">
+                                                    value="{{ $candidate->phone_number }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="address">Address</label>
                                                 <textarea readonly class="form-control" name="address" id="address" type="text"
-                                                    cols="30" rows="2">{{ $offeredCandidate->candidate->permanent_address }}</textarea>
+                                                    cols="30" rows="2">{{ $candidate->permanent_address }}</textarea>
                                             </div>
                                         </div><!-- panel-body -->
                                     </div> <!-- col-->
@@ -67,24 +67,16 @@
                                         <div class="panel-body">
 
                                             <div class="form-group">
-                                                <label for="address">Post-Medical Status</label>
-                                                <select class="form-control custom-select" name="post_medical_status" required="">
+                                                <label for="pre_medical_status">Post-Medical Status</label>
+                                                <select class="form-control custom-select" name="pre_medical_status" required="">
                                                     <option selected="" disabled="" value="">Select candidate status</option>
-                                                    <option value="Pass">Medically fit (Pass)</option>
-                                                    <option value="Fail">Medically Unfit (Fail)</option>
+                                                    <option @if($candidate->pre_medical_status == 1) @endif value="1">Medically fit (Pass)</option>
+                                                    <option @if($candidate->pre_medical_status == 2) @endif value="2">Medically Unfit (Fail)</option>
                                                   </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="Candidate Address">Comments</label>
-                                                <textarea class="form-control" rows="4" name="post_medical_comments"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="post_medical_report">Post-Medical Report</label>
-                                                <div class="input-group">
-                                                  <div class="col-sm-4" style="padding-top:6px;">
-                                                    <input type="file" accept="application/pdf" name="post_medical_report" id="post_medical_report">
-                                                  </div>
-                                                </div>
+                                                <label for="pre_medical_comments">Comments</label>
+                                                <textarea id="pre_medical_comments" class="form-control" rows="4" name="pre_medical_comments"></textarea>
                                             </div>
                                         </div> <!-- panel-body -->
                                     </div> <!-- col -->

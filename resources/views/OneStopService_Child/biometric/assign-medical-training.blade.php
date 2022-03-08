@@ -74,7 +74,7 @@
                                                 <option selected disabled value="">Select Medical Center</option>
                                                 @foreach ($medicalAgencies as $medical)
                                                     <option
-                                                        {{ $offeredCandidate->post_medical_id == $medical->id ? 'selected' : '' }}
+                                                        {{ $offeredCandidate->pre_medical_id == $medical->id ? 'selected' : '' }}
                                                         value="{{ $medical->id }}">{{ $medical->name }}
                                                     </option>
                                                 @endforeach

@@ -20,7 +20,7 @@ class CandidateSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('candidates')->insert([
-                'candidate_name' =>   'Mr. candidate ' . $i,
+                'candidate_name' =>   $faker->name(),
                 'role_id' => 15,
                 'job_id' => rand(1, 10),
                 'company_id' =>$faker->numberBetween(1, 10),
@@ -45,7 +45,7 @@ class CandidateSeeder extends Seeder
             $appliedJob = AppliedJob::findOrFail(11);
 
             $candidate_id =  DB::table('candidates')->insertGetId([
-                'candidate_name' =>   'Mr. candidate ' . $i,
+                'candidate_name' =>   $faker->name(),
                 'role_id' => 15,
                 'job_id' => $appliedJob->job_post_id,
                 'company_id' => $faker->numberBetween(1, 10),
@@ -77,13 +77,13 @@ class CandidateSeeder extends Seeder
             $offeredCandidate->job_post_id = $candidate->job_id;
             // $offeredCandidate->result_status = ($i == 11 ? 'Post-Processing' : 'Selected');
             $offeredCandidate->result_status = 'Recommended';
-            $offeredCandidate->post_medical_status = $i == 11 ? 'New' : null;
+            $offeredCandidate->pre_medical_status = $i == 11 ? 'New' : null;
             $offeredCandidate->employer_comments = Str::random(10);
             $offeredCandidate->created_at = Carbon::now();
             $offeredCandidate->created_id = 8;
             $offeredCandidate->welfare_center_id = 6;
             $offeredCandidate->travel_agency_id = 3;
-            $offeredCandidate->post_medical_id = 12;
+            $offeredCandidate->pre_medical_id = 12;
             $offeredCandidate->save();
         }
 
