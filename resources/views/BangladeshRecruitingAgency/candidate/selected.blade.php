@@ -5,8 +5,7 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -51,7 +50,6 @@
                                         </th>
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
-                                        {{-- <th>Company Name</th> --}}
                                         <th>Job Category</th>
                                         <th>Action</th>
                                     </tr>
@@ -63,26 +61,12 @@
                                                 <input type="checkbox" name="all_option[]" value="{{ $selectedCandidate->id }}">
                                             </td>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $selectedCandidate->company->user_name }}</td>
-                                            {{-- <td>{{ $selectedCandidate->user->company_name }}</td> --}}
+                                            <td>{{ $selectedCandidate->user->name }}</td>
                                             <td>{{ $selectedCandidate->job_category->category_name }}</td>
-
                                             <td>
-                                                {{-- @if ($selectedCandidate->result_status == 'Selected')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.appliedJob.show', $selectedCandidate->id) }}">
-                                                        <i class="fa fa-eye"></i></a>
-                                                @elseif ($selectedCandidate->result_status == 'Approved')
-                                                    <a class="btn btn-info btn-sm"
-                                                        href="{{ route('BangladeshRecruitingAgency.candidate.viewSelected', $selectedCandidate->job_post_id) }}"><i
-                                                            class="fa fa-users"></i></a>
-                                                @endif --}}
-
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('BangladeshRecruitingAgency.candidate.show', $selectedCandidate->id) }}">
                                                     <i class="fa fa-eye"></i>&nbsp;View</a>
-
-
                                             </td>
                                         </tr>
                                     @endforeach

@@ -16,7 +16,7 @@ class CreateAppliedJobsTable extends Migration
         Schema::create('applied_jobs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('job_post_id');
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->unsignedBigInteger('applier_id');
             $table->unsignedBigInteger('selected_medical_id')->nullable();
             $table->unsignedBigInteger('selected_training_id')->nullable();

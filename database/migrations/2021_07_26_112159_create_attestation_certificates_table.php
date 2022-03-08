@@ -16,7 +16,7 @@ class CreateAttestationCertificatesTable extends Migration
         Schema::create('attestation_certificates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidate_id');
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->unsignedBigInteger('wsc_id');
             $table->string('service_type')->nullable();
             $table->text('comments')->nullable();

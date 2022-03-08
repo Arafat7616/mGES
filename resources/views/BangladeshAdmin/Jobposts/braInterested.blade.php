@@ -56,7 +56,7 @@
                                     @foreach ($jobPosts as $jobPost)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $jobPost->company->company_name }}</td>
+                                            <td>{{ $jobPost->user->name }}</td>
                                             <td>{{ $jobPost->job_category->category_name }}</td>
                                             <td>{{ $jobPost->created_at }}</td>
                                             <td>{{ $jobPost->job_vacancy }}</td>
@@ -91,7 +91,7 @@
                                                         <i class="fa fa-pdf"></i>Send Demand Letter
                                                     </a>
                                                     @endif
-                                                  
+
                                                 @else
                                                     <a class="btn btn-warning button" fhgkd="{{ $jobPost->id }}"
                                                         value="{{ $jobPost->job_vacancy }}" href="javascript:void(0);">
@@ -228,7 +228,7 @@
                                 $('#custome_modal_body').html(data);
                                 $('.overlay').css('display', 'block');
 
-                            
+
 
                             },
                         })

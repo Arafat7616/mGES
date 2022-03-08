@@ -109,6 +109,7 @@ class CandidateSeeder extends Seeder
             $candidate->created_id          = $faker->numberBetween(28,37);
             $candidate->permission_status   = $faker->numberBetween(1,2);
             $candidate->created_at          = Carbon::now();
+            $candidate->sending_status      = $faker->numberBetween(1,2);
             $candidate->save();
         }
     }

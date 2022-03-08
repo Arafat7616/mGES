@@ -15,7 +15,7 @@
             <div class="cvId"><small class="CVtop">CV ID : D0Xd9p42123</small></div>
             <div class="cvImg"><img src="{{ asset('assets/images/users/candidate.jpeg') }}" class="cvImgTop" alt=""></div>
             <table class="head-left">
-                
+
                 <tr>
                     <td>Contact</td>
                     <td>:</td>
@@ -32,7 +32,7 @@
                     <td>Sales Executive</td>
                 </tr>
             </table>
-            
+
 
             <div class="worker-header">
                 <div class="name"><b>Karim Benzema</b></div>
@@ -65,7 +65,7 @@
                 </tr>
                 <tr>
                     <td>Sales Executive</td>
-                    <td>Kamrul Group</td>
+                    <td>Versatilo London (Malaysia)</td>
                     <td>
                         <li>Working in a team of three to ensure sales targets are met and exceeded</li>
                         <li>Being trusted with representing Sky at events such as European Marketing week</li>

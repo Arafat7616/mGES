@@ -60,9 +60,9 @@
                                                 <td>
                                                     <input type="checkbox" name="all_option[]"
                                                         value="{{ $candidate->id }}">
-                                                </td>   
+                                                </td>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $candidate->company->user_name }}</td>
+                                                <td>{{ $candidate->user->name }}</td>
                                                 <td>{{ $candidate->job_category->category_name }}</td>
 
                                                 <td>
