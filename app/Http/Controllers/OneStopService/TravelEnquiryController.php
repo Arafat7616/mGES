@@ -23,6 +23,7 @@ class TravelEnquiryController extends Controller
     }
 
     public function newTravelStore(Request $request){
+
         $request->validate([
             'startingPoint' =>  'required',
             'endPoint' =>  'required',

@@ -51,7 +51,7 @@
                                             <div class="panel-body">
                                                 <div class="form-group">
                                                     <label for="totalCost">Total Tickets Cost</label>
-                                                    <input placeholder="Enter tickets required" required name="totalCost" type="text" class="form-control" id="totalCost" >
+                                                    <input placeholder="Enter tickets required" required name="totalCost" type="number" class="form-control" id="totalCost" >
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="comments">Comments</label>
