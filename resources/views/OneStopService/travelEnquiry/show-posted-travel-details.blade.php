@@ -129,6 +129,95 @@
 
             <!-- /.col -->
         </div>
+
+
+        <div class="row">
+            <div class="col-12">
+
+                <div class="panel panel-primary card-outline">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Travel Agency Bidding</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table id="datatable-buttons" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>SL. No</th>
+                                    <th>Agency Name</th>
+                                    <th>Submitted Cost</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach ($bidders as $key=>$bidder)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $bidder->travelAgency ? $bidder->travelAgency->company_name : '' }}</td>
+                                    <td>{{ $bidder->submitted_cost }} </td>
+                                    <td>
+                                        <form role="form" method="POST" action="{{ route('OneStopService.travelEnquiry.select_agency') }}" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="enquiry_id" value="{{ $travelEnquiry->id }}"/>
+                                            <input type="hidden" name="agency_id" value="{{ $bidder->id }}"/>
+
+                                            @if($travelEnquiry->selected_agency_id == $bidder->id)
+                                            <button class="badge badge-pill badge-danger  py-2">
+                                                <i class="fa fa-select"></i> Selected
+                                            </button>
+                                            @else
+                                            <button class="btn btn-info" type="submit">
+                                                <i class="fa fa-select"></i> Select
+                                            </button>
+                                            @endif
+
+
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+
+
+                                {{-- @foreach ($travelEnquiries as $travelEnquiry)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $travelEnquiry->created_at }}</td>
+                                        <td>{{ $travelEnquiry->start_point }}</td>
+                                        <td>{{ $travelEnquiry->end_point }}</td>
+                                        <td>{{ $travelEnquiry->tickets_required }}</td>
+                                        <td>
+                                            @if ($travelEnquiry->enquiry_status == 'New')
+                                                <span class="project-state badge badge-info">New</span>
+                                            @else
+                                                <span class="label label-danger">Inactive</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-info btn-xs"
+                                                href="{{ route('OneStopService.travelEnquiry.ShowPostedTravel', $travelEnquiry->id) }}">
+                                                <i class="fa fa-eye"></i> View
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach --}}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>SL. No</th>
+                                    <th>Agency Name</th>
+                                    <th>Submitted Cost</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
     </div> <!-- container -->
 </div>
 <!--End content -->

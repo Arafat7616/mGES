@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class TravelEnquiry extends Model
 {
@@ -22,7 +23,7 @@ class TravelEnquiry extends Model
 
     public function submittedTravelEnquiry()
     {
-        return $this->hasOne(SubmittedTravelEnquiry::class, 'enquiry_id');
+        return $this->hasOne(SubmittedTravelEnquiry::class, 'enquiry_id')->where('travel_agency_id', Auth::user()->id);
     }
 
     public function oss()

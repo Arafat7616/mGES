@@ -4,6 +4,7 @@ namespace App\Http\Controllers\OneStopService;
 
 use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
+use App\SubmittedTravelEnquiry;
 use App\TravelEnquiry;
 use App\User;
 use Carbon\Carbon;
@@ -52,6 +53,21 @@ class TravelEnquiryController extends Controller
         }
     }
 
+    public function select_agency(Request $request){
+        $travelEnquiry = TravelEnquiry::findOrFail($request->input('enquiry_id'));
+        $travelEnquiry->selected_agency_id = $request->input('agency_id');
+
+        try {
+            $travelEnquiry->update();
+           session()->flash('success', 'Successfully Selected !');
+            return back();
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
+
+        return view('OneStopService.travelEnquiry.newTravel');
+    }
+
     public function postedTravel(){
         $travelEnquiries = TravelEnquiry::orderBy('id','DESC')->get();
         return view('OneStopService.travelEnquiry.postedTravel', compact('travelEnquiries'));
@@ -59,8 +75,9 @@ class TravelEnquiryController extends Controller
 
     public function ShowPostedTravel($travel_enquiry_id){
         $travelEnquiry = TravelEnquiry::findOrFail($travel_enquiry_id);
+        $bidders = SubmittedTravelEnquiry::where('enquiry_id', $travel_enquiry_id)->orderBy('id', 'ASC')->get();
         $user = User::find($travelEnquiry->oss_id);
-        return view('OneStopService.travelEnquiry.show-posted-travel-details', compact('travelEnquiry','user'));
+        return view('OneStopService.travelEnquiry.show-posted-travel-details', compact('travelEnquiry','user','bidders'));
     }
 
     public function showVisaStampingApprovedCandidate($offered_candidate_id){

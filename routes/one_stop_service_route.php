@@ -87,6 +87,7 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('posted', 'TravelEnquiryController@postedTravel')->name('postedTravel');
         Route::get('show-posted/{travel_enquiry_id}', 'TravelEnquiryController@ShowPostedTravel')->name('ShowPostedTravel');
         Route::get('show-visa-stamping-approved-candidate/{offered_candidate_id}', 'TravelEnquiryController@showVisaStampingApprovedCandidate')->name('showVisaStampingApprovedCandidate');
+        Route::post('select_agency', 'TravelEnquiryController@select_agency')->name('select_agency');
     });
 
     // Travel  quotations

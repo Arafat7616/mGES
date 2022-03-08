@@ -25,6 +25,7 @@ class CreateTravelEnquiriesTable extends Migration
             $table->string('enquiry_status')->nullable();
             $table->string('created_date')->nullable();
             $table->string('deleted')->nullable();
+            $table->integer('selected_agency_id')->nullable();
             $table->timestamps();
         });
     }
