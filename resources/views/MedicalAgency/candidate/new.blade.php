@@ -5,7 +5,8 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -59,7 +60,7 @@
                                             <td>
                                                 @if ($candidate->result_status == 'Selected')
                                                     <span class=" badge badge-success">Selected</span>
-                                                @elseif ($candidate->result_status == "Assigned")
+                                                @elseif ($candidate->result_status == 'Assigned')
                                                     <span class="badge badge-info">Assigned</span>
                                                 @else
                                                     <span class="badge badge-info">{{ $candidate->result_status }}</span>
@@ -67,7 +68,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-sm"
-                                                    href="{{ route('MedicalAgency.candidate.medicalReport', $candidate->id) }}">
+                                                    href="{{ route('MedicalAgency.candidate.post_training_report', $candidate->id) }}">
                                                     <i class="fa fa-edit"></i> Upload Report
                                                 </a>
                                                 <a class="btn btn-info btn-sm"

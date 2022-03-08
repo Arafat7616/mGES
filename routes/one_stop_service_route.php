@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // One Stop Service route
-Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 'as' => 'OneStopService.', 'middleware' => ['auth', 'one-stop-service','prevent-back-history']], function () {
+Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 'as' => 'OneStopService.', 'middleware' => ['auth', 'one-stop-service', 'prevent-back-history']], function () {
     Route::get('/dashboard', 'OneStopServiceDashboardController@dashboard')->name('dashboard');
     Route::post('/company-prfile-submit', 'OneStopServiceDashboardController@companyPrfileSubmit')->name('companyPrfileSubmit');
     Route::get('/company-profile-view', 'OneStopServiceDashboardController@companyPrfileView')->name('companyPrfileView');
@@ -64,8 +64,13 @@ Route::group(['prefix' => 'one-stop-service/', 'namespace' => 'OneStopService', 
         Route::get('received-from-ba', 'CandidateController@receivedFromBa')->name('receivedFromBa');
         Route::get('upload-face/{candidate_id}', 'CandidateController@uploadFace')->name('uploadFace');
         Route::post('upload-face-store/{candidate_id}', 'CandidateController@uploadFaceStore')->name('uploadFaceStore');
+
         Route::get('assign-medical-agency/{candidate_id}', 'CandidateController@assignMedicalAgency')->name('assignMedicalAgency');
+        Route::get('assign-traning-agency/{candidate_id}', 'CandidateController@assignTraningAgency')->name('assignTraningAgency');
+
         Route::post('assign-medical-agency-store/{candidate_id}', 'CandidateController@assignMedicalAgencyStore')->name('assignMedicalAgencyStore');
+        Route::post('assign-traning-agency-store/{candidate_id}', 'CandidateController@assignTraningAgencyStore')->name('assignTraningAgencyStore');
+
         Route::get('interview', 'CandidateController@interview')->name('approved');
         Route::get('finalized', 'CandidateController@finalized')->name('rejected');
         Route::get('ticket-booked', 'CandidateController@ticketBooked')->name('ticketBooked');

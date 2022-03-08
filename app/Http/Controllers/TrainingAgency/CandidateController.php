@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\TrainingAgency;
 
+use App\Candidate;
 use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
 use App\User;
@@ -12,9 +13,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class CandidateController extends Controller
 {
-    function new () {
-        $offeredCandidates = OfferedCandidate::where('post_training_id', Auth::user()->id)->where('result_status', 'Post-Processing')->orderBy('id', 'DESC')->get();
-        return view('TrainingAgency.candidate.new', compact('offeredCandidates'));
+    function new()
+    {
+        $candidates = Candidate::where('pre_training_id', Auth::user()->id)->where('pre_medical_status', 0)->orderBy('id', 'DESC')->get();
+        return view('TrainingAgency.candidate.new', compact('candidates'));
     }
 
     public function show($id)
@@ -25,14 +27,15 @@ class CandidateController extends Controller
 
     public function post_training_report($id)
     {
-        $offeredCandidate = OfferedCandidate::findOrFail($id);
 
-        return view('TrainingAgency.candidate.post_training_report', compact('offeredCandidate'));
+        $candidate = Candidate::findOrFail($id);
+
+        return view('TrainingAgency.candidate.post_training_report', compact('candidate'));
     }
     public function add_training_report(Request $request, $id)
     {
         $request->validate([
-            'post_training_report' =>'mimes:pdf',
+            'post_training_report' => 'mimes:pdf',
         ]);
 
         $offeredCandidate = OfferedCandidate::findOrFail($id);
@@ -50,7 +53,7 @@ class CandidateController extends Controller
 
         try {
             $offeredCandidate->save();
-           session()->flash('success', 'Successfully saved !');
+            session()->flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());

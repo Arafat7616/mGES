@@ -13,28 +13,31 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class CandidateController extends Controller
 {
-    public function receivedFromBa(){
-        $candidates = Candidate::where('sending_status', 2)->orderBy('id','DESC')->get();
+    public function receivedFromBa()
+    {
+        $candidates = Candidate::where('sending_status', 2)->orderBy('id', 'DESC')->get();
         return view('OneStopService.candidate.selected', compact('candidates'));
     }
 
-    public function uploadFace($candidate_id){
+    public function uploadFace($candidate_id)
+    {
         $candidate = Candidate::findOrFail($candidate_id);
         return view('OneStopService.candidate.upload-face', compact('candidate'));
     }
 
 
-    public function uploadFaceStore(Request $request, $candidate_id){
+    public function uploadFaceStore(Request $request, $candidate_id)
+    {
         $candidate = Candidate::findOrFail($candidate_id);
 
-        if($request->hasFile('candidate_picture')){
+        if ($request->hasFile('candidate_picture')) {
             if ($candidate->candidate_picture != null)
-            File::delete(public_path($candidate->candidate_picture)); // Old image delete
+                File::delete(public_path($candidate->candidate_picture)); // Old image delete
             $image             = $request->file('candidate_picture');
             $folder_path       = 'uploads/images/users/';
-            $image_new_name    = Str::random(20).'-'.now()->timestamp.'.'.$image->getClientOriginalExtension();
+            $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
-            Image::make($image->getRealPath())->save($folder_path.$image_new_name);
+            Image::make($image->getRealPath())->save($folder_path . $image_new_name);
             $candidate->candidate_picture   = $folder_path . $image_new_name;
         }
         try {
@@ -45,12 +48,26 @@ class CandidateController extends Controller
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
     }
-    public function assignMedicalAgency($candidate_id){
+    public function assignTraningAgency($candidate_id)
+    {
+        $traningAgencies = User::where('user_type', 'training-agency')->where('active_status', 'Approved')->get();
+        $candidate = Candidate::findOrFail($candidate_id);
+        return view('OneStopService.candidate.assign-traning-agency', compact('candidate', 'traningAgencies'));
+    }
+
+
+    public function assignMedicalAgency($candidate_id)
+    {
         $medicalAgencies = User::where('user_type', 'medical-agency')->where('active_status', 'Approved')->get();
         $candidate = Candidate::findOrFail($candidate_id);
         return view('OneStopService.candidate.assign-medical-agency', compact('candidate', 'medicalAgencies'));
     }
-    public function assignMedicalAgencyStore(Request $request, $candidate_id){
+
+
+
+
+    public function assignMedicalAgencyStore(Request $request, $candidate_id)
+    {
         $candidate = Candidate::findOrFail($candidate_id);
         $candidate->pre_medical_id = $request->medical;
         try {
@@ -62,31 +79,52 @@ class CandidateController extends Controller
         }
     }
 
-    public function interview(){
-        $offeredCandidates = OfferedCandidate::whereIn('result_status', ['Interview','Updated','Under-Interview-Process'])->orderBy('id','DESC')->get();
+
+    public function assignTraningAgencyStore(Request $request, $candidate_id)
+    {
+        $candidate = Candidate::findOrFail($candidate_id);
+        $candidate->pre_training_id = $request->traning;
+        try {
+            $candidate->save();
+            session()->flash('success', 'Training Agency Assign Successfully!');
+            return redirect()->Route('OneStopService.candidate.receivedFromBa');
+        } catch (\Exception $exception) {
+            return back()->withErrors('Something going wrong. ' . $exception->getMessage());
+        }
+    }
+
+    public function interview()
+    {
+        $offeredCandidates = OfferedCandidate::whereIn('result_status', ['Interview', 'Updated', 'Under-Interview-Process'])->orderBy('id', 'DESC')->get();
         return view('OneStopService.candidate.interview', compact('offeredCandidates'));
     }
 
-    public function finalized(){
-        $offeredCandidates = OfferedCandidate::where('result_status',
-        'Finalized')->orderBy('id','DESC')->get();
+    public function finalized()
+    {
+        $offeredCandidates = OfferedCandidate::where(
+            'result_status',
+            'Finalized'
+        )->orderBy('id', 'DESC')->get();
         return view('OneStopService.candidate.finalized', compact('offeredCandidates'));
     }
 
-    public function ticketBooked(){
-        $offeredCandidates = OfferedCandidate::whereIn('travel_status', ['Activated','Forwarded','Ticket-Issued'])->orderBy('id','DESC')->get();
+    public function ticketBooked()
+    {
+        $offeredCandidates = OfferedCandidate::whereIn('travel_status', ['Activated', 'Forwarded', 'Ticket-Issued'])->orderBy('id', 'DESC')->get();
         return view('OneStopService.candidate.ticketBooked', compact('offeredCandidates'));
     }
 
-    public function showReviewedCandidate($candidate_id){
+    public function showReviewedCandidate($candidate_id)
+    {
         $candidate = Candidate::findOrFail($candidate_id);
         return view('OneStopService.candidate.show-candidate', compact('candidate'));
     }
 
-    public function showFinalCandidate($offered_candidate_id){
+    public function showFinalCandidate($offered_candidate_id)
+    {
         $offeredCandidate = OfferedCandidate::findOrfail($offered_candidate_id);
         $candidate = Candidate::findOrFail($offeredCandidate->candidate_id);
-        return view('OneStopService.candidate.show-final-candidate', compact('offeredCandidate','candidate'));
+        return view('OneStopService.candidate.show-final-candidate', compact('offeredCandidate', 'candidate'));
     }
 
     public function showBookedCandidate($offered_candidate_id)
@@ -95,13 +133,15 @@ class CandidateController extends Controller
         return view('OneStopService.candidate.show-booked-candidate', compact('offeredCandidate'));
     }
 
-    public function assignSelectedCandidate($candidate_id){
+    public function assignSelectedCandidate($candidate_id)
+    {
         $candidate = Candidate::findOrFail($candidate_id);
-        $wscList = User::where('user_type','child-one-stop-service')->where('active_status','Approved')->orderBy('id','DESC')->get();
-        return view('OneStopService.candidate.assign-selected-candidate', compact('candidate','wscList'));
+        $wscList = User::where('user_type', 'child-one-stop-service')->where('active_status', 'Approved')->orderBy('id', 'DESC')->get();
+        return view('OneStopService.candidate.assign-selected-candidate', compact('candidate', 'wscList'));
     }
 
-    public function assignSelectedCandidateStore(Request $request , $candidate_id){
+    public function assignSelectedCandidateStore(Request $request, $candidate_id)
+    {
         $request->validate([
             'fees' =>  'required',
             'wsc' =>  'required',
@@ -113,21 +153,23 @@ class CandidateController extends Controller
 
         try {
             $candidate->save();
-           session()->flash('success', 'Successfully saved !');
+            session()->flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
     }
 
-    public function assignInterviewOsc($offered_candidate_id){
+    public function assignInterviewOsc($offered_candidate_id)
+    {
         $offeredCandidate = OfferedCandidate::findOrfail($offered_candidate_id);
         $candidate = Candidate::findOrFail($offeredCandidate->candidate_id);
-        $wscList = User::where('user_type','child-one-stop-service')->where('active_status','Approved')->orderBy('id','DESC')->get();
-        return view('OneStopService.candidate.assign-interview-osc', compact('candidate','offeredCandidate','wscList'));
+        $wscList = User::where('user_type', 'child-one-stop-service')->where('active_status', 'Approved')->orderBy('id', 'DESC')->get();
+        return view('OneStopService.candidate.assign-interview-osc', compact('candidate', 'offeredCandidate', 'wscList'));
     }
 
-    public function assignInterviewOscStore(Request $request , $offered_candidate_id){
+    public function assignInterviewOscStore(Request $request, $offered_candidate_id)
+    {
         $request->validate([
             'wsc' =>  'required',
         ]);
@@ -137,14 +179,15 @@ class CandidateController extends Controller
 
         try {
             $offeredCandidate->save();
-           session()->flash('success', 'Successfully saved !');
+            session()->flash('success', 'Successfully saved !');
             return back();
         } catch (\Exception $exception) {
             return back()->withErrors('Something going wrong. ' . $exception->getMessage());
         }
     }
 
-    public function requestToVisa($offered_candidate_id){
+    public function requestToVisa($offered_candidate_id)
+    {
         $offeredCandidate = OfferedCandidate::findOrFail($offered_candidate_id);
         $offeredCandidate->result_status = "Visa-Requested";
         try {
@@ -153,7 +196,7 @@ class CandidateController extends Controller
                 'type' => 'success',
                 'message' => 'Successfully Stored'
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'type' => 'error',
                 'message' => $exception->getMessage()

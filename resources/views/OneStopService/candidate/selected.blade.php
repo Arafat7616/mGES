@@ -5,7 +5,8 @@
     <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"
+        type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -57,29 +58,40 @@
                                             <td>{{ $candidate->phone_number }}</td>
                                             <td>{{ $candidate->candidate_email }}</td>
                                             <td>
-                                                @if($candidate->offered_status == true)
+                                                @if ($candidate->offered_status == true)
                                                     <span class=" badge badge-success">Selected</span>
                                                 @else
                                                     <span class="badge badge-info">Pending</span>
                                                 @endif
                                             </td>
                                             <td>
-                                                @if($candidate->offered_status == true)
-                                                    <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.assignSelectedCandidate', $candidate->id) }}">
+                                                @if ($candidate->offered_status == true)
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="{{ route('OneStopService.candidate.assignSelectedCandidate', $candidate->id) }}">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 @endif
-                                                @if($candidate->candidate_picture == null)
-                                                    <a class="btn btn-success btn-sm" href="{{ route('OneStopService.candidate.uploadFace', $candidate->id) }}">
+                                                @if ($candidate->candidate_picture == null)
+                                                    <a class="btn btn-success btn-sm"
+                                                        href="{{ route('OneStopService.candidate.uploadFace', $candidate->id) }}">
                                                         <i class="fa fa-edit"></i> Upload Face
                                                     </a>
                                                 @endif
-                                                @if($candidate->pre_medical_id == null)
-                                                    <a class="btn btn-primary btn-sm" href="{{ route('OneStopService.candidate.assignMedicalAgency', $candidate->id) }}">
+                                                @if ($candidate->pre_medical_id == null)
+                                                    <a class="btn btn-primary btn-sm"
+                                                        href="{{ route('OneStopService.candidate.assignMedicalAgency', $candidate->id) }}">
                                                         <i class="fa fa-edit"></i> Assign Medical Agency
                                                     </a>
                                                 @endif
-                                                <a class="btn btn-info btn-sm" href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
+
+                                                @if ($candidate->pre_training_id == null)
+                                                    <a class="btn btn-warning btn-sm"
+                                                        href="{{ route('OneStopService.candidate.assignTraningAgency', $candidate->id) }}">
+                                                        <i class="fa fa-edit"></i> Assign Training Agency
+                                                    </a>
+                                                @endif
+                                                <a class="btn btn-info btn-sm"
+                                                    href="{{ route('OneStopService.candidate.showReviewedCandidate', $candidate->id) }}">
                                                     <i class="mdi mdi-eye"></i>
                                                 </a>
                                             </td>
