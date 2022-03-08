@@ -18,7 +18,7 @@ class CreateSubmittedTravelEnquiriesTable extends Migration
             $table->unsignedBigInteger('enquiry_id');
             $table->string('journey_date')->nullable();
             $table->integer('total_tickets')->nullable();
-            $table->string('submitted_cost')->nullable();
+            $table->integer('submitted_cost')->nullable();
             $table->text('travel_agency_comments')->nullable();
             $table->unsignedBigInteger('travel_agency_id');
             $table->string('submitted_date')->nullable();

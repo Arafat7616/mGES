@@ -38,11 +38,23 @@
                                             <div class="panel-body">
                                                 <div class="form-group">
                                                     <label for="startingPoint">Starting Point(From)</label>
-                                                    <input placeholder="Enter Place name" name="startingPoint" type="text" class="form-control" id="startingPoint">
+                                                    {{-- <input placeholder="Enter Place name" name="startingPoint" type="text" class="form-control" id="startingPoint"> --}}
+                                                    <select name="startingPoint" class="form-control" id="startingPoint">
+                                                        <option value="Hazrat Shahjalal International Airport, Dhaka">Hazrat Shahjalal International Airport, Dhaka</option>
+                                                        <option value="Shah Amanat International Airport, Chattogram">Shah Amanat International Airport, Chattogram</option>
+                                                        <option value="Osmani International Airport, Sylhet">Osmani International Airport, Sylhet</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="endPoint">End Point(To)</label>
-                                                    <input placeholder="Enter Place name" name="endPoint" type="text" class="form-control" id="endPoint">
+                                                    {{-- <input placeholder="Enter Place name" name="endPoint" type="text" class="form-control" id="endPoint"> --}}
+                                                    <select name="endPoint" class="form-control" id="endPoint">
+                                                        <option value="Kuala Lumpur International Airport">Kuala Lumpur International Airport</option>
+                                                        <option value="Melaka International Airport ">Melaka International Airport </option>
+                                                        <option value="Sultan Abdul Aziz Shah Airport">Sultan Abdul Aziz Shah Airport</option>
+                                                        <option value="Penang International Airport">Penang International Airport</option>
+                                                        <option value="Kuching International Airport">Kuching International Airport</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="totalTickets">Total Tickets Required</label>

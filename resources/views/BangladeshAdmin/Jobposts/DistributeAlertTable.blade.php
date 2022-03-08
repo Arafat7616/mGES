@@ -35,8 +35,17 @@
                     <td>
 
 
+                        @php
+                            if($jobDistributeInBRA->bra->starRecurtingAgency)
+                            {
+                                $rating_limit = $jobDistributeInBRA->bra->starRecurtingAgency->ratings;
+                            }
+                            else {
+                                $rating_limit = 0;
+                            }
+                        @endphp
 
-                        @for ($i = 0; $i < $jobDistributeInBRA->bra->starRecurtingAgency->ratings; $i++)
+                        @for ($i = 0; $i < $rating_limit; $i++)
                             <i class="fa fa-star" aria-hidden="true" style="color: #FFD700"></i>
                         @endfor
                         {{-- <i class="fa fa-star" aria-hidden="true" style="color: #FFD700"></i>

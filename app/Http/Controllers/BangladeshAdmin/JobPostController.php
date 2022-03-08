@@ -192,14 +192,26 @@ class JobPostController extends Controller
 
         $totalAmount = ($jobPost->job_vacancy - 200);
 
+
         $totalReatingArray = [];
         foreach ($BRAInterests as $BRAInterest) {
-            array_push($totalReatingArray, $BRAInterest->bra->starRecurtingAgency->ratings);
+
+            if($BRAInterest->bra->starRecurtingAgency)
+            {
+                array_push($totalReatingArray, $BRAInterest->bra->starRecurtingAgency->ratings);
+            }
+            else{
+                array_push($totalReatingArray,0);
+            }
+
         }
         $totalRating = array_sum($totalReatingArray);
 
 
+        if($totalRating)
         $perRating =  ($totalAmount / $totalRating);
+        else
+        $perRating = 1;
 
         foreach ($BRAInterests as $key => $BRAInterest) {
 
@@ -207,7 +219,13 @@ class JobPostController extends Controller
             $jobDistributeInBRA->job_post_id = $job_post_id;
             $jobDistributeInBRA->bra_id = $BRAInterest->bra_id;
             $jobDistributeInBRA->bra_interest_id = $BRAInterest->id;
+            if($BRAInterest->bra->starRecurtingAgency)
             $jobDistributeInBRA->distributed_vacancy = round($perRating * $BRAInterest->bra->starRecurtingAgency->ratings);
+            else
+            $jobDistributeInBRA->distributed_vacancy = 0;
+
+
+
             $jobDistributeInBRA->save();
 
             //array_push($messageArray, $BRAInterest->bra->name, $getedValue[$key]);

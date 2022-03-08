@@ -87,7 +87,7 @@
 
     {{-- JS for Fractional Star --}}
     <script>
-        var starWidth = 30;
+        var starWidth = 40;
 
         $.fn.stars = function() {
         return $(this).each(function() {
