@@ -67,6 +67,11 @@
                                                     <i class="fa fa-eye"></i>
                                                 </a>
 
+                                                <a class="btn btn-info"
+                                                    href="{{ url('job-post/demand-latter/'.$jobPost->id) }}">
+                                                    <i class="fa fa-file"></i>
+                                                </a>
+
 
 
                                                 <button class="btn btn-info button" value="{{ $jobPost->job_vacancy }}"

@@ -146,6 +146,8 @@
 
             </div>
 
+            @if($rec_agency->count() > 0)
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-primary">
@@ -206,6 +208,8 @@
                     </div>
                 </div>
             </div>
+
+            @endif
         </div> <!-- container -->
     </div>
     <!--End content -->

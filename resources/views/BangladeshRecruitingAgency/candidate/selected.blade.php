@@ -51,6 +51,7 @@
                                         <th>SL No</th>
                                         <th>Recruiter Name</th>
                                         <th>Job Category</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -64,6 +65,10 @@
                                             <td>{{ $selectedCandidate->user->name }}</td>
                                             <td>{{ $selectedCandidate->job_category->category_name }}</td>
                                             <td>
+                                                {!! QrCode::size(100)->generate(url('cv/'.$selectedCandidate->id)) !!}
+                                            </td>
+                                            <td>
+ 
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('BangladeshRecruitingAgency.candidate.show', $selectedCandidate->id) }}">
                                                     <i class="fa fa-eye"></i>&nbsp;View</a>

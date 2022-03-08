@@ -56,12 +56,13 @@
                                 </li>
                             </ul>
 
-                            <a href="#" download="" class="btn btn-primary btn-block">
-                                <b><i class="fa fa-download"></i> Demand Letter </b>
+                            <a href="{{ url('job-post/demand-latter/'.$job_post->id) }}" class="btn btn-primary btn-block" target="_blank">
+                                <b><i class="fa fa-file"></i>&nbsp;&nbsp;Preliminary Demand Letter </b>
                             </a>
                         </div>
                     </div>
                 </div>
+               
                 <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Candidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -20,8 +21,9 @@ class FrontendController extends Controller
         return '<center><h1>System Rebooted!</h1></center>';
     }
 
-    public function candidateCV(){
-        return view('Candidate.cv.workerpdf');
+    public function candidateCV($id){
+        $candidate = Candidate::find($id);
+        return view('Candidate.cv.workerpdf')->with('candidate', $candidate);
     }
 
     public function index()
