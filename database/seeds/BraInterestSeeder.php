@@ -13,7 +13,7 @@ class BraInterestSeeder extends Seeder
     public function run()
     {
         BRAInterest::create([
-            'bra_id' => 5,
+            'bra_id' => 28,
             'job_post_id' => 31,
             'status' =>  true
         ]);
