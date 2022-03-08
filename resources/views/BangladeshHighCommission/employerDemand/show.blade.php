@@ -118,7 +118,7 @@
 
                             <br>
                             <p class="text-center">
-                                {!! QrCode::size(200)->generate(url('/qr_code_result')) !!}
+                                {!! QrCode::size(200)->generate(url('job-post/demand-latter/'.$job_post->id)) !!}
                             </p>
                           </div>
                     </div>

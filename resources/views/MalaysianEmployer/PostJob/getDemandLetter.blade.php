@@ -43,6 +43,7 @@
                                         <th>SL No</th>
                                         <th>BRA</th>
                                         <th>Distributed Category</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -53,6 +54,9 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $jobDistributedBra->bra->name ?? '-' }}</td>
                                                 <td>{{ $jobDistributedBra->distributed_vacancy ?? '-' }}</td>
+                                                <td>
+                                                    {!! QrCode::size(100)->generate(url('job-post/demand-latter/'.$jobPost->id.'/' . $jobDistributedBra->id)) !!}
+                                                </td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm"
                                                         href="{{ route('MalaysianEmployer.postJob.show', $jobPost->id) }}">
@@ -72,6 +76,7 @@
                                         <th>SL No</th>
                                         <th>BRA</th>
                                         <th>Distributed Category</th>
+                                        <th>QR Code</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
