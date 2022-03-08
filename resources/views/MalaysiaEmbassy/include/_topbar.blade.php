@@ -76,14 +76,14 @@
 
                     <li class="nav-item dropdown user-menu">
                         <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset(Auth::user()->logo ?? 'assets/images/users/avatar-1.jpg') }}"
+                            <img src="{{ asset(Auth::user()->logo ?? 'assets/images/admin_pic.png') }}"
                                 class="user-image img-circle " alt="User Image">
                             <span class="d-none d-md-inline"> {{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <!-- User image -->
                             <li class="user-header text-center ">
-                                <img class="text-center" src="{{ asset(Auth::user()->logo ?? 'assets/images/users/avatar-1.jpg') }}"
+                                <img class="text-center" src="{{ asset(Auth::user()->logo ?? 'assets/images/admin_pic.png') }}"
                                     class="img-circle " alt="User Image">
                                 <p>
                                     {{ Auth::user()->name }}
@@ -124,10 +124,10 @@
 
 
                     {{-- <li class="dropdown" >
-                        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="user-img" class="img-circle"> </a>
+                        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('assets/images/admin_pic.png')}}" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu" >
                             <li>
-                                <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="user-img" class="img-circle img-fluid" style="width: 150px;">
+                                <img src="{{asset('assets/images/admin_pic.png')}}" alt="user-img" class="img-circle img-fluid" style="width: 150px;">
                             </li>
 
                             <li class="divider"></li>

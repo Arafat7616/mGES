@@ -80,14 +80,14 @@
 
                     <li class="nav-item dropdown user-menu">
                         <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset(Auth::user()->logo ?? 'assets/images/users/avatar-1.jpg') }}"
+                            <img src="{{ asset(Auth::user()->logo ?? 'assets/images/admin_pic.png') }}"
                                 class="user-image img-circle " alt="User Image">
                             <span class="d-none d-md-inline"> {{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <!-- User image -->
                             <li class="user-header text-center ">
-                                <img class="text-center" src="{{ asset(Auth::user()->logo ?? 'assets/images/users/avatar-1.jpg') }}"
+                                <img class="text-center" src="{{ asset(Auth::user()->logo ?? 'assets/images/admin_pic.png') }}"
                                     class="img-circle " alt="User Image">
                                 <p>
                                     {{ Auth::user()->name }}
