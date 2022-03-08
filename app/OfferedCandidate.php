@@ -15,7 +15,7 @@ class OfferedCandidate extends Model
         'created_id',
         'interview_osc_id',
         'selected_osc_id',
-        'post_medical_id',
+        'pre_medical_id',
         'post_training_id',
         'travel_agency_id',
         'welfare_center_id',

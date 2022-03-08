@@ -21,7 +21,7 @@ class CreateOfferedCandidatesTable extends Migration
             $table->unsignedBigInteger('created_id')->nullable();
             $table->unsignedBigInteger('interview_osc_id')->nullable();
             $table->unsignedBigInteger('selected_osc_id')->nullable();
-            $table->unsignedBigInteger('post_medical_id')->nullable();
+            $table->unsignedBigInteger('pre_medical_id')->nullable();
             $table->unsignedBigInteger('post_biometric_id')->nullable();
             $table->unsignedBigInteger('post_training_id')->nullable();
             $table->unsignedBigInteger('travel_agency_id')->nullable();

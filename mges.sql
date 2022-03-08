@@ -1418,7 +1418,7 @@ CREATE TABLE `offered_candidates` (
   `created_id` bigint(20) UNSIGNED DEFAULT NULL,
   `interview_osc_id` bigint(20) UNSIGNED DEFAULT NULL,
   `selected_osc_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `post_medical_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `pre_medical_id` bigint(20) UNSIGNED DEFAULT NULL,
   `post_biometric_id` bigint(20) UNSIGNED DEFAULT NULL,
   `post_training_id` bigint(20) UNSIGNED DEFAULT NULL,
   `travel_agency_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -1462,7 +1462,7 @@ CREATE TABLE `offered_candidates` (
 -- Dumping data for table `offered_candidates`
 --
 
-INSERT INTO `offered_candidates` (`id`, `candidate_id`, `job_post_id`, `job_category_id`, `created_id`, `interview_osc_id`, `selected_osc_id`, `post_medical_id`, `post_biometric_id`, `post_training_id`, `travel_agency_id`, `welfare_center_id`, `candidate_name`, `phone_number`, `candidate_email`, `candidate_user_id`, `candidate_password`, `result_status`, `active_status`, `employer_comments`, `offer_letter`, `payment_assigned`, `payment_method`, `interview_result`, `biometric_fee`, `bio_status`, `bio_report`, `post_medical_status`, `post_training_status`, `post_medical_report`, `post_training_report`, `medical_fee`, `training_fee`, `post_medical_comments`, `post_training_comments`, `visa_document`, `visa_reason`, `travel_status`, `date_of_journey`, `flight_number`, `ticket_cost`, `ticket_pdf`, `activated_at`, `created_at`, `updated_at`) VALUES
+INSERT INTO `offered_candidates` (`id`, `candidate_id`, `job_post_id`, `job_category_id`, `created_id`, `interview_osc_id`, `selected_osc_id`, `pre_medical_id`, `post_biometric_id`, `post_training_id`, `travel_agency_id`, `welfare_center_id`, `candidate_name`, `phone_number`, `candidate_email`, `candidate_user_id`, `candidate_password`, `result_status`, `active_status`, `employer_comments`, `offer_letter`, `payment_assigned`, `payment_method`, `interview_result`, `biometric_fee`, `bio_status`, `bio_report`, `post_medical_status`, `post_training_status`, `post_medical_report`, `post_training_report`, `medical_fee`, `training_fee`, `post_medical_comments`, `post_training_comments`, `visa_document`, `visa_reason`, `travel_status`, `date_of_journey`, `flight_number`, `ticket_cost`, `ticket_pdf`, `activated_at`, `created_at`, `updated_at`) VALUES
 (1, 11, 21, 8, 8, NULL, 11, 12, NULL, NULL, 3, 6, 'Demo Name 11', '01856230550', 'demon11@gmail.com', NULL, NULL, 'Recommended', NULL, 'fkM24eliX9', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'New', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ticket-Issued', NULL, NULL, NULL, NULL, NULL, '2022-03-02 15:08:02', '2022-03-02 15:08:02'),
 (2, 12, 21, 8, 8, NULL, 11, 12, NULL, NULL, 3, 6, 'Demo Name 12', '01856230550', 'demon12@gmail.com', NULL, NULL, 'Recommended', NULL, 'ctUclxW1BH', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ticket-Issued', NULL, NULL, NULL, NULL, NULL, '2022-03-02 15:08:02', '2022-03-02 15:08:02'),
 (3, 13, 21, 8, 8, NULL, 11, 12, NULL, NULL, 3, 6, 'Demo Name 13', '01856230550', 'demon13@gmail.com', NULL, NULL, 'Recommended', NULL, 't0p6imJy40', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ticket-Issued', NULL, NULL, NULL, NULL, NULL, '2022-03-02 15:08:02', '2022-03-02 15:08:02'),

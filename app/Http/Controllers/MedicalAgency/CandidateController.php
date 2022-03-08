@@ -5,18 +5,15 @@ namespace App\Http\Controllers\MedicalAgency;
 use App\Candidate;
 use App\Http\Controllers\Controller;
 use App\OfferedCandidate;
-use App\User;
 use Illuminate\Http\Request;
-use Laravel\Ui\Presets\React;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Intervention\Image\ImageManagerStatic as Image;
 
 class CandidateController extends Controller
 {
     public function new(){
-        $offeredCandidates = OfferedCandidate::where('post_medical_id', Auth::user()->id)->where('result_status', 'Post-Processing')->orderBy('id','DESC')->get();
-        return view('MedicalAgency.candidate.new', compact('offeredCandidates'));
+        $candidates = Candidate::where('pre_medical_id', Auth::user()->id)->where('pre_medical_status', 0)->orderBy('id','DESC')->get();
+        return view('MedicalAgency.candidate.new', compact('candidates'));
     }
 
     public function show($id){
@@ -59,7 +56,7 @@ class CandidateController extends Controller
     }
 
     public function reported(){
-        $offeredCandidates = OfferedCandidate::where('post_medical_status', '!=', 'New')->where('post_medical_id', Auth::user()->id )->orderBy('id','DESC')->get();
+        $offeredCandidates = OfferedCandidate::where('post_medical_status', '!=', 'New')->where('pre_medical_id', Auth::user()->id )->orderBy('id','DESC')->get();
         return view('MedicalAgency.candidate.reported', compact('offeredCandidates'));
     }
 }

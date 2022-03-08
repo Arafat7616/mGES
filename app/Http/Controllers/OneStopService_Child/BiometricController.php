@@ -115,7 +115,7 @@ class BiometricController extends Controller
         $offeredCandidate->result_status = 'Post-Processing';
         $offeredCandidate->training_fee = $request->trainingFees;
         $offeredCandidate->medical_fee = $request->medicalFees;
-        $offeredCandidate->post_medical_id = $request->medicalCenter;
+        $offeredCandidate->pre_medical_id = $request->medicalCenter;
         $offeredCandidate->post_training_id = $request->trainingCenter;
 
         try {

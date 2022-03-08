@@ -83,7 +83,7 @@ class CandidateSeeder extends Seeder
             $offeredCandidate->created_id = 8;
             $offeredCandidate->welfare_center_id = 6;
             $offeredCandidate->travel_agency_id = 3;
-            $offeredCandidate->post_medical_id = 12;
+            $offeredCandidate->pre_medical_id = 12;
             $offeredCandidate->save();
         }
 
