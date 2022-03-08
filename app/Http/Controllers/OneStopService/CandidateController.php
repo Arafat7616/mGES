@@ -13,8 +13,8 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class CandidateController extends Controller
 {
-    public function selected(){
-        $candidates = Candidate::where('result_status','!=','Assigned')->where('offered_status', true)->orderBy('id','DESC')->get();
+    public function receivedFromBa(){
+        $candidates = Candidate::where('sending_status', 2)->orderBy('id','DESC')->get();
         return view('OneStopService.candidate.selected', compact('candidates'));
     }
 

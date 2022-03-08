@@ -63,8 +63,8 @@
                             </ul>
 
 
-                            <a href="../demandletter/172745224_23847221674930487_737226822608284999_n.jpg " download="" class="btn btn-primary btn-block">
-                                <b><i class="fa fa-download"></i> Demand Letter </b>
+                            <a href="{{ url('job-post/demand-latter/'.$job_post->id) }}" class="btn btn-primary btn-block" target="_blank">
+                                <b><i class="fa fa-file"></i>&nbsp; Preliminary Demand Letter </b>
                             </a>
                           </div>
                     </div>
@@ -136,7 +136,7 @@
                             <strong><i class="fa fa-calendar mr-1"></i> QR Code</strong>
                             <br>
                             <p class="text-center">
-                                {!! QrCode::size(200)->generate(url('/qr_code_result')) !!}
+                                {!! QrCode::size(200)->generate(url('job-post/demand-latter/'.$job_post->id)) !!}
                             </p>
                           </div>
                     </div>

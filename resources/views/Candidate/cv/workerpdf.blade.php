@@ -12,31 +12,32 @@
 <body>
     <div class="worker">
         <div class="worker-container">
-            <div class="cvId"><small class="CVtop">CV ID : D0Xd9p42123</small></div>
-            <div class="cvImg"><img src="{{ asset('assets/images/users/candidate.jpeg') }}" class="cvImgTop" alt=""></div>
+            <div class="cvId"><small class="CVtop">CV ID : {{ $candidate->id }}</small></div>
+            {{-- <div class="cvImg"><img src="{{ asset('assets/images/users/candidate.jpeg') }}" class="cvImgTop" alt=""></div> --}}
+            <div class="cvImg"><img src="{{ asset($candidate->candidate_picture ?? get_static_option('user')) }}" class="cvImgTop" alt=""></div>
             <table class="head-left">
                 
                 <tr>
                     <td>Contact</td>
                     <td>:</td>
-                    <td>01732-XXXXXX</td>
+                    <td>{{ $candidate->phone_number }}</td>
                 </tr>
                 <tr>
                     <td>Address</td>
                     <td>:</td>
-                    <td>Tejgaon, Dhaka -1215</td>
+                    <td>{{ $candidate->present_address }}</td>
                 </tr>
                 <tr>
                     <td>Job Type</td>
                     <td>:</td>
-                    <td>Sales Executive</td>
+                    <td>{{ $candidate->job_category->category_name}}</td>
                 </tr>
             </table>
             
 
             <div class="worker-header">
-                <div class="name"><b>Karim Benzema</b></div>
-                <div class="passion"><b>Sales Executive</b></div>
+                <div class="name"><b>{{ $candidate->candidate_name }}</b></div>
+                <div class="passion"><b>{{ $candidate->job_category->category_name}}</b></div>
                 <div>* Employee of the Month at Sky for excelling sales targets</div>
                 <div>* 1st class Hons degree in BA Business and Management</div>
                 <div>* Three A levels at grades AAB</div>
@@ -145,7 +146,7 @@
                 <tr>
                     <td>Name</td>
                     <td>:</td>
-                    <td>Karim Benzema</td>
+                    <td>{{ $candidate->candidate_name }}</td>
                 </tr>
                 <tr>
                     <td>Father Name</td>
@@ -160,27 +161,27 @@
                 <tr>
                     <td>Date of Birth</td>
                     <td>:</td>
-                    <td>02-02-1996</td>
+                    <td>{{ $candidate->candidate_dob }}</td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>:</td>
-                    <td>Male</td>
+                    <td>{{ $candidate->candidate_gender }}</td>
                 </tr>
                 <tr>
                     <td>Merital Status</td>
                     <td>:</td>
-                    <td>Single</td>
+                    <td>Married</td>
                 </tr>
                 <tr>
                     <td>Present Address</td>
                     <td>:</td>
-                    <td>Tejgaon, Dhaka -1215</td>
+                    <td>{{ $candidate->present_address }}</td>
                 </tr>
                 <tr>
                     <td>Permanent Address</td>
                     <td>:</td>
-                    <td>Amdai, Jouprhat, Rajshahi</td>
+                    <td>{{ $candidate->permanent_address }}</td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
@@ -193,9 +194,9 @@
                 <p class="objectives">Reference</p>
             </div>
             <p class="objective-details"></p>
-            <div class="passion"><b>Monir Islam</b></div>
-            <div class="passion"><small>Contact : 01732 - XXXXXXX</small></div>
-            <div class="passion cvFooter"><small>Manager, Fanda Group of Company</small></div>
+            <div class="passion"><b>Ismail Hossain</b></div>
+            <div class="passion"><small>Contact : 01732 - 12521</small></div>
+            <div class="passion cvFooter"><small>Manager, Versatilo Group of Company</small></div>
         </div>
     </div>
 </body>

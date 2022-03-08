@@ -123,7 +123,7 @@ class BangladeshRecruitingAgencyDashboardController extends Controller
 
     public function notification()
     {
-        $notifications = Notification::where('notification_for', 'bangladesh-recruiting-agency')->get();
+        $notifications = Notification::where('notification_for', 'bangladesh-recruiting-agency')->latest()->get();
 
         // return "hello";
 

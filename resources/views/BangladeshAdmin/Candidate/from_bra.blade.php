@@ -51,6 +51,7 @@
                                             <th>SL No</th>
                                             <th>Recruiter Name</th>
                                             <th>Job Category</th>
+                                            <th>QR Code</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -60,11 +61,13 @@
                                                 <td>
                                                     <input type="checkbox" name="all_option[]"
                                                         value="{{ $candidate->id }}">
-                                                </td>   
+                                                </td>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $candidate->company->user_name }}</td>
+                                                <td>{{ $candidate->user->name }}</td>
                                                 <td>{{ $candidate->job_category->category_name }}</td>
-
+                                                <td>
+                                                    {!! QrCode::size(100)->generate(url('cv/'.$candidate->id)) !!}
+                                                </td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm"
                                                         href="{{ route('BangladeshAdmin.candidate.show', $candidate->id) }}">

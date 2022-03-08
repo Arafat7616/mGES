@@ -201,7 +201,7 @@
                                         </a>
                                     @endif
                                 </div> 
-                                {!! QrCode::size(300)->generate($link) !!}
+                                {!! QrCode::size(300)->generate(url('cv/'.$candidate->id)) !!}
                             </div><!-- /.card-body -->
                         </div> <!-- /.nav-tabs-custom -->
                     </div> <!-- /.col -->

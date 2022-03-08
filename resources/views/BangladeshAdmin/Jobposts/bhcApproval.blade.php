@@ -55,42 +55,22 @@
                                     @foreach ($job_posts as $job_post)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $job_post->company->company_name ?? '-' }}</td>
+                                            <td>{{ $job_post->user->name ?? '-' }}</td>
                                             <td>{{ $job_post->job_category->category_name ?? '-' }}</td>
                                             <td>{{ $job_post->job_location ?? '-' }}</td>
                                             <td>{{ $job_post->appointment_date ?? '-' }}</td>
                                             <td>{{ $job_post->job_vacancy }}</td>
-                                            <td>{!! QrCode::size(100)->generate(url('/qr_code_result')) !!}</td>
+                                            <td>{!! QrCode::size(100)->generate(url('job-post/demand-latter/'.$job_post->id)) !!}</td>
                                             <td>
-                                               @if ($job_post->status == 'New')
-                                                    <button type="button" name="New"
-                                                        class="btn btn-primary btn-xs update">New</button>
-                                                @elseif ($job_post->status == "Rejected")
-                                                    <button type="button" name="Rejected"
-                                                        class="btn btn-warning btn-xs update">Rejected</button>
-                                                @elseif ($job_post->status == "Pending")
-                                                    <button type="button" name="Pending"
-                                                        class="btn btn-warning btn-xs update">Pending</button>
-                                                @elseif ($job_post->status == "Approved")
-                                                    <button type="button" name="Approved"
-                                                        class="btn btn-success btn-xs update">Approved</button>
-                                                @elseif ($job_post->status == "Verified")
-                                                    <button type="button" name="Verified"
-                                                        class="btn btn-info btn-xs update">Verified</button>
-                                                @elseif ($job_post->status == "Applied")
-                                                    <button type="button" name="Applied"
-                                                        class="btn btn-info btn-xs update">Applied</button>
-                                                @endif
+                                       
+                                                <button type="button" name="Verified"
+                                                        class="btn btn-info btn-xs update">Verified by BHC</button>
                                             </td>
                                             <td>
                                                 <a class="btn btn-info btn-xs" href="{{ route('BangladeshAdmin.jobPost.bhcApproved_view', $job_post->id) }}">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
 
-                                                {{-- <a class="btn btn-primary btn-sm"
-                                                    href="{{ route('WelfareCentre.employerDemand.send_to_me_and_ba', $job_post->id) }}">
-                                                    <i class="fa fa-send"></i>
-                                                </a> --}}
                                             </td>
 
 
