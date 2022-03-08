@@ -4,6 +4,27 @@
 <head>
 
     @include('BangladeshRecruitingAgency.include._header')
+
+    {{-- CSS for Fractional Star --}}
+    <style>
+        span.stars, span.stars span {
+        display: block;
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+        width: 200px; /* width of a star multiplied by 5 */
+        height: 40px; /* the height of the star */
+        background-size: 40px 40px;
+        }
+
+        span.stars span {
+        background-position: 0 0;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+        }
+
+        .star-center{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 
@@ -62,6 +83,20 @@
                 }
             });
         }
+    </script>
+
+    {{-- JS for Fractional Star --}}
+    <script>
+        var starWidth = 30;
+
+        $.fn.stars = function() {
+        return $(this).each(function() {
+            $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * starWidth));
+        });
+        }
+        $(document).ready(function() {
+        $('span.stars').stars();
+        });
     </script>
 
 </body>

@@ -53,7 +53,7 @@
                                     @foreach ($selectedCandidates as $selectedCandidate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $selectedCandidate->jobPost->company->user_name }}</td>
+                                            <td>{{ $selectedCandidate->jobPost->user->name }}</td>
                                             <td>{{ $selectedCandidate->jobPost->user->company_name }}</td>
                                             <td>{{ $selectedCandidate->jobPost->job_category->category_name }}</td>
                                             <td>{{ $selectedCandidate->approved_vacancy }}</td>
